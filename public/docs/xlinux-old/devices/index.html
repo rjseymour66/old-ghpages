@@ -1,0 +1,1372 @@
+<!doctype html>
+<html itemscope itemtype="http://schema.org/WebPage" lang="en" class="no-js">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="noindex, nofollow">
+
+
+<link rel="shortcut icon" href="/favicons/favicon.ico" >
+<link rel="apple-touch-icon" href="/favicons/apple-touch-icon-180x180.png" sizes="180x180">
+<link rel="icon" type="image/png" href="/favicons/favicon-16x16.png" sizes="16x16">
+<link rel="icon" type="image/png" href="/favicons/favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="/favicons/android-36x36.png" sizes="36x36">
+<link rel="icon" type="image/png" href="/favicons/android-48x48.png" sizes="48x48">
+<link rel="icon" type="image/png" href="/favicons/android-72x72.png" sizes="72x72">
+<link rel="icon" type="image/png" href="/favicons/android-96x96.png" sizes="96x96">
+<link rel="icon" type="image/png" href="/favicons/android-144x144.png" sizes="144x144">
+<link rel="icon" type="image/png" href="/favicons/android-192x192.png" sizes="192x192">
+
+<title>Linux devices | Goldydocs</title>
+<meta name="description" content="The kernel must recognize and know how to communicate with each device on your system. The kernel communicates with devices using modules.
+Device interfaces Each device uses a standard protocol to communicate with the system hardware. The kernel module must know how to send data to and receive data from the device with this protocol. There are three popular standards to connect devices:
+PCI boards USB GPIO PCI boards Peripheral Component Interconnect (PCI) was developed to connect hardware boards to PC motherboards. Now, it is commonly used to provide an interface for external hardware cards.">
+<meta property="og:url" content="//localhost:1313/docs/xlinux-old/devices/">
+  <meta property="og:site_name" content="Goldydocs">
+  <meta property="og:title" content="Linux devices">
+  <meta property="og:description" content="The kernel must recognize and know how to communicate with each device on your system. The kernel communicates with devices using modules.
+Device interfaces Each device uses a standard protocol to communicate with the system hardware. The kernel module must know how to send data to and receive data from the device with this protocol. There are three popular standards to connect devices:
+PCI boards USB GPIO PCI boards Peripheral Component Interconnect (PCI) was developed to connect hardware boards to PC motherboards. Now, it is commonly used to provide an interface for external hardware cards.">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="docs">
+    <meta property="article:modified_time" content="2024-11-02T12:48:42-04:00">
+
+  <meta itemprop="name" content="Linux devices">
+  <meta itemprop="description" content="The kernel must recognize and know how to communicate with each device on your system. The kernel communicates with devices using modules.
+Device interfaces Each device uses a standard protocol to communicate with the system hardware. The kernel module must know how to send data to and receive data from the device with this protocol. There are three popular standards to connect devices:
+PCI boards USB GPIO PCI boards Peripheral Component Interconnect (PCI) was developed to connect hardware boards to PC motherboards. Now, it is commonly used to provide an interface for external hardware cards.">
+  <meta itemprop="dateModified" content="2024-11-02T12:48:42-04:00">
+  <meta itemprop="wordCount" content="3197">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Linux devices">
+  <meta name="twitter:description" content="The kernel must recognize and know how to communicate with each device on your system. The kernel communicates with devices using modules.
+Device interfaces Each device uses a standard protocol to communicate with the system hardware. The kernel module must know how to send data to and receive data from the device with this protocol. There are three popular standards to connect devices:
+PCI boards USB GPIO PCI boards Peripheral Component Interconnect (PCI) was developed to connect hardware boards to PC motherboards. Now, it is commonly used to provide an interface for external hardware cards.">
+<link href="/scss/main.css" rel="stylesheet">
+<script
+  src="https://code.jquery.com/jquery-3.7.1.min.js"
+  integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+  crossorigin="anonymous"></script>
+
+  </head>
+  <body class="td-page">
+    <header>
+      <nav class="td-navbar js-navbar-scroll" data-bs-theme="dark">
+<div class="container-fluid flex-column flex-md-row">
+  <a class="navbar-brand" href="/"><span class="navbar-brand__logo navbar-logo"><svg id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 500 500" style="enable-background:new 0 0 500 500"><g><path style="fill:#fff" d="M116.8525 421.9722c-5.7041.0-10.3442-4.3127-10.3442-9.6129V88.183c0-5.3002 4.6401-9.6117 10.3442-9.6117H320.858c3.0347.0 9.3959.5498 11.7506 2.6302l.3545.3442 58.905 63.2912c2.3101 2.491 2.9202 8.4928 2.9202 11.3184v256.2039c0 5.3002-4.6407 9.6129-10.3436 9.6129H116.8525z"/><g><g><g><path style="fill:#767676" d="M384.4445 423.2066H116.852c-6.3839.0-11.5786-4.8658-11.5786-10.8474V88.1831c0-5.9804 5.1947-10.8461 11.5786-10.8461h204.0062c.377.0 9.2786.0329 12.568 2.9389l.3947.3833 58.9508 63.337c3.2135 3.4652 3.2514 11.7924 3.2514 12.1593v256.2036C396.0231 418.3408 390.8284 423.2066 384.4445 423.2066zM116.5079 411.9189c.0848.0278.1999.0531.3441.0531h267.5925c.1442.0.2581-.0253.3441-.0531V156.1556c-.0076-.9033-.3593-3.7347-.7034-5.0037l-57.6527-61.9416c-1.4651-.3176-4.4533-.6389-5.5742-.6389H116.852c-.143.0-.2594.024-.3441.0531V411.9189zm267.4533-261.149zM327.0321 89.371v.0013V89.371z"/></g></g></g><g><g><path style="fill:#5b7fc0" d="M189.0874 210.1754l.0012-.0012c7.7751.0012 15.0295 4.1862 18.932 10.9234 1.9177 3.3159 2.9305 7.1011 2.9293 10.9378.0 5.8394-2.2733 11.3304-6.4032 15.4604-4.1288 4.1288-9.6186 6.4032-15.458 6.4032s-11.328-2.2733-15.458-6.4032-6.4032-9.6186-6.4056-15.4628c.0012-6.025 2.454-11.4897 6.4116-15.4473C177.5953 212.627 183.0601 210.1742 189.0874 210.1754zm7.993 21.8576c.0012-1.4042-.3687-2.7868-1.063-3.9887-1.4293-2.4684-4.0833-3.9995-6.9299-4.0019-4.4077.0024-7.993 3.5877-7.993 7.993.0 2.1356.832 4.1431 2.3427 5.6539 1.5083 1.5083 3.5159 2.3403 5.6503 2.3415 2.1356.0 4.1443-.8308 5.6539-2.3403S197.0816 234.1722 197.0804 232.033z"/><path style="opacity:.3;fill:#fff" d="M189.0898 210.176c7.7763.0 15.0283 4.1826 18.926 10.9151 1.9201 3.3136 2.9377 7.0988 2.9353 10.9462.0024 12.0643-9.8065 21.8636-21.8613 21.8613-12.0547.0024-21.8636-9.8066-21.8612-21.8613.0-6.0285 2.4516-11.4921 6.4116-15.452C177.5977 212.6276 183.0612 210.176 189.0898 210.176zm7.9941 21.8612c0-1.4078-.3711-2.7892-1.0702-3.9959-1.4269-2.466-4.0797-3.9983-6.924-3.9983-4.4005-.0048-7.9918 3.5817-7.9942 7.9942.0024 4.4077 3.5865 7.9918 7.9942 7.9942 2.2027.0 4.2018-.8978 5.6479-2.3439C196.1861 236.239 197.0839 234.2399 197.0839 232.0372z"/><g><defs><path id="SVGID_1_" d="M194.7376 237.6875c-1.4461 1.4461-3.4452 2.3439-5.6479 2.3439-4.4077-.0024-7.9918-3.5865-7.9942-7.9942.0024-4.4125 3.5937-7.999 7.9942-7.9942 2.8443.0 5.497 1.5323 6.924 3.9983.6991 1.2067 1.0702 2.5881 1.0702 3.9959C197.0839 234.2399 196.1861 236.239 194.7376 237.6875z"/></defs><clipPath id="SVGID_2_"><use xlink:href="#SVGID_1_" style="overflow:visible"/></clipPath><path style="clip-path:url(#SVGID_2_);fill:#fff" d="M190.0704 225.0237c-4.4005-.0048-7.9918 3.5817-7.9942 7.9942.0011 1.9546.7088 3.7452 1.8782 5.1354-1.7447-1.4674-2.8575-3.663-2.8588-6.116.0024-4.4125 3.5936-7.999 7.9942-7.9942 2.3802-1e-4 4.616 1.0833 6.1218 2.8788C193.7885 225.7247 191.9774 225.0237 190.0704 225.0237z"/><path style="opacity:.13;clip-path:url(#SVGID_2_);fill:#020202" d="M190.0704 225.0237c-4.4005-.0048-7.9918 3.5817-7.9942 7.9942.0011 1.9546.7088 3.7452 1.8782 5.1354-1.7447-1.4674-2.8575-3.663-2.8588-6.116.0024-4.4125 3.5936-7.999 7.9942-7.9942 2.3802-1e-4 4.616 1.0833 6.1218 2.8788C193.7885 225.7247 191.9774 225.0237 190.0704 225.0237z"/></g><g><defs><path id="SVGID_3_" d="M189.0898 210.176c7.7763.0 15.0283 4.1826 18.926 10.9151 1.9201 3.3136 2.9377 7.0988 2.9353 10.9462.0024 12.0643-9.8065 21.8636-21.8613 21.8613-12.0547.0024-21.8636-9.8066-21.8612-21.8613.0-6.0285 2.4516-11.4921 6.4116-15.452C177.5977 212.6276 183.0612 210.176 189.0898 210.176zm7.9941 21.8612c0-1.4078-.3711-2.7892-1.0702-3.9959-1.4269-2.466-4.0797-3.9983-6.924-3.9983-4.4005-.0048-7.9918 3.5817-7.9942 7.9942.0024 4.4077 3.5865 7.9918 7.9942 7.9942 2.2027.0 4.2018-.8978 5.6479-2.3439C196.1861 236.239 197.0839 234.2399 197.0839 232.0372z"/></defs><clipPath id="SVGID_4_"><use xlink:href="#SVGID_3_" style="overflow:visible"/></clipPath><path style="clip-path:url(#SVGID_4_);fill:#5b7fc0" d="M172.6595 215.6045c-3.96 3.96-6.4116 9.4235-6.4116 15.452-.0024 12.0547 9.8066 21.8636 21.8613 21.8612 12.0547.0024 21.8636-9.797 21.8613-21.8612.0024-3.8475-1.0151-7.6326-2.9353-10.9462-3.8977-6.7324-11.1497-10.9151-18.926-10.9151C182.0806 209.1953 176.6171 211.647 172.6595 215.6045z"/></g></g><rect x="198.8952" y="225.1043" style="fill:#5b7fc0" width="122.6266" height="13.8671"/></g><g><path style="fill:#d95140" d="M189.0874 155.7611l.0012-.0012c7.7751.0012 15.0295 4.1862 18.932 10.9234 1.9177 3.3159 2.9305 7.1011 2.9293 10.9378.0 5.8394-2.2733 11.3304-6.4032 15.4604-4.1288 4.1288-9.6186 6.4032-15.458 6.4032s-11.328-2.2733-15.458-6.4032-6.4032-9.6186-6.4056-15.4628c.0012-6.0249 2.454-11.4897 6.4116-15.4473C177.5953 158.2128 183.0601 155.7599 189.0874 155.7611zm7.993 21.8577c.0012-1.4042-.3687-2.7868-1.063-3.9887-1.4293-2.4684-4.0833-3.9995-6.9299-4.0019-4.4077.0024-7.993 3.5877-7.993 7.993.0 2.1356.832 4.1431 2.3427 5.6539 1.5083 1.5083 3.5159 2.3403 5.6503 2.3415 2.1356.0 4.1443-.8308 5.6539-2.3403C196.2508 181.7667 197.0816 179.758 197.0804 177.6188z"/><path style="opacity:.3;fill:#fff" d="M189.0898 155.7617c7.7763.0 15.0283 4.1826 18.926 10.9151 1.9201 3.3135 2.9377 7.0987 2.9353 10.9462.0024 12.0643-9.8065 21.8636-21.8613 21.8613-12.0547.0024-21.8636-9.8066-21.8612-21.8613.0-6.0285 2.4516-11.4921 6.4116-15.452C177.5977 158.2134 183.0612 155.7617 189.0898 155.7617zm7.9941 21.8613c0-1.4078-.3711-2.7892-1.0702-3.9959-1.4269-2.466-4.0797-3.9983-6.924-3.9983-4.4005-.0048-7.9918 3.5817-7.9942 7.9942.0024 4.4077 3.5865 7.9918 7.9942 7.9942 2.2027.0 4.2018-.8978 5.6479-2.3439C196.1861 181.8248 197.0839 179.8256 197.0839 177.623z"/><g><defs><path id="SVGID_5_" d="M194.7376 183.2733c-1.4461 1.4461-3.4452 2.3439-5.6479 2.3439-4.4077-.0024-7.9918-3.5865-7.9942-7.9942.0024-4.4125 3.5937-7.9989 7.9942-7.9942 2.8443.0 5.497 1.5323 6.924 3.9983.6991 1.2067 1.0702 2.5881 1.0702 3.9959C197.0839 179.8256 196.1861 181.8248 194.7376 183.2733z"/></defs><clipPath id="SVGID_6_"><use xlink:href="#SVGID_5_" style="overflow:visible"/></clipPath><path style="clip-path:url(#SVGID_6_);fill:#fff" d="M190.0704 170.6095c-4.4005-.0048-7.9918 3.5817-7.9942 7.9942.0011 1.9546.7088 3.7452 1.8782 5.1354-1.7447-1.4674-2.8575-3.663-2.8588-6.116.0024-4.4125 3.5936-7.999 7.9942-7.9942 2.3802-1e-4 4.616 1.0833 6.1218 2.8788C193.7885 171.3104 191.9774 170.6095 190.0704 170.6095z"/><path style="opacity:.13;clip-path:url(#SVGID_6_);fill:#020202" d="M190.0704 170.6095c-4.4005-.0048-7.9918 3.5817-7.9942 7.9942.0011 1.9546.7088 3.7452 1.8782 5.1354-1.7447-1.4674-2.8575-3.663-2.8588-6.116.0024-4.4125 3.5936-7.999 7.9942-7.9942 2.3802-1e-4 4.616 1.0833 6.1218 2.8788C193.7885 171.3104 191.9774 170.6095 190.0704 170.6095z"/></g><g><defs><path id="SVGID_7_" d="M189.0898 155.7617c7.7763.0 15.0283 4.1826 18.926 10.9151 1.9201 3.3135 2.9377 7.0987 2.9353 10.9462.0024 12.0643-9.8065 21.8636-21.8613 21.8613-12.0547.0024-21.8636-9.8066-21.8612-21.8613.0-6.0285 2.4516-11.4921 6.4116-15.452C177.5977 158.2134 183.0612 155.7617 189.0898 155.7617zm7.9941 21.8613c0-1.4078-.3711-2.7892-1.0702-3.9959-1.4269-2.466-4.0797-3.9983-6.924-3.9983-4.4005-.0048-7.9918 3.5817-7.9942 7.9942.0024 4.4077 3.5865 7.9918 7.9942 7.9942 2.2027.0 4.2018-.8978 5.6479-2.3439C196.1861 181.8248 197.0839 179.8256 197.0839 177.623z"/></defs><clipPath id="SVGID_8_"><use xlink:href="#SVGID_7_" style="overflow:visible"/></clipPath><path style="clip-path:url(#SVGID_8_);fill:#d95140" d="M172.6595 161.1903c-3.96 3.96-6.4116 9.4235-6.4116 15.452-.0024 12.0547 9.8066 21.8636 21.8613 21.8613 12.0547.0024 21.8636-9.797 21.8613-21.8613.0024-3.8474-1.0151-7.6326-2.9353-10.9462-3.8977-6.7324-11.1497-10.9151-18.926-10.9151C182.0806 154.7811 176.6171 157.2327 172.6595 161.1903z"/></g><rect x="198.8952" y="170.69" style="fill:#d95140" width="122.6266" height="13.8671"/></g><g><g><path style="fill:#56a55c" d="M189.5379 264.6147l.0012-.0012c7.7751.0012 15.0294 4.1862 18.932 10.9235 1.9177 3.3159 2.9305 7.1011 2.9293 10.9378.0 5.8394-2.2733 11.3304-6.4032 15.4604-4.1288 4.1288-9.6186 6.4032-15.458 6.4032-5.8394.0-11.3281-2.2733-15.458-6.4032-4.13-4.13-6.4032-9.6186-6.4056-15.4628.0012-6.0249 2.454-11.4897 6.4116-15.4472C178.0458 267.0663 183.5105 264.6135 189.5379 264.6147zm7.993 21.8576c.0012-1.4042-.3687-2.7868-1.063-3.9887-1.4293-2.4684-4.0833-3.9995-6.9299-4.0019-4.4077.0024-7.993 3.5877-7.993 7.993.0 2.1356.832 4.1431 2.3427 5.6538 1.5083 1.5083 3.5159 2.3403 5.6503 2.3415 2.1356.0 4.1443-.8308 5.6539-2.3403C196.7013 290.6202 197.5321 288.6115 197.5309 286.4723z"/><path style="opacity:.3;fill:#fff" d="M189.5403 264.6153c7.7763.0 15.0283 4.1826 18.926 10.9151 1.9201 3.3135 2.9377 7.0987 2.9353 10.9462.0024 12.0643-9.8065 21.8636-21.8613 21.8613-12.0547.0024-21.8636-9.8065-21.8612-21.8613.0-6.0285 2.4516-11.492 6.4116-15.452C178.0482 267.0669 183.5117 264.6153 189.5403 264.6153zm7.9941 21.8612c0-1.4078-.3711-2.7892-1.0702-3.9959-1.4269-2.466-4.0797-3.9983-6.924-3.9983-4.4005-.0048-7.9918 3.5817-7.9942 7.9941.0024 4.4077 3.5865 7.9918 7.9942 7.9942 2.2027.0 4.2018-.8978 5.6479-2.3439C196.6366 290.6783 197.5344 288.6792 197.5344 286.4765z"/><g><defs><path id="SVGID_9_" d="M195.1881 292.1268c-1.4461 1.4461-3.4452 2.3439-5.6479 2.3439-4.4077-.0024-7.9918-3.5865-7.9942-7.9942.0024-4.4125 3.5937-7.9989 7.9942-7.9941 2.8443.0 5.497 1.5323 6.924 3.9983.6991 1.2067 1.0702 2.5881 1.0702 3.9959C197.5344 288.6792 196.6366 290.6783 195.1881 292.1268z"/></defs><clipPath id="SVGID_10_"><use xlink:href="#SVGID_9_" style="overflow:visible"/></clipPath><path style="clip-path:url(#SVGID_10_);fill:#fff" d="M190.5209 279.463c-4.4005-.0048-7.9918 3.5817-7.9942 7.9941.0011 1.9547.7088 3.7452 1.8782 5.1354-1.7446-1.4674-2.8575-3.6631-2.8588-6.1161.0024-4.4125 3.5936-7.999 7.9942-7.9941 2.3802-1e-4 4.616 1.0833 6.1218 2.8788C194.239 280.164 192.4279 279.463 190.5209 279.463z"/><path style="opacity:.13;clip-path:url(#SVGID_10_);fill:#020202" d="M190.5209 279.463c-4.4005-.0048-7.9918 3.5817-7.9942 7.9941.0011 1.9547.7088 3.7452 1.8782 5.1354-1.7446-1.4674-2.8575-3.6631-2.8588-6.1161.0024-4.4125 3.5936-7.999 7.9942-7.9941 2.3802-1e-4 4.616 1.0833 6.1218 2.8788C194.239 280.164 192.4279 279.463 190.5209 279.463z"/></g><g><defs><path id="SVGID_11_" d="M189.5403 264.6153c7.7763.0 15.0283 4.1826 18.926 10.9151 1.9201 3.3135 2.9377 7.0987 2.9353 10.9462.0024 12.0643-9.8065 21.8636-21.8613 21.8613-12.0547.0024-21.8636-9.8065-21.8612-21.8613.0-6.0285 2.4516-11.492 6.4116-15.452C178.0482 267.0669 183.5117 264.6153 189.5403 264.6153zm7.9941 21.8612c0-1.4078-.3711-2.7892-1.0702-3.9959-1.4269-2.466-4.0797-3.9983-6.924-3.9983-4.4005-.0048-7.9918 3.5817-7.9942 7.9941.0024 4.4077 3.5865 7.9918 7.9942 7.9942 2.2027.0 4.2018-.8978 5.6479-2.3439C196.6366 290.6783 197.5344 288.6792 197.5344 286.4765z"/></defs><clipPath id="SVGID_12_"><use xlink:href="#SVGID_11_" style="overflow:visible"/></clipPath><path style="clip-path:url(#SVGID_12_);fill:#56a55c" d="M173.11 270.0439c-3.96 3.96-6.4116 9.4235-6.4116 15.452-.0024 12.0547 9.8066 21.8636 21.8613 21.8613 12.0547.0024 21.8636-9.797 21.8613-21.8613.0024-3.8474-1.0151-7.6326-2.9353-10.9462-3.8977-6.7325-11.1497-10.9151-18.926-10.9151C182.5311 263.6346 177.0676 266.0863 173.11 270.0439z"/></g></g><rect x="199.3456" y="279.5436" style="fill:#56a55c" width="122.6266" height="13.8671"/></g><g><g><path style="fill:#f1bc42" d="M189.0874 318.7208l.0012-.0012c7.7751.0012 15.0295 4.1862 18.932 10.9234 1.9177 3.3159 2.9305 7.1011 2.9293 10.9378.0 5.8394-2.2733 11.3305-6.4032 15.4604-4.1288 4.1288-9.6186 6.4032-15.458 6.4032s-11.328-2.2733-15.458-6.4032-6.4032-9.6186-6.4056-15.4628c.0012-6.025 2.454-11.4897 6.4116-15.4472C177.5953 321.1724 183.0601 318.7196 189.0874 318.7208zm7.993 21.8576c.0012-1.4042-.3687-2.7868-1.063-3.9887-1.4293-2.4684-4.0833-3.9995-6.9299-4.0019-4.4077.0024-7.993 3.5877-7.993 7.993.0 2.1356.832 4.1431 2.3427 5.6539 1.5083 1.5083 3.5159 2.3403 5.6503 2.3415 2.1356.0 4.1443-.8308 5.6539-2.3403S197.0816 342.7176 197.0804 340.5784z"/><path style="opacity:.3;fill:#fff" d="M189.0898 318.7214c7.7763.0 15.0283 4.1826 18.926 10.915 1.9201 3.3136 2.9377 7.0988 2.9353 10.9462.0024 12.0643-9.8065 21.8636-21.8613 21.8612-12.0547.0024-21.8636-9.8065-21.8612-21.8612.0-6.0285 2.4516-11.4921 6.4116-15.452C177.5977 321.173 183.0612 318.7214 189.0898 318.7214zm7.9941 21.8612c0-1.4078-.3711-2.7892-1.0702-3.9959-1.4269-2.466-4.0797-3.9983-6.924-3.9983-4.4005-.0048-7.9918 3.5817-7.9942 7.9942.0024 4.4077 3.5865 7.9918 7.9942 7.9942 2.2027.0 4.2018-.8978 5.6479-2.3439C196.1861 344.7844 197.0839 342.7853 197.0839 340.5826z"/><g><defs><path id="SVGID_13_" d="M194.7376 346.2329c-1.4461 1.4461-3.4452 2.3439-5.6479 2.3439-4.4077-.0024-7.9918-3.5865-7.9942-7.9942.0024-4.4125 3.5937-7.999 7.9942-7.9942 2.8443.0 5.497 1.5323 6.924 3.9983.6991 1.2067 1.0702 2.5881 1.0702 3.9959C197.0839 342.7853 196.1861 344.7844 194.7376 346.2329z"/></defs><clipPath id="SVGID_14_"><use xlink:href="#SVGID_13_" style="overflow:visible"/></clipPath><path style="clip-path:url(#SVGID_14_);fill:#fff" d="M190.0704 333.5691c-4.4005-.0048-7.9918 3.5817-7.9942 7.9942.0011 1.9547.7088 3.7452 1.8782 5.1354-1.7447-1.4674-2.8575-3.6631-2.8588-6.1161.0024-4.4125 3.5936-7.999 7.9942-7.9942 2.3802-1e-4 4.616 1.0834 6.1218 2.8788C193.7885 334.2701 191.9774 333.5691 190.0704 333.5691z"/><path style="opacity:.13;clip-path:url(#SVGID_14_);fill:#020202" d="M190.0704 333.5691c-4.4005-.0048-7.9918 3.5817-7.9942 7.9942.0011 1.9547.7088 3.7452 1.8782 5.1354-1.7447-1.4674-2.8575-3.6631-2.8588-6.1161.0024-4.4125 3.5936-7.999 7.9942-7.9942 2.3802-1e-4 4.616 1.0834 6.1218 2.8788C193.7885 334.2701 191.9774 333.5691 190.0704 333.5691z"/></g><g><defs><path id="SVGID_15_" d="M189.0898 318.7214c7.7763.0 15.0283 4.1826 18.926 10.915 1.9201 3.3136 2.9377 7.0988 2.9353 10.9462.0024 12.0643-9.8065 21.8636-21.8613 21.8612-12.0547.0024-21.8636-9.8065-21.8612-21.8612.0-6.0285 2.4516-11.4921 6.4116-15.452C177.5977 321.173 183.0612 318.7214 189.0898 318.7214zm7.9941 21.8612c0-1.4078-.3711-2.7892-1.0702-3.9959-1.4269-2.466-4.0797-3.9983-6.924-3.9983-4.4005-.0048-7.9918 3.5817-7.9942 7.9942.0024 4.4077 3.5865 7.9918 7.9942 7.9942 2.2027.0 4.2018-.8978 5.6479-2.3439C196.1861 344.7844 197.0839 342.7853 197.0839 340.5826z"/></defs><clipPath id="SVGID_16_"><use xlink:href="#SVGID_15_" style="overflow:visible"/></clipPath><path style="clip-path:url(#SVGID_16_);fill:#f1bc42" d="M172.6595 324.15c-3.96 3.96-6.4116 9.4235-6.4116 15.452-.0024 12.0547 9.8066 21.8636 21.8613 21.8612 12.0547.0024 21.8636-9.797 21.8613-21.8612.0024-3.8474-1.0151-7.6327-2.9353-10.9462-3.8977-6.7324-11.1497-10.9151-18.926-10.9151C182.0806 317.7407 176.6171 320.1924 172.6595 324.15z"/></g></g><rect x="198.8952" y="333.6497" style="fill:#f1bc42" width="122.6266" height="13.8671"/></g></g></svg></span><span class="navbar-brand__name">Goldydocs</span></a>
+  <div class="td-navbar-nav-scroll ms-md-auto" id="main_navbar">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link active" href="/docs/"><span>Documentation</span></a>
+      </li>
+      <li class="nav-item dropdown d-none d-lg-block">
+        <div class="dropdown">
+  <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">English</a>
+  <ul class="dropdown-menu">
+    <li><a class="dropdown-item" href="/no/">Norsk</a></li>
+    <li><a class="dropdown-item" href="/fa/">فارسی</a></li>
+    </ul>
+</div></li>
+      </ul>
+  </div>
+  <div class="d-none d-lg-block">
+    <div class="td-search">
+  <div class="td-search__icon"></div>
+  <input type="search" class="td-search__input form-control td-search-input" placeholder="Search this site…" aria-label="Search this site…" autocomplete="off">
+</div>
+  </div>
+</div>
+</nav>
+    </header>
+    <div class="container-fluid td-outer">
+      <div class="td-main">
+        <div class="row flex-xl-nowrap">
+          <aside class="col-12 col-md-3 col-xl-2 td-sidebar d-print-none">
+            <div id="td-sidebar-menu" class="td-sidebar__inner">
+  <form class="td-sidebar__search d-flex align-items-center">
+    <div class="td-search">
+  <div class="td-search__icon"></div>
+  <input type="search" class="td-search__input form-control td-search-input" placeholder="Search this site…" aria-label="Search this site…" autocomplete="off">
+</div>
+    <button class="btn btn-link td-sidebar__toggle d-md-none p-0 ms-3 fas fa-bars" type="button" data-bs-toggle="collapse" data-bs-target="#td-section-nav" aria-controls="td-section-nav" aria-expanded="false" aria-label="Toggle section navigation">
+    </button>
+  </form>
+  <nav class="td-sidebar-nav collapse" id="td-section-nav">
+    <div class="td-sidebar-nav__section nav-item dropdown d-block d-lg-none">
+      <div class="dropdown">
+  <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">English</a>
+  <ul class="dropdown-menu">
+    <li><a class="dropdown-item" href="/no/">Norsk</a></li>
+    <li><a class="dropdown-item" href="/fa/">فارسی</a></li>
+    </ul>
+</div>
+    </div>
+    <ul class="td-sidebar-nav__section pe-md-3 ul-0">
+      <li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child active-path" id="m-docs-li">
+  <a href="/docs/" class="align-left ps-0 td-sidebar-link td-sidebar-link__section tree-root" id="m-docs"><span class="">Documentation</span></a>
+  <ul class="ul-1">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-docslinux-li">
+  <a href="/docs/linux/" class="align-left ps-0 td-sidebar-link td-sidebar-link__section" id="m-docslinux"><span class="">Linux</span></a>
+  <ul class="ul-2 foldable">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docslinuxbasics-li">
+  <a href="/docs/linux/basics/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docslinuxbasics"><span class="">Basics</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docslinuxkernel-li">
+  <a href="/docs/linux/kernel/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docslinuxkernel"><span class="">Kernel</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docslinuxmemory-li">
+  <a href="/docs/linux/memory/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docslinuxmemory"><span class="">Memory</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docslinuxnetworking-li">
+  <a href="/docs/linux/networking/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docslinuxnetworking"><span class="">Networking</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docslinuxperformance-li">
+  <a href="/docs/linux/performance/" title="Systems performance" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docslinuxperformance"><span class="">Performance</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docslinuxpermissions-li">
+  <a href="/docs/linux/permissions/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docslinuxpermissions"><span class="">Permissions and ownership</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docslinuxssh-li">
+  <a href="/docs/linux/ssh/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docslinuxssh"><span class="">SSH</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docslinuxsystem-info-li">
+  <a href="/docs/linux/system-info/" title="System information" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docslinuxsystem-info"><span class="">System info</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docslinuxsystemd-li">
+  <a href="/docs/linux/systemd/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docslinuxsystemd"><span class="">Systemd</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docslinuxtext-li">
+  <a href="/docs/linux/text/" title="Text tools and processing" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docslinuxtext"><span class="">Text</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docslinuxtodo-li">
+  <a href="/docs/linux/todo/" title="Todo list" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docslinuxtodo"><span class="">Todo</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docslinuxvpn-li">
+  <a href="/docs/linux/vpn/" title="Virtual Private Networks (VPNs)" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docslinuxvpn"><span class="">VPNs</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docslinuxweb-servers-li">
+  <a href="/docs/linux/web-servers/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docslinuxweb-servers"><span class="">Web servers</span></a>
+</li>
+  </ul>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-docswriting-li">
+  <a href="/docs/writing/" class="align-left ps-0 td-sidebar-link td-sidebar-link__section" id="m-docswriting"><span class="">Writing</span></a>
+  <ul class="ul-2 foldable">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docswritingterms-li">
+  <a href="/docs/writing/terms/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docswritingterms"><span class="">Terms and definitions</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docswritingphrases-clauses-li">
+  <a href="/docs/writing/phrases-clauses/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docswritingphrases-clauses"><span class="">Phrases and clauses</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docswritingnouns-li">
+  <a href="/docs/writing/nouns/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docswritingnouns"><span class="">Nouns</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docswritingpronouns-li">
+  <a href="/docs/writing/pronouns/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docswritingpronouns"><span class="">Pronouns</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docswritingverbs-li">
+  <a href="/docs/writing/verbs/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docswritingverbs"><span class="">Verbs</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docswritingadjectives-li">
+  <a href="/docs/writing/adjectives/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docswritingadjectives"><span class="">Adjectives</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docswritingadverbs-li">
+  <a href="/docs/writing/adverbs/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docswritingadverbs"><span class="">Adverbs</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docswritingconjunctions-li">
+  <a href="/docs/writing/conjunctions/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docswritingconjunctions"><span class="">Conjunctions</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docswritingprepositions-li">
+  <a href="/docs/writing/prepositions/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docswritingprepositions"><span class="">Prepositions</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docswritingdeterminers-li">
+  <a href="/docs/writing/determiners/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docswritingdeterminers"><span class="">Determiners</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docswritinggrammer-phrases-li">
+  <a href="/docs/writing/grammer-phrases/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docswritinggrammer-phrases"><span class="">Grammar of phrases</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docswritinggrammar-clauses-li">
+  <a href="/docs/writing/grammar-clauses/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docswritinggrammar-clauses"><span class="">Grammar of clauses</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docswritingcoordination-li">
+  <a href="/docs/writing/coordination/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docswritingcoordination"><span class="">Coordination</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docswritingusage-li">
+  <a href="/docs/writing/usage/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docswritingusage"><span class="">Usage</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docswritingsentences-li">
+  <a href="/docs/writing/sentences/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docswritingsentences"><span class="">Sentences</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docswritingparagraphs-li">
+  <a href="/docs/writing/paragraphs/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docswritingparagraphs"><span class="">Paragraphs</span></a>
+</li>
+  </ul>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-docsgit-li">
+  <a href="/docs/git/" class="align-left ps-0 td-sidebar-link td-sidebar-link__section" id="m-docsgit"><span class="">git</span></a>
+  <ul class="ul-2 foldable">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsgitbranching-li">
+  <a href="/docs/git/branching/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsgitbranching"><span class="">Branching</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsgitlinux-plus-li">
+  <a href="/docs/git/linux-plus/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsgitlinux-plus"><span class="">Linux&#43; git</span></a>
+</li>
+  </ul>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-docsnetworking-li">
+  <a href="/docs/networking/" class="align-left ps-0 td-sidebar-link td-sidebar-link__section" id="m-docsnetworking"><span class="">Networking</span></a>
+  <ul class="ul-2 foldable">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsnetworkingintro-networks-li">
+  <a href="/docs/networking/intro-networks/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsnetworkingintro-networks"><span class="">Intro to networks</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsnetworkingosi-model-li">
+  <a href="/docs/networking/osi-model/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsnetworkingosi-model"><span class="">OSI model</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsnetworkingconnectors-wiring-li">
+  <a href="/docs/networking/connectors-wiring/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsnetworkingconnectors-wiring"><span class="">Ethernet</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsnetworkingnetwork-devices-li">
+  <a href="/docs/networking/network-devices/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsnetworkingnetwork-devices"><span class="">Networking devices</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsnetworkinginternet-protocol-li">
+  <a href="/docs/networking/internet-protocol/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsnetworkinginternet-protocol"><span class="">Internet Protocol</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsnetworkingip-addressing-li">
+  <a href="/docs/networking/ip-addressing/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsnetworkingip-addressing"><span class="">IP addressing</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsnetworkingsubnet-nat-li">
+  <a href="/docs/networking/subnet-nat/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsnetworkingsubnet-nat"><span class="">Subnets and NAT</span></a>
+</li>
+  </ul>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-docsbash-li">
+  <a href="/docs/bash/" title="Bash scripting" class="align-left ps-0 td-sidebar-link td-sidebar-link__section" id="m-docsbash"><span class="">Bash</span></a>
+  <ul class="ul-2 foldable">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child collapse" id="m-docsbashefficiency-li">
+  <a href="/docs/bash/efficiency/" title="Efficient command line" class="align-left ps-0 td-sidebar-link td-sidebar-link__section" id="m-docsbashefficiency"><span class="">Efficient</span></a>
+  <ul class="ul-3 foldable">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsbashefficiencycore-li">
+  <a href="/docs/bash/efficiency/core/" title="Core commands" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsbashefficiencycore"><span class="">Core</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsbashefficiencyshell-li">
+  <a href="/docs/bash/efficiency/shell/" title="Introducing the shell" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsbashefficiencyshell"><span class="">Shell</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsbashefficiencyrerun-commands-li">
+  <a href="/docs/bash/efficiency/rerun-commands/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsbashefficiencyrerun-commands"><span class="">Rerunning commands</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsbashefficiencyfilesystem-li">
+  <a href="/docs/bash/efficiency/filesystem/" title="Cruising the filesystem" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsbashefficiencyfilesystem"><span class="">Filesystem</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsbashefficiencytext-commands-li">
+  <a href="/docs/bash/efficiency/text-commands/" title="Producing, isolating, combining, and transforming text" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsbashefficiencytext-commands"><span class="">Text commands</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsbashefficiencyparents-child-envs-li">
+  <a href="/docs/bash/efficiency/parents-child-envs/" title="Parent, children, and environments" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsbashefficiencyparents-child-envs"><span class="">Environments</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsbashefficiencyrunning-commands-li">
+  <a href="/docs/bash/efficiency/running-commands/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsbashefficiencyrunning-commands"><span class="">Running commands</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsbashefficiencybrash-li">
+  <a href="/docs/bash/efficiency/brash/" title="Brash one-liners" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsbashefficiencybrash"><span class="">Brash</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsbashefficiencytext-files-li">
+  <a href="/docs/bash/efficiency/text-files/" title="Leveraging text files" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsbashefficiencytext-files"><span class="">Text files</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsbashefficiencykeyboard-li">
+  <a href="/docs/bash/efficiency/keyboard/" title="Keyboard efficiency" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsbashefficiencykeyboard"><span class="">Keyboard</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsbashefficiencytime-savers-li">
+  <a href="/docs/bash/efficiency/time-savers/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsbashefficiencytime-savers"><span class="">Time savers</span></a>
+</li>
+  </ul>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsbashcyberops-li">
+  <a href="/docs/bash/cyberops/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsbashcyberops"><span class="">Cyberops bash notes</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsbashcommands-li">
+  <a href="/docs/bash/commands/" title="Common commands" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsbashcommands"><span class="">Commands</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsbashsyntax-li">
+  <a href="/docs/bash/syntax/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsbashsyntax"><span class="">Syntax</span></a>
+</li>
+  </ul>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-docsgithub-li">
+  <a href="/docs/github/" class="align-left ps-0 td-sidebar-link td-sidebar-link__section" id="m-docsgithub"><span class="">GitHub</span></a>
+  <ul class="ul-2 foldable">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsgithubgh-actions-li">
+  <a href="/docs/github/gh-actions/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsgithubgh-actions"><span class="">GitHub actions</span></a>
+</li>
+  </ul>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-docsgo-li">
+  <a href="/docs/go/" class="align-left ps-0 td-sidebar-link td-sidebar-link__section" id="m-docsgo"><span class="">Go</span></a>
+  <ul class="ul-2 foldable">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsgolearn-go-with-tests-li">
+  <a href="/docs/go/learn-go-with-tests/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsgolearn-go-with-tests"><span class="">Learn with tests</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child collapse" id="m-docsgooverhead-li">
+  <a href="/docs/go/overhead/" class="align-left ps-0 td-sidebar-link td-sidebar-link__section" id="m-docsgooverhead"><span class="">Project organization</span></a>
+  <ul class="ul-3 foldable">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsgooverheadproject-setup-li">
+  <a href="/docs/go/overhead/project-setup/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsgooverheadproject-setup"><span class="">Project setup</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsgooverheadtooling-li">
+  <a href="/docs/go/overhead/tooling/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsgooverheadtooling"><span class="">Go tooling</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsgooverheadidioms-li">
+  <a href="/docs/go/overhead/idioms/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsgooverheadidioms"><span class="">Idioms</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsgooverheadblueprints-li">
+  <a href="/docs/go/overhead/blueprints/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsgooverheadblueprints"><span class="">Blueprints</span></a>
+</li>
+  </ul>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child collapse" id="m-docsgobasics-li">
+  <a href="/docs/go/basics/" title="Getting started with Go" class="align-left ps-0 td-sidebar-link td-sidebar-link__section" id="m-docsgobasics"><span class="">Getting started</span></a>
+  <ul class="ul-3 foldable">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsgobasicserrors-li">
+  <a href="/docs/go/basics/errors/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsgobasicserrors"><span class="">Errors</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsgobasicstypes-li">
+  <a href="/docs/go/basics/types/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsgobasicstypes"><span class="">Types and collections</span></a>
+</li>
+  </ul>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child collapse" id="m-docsgoio-li">
+  <a href="/docs/go/io/" title="Input and output" class="align-left ps-0 td-sidebar-link td-sidebar-link__section" id="m-docsgoio"><span class="">I/O</span></a>
+  <ul class="ul-3 foldable">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsgoiojson-li">
+  <a href="/docs/go/io/json/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsgoiojson"><span class="">JSON data</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsgoiorw-files-li">
+  <a href="/docs/go/io/rw-files/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsgoiorw-files"><span class="">Reading, writing, files</span></a>
+</li>
+  </ul>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child collapse" id="m-docsgonetwork-li">
+  <a href="/docs/go/network/" class="align-left ps-0 td-sidebar-link td-sidebar-link__section" id="m-docsgonetwork"><span class="">Network</span></a>
+  <ul class="ul-3 foldable">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsgonetworkclients-li">
+  <a href="/docs/go/network/clients/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsgonetworkclients"><span class="">Clients</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsgonetworkservers-li">
+  <a href="/docs/go/network/servers/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsgonetworkservers"><span class="">Servers</span></a>
+</li>
+  </ul>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child collapse" id="m-docsgodatabases-li">
+  <a href="/docs/go/databases/" class="align-left ps-0 td-sidebar-link td-sidebar-link__section" id="m-docsgodatabases"><span class="">Databases</span></a>
+  <ul class="ul-3 foldable">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsgodatabasespatterns-li">
+  <a href="/docs/go/databases/patterns/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsgodatabasespatterns"><span class="">Patterns</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsgodatabasessql-package-li">
+  <a href="/docs/go/databases/sql-package/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsgodatabasessql-package"><span class="">SQL package</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsgodatabasesmysql-li">
+  <a href="/docs/go/databases/mysql/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsgodatabasesmysql"><span class="">MySQL</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsgodatabasespostgres-li">
+  <a href="/docs/go/databases/postgres/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsgodatabasespostgres"><span class="">PostgreSQL</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsgodatabasessqlite-li">
+  <a href="/docs/go/databases/sqlite/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsgodatabasessqlite"><span class="">SQLite</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsgodatabasesmigrations-li">
+  <a href="/docs/go/databases/migrations/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsgodatabasesmigrations"><span class="">Migrations</span></a>
+</li>
+  </ul>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsgotesting-li">
+  <a href="/docs/go/testing/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsgotesting"><span class="">Testing</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsgoconcurrency-li">
+  <a href="/docs/go/concurrency/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsgoconcurrency"><span class="">Concurrency</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsgocli-tools-li">
+  <a href="/docs/go/cli-tools/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsgocli-tools"><span class="">CLI tools</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsgoobservability-li">
+  <a href="/docs/go/observability/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsgoobservability"><span class="">Observability</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsgocontainers-li">
+  <a href="/docs/go/containers/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsgocontainers"><span class="">Containers</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsgocontext-li">
+  <a href="/docs/go/context/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsgocontext"><span class="">Context</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsgotemplates-li">
+  <a href="/docs/go/templates/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsgotemplates"><span class="">Templates</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsgologging-li">
+  <a href="/docs/go/logging/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsgologging"><span class="">Logging</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsgosecurity-li">
+  <a href="/docs/go/security/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsgosecurity"><span class="">Security</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsgoapis-li">
+  <a href="/docs/go/apis/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsgoapis"><span class="">APIs</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsgorepo-dump-li">
+  <a href="/docs/go/repo-dump/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsgorepo-dump"><span class="">Repo dump</span></a>
+</li>
+  </ul>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-docshugo-li">
+  <a href="/docs/hugo/" class="align-left ps-0 td-sidebar-link td-sidebar-link__section" id="m-docshugo"><span class="">Hugo</span></a>
+  <ul class="ul-2 foldable">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docshugopragmatic-li">
+  <a href="/docs/hugo/pragmatic/" title="Pragmatic book" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docshugopragmatic"><span class="">Pragmatic</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docshugobasics-li">
+  <a href="/docs/hugo/basics/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docshugobasics"><span class="">Basics</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docshugohosting-li">
+  <a href="/docs/hugo/hosting/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docshugohosting"><span class="">Hosting</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docshugoconfiguration-li">
+  <a href="/docs/hugo/configuration/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docshugoconfiguration"><span class="">Configuration</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docshugoimages-li">
+  <a href="/docs/hugo/images/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docshugoimages"><span class="">Images</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docshugoshortcodes-li">
+  <a href="/docs/hugo/shortcodes/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docshugoshortcodes"><span class="">Shortcodes</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child collapse" id="m-docshugotemplates-li">
+  <a href="/docs/hugo/templates/" class="align-left ps-0 td-sidebar-link td-sidebar-link__section" id="m-docshugotemplates"><span class="">Templates</span></a>
+  <ul class="ul-3 foldable">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docshugotemplatescheat-sheet-li">
+  <a href="/docs/hugo/templates/cheat-sheet/" title="Templates cheat sheet" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docshugotemplatescheat-sheet"><span class="">Cheat sheet</span></a>
+</li>
+  </ul>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docshugoassets-li">
+  <a href="/docs/hugo/assets/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docshugoassets"><span class="">Assets</span></a>
+</li>
+  </ul>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-docsinkscape-li">
+  <a href="/docs/inkscape/" class="align-left ps-0 td-sidebar-link td-sidebar-link__section" id="m-docsinkscape"><span class="">Inkscape</span></a>
+  <ul class="ul-2 foldable">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsinkscapebasics-li">
+  <a href="/docs/inkscape/basics/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsinkscapebasics"><span class="">Basics</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsinkscapemenus-li">
+  <a href="/docs/inkscape/menus/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsinkscapemenus"><span class="">Menus</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsinkscaperepo-dump-li">
+  <a href="/docs/inkscape/repo-dump/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsinkscaperepo-dump"><span class="">Repo dump</span></a>
+</li>
+  </ul>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-docsllm-li">
+  <a href="/docs/llm/" title="Large Language Models" class="align-left ps-0 td-sidebar-link td-sidebar-link__section" id="m-docsllm"><span class="">LLMs</span></a>
+  <ul class="ul-2 foldable">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsllmrhel-li">
+  <a href="/docs/llm/rhel/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsllmrhel"><span class="">RHEL</span></a>
+</li>
+  </ul>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docspython-li">
+  <a href="/docs/python/" class="align-left ps-0 td-sidebar-link td-sidebar-link__section" id="m-docspython"><span class="">Python</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-docssql-li">
+  <a href="/docs/sql/" class="align-left ps-0 td-sidebar-link td-sidebar-link__section" id="m-docssql"><span class="">SQL</span></a>
+  <ul class="ul-2 foldable">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docssqlmysql-li">
+  <a href="/docs/sql/mysql/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docssqlmysql"><span class="">MySQL</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docssqlpostgres-li">
+  <a href="/docs/sql/postgres/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docssqlpostgres"><span class="">Postgres</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docssqlsql-li">
+  <a href="/docs/sql/sql/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docssqlsql"><span class="">Repo dump</span></a>
+</li>
+  </ul>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-docsubuntu-server-li">
+  <a href="/docs/ubuntu-server/" title="Ubuntu Server" class="align-left ps-0 td-sidebar-link td-sidebar-link__section" id="m-docsubuntu-server"><span class="">Ubuntu</span></a>
+  <ul class="ul-2 foldable">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsubuntu-serverinstallation-li">
+  <a href="/docs/ubuntu-server/installation/" title="Installing Ubuntu Server" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsubuntu-serverinstallation"><span class="">Installation</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsubuntu-serverusers-permissions-li">
+  <a href="/docs/ubuntu-server/users-permissions/" title="Users, groups, and permissions" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsubuntu-serverusers-permissions"><span class="">Users/groups</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsubuntu-serverpackages-li">
+  <a href="/docs/ubuntu-server/packages/" title="Software Packages" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsubuntu-serverpackages"><span class="">Packages</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsubuntu-serverfilesystem-li">
+  <a href="/docs/ubuntu-server/filesystem/" title="Navigating the filesystem" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsubuntu-serverfilesystem"><span class="">Filesystem</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsubuntu-serverfiles-dirs-li">
+  <a href="/docs/ubuntu-server/files-dirs/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsubuntu-serverfiles-dirs"><span class="">Files and directories</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsubuntu-servershell-li">
+  <a href="/docs/ubuntu-server/shell/" title="Bash shell" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsubuntu-servershell"><span class="">Shell</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsubuntu-serverprocesses-li">
+  <a href="/docs/ubuntu-server/processes/" title="Controlling and managing processes" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsubuntu-serverprocesses"><span class="">Processes</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsubuntu-serversys-resources-li">
+  <a href="/docs/ubuntu-server/sys-resources/" title="Monitoring system resources" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsubuntu-serversys-resources"><span class="">System resources</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsubuntu-serverstorage-li">
+  <a href="/docs/ubuntu-server/storage/" title="Managing storage volumes" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsubuntu-serverstorage"><span class="">Storage</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsubuntu-servernetworks-li">
+  <a href="/docs/ubuntu-server/networks/" title="Connecting to networks" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsubuntu-servernetworks"><span class="">Networks</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsubuntu-servernetwork-services-li">
+  <a href="/docs/ubuntu-server/network-services/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsubuntu-servernetwork-services"><span class="">Network services</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsubuntu-serversharing-files-li">
+  <a href="/docs/ubuntu-server/sharing-files/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsubuntu-serversharing-files"><span class="">Sharing and transferring files</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsubuntu-serverdatabase-li">
+  <a href="/docs/ubuntu-server/database/" title="Managing databases" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsubuntu-serverdatabase"><span class="">Databases</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsubuntu-serverweb-server-li">
+  <a href="/docs/ubuntu-server/web-server/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsubuntu-serverweb-server"><span class="">Web servers</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsubuntu-serveransible-li">
+  <a href="/docs/ubuntu-server/ansible/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsubuntu-serveransible"><span class="">Ansible</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsubuntu-servervirtualization-li">
+  <a href="/docs/ubuntu-server/virtualization/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsubuntu-servervirtualization"><span class="">Virtualization</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsubuntu-servercontainers-li">
+  <a href="/docs/ubuntu-server/containers/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsubuntu-servercontainers"><span class="">Containers</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsubuntu-servercontainer-orchestration-li">
+  <a href="/docs/ubuntu-server/container-orchestration/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsubuntu-servercontainer-orchestration"><span class="">Container orchestration</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsubuntu-servercloud-li">
+  <a href="/docs/ubuntu-server/cloud/" title="Deploying Ubuntu in the Cloud" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsubuntu-servercloud"><span class="">Cloud</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsubuntu-serverterraform-li">
+  <a href="/docs/ubuntu-server/terraform/" title="Terraform cloud deployments" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsubuntu-serverterraform"><span class="">Terraform</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsubuntu-serversecurity-li">
+  <a href="/docs/ubuntu-server/security/" title="Securing your server" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsubuntu-serversecurity"><span class="">Security</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsubuntu-servertroubleshooting-li">
+  <a href="/docs/ubuntu-server/troubleshooting/" title="Troubleshooting your server" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsubuntu-servertroubleshooting"><span class="">Troubleshooting</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsubuntu-serverdisasters-li">
+  <a href="/docs/ubuntu-server/disasters/" title="Preventing disasters" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsubuntu-serverdisasters"><span class="">Disasters</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsubuntu-serverregex-li">
+  <a href="/docs/ubuntu-server/regex/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsubuntu-serverregex"><span class="">Regex</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsubuntu-serverbackups-li">
+  <a href="/docs/ubuntu-server/backups/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsubuntu-serverbackups"><span class="">Backups</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsubuntu-servercompression-li">
+  <a href="/docs/ubuntu-server/compression/" title="Compression and archives" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsubuntu-servercompression"><span class="">Compression</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsubuntu-serverenvironment-li">
+  <a href="/docs/ubuntu-server/environment/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsubuntu-serverenvironment"><span class="">Environment</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsubuntu-serverfirewalls-li">
+  <a href="/docs/ubuntu-server/firewalls/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsubuntu-serverfirewalls"><span class="">Firewalls</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsubuntu-serverlogs-li">
+  <a href="/docs/ubuntu-server/logs/" title="Logging" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsubuntu-serverlogs"><span class="">Logs</span></a>
+</li>
+  </ul>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-docsweb-dev-li">
+  <a href="/docs/web-dev/" title="Web Development" class="align-left ps-0 td-sidebar-link td-sidebar-link__section" id="m-docsweb-dev"><span class="">Web Dev</span></a>
+  <ul class="ul-2 foldable">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child collapse" id="m-docsweb-devaccessibility-li">
+  <a href="/docs/web-dev/accessibility/" class="align-left ps-0 td-sidebar-link td-sidebar-link__section" id="m-docsweb-devaccessibility"><span class="">Accessibility</span></a>
+  <ul class="ul-3 foldable">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsweb-devaccessibilityaria-li">
+  <a href="/docs/web-dev/accessibility/aria/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsweb-devaccessibilityaria"><span class="">ARIA attributes</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsweb-devaccessibilitydocs-structure-li">
+  <a href="/docs/web-dev/accessibility/docs-structure/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsweb-devaccessibilitydocs-structure"><span class="">Document structure</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsweb-devaccessibilitypage-structure-li">
+  <a href="/docs/web-dev/accessibility/page-structure/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsweb-devaccessibilitypage-structure"><span class="">Page structure</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsweb-devaccessibilitylinking-li">
+  <a href="/docs/web-dev/accessibility/linking/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsweb-devaccessibilitylinking"><span class="">Linking content</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsweb-devaccessibilitybuttons-li">
+  <a href="/docs/web-dev/accessibility/buttons/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsweb-devaccessibilitybuttons"><span class="">Buttons</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsweb-devaccessibilitystyling-content-li">
+  <a href="/docs/web-dev/accessibility/styling-content/" title="Styling content" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsweb-devaccessibilitystyling-content"><span class="">Styles</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsweb-devaccessibilityfocus-li">
+  <a href="/docs/web-dev/accessibility/focus/" title="Managing Focus" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsweb-devaccessibilityfocus"><span class="">Focus</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsweb-devaccessibilitynavigation-li">
+  <a href="/docs/web-dev/accessibility/navigation/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsweb-devaccessibilitynavigation"><span class="">Navigation</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsweb-devaccessibilityvisibility-li">
+  <a href="/docs/web-dev/accessibility/visibility/" title="Toggling content visibility" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsweb-devaccessibilityvisibility"><span class="">Visibility</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsweb-devaccessibilityforms-li">
+  <a href="/docs/web-dev/accessibility/forms/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsweb-devaccessibilityforms"><span class="">Forms</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsweb-devaccessibilityfiltering-data-li">
+  <a href="/docs/web-dev/accessibility/filtering-data/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsweb-devaccessibilityfiltering-data"><span class="">Filtering data</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsweb-devaccessibilitytables-li">
+  <a href="/docs/web-dev/accessibility/tables/" title="Presenting tabular data" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsweb-devaccessibilitytables"><span class="">Tables</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsweb-devaccessibilitydebugging-li">
+  <a href="/docs/web-dev/accessibility/debugging/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsweb-devaccessibilitydebugging"><span class="">Debugging</span></a>
+</li>
+  </ul>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child collapse" id="m-docsweb-devhtml-li">
+  <a href="/docs/web-dev/html/" class="align-left ps-0 td-sidebar-link td-sidebar-link__section" id="m-docsweb-devhtml"><span class="">HTML</span></a>
+  <ul class="ul-3 foldable">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsweb-devhtmldoc-structure-li">
+  <a href="/docs/web-dev/html/doc-structure/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsweb-devhtmldoc-structure"><span class="">Document structure</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsweb-devhtmlmetadata-li">
+  <a href="/docs/web-dev/html/metadata/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsweb-devhtmlmetadata"><span class="">Metadata</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsweb-devhtmlsemantic-html-li">
+  <a href="/docs/web-dev/html/semantic-html/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsweb-devhtmlsemantic-html"><span class="">Semantic HTML</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsweb-devhtmlheadings-sections-li">
+  <a href="/docs/web-dev/html/headings-sections/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsweb-devhtmlheadings-sections"><span class="">Headings and sections</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsweb-devhtmlattributes-li">
+  <a href="/docs/web-dev/html/attributes/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsweb-devhtmlattributes"><span class="">Attributes</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsweb-devhtmltext-links-li">
+  <a href="/docs/web-dev/html/text-links/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsweb-devhtmltext-links"><span class="">Text and links</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsweb-devhtmllists-li">
+  <a href="/docs/web-dev/html/lists/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsweb-devhtmllists"><span class="">Lists</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsweb-devhtmlnavigation-li">
+  <a href="/docs/web-dev/html/navigation/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsweb-devhtmlnavigation"><span class="">Navigation</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsweb-devhtmltables-li">
+  <a href="/docs/web-dev/html/tables/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsweb-devhtmltables"><span class="">Tables</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsweb-devhtmlforms-li">
+  <a href="/docs/web-dev/html/forms/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsweb-devhtmlforms"><span class="">Forms</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsweb-devhtmlimages-li">
+  <a href="/docs/web-dev/html/images/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsweb-devhtmlimages"><span class="">Images</span></a>
+</li>
+  </ul>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child collapse" id="m-docsweb-devcomponents-li">
+  <a href="/docs/web-dev/components/" class="align-left ps-0 td-sidebar-link td-sidebar-link__section" id="m-docsweb-devcomponents"><span class="">Components</span></a>
+  <ul class="ul-3 foldable">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsweb-devcomponentstoggle-button-li">
+  <a href="/docs/web-dev/components/toggle-button/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsweb-devcomponentstoggle-button"><span class="">Toggle buttons</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsweb-devcomponentstodo-list-li">
+  <a href="/docs/web-dev/components/todo-list/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsweb-devcomponentstodo-list"><span class="">Todo list</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsweb-devcomponentsmenus-li">
+  <a href="/docs/web-dev/components/menus/" title="Menus and menu buttons" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsweb-devcomponentsmenus"><span class="">Menus</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsweb-devcomponentstooltips-li">
+  <a href="/docs/web-dev/components/tooltips/" title="Tooltips and toggletips" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsweb-devcomponentstooltips"><span class="">Tooltips</span></a>
+</li>
+  </ul>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child collapse" id="m-docsweb-devcss-li">
+  <a href="/docs/web-dev/css/" class="align-left ps-0 td-sidebar-link td-sidebar-link__section" id="m-docsweb-devcss"><span class="">CSS</span></a>
+  <ul class="ul-3 foldable">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsweb-devcsssecrets-li">
+  <a href="/docs/web-dev/css/secrets/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsweb-devcsssecrets"><span class="">Secrets</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsweb-devcsssyntax-selectors-li">
+  <a href="/docs/web-dev/css/syntax-selectors/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsweb-devcsssyntax-selectors"><span class="">Syntax and selectors</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsweb-devcssrelative-units-li">
+  <a href="/docs/web-dev/css/relative-units/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsweb-devcssrelative-units"><span class="">Relative Units</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsweb-devcssdoc-flow-li">
+  <a href="/docs/web-dev/css/doc-flow/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsweb-devcssdoc-flow"><span class="">Doc flow and layout</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsweb-devcssbox-model-li">
+  <a href="/docs/web-dev/css/box-model/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsweb-devcssbox-model"><span class="">Box Model</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsweb-devcssflexbox-li">
+  <a href="/docs/web-dev/css/flexbox/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsweb-devcssflexbox"><span class="">Flexbox</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsweb-devcssgrid-li">
+  <a href="/docs/web-dev/css/grid/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsweb-devcssgrid"><span class="">Grid</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsweb-devcsspositioning-stacking-li">
+  <a href="/docs/web-dev/css/positioning-stacking/" title="Positioning and stacking context" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsweb-devcsspositioning-stacking"><span class="">Positioning</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsweb-devcssresponsive-li">
+  <a href="/docs/web-dev/css/responsive/" title="Responsive design" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsweb-devcssresponsive"><span class="">Responsive</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsweb-devcsslayers-li">
+  <a href="/docs/web-dev/css/layers/" title="Cascade Layers" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsweb-devcsslayers"><span class="">Layers</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsweb-devcssmodular-li">
+  <a href="/docs/web-dev/css/modular/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsweb-devcssmodular"><span class="">Modular CSS</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsweb-devcsscontainer-queries-li">
+  <a href="/docs/web-dev/css/container-queries/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsweb-devcsscontainer-queries"><span class="">Container queries</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsweb-devcsscolor-contrast-li">
+  <a href="/docs/web-dev/css/color-contrast/" title="Color and contrast" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsweb-devcsscolor-contrast"><span class="">Color</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsweb-devcsstypography-spacing-li">
+  <a href="/docs/web-dev/css/typography-spacing/" title="Typography and spacing" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsweb-devcsstypography-spacing"><span class="">Typography</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsweb-devcssgradients-shadows-blends-li">
+  <a href="/docs/web-dev/css/gradients-shadows-blends/" title="Gradients, shadows, and blend modes" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsweb-devcssgradients-shadows-blends"><span class="">Gradients, shadows, blends</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsweb-devcssmasks-shapes-clip-li">
+  <a href="/docs/web-dev/css/masks-shapes-clip/" title="Masks, shapes, and clipping" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsweb-devcssmasks-shapes-clip"><span class="">Masks, shapes, clipping</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsweb-devcsstransitions-li">
+  <a href="/docs/web-dev/css/transitions/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsweb-devcsstransitions"><span class="">Transitions</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsweb-devcsstransforms-li">
+  <a href="/docs/web-dev/css/transforms/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsweb-devcsstransforms"><span class="">Transforms</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsweb-devcssanimations-li">
+  <a href="/docs/web-dev/css/animations/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsweb-devcssanimations"><span class="">Animations</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsweb-devcsspreprocessors-li">
+  <a href="/docs/web-dev/css/preprocessors/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsweb-devcsspreprocessors"><span class="">Preprocessors</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsweb-devcssimages-li">
+  <a href="/docs/web-dev/css/images/" title="Images and SVGs" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsweb-devcssimages"><span class="">Images</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsweb-devcssforms-li">
+  <a href="/docs/web-dev/css/forms/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsweb-devcssforms"><span class="">Forms</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsweb-devcssemmet-li">
+  <a href="/docs/web-dev/css/emmet/" title="Emmet for VSCode" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsweb-devcssemmet"><span class="">Emmet</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsweb-devcsspatterns-li">
+  <a href="/docs/web-dev/css/patterns/" title="Patterns and components" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsweb-devcsspatterns"><span class="">Patterns</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsweb-devcsssample-li">
+  <a href="/docs/web-dev/css/sample/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsweb-devcsssample"><span class="">Sample styling sheet</span></a>
+</li>
+  </ul>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child collapse" id="m-docsweb-devjavascript-li">
+  <a href="/docs/web-dev/javascript/" class="align-left ps-0 td-sidebar-link td-sidebar-link__section" id="m-docsweb-devjavascript"><span class="">Javascript</span></a>
+  <ul class="ul-3 foldable">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsweb-devjavascriptbuild-tools-li">
+  <a href="/docs/web-dev/javascript/build-tools/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsweb-devjavascriptbuild-tools"><span class="">Build tools</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsweb-devjavascriptenvironment-li">
+  <a href="/docs/web-dev/javascript/environment/" title="Programming environment" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsweb-devjavascriptenvironment"><span class="">Environment</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsweb-devjavascriptbasics-li">
+  <a href="/docs/web-dev/javascript/basics/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsweb-devjavascriptbasics"><span class="">Basics</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsweb-devjavascriptobjects-li">
+  <a href="/docs/web-dev/javascript/objects/" title="Objects and organization" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsweb-devjavascriptobjects"><span class="">Objects</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsweb-devjavascriptevents-li">
+  <a href="/docs/web-dev/javascript/events/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsweb-devjavascriptevents"><span class="">Events</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsweb-devjavascriptscripting-li">
+  <a href="/docs/web-dev/javascript/scripting/" title="Scripting documents" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsweb-devjavascriptscripting"><span class="">Scripting</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsweb-devjavascriptgeometry-scrolling-li">
+  <a href="/docs/web-dev/javascript/geometry-scrolling/" title="Document geometry and scrolling" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsweb-devjavascriptgeometry-scrolling"><span class="">Geometry and scrolling</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsweb-devjavascriptlocation-nav-history-li">
+  <a href="/docs/web-dev/javascript/location-nav-history/" title="Location, navigation, and history" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsweb-devjavascriptlocation-nav-history"><span class="">Location, nav, history</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsweb-devjavascriptnetworking-li">
+  <a href="/docs/web-dev/javascript/networking/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsweb-devjavascriptnetworking"><span class="">Networking</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsweb-devjavascriptstorage-li">
+  <a href="/docs/web-dev/javascript/storage/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsweb-devjavascriptstorage"><span class="">Storage</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsweb-devjavascriptasync-li">
+  <a href="/docs/web-dev/javascript/async/" title="Asynchronous JS" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsweb-devjavascriptasync"><span class="">Async</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsweb-devjavascriptarrays-li">
+  <a href="/docs/web-dev/javascript/arrays/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsweb-devjavascriptarrays"><span class="">Arrays</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsweb-devjavascriptpatterns-li">
+  <a href="/docs/web-dev/javascript/patterns/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsweb-devjavascriptpatterns"><span class="">Patterns</span></a>
+</li>
+  </ul>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsweb-devrefactoring-ui-li">
+  <a href="/docs/web-dev/refactoring-ui/" class="align-left ps-0 td-sidebar-link td-sidebar-link__section" id="m-docsweb-devrefactoring-ui"><span class="">Refactoring UI</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child collapse" id="m-docsweb-devdesign-li">
+  <a href="/docs/web-dev/design/" title="Web Design" class="align-left ps-0 td-sidebar-link td-sidebar-link__section" id="m-docsweb-devdesign"><span class="">Design</span></a>
+  <ul class="ul-3 foldable">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsweb-devdesignlinks-li">
+  <a href="/docs/web-dev/design/links/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsweb-devdesignlinks"><span class="">Links</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsweb-devdesigndesign-fundamentals-li">
+  <a href="/docs/web-dev/design/design-fundamentals/" title="Design fundamentals" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsweb-devdesigndesign-fundamentals"><span class="">Fundamentals</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsweb-devdesignux-li">
+  <a href="/docs/web-dev/design/ux/" title="User experience" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsweb-devdesignux"><span class="">UX</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsweb-devdesignux-research-li">
+  <a href="/docs/web-dev/design/ux-research/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsweb-devdesignux-research"><span class="">User research</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsweb-devdesignux-design-li">
+  <a href="/docs/web-dev/design/ux-design/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsweb-devdesignux-design"><span class="">User design</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsweb-devdesignlayout-composition-li">
+  <a href="/docs/web-dev/design/layout-composition/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsweb-devdesignlayout-composition"><span class="">Layout and composition</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsweb-devdesignanimations-li">
+  <a href="/docs/web-dev/design/animations/" title="Enhancing layouts with animation" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsweb-devdesignanimations"><span class="">Animations</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsweb-devdesigntypography-li">
+  <a href="/docs/web-dev/design/typography/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsweb-devdesigntypography"><span class="">Typography</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsweb-devdesigncolor-li">
+  <a href="/docs/web-dev/design/color/" title="Color theory" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsweb-devdesigncolor"><span class="">Color</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsweb-devdesigntutorial-li">
+  <a href="/docs/web-dev/design/tutorial/" title="Process outline: Building a website" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsweb-devdesigntutorial"><span class="">Process outline</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsweb-devdesigntesting-li">
+  <a href="/docs/web-dev/design/testing/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsweb-devdesigntesting"><span class="">Testing</span></a>
+</li>
+  </ul>
+</li>
+  </ul>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child active-path" id="m-docsxlinux-old-li">
+  <a href="/docs/xlinux-old/" class="align-left ps-0 td-sidebar-link td-sidebar-link__section" id="m-docsxlinux-old"><span class="">xLinux (old)</span></a>
+  <ul class="ul-2 foldable">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsxlinux-oldcommand-reference-li">
+  <a href="/docs/xlinux-old/command-reference/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsxlinux-oldcommand-reference"><span class="">Linux commands</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsxlinux-oldservices-li">
+  <a href="/docs/xlinux-old/services/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsxlinux-oldservices"><span class="">Services overview</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsxlinux-oldfiles-directories-li">
+  <a href="/docs/xlinux-old/files-directories/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsxlinux-oldfiles-directories"><span class="">Files and directories</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsxlinux-oldsearch-analyze-text-li">
+  <a href="/docs/xlinux-old/search-analyze-text/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsxlinux-oldsearch-analyze-text"><span class="">Searching and analyzing text</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsxlinux-oldboot-process-li">
+  <a href="/docs/xlinux-old/boot-process/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsxlinux-oldboot-process"><span class="">Boot process</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsxlinux-oldsystem-startup-services-li">
+  <a href="/docs/xlinux-old/system-startup-services/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsxlinux-oldsystem-startup-services"><span class="">System startup and services</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsxlinux-oldnetwork-connections-li">
+  <a href="/docs/xlinux-old/network-connections/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsxlinux-oldnetwork-connections"><span class="">Network connections</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsxlinux-oldlocalization-li">
+  <a href="/docs/xlinux-old/localization/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsxlinux-oldlocalization"><span class="">Localization</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsxlinux-oldusers-groups-li">
+  <a href="/docs/xlinux-old/users-groups/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsxlinux-oldusers-groups"><span class="">Users and groups</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsxlinux-oldstorage-li">
+  <a href="/docs/xlinux-old/storage/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsxlinux-oldstorage"><span class="">Storage</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsxlinux-oldprotecting-files-li">
+  <a href="/docs/xlinux-old/protecting-files/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsxlinux-oldprotecting-files"><span class="">Protecting files</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsxlinux-oldgoverning-software-li">
+  <a href="/docs/xlinux-old/governing-software/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsxlinux-oldgoverning-software"><span class="">Governing software</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsxlinux-oldkernel-modules-li">
+  <a href="/docs/xlinux-old/kernel-modules/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsxlinux-oldkernel-modules"><span class="">Kernel modules</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsxlinux-oldownership-permissions-li">
+  <a href="/docs/xlinux-old/ownership-permissions/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsxlinux-oldownership-permissions"><span class="">Ownership and permissions</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsxlinux-oldaccess-auth-li">
+  <a href="/docs/xlinux-old/access-auth/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsxlinux-oldaccess-auth"><span class="">Access and authorization</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsxlinux-oldlogging-li">
+  <a href="/docs/xlinux-old/logging/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsxlinux-oldlogging"><span class="">Logging services</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsxlinux-oldfirewalls-li">
+  <a href="/docs/xlinux-old/firewalls/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsxlinux-oldfirewalls"><span class="">Firewalls</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsxlinux-oldsecurity-best-practices-li">
+  <a href="/docs/xlinux-old/security-best-practices/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsxlinux-oldsecurity-best-practices"><span class="">Security best practices</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsxlinux-oldcpu-memory-li">
+  <a href="/docs/xlinux-old/cpu-memory/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsxlinux-oldcpu-memory"><span class="">CPU and memory</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsxlinux-oldperformance-li">
+  <a href="/docs/xlinux-old/performance/" title="Optimizing performance" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsxlinux-oldperformance"><span class="">Performance</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child active-path" id="m-docsxlinux-olddevices-li">
+  <a href="/docs/xlinux-old/devices/" title="Linux devices" class="align-left ps-0 active td-sidebar-link td-sidebar-link__page" id="m-docsxlinux-olddevices"><span class="td-sidebar-nav-active-item">Devices</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsxlinux-oldautomating-jobs-li">
+  <a href="/docs/xlinux-old/automating-jobs/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsxlinux-oldautomating-jobs"><span class="">Automating jobs</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsxlinux-oldcloud-virtualization-li">
+  <a href="/docs/xlinux-old/cloud-virtualization/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsxlinux-oldcloud-virtualization"><span class="">Cloud and virtualization</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsxlinux-oldorchestration-li">
+  <a href="/docs/xlinux-old/orchestration/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsxlinux-oldorchestration"><span class="">Orchestration</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsxlinux-oldtmux-li">
+  <a href="/docs/xlinux-old/tmux/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsxlinux-oldtmux"><span class="">tmux</span></a>
+</li>
+  </ul>
+</li>
+  </ul>
+</li>
+    </ul>
+  </nav>
+</div>
+
+          </aside>
+          <aside class="d-none d-xl-block col-xl-2 td-sidebar-toc d-print-none">
+            <div class="td-page-meta ms-2 pb-1 pt-2 mb-0">
+
+</div>
+
+            <div class="td-toc">
+        <nav id="TableOfContents">
+  <ul>
+    <li><a href="#device-interfaces">Device interfaces</a>
+      <ul>
+        <li><a href="#pci-boards">PCI boards</a></li>
+        <li><a href="#usb-interface">USB interface</a></li>
+        <li><a href="#gpio">GPIO</a></li>
+      </ul>
+    </li>
+    <li><a href="#dev-directory">/dev directory</a>
+      <ul>
+        <li><a href="#device-files">Device files</a></li>
+        <li><a href="#special-device-files">Special device files</a></li>
+        <li><a href="#device-mapper">device mapper</a></li>
+      </ul>
+    </li>
+    <li><a href="#proc-directory">/proc directory</a>
+      <ul>
+        <li><a href="#interrupt-requests">Interrupt requests</a></li>
+        <li><a href="#io-ports">I/O ports</a></li>
+        <li><a href="#direct-memory-access">Direct memory access</a></li>
+      </ul>
+    </li>
+    <li><a href="#sys-directory">/sys directory</a></li>
+    <li><a href="#working-with-devices">Working with devices</a>
+      <ul>
+        <li><a href="#lsdev">lsdev</a></li>
+        <li><a href="#lsblk">lsblk</a></li>
+        <li><a href="#dmesg">dmesg</a></li>
+        <li><a href="#lspci">lspci</a></li>
+        <li><a href="#lsusb">lsusb</a></li>
+      </ul>
+    </li>
+    <li><a href="#monitor-support">Monitor support</a>
+      <ul>
+        <li><a href="#x-window-system">X Window System</a></li>
+      </ul>
+    </li>
+    <li><a href="#printers">Printers</a>
+      <ul>
+        <li><a href="#print-queue-commands">Print queue commands</a></li>
+      </ul>
+    </li>
+    <li><a href="#hot-pluggable-devices">Hot-pluggable devices</a></li>
+    <li><a href="#detecting-dynamic-devices">Detecting dynamic devices</a>
+      <ul>
+        <li><a href="#udevadm">udevadm</a></li>
+      </ul>
+    </li>
+    <li><a href="#troubleshooting">Troubleshooting</a>
+      <ul>
+        <li><a href="#dmidecode">dmidecode</a></li>
+        <li><a href="#lshw">lshw</a></li>
+        <li><a href="#keyboard-mappings">Keyboard mappings</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+      </div>
+    
+            
+	
+          </aside>
+          <main class="col-12 col-md-9 col-xl-8 ps-md-5" role="main">
+            
+  
+
+            <nav aria-label="breadcrumb" class="td-breadcrumbs">
+  <ol class="breadcrumb">
+  <li class="breadcrumb-item">
+    <a href="/docs/">Documentation</a></li>
+  <li class="breadcrumb-item">
+    <a href="/docs/xlinux-old/">xLinux (old)</a></li>
+  <li class="breadcrumb-item active" aria-current="page">
+    Devices</li>
+  </ol>
+</nav>
+<div class="td-content">
+	<h1>Linux devices</h1>
+	
+	<header class="article-meta">
+		
+  </header>
+	<p>The kernel must recognize and know how to communicate with each device on your system. The kernel communicates with devices using modules.</p>
+<h2 id="device-interfaces">Device interfaces</h2>
+<p>Each device uses a standard protocol to communicate with the system hardware. The kernel module must know how to send data to and receive data from the device with this protocol. There are three popular standards to connect devices:</p>
+<ul>
+<li>PCI boards</li>
+<li>USB</li>
+<li>GPIO</li>
+</ul>
+<h3 id="pci-boards">PCI boards</h3>
+<p>Peripheral Component Interconnect (PCI) was developed to connect hardware boards to PC motherboards. Now, it is commonly used to provide an interface for external hardware cards.</p>
+<p>Some devices that use PCI boards:</p>
+<ul>
+<li><strong>Internal hard drives</strong>: Hard drives that use SATA and SCI connectors. The kernel automatically recognizes both of these hard drive types.</li>
+<li><strong>External hard drives</strong>: Network hard drives that use the Fibre Channel standard use PCI boards that support the Host Bus Adapter (HBA) standard.</li>
+<li><strong>Network Interface Cards</strong>: Hard-wired cards let you connect to the network with the RJ-45 cable standard.</li>
+<li><strong>Wireless Cards</strong>: PCI boards that support IEEE 802.11. Popular in workstations more than servers.</li>
+<li><strong>Bluetooth Devices</strong>: Short-distance wireless communication with other bluetooth devices in peer-to-peer network.</li>
+<li><strong>Video Accelerators</strong>: Apps that need advanced graphics use video accelerator cards, that offload video processing from the CPU.</li>
+<li><strong>Audo Cards</strong>: Apps that need high-quality sound use special audio cards, that offload audio processing from the CPU.</li>
+</ul>
+<h3 id="usb-interface">USB interface</h3>
+<p>Universal Serial Bus (USB) uses serial connections, so it requires fewer connectors to the motherboard which allows for a smaller interface. USB 4.0 has data transfer speeds of 40 Gbps.</p>
+<p>For linux to communicate with USB:</p>
+<ol>
+<li>Kernel must have module to recognize USB controller on the machine. The controller helps the kernel and the machine&rsquo;s USB bus communicate</li>
+<li>Kernel needs module for individual device type you plug into the USB bus</li>
+</ol>
+<h3 id="gpio">GPIO</h3>
+<p>General-purpose input/output (GPIO) interface is popular with small utility Linux systems that are designed to control external devices for automation projects, like Raspberry Pi. Used to control objects and environments:</p>
+<ul>
+<li>control room temp</li>
+<li>sense when doors or windows open/close</li>
+<li>sense motion</li>
+<li>control robot operations</li>
+</ul>
+<h2 id="dev-directory">/dev directory</h2>
+<p>Stores device files. A device file is a special file that linux uses to interface with hardware devices&ndash;they allow the system to transfer data to and from the device.</p>
+<ul>
+<li>Writes to device file to send data to device</li>
+<li>Reads device file to retrieve data from device</li>
+</ul>
+<h3 id="device-files">Device files</h3>
+<p>Two types of device files:</p>
+<ul>
+<li><strong>Character</strong>: Transfers data one char at a time. Often used for serial devices such as terminals or USB devices</li>
+<li><strong>Block</strong>: Transfers large blocks of data. Used for high-speed data transfer devices like hard drives or network cards.</li>
+</ul>
+<p>Block starts with <code>b</code>, character starts with <code>c</code>:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ls -al /dev/sd* /dev/tty*
+</span></span><span style="display:flex;"><span>ls: cannot access <span style="color:#4e9a06">&#39;/dev/sd*&#39;</span>: No such file or directory
+</span></span><span style="display:flex;"><span>crw-rw-rw- <span style="color:#0000cf;font-weight:bold">1</span> root        tty     5,  <span style="color:#0000cf;font-weight:bold">0</span> Apr <span style="color:#0000cf;font-weight:bold">25</span> 08:29  /dev/tty
+</span></span><span style="display:flex;"><span>crw--w---- <span style="color:#0000cf;font-weight:bold">1</span> root        tty     4,  <span style="color:#0000cf;font-weight:bold">0</span> Apr <span style="color:#0000cf;font-weight:bold">18</span> 21:53  /dev/tty0
+</span></span><span style="display:flex;"><span>crw--w---- <span style="color:#0000cf;font-weight:bold">1</span> root        tty     4,  <span style="color:#0000cf;font-weight:bold">1</span> Apr <span style="color:#0000cf;font-weight:bold">18</span> 21:53  /dev/tty1
+</span></span><span style="display:flex;"><span>crw--w---- <span style="color:#0000cf;font-weight:bold">1</span> root        tty     4, <span style="color:#0000cf;font-weight:bold">10</span> Apr <span style="color:#0000cf;font-weight:bold">18</span> 21:53  /dev/tty10
+</span></span><span style="display:flex;"><span>...
+</span></span></code></pre></div><h3 id="special-device-files">Special device files</h3>
+<table>
+  <thead>
+      <tr>
+          <th>File</th>
+          <th>Description</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><code>/dev/null</code></td>
+          <td>Data sink. Send data that you want to discard here.</td>
+      </tr>
+      <tr>
+          <td><code>/dev/random</code></td>
+          <td>Access to kernel&rsquo;s random number generator. Blocks requests until enough random data has been generated to calculate a true random number.</td>
+      </tr>
+      <tr>
+          <td><code>/dev/urandom</code></td>
+          <td>Access to kernel&rsquo;s random number generator. Does not block, returns random number. Less accurate than <code>/dev/random</code></td>
+      </tr>
+      <tr>
+          <td><code>/dev/zero</code></td>
+          <td>When data is read from this device, it returns a NULL character (<code>0x00</code>). Used to create null files, or erase data on a disk partition.</td>
+      </tr>
+  </tbody>
+</table>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ls -l /dev/null 
+</span></span><span style="display:flex;"><span>crw-rw-rw- <span style="color:#0000cf;font-weight:bold">1</span> root root 1, <span style="color:#0000cf;font-weight:bold">3</span> Apr <span style="color:#0000cf;font-weight:bold">18</span> 21:53 /dev/null
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>ls -l /dev/*rand*
+</span></span><span style="display:flex;"><span>crw-rw-rw- <span style="color:#0000cf;font-weight:bold">1</span> root root 1, <span style="color:#0000cf;font-weight:bold">8</span> Apr <span style="color:#0000cf;font-weight:bold">18</span> 21:53 /dev/random
+</span></span><span style="display:flex;"><span>crw-rw-rw- <span style="color:#0000cf;font-weight:bold">1</span> root root 1, <span style="color:#0000cf;font-weight:bold">9</span> Apr <span style="color:#0000cf;font-weight:bold">18</span> 21:53 /dev/urandom
+</span></span><span style="display:flex;"><span> 
+</span></span><span style="display:flex;"><span>ls -l /dev/zero 
+</span></span><span style="display:flex;"><span>crw-rw-rw- <span style="color:#0000cf;font-weight:bold">1</span> root root 1, <span style="color:#0000cf;font-weight:bold">5</span> Apr <span style="color:#0000cf;font-weight:bold">18</span> 21:53 /dev/zero
+</span></span></code></pre></div><h3 id="device-mapper">device mapper</h3>
+<p>The kernel maps physical block devices to virtual block devices. The virtual block devices allow the system to intercept the data written to or read from the the physical device and perform some operation on them. Used by:</p>
+<ul>
+<li>LVM to create logical drives</li>
+<li>LUKS to encrypt data</li>
+</ul>
+<h2 id="proc-directory">/proc directory</h2>
+<p>A virtual directory that the kernel dynamically populates to provide access to information about the system hardware settings and status. Different files in <code>/proc</code> track different system features.</p>
+<h3 id="interrupt-requests">Interrupt requests</h3>
+<p>Interrupt requests (IRQs) let hardware devices indicate when they have data that they need to send to the CPU. The Plug and Play (PnP) system in linux assigns each device a unique IRQ address, which is stored in the <code>/proc/interrupts</code> file.</p>
+<p>The number in the first column is the IRQ assigned to the device. Some are default (<code>0</code> for the system timer), and some are assigned when the system detects a device during boot:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>cat /proc/interrupts 
+</span></span><span style="display:flex;"><span>            CPU0       CPU1       CPU2       CPU3       CPU4       CPU5       CPU6       CPU7       CPU8       CPU9       CPU10      CPU11      
+</span></span><span style="display:flex;"><span>   1:     <span style="color:#0000cf;font-weight:bold">242119</span>          <span style="color:#0000cf;font-weight:bold">0</span>          <span style="color:#0000cf;font-weight:bold">0</span>          <span style="color:#0000cf;font-weight:bold">0</span>          <span style="color:#0000cf;font-weight:bold">0</span>          <span style="color:#0000cf;font-weight:bold">0</span>          <span style="color:#0000cf;font-weight:bold">0</span>          <span style="color:#0000cf;font-weight:bold">0</span>          <span style="color:#0000cf;font-weight:bold">0</span>          <span style="color:#0000cf;font-weight:bold">0</span>          <span style="color:#0000cf;font-weight:bold">0</span>      <span style="color:#0000cf;font-weight:bold">15983</span>  IR-IO-APIC    1-edge      i8042
+</span></span><span style="display:flex;"><span>   8:          <span style="color:#0000cf;font-weight:bold">0</span>          <span style="color:#0000cf;font-weight:bold">0</span>          <span style="color:#0000cf;font-weight:bold">0</span>          <span style="color:#0000cf;font-weight:bold">0</span>          <span style="color:#0000cf;font-weight:bold">0</span>          <span style="color:#0000cf;font-weight:bold">0</span>          <span style="color:#0000cf;font-weight:bold">0</span>          <span style="color:#0000cf;font-weight:bold">0</span>          <span style="color:#0000cf;font-weight:bold">0</span>          <span style="color:#0000cf;font-weight:bold">0</span>          <span style="color:#0000cf;font-weight:bold">0</span>          <span style="color:#0000cf;font-weight:bold">0</span>  IR-IO-APIC    8-edge      rtc0
+</span></span><span style="display:flex;"><span>   9:     <span style="color:#0000cf;font-weight:bold">833609</span>      <span style="color:#0000cf;font-weight:bold">71145</span>          <span style="color:#0000cf;font-weight:bold">0</span>          <span style="color:#0000cf;font-weight:bold">0</span>          <span style="color:#0000cf;font-weight:bold">0</span>          <span style="color:#0000cf;font-weight:bold">0</span>          <span style="color:#0000cf;font-weight:bold">0</span>          <span style="color:#0000cf;font-weight:bold">0</span>          <span style="color:#0000cf;font-weight:bold">0</span>          <span style="color:#0000cf;font-weight:bold">0</span>          <span style="color:#0000cf;font-weight:bold">0</span>          <span style="color:#0000cf;font-weight:bold">0</span>  IR-IO-APIC    9-fasteoi   acpi
+</span></span><span style="display:flex;"><span>  12:         <span style="color:#0000cf;font-weight:bold">60</span>          <span style="color:#0000cf;font-weight:bold">0</span>          <span style="color:#0000cf;font-weight:bold">0</span>          <span style="color:#0000cf;font-weight:bold">0</span>          <span style="color:#0000cf;font-weight:bold">0</span>          <span style="color:#0000cf;font-weight:bold">0</span>          <span style="color:#0000cf;font-weight:bold">0</span>          <span style="color:#0000cf;font-weight:bold">0</span>          <span style="color:#0000cf;font-weight:bold">0</span>          <span style="color:#0000cf;font-weight:bold">0</span>         <span style="color:#0000cf;font-weight:bold">53</span>          <span style="color:#0000cf;font-weight:bold">0</span>  IR-IO-APIC   12-edge      i8042
+</span></span><span style="display:flex;"><span>  14:          <span style="color:#0000cf;font-weight:bold">0</span>          <span style="color:#0000cf;font-weight:bold">0</span>          <span style="color:#0000cf;font-weight:bold">0</span>          <span style="color:#0000cf;font-weight:bold">0</span>          <span style="color:#0000cf;font-weight:bold">0</span>          <span style="color:#0000cf;font-weight:bold">0</span>          <span style="color:#0000cf;font-weight:bold">0</span>          <span style="color:#0000cf;font-weight:bold">0</span>          <span style="color:#0000cf;font-weight:bold">0</span>          <span style="color:#0000cf;font-weight:bold">0</span>          <span style="color:#0000cf;font-weight:bold">0</span>          <span style="color:#0000cf;font-weight:bold">0</span>  IR-IO-APIC   14-fasteoi   INT3450:00
+</span></span><span style="display:flex;"><span>  16:          <span style="color:#0000cf;font-weight:bold">0</span>          <span style="color:#0000cf;font-weight:bold">0</span>          <span style="color:#0000cf;font-weight:bold">0</span>          <span style="color:#0000cf;font-weight:bold">3</span>          <span style="color:#0000cf;font-weight:bold">0</span>          <span style="color:#0000cf;font-weight:bold">0</span>          <span style="color:#0000cf;font-weight:bold">0</span>          <span style="color:#0000cf;font-weight:bold">0</span>          <span style="color:#0000cf;font-weight:bold">0</span>          <span style="color:#0000cf;font-weight:bold">0</span>          <span style="color:#0000cf;font-weight:bold">0</span>          <span style="color:#0000cf;font-weight:bold">0</span>  IR-IO-APIC   16-fasteoi   idma64.0, i801_smbus, i2c_designware.0
+</span></span><span style="display:flex;"><span>  17:    <span style="color:#0000cf;font-weight:bold">4099961</span>          <span style="color:#0000cf;font-weight:bold">0</span>   <span style="color:#0000cf;font-weight:bold">12223733</span>   <span style="color:#0000cf;font-weight:bold">20469941</span>          <span style="color:#0000cf;font-weight:bold">0</span>          <span style="color:#0000cf;font-weight:bold">0</span>     <span style="color:#0000cf;font-weight:bold">464405</span>    <span style="color:#0000cf;font-weight:bold">5467918</span>   <span style="color:#0000cf;font-weight:bold">12848240</span>          <span style="color:#0000cf;font-weight:bold">0</span>          <span style="color:#0000cf;font-weight:bold">0</span>       <span style="color:#0000cf;font-weight:bold">1074</span>  IR-IO-APIC   17-fasteoi   idma64.1, i2c_designware.1
+</span></span><span style="display:flex;"><span>...
+</span></span></code></pre></div><h3 id="io-ports">I/O ports</h3>
+<p>System I/O ports are locations in memory where the CPU can send data to and receive data from the hardware device. The system assigns each device an I/O port, which is tracked in the <code>/proc/ioports</code> file:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>cat /proc/ioports 
+</span></span><span style="display:flex;"><span>0000-0000 : PCI Bus 0000:00
+</span></span><span style="display:flex;"><span>  0000-0000 : dma1
+</span></span><span style="display:flex;"><span>  0000-0000 : pic1
+</span></span><span style="display:flex;"><span>  0000-0000 : timer0
+</span></span><span style="display:flex;"><span>  0000-0000 : timer1
+</span></span><span style="display:flex;"><span>  0000-0000 : keyboard
+</span></span><span style="display:flex;"><span>  0000-0000 : keyboard
+</span></span><span style="display:flex;"><span>...
+</span></span></code></pre></div><p>If there is a port conflict, you can override the assigned port with the <code>setpci</code> command.</p>
+<h3 id="direct-memory-access">Direct memory access</h3>
+<p>Sending data through an I/O port can be slow, so some devices use direct memory acces (DMA) to send data from a hardware device directly to memory on the system, without having to wait for the CPU. The CPU can read the data from memory when it is ready.</p>
+<p>Each hardware device that uses DMA must be assigned a channel number, which is tracked in <code>/proc/dma</code>:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>cat /proc/dma 
+</span></span><span style="display:flex;"><span> 4: cascade
+</span></span></code></pre></div><h2 id="sys-directory">/sys directory</h2>
+<p>Virtual directory that stores information about hardware devices that any user on the system can access. Each subdirectory is based on a device or system function:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ls -al /sys/
+</span></span><span style="display:flex;"><span>total <span style="color:#0000cf;font-weight:bold">4</span>
+</span></span><span style="display:flex;"><span>dr-xr-xr-x  <span style="color:#0000cf;font-weight:bold">13</span> root root    <span style="color:#0000cf;font-weight:bold">0</span> Apr <span style="color:#0000cf;font-weight:bold">18</span> 21:52 .
+</span></span><span style="display:flex;"><span>drwxr-xr-x  <span style="color:#0000cf;font-weight:bold">21</span> root root <span style="color:#0000cf;font-weight:bold">4096</span> Mar <span style="color:#0000cf;font-weight:bold">23</span>  <span style="color:#0000cf;font-weight:bold">2023</span> ..
+</span></span><span style="display:flex;"><span>drwxr-xr-x   <span style="color:#0000cf;font-weight:bold">2</span> root root    <span style="color:#0000cf;font-weight:bold">0</span> Apr <span style="color:#0000cf;font-weight:bold">18</span> 21:52 block
+</span></span><span style="display:flex;"><span>drwxr-xr-x  <span style="color:#0000cf;font-weight:bold">52</span> root root    <span style="color:#0000cf;font-weight:bold">0</span> Apr <span style="color:#0000cf;font-weight:bold">18</span> 21:52 bus
+</span></span><span style="display:flex;"><span>drwxr-xr-x  <span style="color:#0000cf;font-weight:bold">85</span> root root    <span style="color:#0000cf;font-weight:bold">0</span> Apr <span style="color:#0000cf;font-weight:bold">18</span> 21:52 class
+</span></span><span style="display:flex;"><span>drwxr-xr-x   <span style="color:#0000cf;font-weight:bold">4</span> root root    <span style="color:#0000cf;font-weight:bold">0</span> Apr <span style="color:#0000cf;font-weight:bold">18</span> 21:52 dev
+</span></span><span style="display:flex;"><span>drwxr-xr-x  <span style="color:#0000cf;font-weight:bold">29</span> root root    <span style="color:#0000cf;font-weight:bold">0</span> Apr <span style="color:#0000cf;font-weight:bold">18</span> 21:52 devices
+</span></span><span style="display:flex;"><span>drwxr-xr-x   <span style="color:#0000cf;font-weight:bold">6</span> root root    <span style="color:#0000cf;font-weight:bold">0</span> Apr <span style="color:#0000cf;font-weight:bold">18</span> 21:52 firmware
+</span></span><span style="display:flex;"><span>drwxr-xr-x   <span style="color:#0000cf;font-weight:bold">8</span> root root    <span style="color:#0000cf;font-weight:bold">0</span> Apr <span style="color:#0000cf;font-weight:bold">18</span> 21:52 fs
+</span></span><span style="display:flex;"><span>drwxr-xr-x   <span style="color:#0000cf;font-weight:bold">2</span> root root    <span style="color:#0000cf;font-weight:bold">0</span> Apr <span style="color:#0000cf;font-weight:bold">18</span> 21:53 hypervisor
+</span></span><span style="display:flex;"><span>drwxr-xr-x  <span style="color:#0000cf;font-weight:bold">16</span> root root    <span style="color:#0000cf;font-weight:bold">0</span> Apr <span style="color:#0000cf;font-weight:bold">18</span> 21:52 kernel
+</span></span><span style="display:flex;"><span>drwxr-xr-x <span style="color:#0000cf;font-weight:bold">341</span> root root    <span style="color:#0000cf;font-weight:bold">0</span> Apr <span style="color:#0000cf;font-weight:bold">18</span> 21:52 module
+</span></span><span style="display:flex;"><span>drwxr-xr-x   <span style="color:#0000cf;font-weight:bold">3</span> root root    <span style="color:#0000cf;font-weight:bold">0</span> Apr <span style="color:#0000cf;font-weight:bold">18</span> 21:53 power
+</span></span></code></pre></div><h2 id="working-with-devices">Working with devices</h2>
+<h3 id="lsdev">lsdev</h3>
+<p>Displays informatin about the hardware devices installed on the system. Combines info from the following files:</p>
+<ul>
+<li><code>/proc/interrupts</code></li>
+<li><code>/proc/ioports</code></li>
+<li><code>/proc/dma</code></li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>lsdev
+</span></span><span style="display:flex;"><span>Device            DMA   IRQ  I/O Ports
+</span></span><span style="display:flex;"><span>------------------------------------------------
+</span></span><span style="display:flex;"><span>0000:00:02.0                   0000-0000
+</span></span><span style="display:flex;"><span>0000:00:17.0                   0000-0000   0000-0000   0000-0000
+</span></span><span style="display:flex;"><span>0000:00:1f.4                   0000-0000
+</span></span><span style="display:flex;"><span>0000:01:00.0                     0000-0000
+</span></span><span style="display:flex;"><span>acpi                      <span style="color:#0000cf;font-weight:bold">9</span> 
+</span></span><span style="display:flex;"><span>ACPI                           0000-0000   0000-0000   0000-0000   0000-0000   0000-0000
+</span></span><span style="display:flex;"><span>ahci                             0000-0000     0000-0000     0000-0000
+</span></span><span style="display:flex;"><span>ahci<span style="color:#ce5c00;font-weight:bold">[</span>0000:00:17.0<span style="color:#ce5c00;font-weight:bold">]</span>        <span style="color:#0000cf;font-weight:bold">131</span> 
+</span></span><span style="display:flex;"><span>cascade             <span style="color:#0000cf;font-weight:bold">4</span>       
+</span></span><span style="display:flex;"><span>dma                            0000-0000
+</span></span><span style="display:flex;"><span>...
+</span></span></code></pre></div><h3 id="lsblk">lsblk</h3>
+<p>Displays information about the block devices installed on the system. Has command-line options:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#8f5902;font-style:italic"># view all block devices</span>
+</span></span><span style="display:flex;"><span>lsblk
+</span></span><span style="display:flex;"><span>NAME        MAJ:MIN RM   SIZE RO TYPE MOUNTPOINTS
+</span></span><span style="display:flex;"><span>loop0         7:0    <span style="color:#0000cf;font-weight:bold">0</span>     4K  <span style="color:#0000cf;font-weight:bold">1</span> loop /snap/bare/5
+</span></span><span style="display:flex;"><span>loop1         7:1    <span style="color:#0000cf;font-weight:bold">0</span>  66.1M  <span style="color:#0000cf;font-weight:bold">1</span> loop /snap/cups/1044
+</span></span><span style="display:flex;"><span>loop2         7:2    <span style="color:#0000cf;font-weight:bold">0</span> 160.6M  <span style="color:#0000cf;font-weight:bold">1</span> loop /snap/chromium/2805
+</span></span><span style="display:flex;"><span>loop3         7:3    <span style="color:#0000cf;font-weight:bold">0</span> 105.4M  <span style="color:#0000cf;font-weight:bold">1</span> loop /snap/core/16574
+</span></span><span style="display:flex;"><span>...
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8f5902;font-style:italic"># view SCSI block devices only</span>
+</span></span><span style="display:flex;"><span>lsblk -S
+</span></span><span style="display:flex;"><span>NAME HCTL       TYPE VENDOR   MODEL      REV SERIAL                                                  TRAN
+</span></span><span style="display:flex;"><span>sda  3:0:0:0    disk  USB     SanDisk <span style="color:#0000cf;font-weight:bold">3</span> 1.00 0401095f84926a9e2f38e3ecb97f3b66fe6dc10ae15b2eb3fee86e9 usb
+</span></span></code></pre></div><h3 id="dmesg">dmesg</h3>
+<p>View kernel ring buffer records, which are kernel-level events. Because it is a ring, this file overwrites older messages with new ones. Great for troubleshooting kernel modules.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#8f5902;font-style:italic"># verify USB connection</span>
+</span></span><span style="display:flex;"><span>sudo dmesg <span style="color:#000;font-weight:bold">|</span> tail -20
+</span></span><span style="display:flex;"><span><span style="color:#ce5c00;font-weight:bold">[</span>91877.590512<span style="color:#ce5c00;font-weight:bold">]</span> <span style="color:#ce5c00;font-weight:bold">[</span>UFW BLOCK<span style="color:#ce5c00;font-weight:bold">]</span> <span style="color:#000">IN</span><span style="color:#ce5c00;font-weight:bold">=</span>wlp59s0 <span style="color:#000">OUT</span><span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">MAC</span><span style="color:#ce5c00;font-weight:bold">=</span>01:00:5e:00:00:01:90:58:51:d4:02:6a:08:00 <span style="color:#000">SRC</span><span style="color:#ce5c00;font-weight:bold">=</span>10.0.0.1 <span style="color:#000">DST</span><span style="color:#ce5c00;font-weight:bold">=</span>224.0.0.1 <span style="color:#000">LEN</span><span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#0000cf;font-weight:bold">28</span> <span style="color:#000">TOS</span><span style="color:#ce5c00;font-weight:bold">=</span>0x00 <span style="color:#000">PREC</span><span style="color:#ce5c00;font-weight:bold">=</span>0xC0 <span style="color:#000">TTL</span><span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#0000cf;font-weight:bold">1</span> <span style="color:#000">ID</span><span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#0000cf;font-weight:bold">12912</span> <span style="color:#000">PROTO</span><span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#0000cf;font-weight:bold">2</span> 
+</span></span><span style="display:flex;"><span><span style="color:#ce5c00;font-weight:bold">[</span>91883.121258<span style="color:#ce5c00;font-weight:bold">]</span> <span style="color:#ce5c00;font-weight:bold">[</span>UFW BLOCK<span style="color:#ce5c00;font-weight:bold">]</span> <span style="color:#000">IN</span><span style="color:#ce5c00;font-weight:bold">=</span>wlp59s0 <span style="color:#000">OUT</span><span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">MAC</span><span style="color:#ce5c00;font-weight:bold">=</span>01:00:5e:00:00:fb:84:c5:a6:17:8b:58:08:00 <span style="color:#000">SRC</span><span style="color:#ce5c00;font-weight:bold">=</span>10.0.0.145 <span style="color:#000">DST</span><span style="color:#ce5c00;font-weight:bold">=</span>224.0.0.251 <span style="color:#000">LEN</span><span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#0000cf;font-weight:bold">32</span> <span style="color:#000">TOS</span><span style="color:#ce5c00;font-weight:bold">=</span>0x00 <span style="color:#000">PREC</span><span style="color:#ce5c00;font-weight:bold">=</span>0x00 <span style="color:#000">TTL</span><span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#0000cf;font-weight:bold">1</span> <span style="color:#000">ID</span><span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#0000cf;font-weight:bold">17897</span> <span style="color:#000">PROTO</span><span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#0000cf;font-weight:bold">2</span> 
+</span></span><span style="display:flex;"><span><span style="color:#ce5c00;font-weight:bold">[</span>91906.743226<span style="color:#ce5c00;font-weight:bold">]</span> <span style="color:#ce5c00;font-weight:bold">[</span>UFW BLOCK<span style="color:#ce5c00;font-weight:bold">]</span> <span style="color:#000">IN</span><span style="color:#ce5c00;font-weight:bold">=</span>wlp59s0 <span style="color:#000">OUT</span><span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">MAC</span><span style="color:#ce5c00;font-weight:bold">=</span>01:00:5e:00:00:fb:90:58:51:d4:02:6a:08:00 <span style="color:#000">SRC</span><span style="color:#ce5c00;font-weight:bold">=</span>10.0.0.1 <span style="color:#000">DST</span><span style="color:#ce5c00;font-weight:bold">=</span>224.0.0.251 <span style="color:#000">LEN</span><span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#0000cf;font-weight:bold">28</span> <span style="color:#000">TOS</span><span style="color:#ce5c00;font-weight:bold">=</span>0x00 <span style="color:#000">PREC</span><span style="color:#ce5c00;font-weight:bold">=</span>0xC0 <span style="color:#000">TTL</span><span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#0000cf;font-weight:bold">1</span> <span style="color:#000">ID</span><span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#0000cf;font-weight:bold">18127</span> <span style="color:#000">PROTO</span><span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#0000cf;font-weight:bold">2</span> 
+</span></span><span style="display:flex;"><span><span style="color:#ce5c00;font-weight:bold">[</span>91906.743262<span style="color:#ce5c00;font-weight:bold">]</span> <span style="color:#ce5c00;font-weight:bold">[</span>UFW BLOCK<span style="color:#ce5c00;font-weight:bold">]</span> <span style="color:#000">IN</span><span style="color:#ce5c00;font-weight:bold">=</span>wlp59s0 <span style="color:#000">OUT</span><span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">MAC</span><span style="color:#ce5c00;font-weight:bold">=</span>01:00:5e:00:00:fb:90:58:51:d4:02:6a:08:00 <span style="color:#000">SRC</span><span style="color:#ce5c00;font-weight:bold">=</span>10.0.0.1 <span style="color:#000">DST</span><span style="color:#ce5c00;font-weight:bold">=</span>224.0.0.251 <span style="color:#000">LEN</span><span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#0000cf;font-weight:bold">28</span> <span style="color:#000">TOS</span><span style="color:#ce5c00;font-weight:bold">=</span>0x00 <span style="color:#000">PREC</span><span style="color:#ce5c00;font-weight:bold">=</span>0xC0 <span style="color:#000">TTL</span><span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#0000cf;font-weight:bold">1</span> <span style="color:#000">ID</span><span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#0000cf;font-weight:bold">18128</span> <span style="color:#000">PROTO</span><span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#0000cf;font-weight:bold">2</span> 
+</span></span><span style="display:flex;"><span><span style="color:#ce5c00;font-weight:bold">[</span>91913.497411<span style="color:#ce5c00;font-weight:bold">]</span> usb 2-1: new SuperSpeed USB device number <span style="color:#0000cf;font-weight:bold">5</span> using xhci_hcd
+</span></span><span style="display:flex;"><span><span style="color:#ce5c00;font-weight:bold">[</span>91913.518503<span style="color:#ce5c00;font-weight:bold">]</span> usb 2-1: New USB device found, <span style="color:#000">idVendor</span><span style="color:#ce5c00;font-weight:bold">=</span>0781, <span style="color:#000">idProduct</span><span style="color:#ce5c00;font-weight:bold">=</span>5581, <span style="color:#000">bcdDevice</span><span style="color:#ce5c00;font-weight:bold">=</span> 1.00
+</span></span><span style="display:flex;"><span><span style="color:#ce5c00;font-weight:bold">[</span>91913.518515<span style="color:#ce5c00;font-weight:bold">]</span> usb 2-1: New USB device strings: <span style="color:#000">Mfr</span><span style="color:#ce5c00;font-weight:bold">=</span>1, <span style="color:#000">Product</span><span style="color:#ce5c00;font-weight:bold">=</span>2, <span style="color:#000">SerialNumber</span><span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#0000cf;font-weight:bold">3</span>
+</span></span><span style="display:flex;"><span><span style="color:#ce5c00;font-weight:bold">[</span>91913.518521<span style="color:#ce5c00;font-weight:bold">]</span> usb 2-1: Product:  SanDisk 3.2Gen1
+</span></span><span style="display:flex;"><span><span style="color:#ce5c00;font-weight:bold">[</span>91913.518526<span style="color:#ce5c00;font-weight:bold">]</span> usb 2-1: Manufacturer:  USB
+</span></span><span style="display:flex;"><span><span style="color:#ce5c00;font-weight:bold">[</span>91913.518530<span style="color:#ce5c00;font-weight:bold">]</span> usb 2-1: SerialNumber: 0401095f84926a9e2f38e3ecb97f3b66fe6dc10ae15b2eb3fee86e909773f274bd93000000000000000000002d440ab8ff025e18815581076da82bb8
+</span></span><span style="display:flex;"><span><span style="color:#ce5c00;font-weight:bold">[</span>91913.521064<span style="color:#ce5c00;font-weight:bold">]</span> usb-storage 2-1:1.0: USB Mass Storage device detected
+</span></span><span style="display:flex;"><span><span style="color:#ce5c00;font-weight:bold">[</span>91913.521752<span style="color:#ce5c00;font-weight:bold">]</span> scsi host3: usb-storage 2-1:1.0
+</span></span><span style="display:flex;"><span><span style="color:#ce5c00;font-weight:bold">[</span>91914.547750<span style="color:#ce5c00;font-weight:bold">]</span> scsi 3:0:0:0: Direct-Access      USB      SanDisk 3.2Gen1 1.00 PQ: <span style="color:#0000cf;font-weight:bold">0</span> ANSI: <span style="color:#0000cf;font-weight:bold">6</span>
+</span></span><span style="display:flex;"><span><span style="color:#ce5c00;font-weight:bold">[</span>91914.548442<span style="color:#ce5c00;font-weight:bold">]</span> sd 3:0:0:0: Attached scsi generic sg0 <span style="color:#204a87">type</span> <span style="color:#0000cf;font-weight:bold">0</span>
+</span></span><span style="display:flex;"><span><span style="color:#ce5c00;font-weight:bold">[</span>91914.548960<span style="color:#ce5c00;font-weight:bold">]</span> sd 3:0:0:0: <span style="color:#ce5c00;font-weight:bold">[</span>sda<span style="color:#ce5c00;font-weight:bold">]</span> <span style="color:#0000cf;font-weight:bold">120176640</span> 512-byte logical blocks: <span style="color:#ce5c00;font-weight:bold">(</span>61.5 GB/57.3 GiB<span style="color:#ce5c00;font-weight:bold">)</span>
+</span></span><span style="display:flex;"><span><span style="color:#ce5c00;font-weight:bold">[</span>91914.550065<span style="color:#ce5c00;font-weight:bold">]</span> sd 3:0:0:0: <span style="color:#ce5c00;font-weight:bold">[</span>sda<span style="color:#ce5c00;font-weight:bold">]</span> Write Protect is off
+</span></span><span style="display:flex;"><span><span style="color:#ce5c00;font-weight:bold">[</span>91914.550074<span style="color:#ce5c00;font-weight:bold">]</span> sd 3:0:0:0: <span style="color:#ce5c00;font-weight:bold">[</span>sda<span style="color:#ce5c00;font-weight:bold">]</span> Mode Sense: <span style="color:#0000cf;font-weight:bold">43</span> <span style="color:#0000cf;font-weight:bold">00</span> <span style="color:#0000cf;font-weight:bold">00</span> <span style="color:#0000cf;font-weight:bold">00</span>
+</span></span><span style="display:flex;"><span><span style="color:#ce5c00;font-weight:bold">[</span>91914.550545<span style="color:#ce5c00;font-weight:bold">]</span> sd 3:0:0:0: <span style="color:#ce5c00;font-weight:bold">[</span>sda<span style="color:#ce5c00;font-weight:bold">]</span> Write cache: disabled, <span style="color:#204a87">read</span> cache: enabled, doesn<span style="color:#4e9a06">\&#39;</span>t support DPO or FUA
+</span></span><span style="display:flex;"><span><span style="color:#ce5c00;font-weight:bold">[</span>91914.587927<span style="color:#ce5c00;font-weight:bold">]</span>  sda:
+</span></span><span style="display:flex;"><span><span style="color:#ce5c00;font-weight:bold">[</span>91914.590460<span style="color:#ce5c00;font-weight:bold">]</span> sd 3:0:0:0: <span style="color:#ce5c00;font-weight:bold">[</span>sda<span style="color:#ce5c00;font-weight:bold">]</span> Attached SCSI removable disk
+</span></span></code></pre></div><h3 id="lspci">lspci</h3>
+<p>View the currently installed and recognized PCI and PCIe devices.Useful to troubleshoot PCI card issues, like when it is not recognized by the system.</p>
+<p><a href="https://phoenixnap.com/kb/lspci-command#ftoc-heading-3">lspci useful options</a></p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>lspci
+</span></span><span style="display:flex;"><span>00:00.0 Host bridge: Intel Corporation 8th Gen Core Processor Host Bridge/DRAM Registers <span style="color:#ce5c00;font-weight:bold">(</span>rev 07<span style="color:#ce5c00;font-weight:bold">)</span>
+</span></span><span style="display:flex;"><span>00:01.0 PCI bridge: Intel Corporation 6th-10th Gen Core Processor PCIe Controller <span style="color:#ce5c00;font-weight:bold">(</span>x16<span style="color:#ce5c00;font-weight:bold">)</span> <span style="color:#ce5c00;font-weight:bold">(</span>rev 07<span style="color:#ce5c00;font-weight:bold">)</span>
+</span></span><span style="display:flex;"><span>00:02.0 VGA compatible controller: Intel Corporation CoffeeLake-H GT2 <span style="color:#ce5c00;font-weight:bold">[</span>UHD Graphics 630<span style="color:#ce5c00;font-weight:bold">]</span>
+</span></span><span style="display:flex;"><span>00:04.0 Signal processing controller: Intel Corporation Xeon E3-1200 v5/E3-1500 v5/6th Gen Core Processor Thermal Subsystem <span style="color:#ce5c00;font-weight:bold">(</span>rev 07<span style="color:#ce5c00;font-weight:bold">)</span>
+</span></span><span style="display:flex;"><span>00:08.0 System peripheral: Intel Corporation Xeon E3-1200 v5/v6 / E3-1500 v5 / 6th/7th/8th Gen Core Processor Gaussian Mixture Model
+</span></span><span style="display:flex;"><span>00:12.0 Signal processing controller: Intel Corporation Cannon Lake PCH Thermal Controller <span style="color:#ce5c00;font-weight:bold">(</span>rev 10<span style="color:#ce5c00;font-weight:bold">)</span>
+</span></span><span style="display:flex;"><span>00:14.0 USB controller: Intel Corporation Cannon Lake PCH USB 3.1 xHCI Host Controller <span style="color:#ce5c00;font-weight:bold">(</span>rev 10<span style="color:#ce5c00;font-weight:bold">)</span>
+</span></span><span style="display:flex;"><span>00:14.2 RAM memory: Intel Corporation Cannon Lake PCH Shared SRAM <span style="color:#ce5c00;font-weight:bold">(</span>rev 10<span style="color:#ce5c00;font-weight:bold">)</span>
+</span></span><span style="display:flex;"><span>00:15.0 Serial bus controller: Intel Corporation Cannon Lake PCH Serial IO I2C Controller <span style="color:#8f5902;font-style:italic">#0 (rev 10)</span>
+</span></span><span style="display:flex;"><span>00:15.1 Serial bus controller: Intel Corporation Cannon Lake PCH Serial IO I2C Controller <span style="color:#8f5902;font-style:italic">#1 (rev 10)</span>
+</span></span><span style="display:flex;"><span>...
+</span></span></code></pre></div><h3 id="lsusb">lsusb</h3>
+<p>View basic info about USB devices connected to the system:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>lsb <span style="color:#ce5c00;font-weight:bold">[</span>OPTIONS<span style="color:#ce5c00;font-weight:bold">]</span>
+</span></span><span style="display:flex;"><span>-d <span style="color:#8f5902;font-style:italic"># specify vendor ID</span>
+</span></span><span style="display:flex;"><span>-D <span style="color:#8f5902;font-style:italic"># specify device file</span>
+</span></span><span style="display:flex;"><span>-s <span style="color:#8f5902;font-style:italic"># specify bus</span>
+</span></span><span style="display:flex;"><span>-t <span style="color:#8f5902;font-style:italic"># display in tree format, showing related devices</span>
+</span></span><span style="display:flex;"><span>-v <span style="color:#8f5902;font-style:italic"># verbose</span>
+</span></span><span style="display:flex;"><span>-V <span style="color:#8f5902;font-style:italic"># version</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8f5902;font-style:italic"># standard output</span>
+</span></span><span style="display:flex;"><span>lsusb
+</span></span><span style="display:flex;"><span>Bus <span style="color:#0000cf;font-weight:bold">004</span> Device 001: ID 1d6b:0003 Linux Foundation 3.0 root hub
+</span></span><span style="display:flex;"><span>Bus <span style="color:#0000cf;font-weight:bold">003</span> Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
+</span></span><span style="display:flex;"><span>Bus <span style="color:#0000cf;font-weight:bold">002</span> Device 005: ID 0781:5581 SanDisk Corp. Ultra
+</span></span><span style="display:flex;"><span>Bus <span style="color:#0000cf;font-weight:bold">002</span> Device 001: ID 1d6b:0003 Linux Foundation 3.0 root hub
+</span></span><span style="display:flex;"><span>Bus <span style="color:#0000cf;font-weight:bold">001</span> Device 003: ID 27c6:5395 Shenzhen Goodix Technology Co.,Ltd. Fingerprint Reader
+</span></span><span style="display:flex;"><span>Bus <span style="color:#0000cf;font-weight:bold">001</span> Device 038: ID 8087:0029 Intel Corp. AX200 Bluetooth
+</span></span><span style="display:flex;"><span>Bus <span style="color:#0000cf;font-weight:bold">001</span> Device 004: ID 0c45:6723 Microdia Integrated_Webcam_HD
+</span></span><span style="display:flex;"><span>Bus <span style="color:#0000cf;font-weight:bold">001</span> Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8f5902;font-style:italic"># tree view</span>
+</span></span><span style="display:flex;"><span>lsusb -t
+</span></span><span style="display:flex;"><span>/:  Bus 04.Port 1: Dev 1, <span style="color:#000">Class</span><span style="color:#ce5c00;font-weight:bold">=</span>root_hub, <span style="color:#000">Driver</span><span style="color:#ce5c00;font-weight:bold">=</span>xhci_hcd/2p, 10000M
+</span></span><span style="display:flex;"><span>/:  Bus 03.Port 1: Dev 1, <span style="color:#000">Class</span><span style="color:#ce5c00;font-weight:bold">=</span>root_hub, <span style="color:#000">Driver</span><span style="color:#ce5c00;font-weight:bold">=</span>xhci_hcd/2p, 480M
+</span></span><span style="display:flex;"><span>/:  Bus 02.Port 1: Dev 1, <span style="color:#000">Class</span><span style="color:#ce5c00;font-weight:bold">=</span>root_hub, <span style="color:#000">Driver</span><span style="color:#ce5c00;font-weight:bold">=</span>xhci_hcd/10p, 10000M
+</span></span><span style="display:flex;"><span>    <span style="color:#000;font-weight:bold">|</span>__ Port 1: Dev 5, If 0, <span style="color:#000">Class</span><span style="color:#ce5c00;font-weight:bold">=</span>Mass Storage, <span style="color:#000">Driver</span><span style="color:#ce5c00;font-weight:bold">=</span>usb-storage, 5000M
+</span></span><span style="display:flex;"><span>/:  Bus 01.Port 1: Dev 1, <span style="color:#000">Class</span><span style="color:#ce5c00;font-weight:bold">=</span>root_hub, <span style="color:#000">Driver</span><span style="color:#ce5c00;font-weight:bold">=</span>xhci_hcd/16p, 480M
+</span></span><span style="display:flex;"><span>    <span style="color:#000;font-weight:bold">|</span>__ Port 4: Dev 38, If 1, <span style="color:#000">Class</span><span style="color:#ce5c00;font-weight:bold">=</span>Wireless, <span style="color:#000">Driver</span><span style="color:#ce5c00;font-weight:bold">=</span>btusb, 12M
+</span></span><span style="display:flex;"><span>    <span style="color:#000;font-weight:bold">|</span>__ Port 4: Dev 38, If 0, <span style="color:#000">Class</span><span style="color:#ce5c00;font-weight:bold">=</span>Wireless, <span style="color:#000">Driver</span><span style="color:#ce5c00;font-weight:bold">=</span>btusb, 12M
+</span></span><span style="display:flex;"><span>    <span style="color:#000;font-weight:bold">|</span>__ Port 7: Dev 3, If 0, <span style="color:#000">Class</span><span style="color:#ce5c00;font-weight:bold">=</span>Communications, <span style="color:#000">Driver</span><span style="color:#ce5c00;font-weight:bold">=</span>, 12M
+</span></span><span style="display:flex;"><span>    <span style="color:#000;font-weight:bold">|</span>__ Port 7: Dev 3, If 1, <span style="color:#000">Class</span><span style="color:#ce5c00;font-weight:bold">=</span>CDC Data, <span style="color:#000">Driver</span><span style="color:#ce5c00;font-weight:bold">=</span>, 12M
+</span></span><span style="display:flex;"><span>    <span style="color:#000;font-weight:bold">|</span>__ Port 12: Dev 4, If 1, <span style="color:#000">Class</span><span style="color:#ce5c00;font-weight:bold">=</span>Video, <span style="color:#000">Driver</span><span style="color:#ce5c00;font-weight:bold">=</span>uvcvideo, 480M
+</span></span><span style="display:flex;"><span>    <span style="color:#000;font-weight:bold">|</span>__ Port 12: Dev 4, If 0, <span style="color:#000">Class</span><span style="color:#ce5c00;font-weight:bold">=</span>Video, <span style="color:#000">Driver</span><span style="color:#ce5c00;font-weight:bold">=</span>uvcvideo, 480M
+</span></span></code></pre></div><h2 id="monitor-support">Monitor support</h2>
+<p>Linux controls the video environment with two components:</p>
+<ul>
+<li>video card</li>
+<li>monitor</li>
+</ul>
+<h3 id="x-window-system">X Window System</h3>
+<p><em>X Window System</em> is a standard protocol for interacting with displays. Commonly referred to as X or X11 (latest version). Newest software pacakges:</p>
+<ul>
+<li><strong>X.org</strong>: Uses simple text-based config files in <code>/etc/X11</code></li>
+<li><strong>Wayland</strong>: Simple and secure, developed by Red Hat. Uses separate config files for each user in the <code>~/.config/weston.ini</code> config file in each user home dir.</li>
+</ul>
+<p>Both softwares detect the video card at boot time and make changes. They can also detect video equiptment on the fly and make changes as needed.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#8f5902;font-style:italic"># X.org config files</span>
+</span></span><span style="display:flex;"><span>ls /etc/X11/
+</span></span><span style="display:flex;"><span>app-defaults             fonts    xkb          Xreset.d    Xsession.d        XvMCConfig
+</span></span><span style="display:flex;"><span>cursors                  rgb.txt  xorg.conf.d  Xresources  Xsession.options  Xwrapper.config
+</span></span><span style="display:flex;"><span>default-display-manager  xinit    Xreset       Xsession    xsm
+</span></span></code></pre></div><h2 id="printers">Printers</h2>
+<blockquote>
+<p>Find linux-compatible printers:</p>
+<ul>
+<li><a href="https://openprinting.org/printers">Open Printing</a></li>
+<li><a href="https://tldp.org/HOWTO/Printing-HOWTO/printers.html">The Printing HOWTO</a></li>
+</ul></blockquote>
+<p>Linux manages printer drivers with the Common Unix Printing System (CUPS), available on the workstation at port 361 (<code>localhost:631</code>). You can configure printers using different protocols.</p>
+<h3 id="print-queue-commands">Print queue commands</h3>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#8f5902;font-style:italic"># start, stop or pause print queue</span>
+</span></span><span style="display:flex;"><span>lpc -P &lt;printer&gt;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8f5902;font-style:italic"># display print queue status and pending jobs</span>
+</span></span><span style="display:flex;"><span>lpq -P &lt;printer&gt;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8f5902;font-style:italic"># submit new print job</span>
+</span></span><span style="display:flex;"><span>lpr -P &lt;printer&gt; &lt;file&gt;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8f5902;font-style:italic"># rm specific print job from queue</span>
+</span></span><span style="display:flex;"><span>lprm -P &lt;printer&gt;
+</span></span></code></pre></div><h2 id="hot-pluggable-devices">Hot-pluggable devices</h2>
+<p>Hardware is generally categorized in one of two ways:</p>
+<ul>
+<li><strong>Cold-pluggable devices</strong>: Must be connected when the system is off. Generally found in the computer case, such as:
+<ul>
+<li>memory</li>
+<li>PCI cards</li>
+<li>hard drives</li>
+</ul>
+</li>
+<li><strong>Hot-pluggable devices</strong>: External components, can add or remove at any time, such as:
+<ul>
+<li>network connections</li>
+<li>monitors</li>
+<li>USB devices</li>
+</ul>
+</li>
+</ul>
+<h2 id="detecting-dynamic-devices">Detecting dynamic devices</h2>
+<p><em><code>udev device manager</code></em> listens to kernel notifications about hardware devices that are plugged in or removed. Its started at boot time by the <code>init</code> process and always runs in the background.</p>
+<p><code>udev device manager</code> listens to notifications and compares the messages against rules set in <code>/etc/udev/rules.d</code>:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#8f5902;font-style:italic"># virtualbox udev rules file</span>
+</span></span><span style="display:flex;"><span>cat /etc/udev/rules.d/60-vboxadd.rules 
+</span></span><span style="display:flex;"><span><span style="color:#000">KERNEL</span><span style="color:#ce5c00;font-weight:bold">==</span><span style="color:#4e9a06">&#34;vboxguest&#34;</span>, <span style="color:#000">NAME</span><span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#4e9a06">&#34;vboxguest&#34;</span>, <span style="color:#000">OWNER</span><span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#4e9a06">&#34;vboxadd&#34;</span>, <span style="color:#000">MODE</span><span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#4e9a06">&#34;0660&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#000">KERNEL</span><span style="color:#ce5c00;font-weight:bold">==</span><span style="color:#4e9a06">&#34;vboxuser&#34;</span>, <span style="color:#000">NAME</span><span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#4e9a06">&#34;vboxuser&#34;</span>, <span style="color:#000">OWNER</span><span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#4e9a06">&#34;vboxadd&#34;</span>, <span style="color:#000">MODE</span><span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#4e9a06">&#34;0666&#34;</span>
+</span></span></code></pre></div><h3 id="udevadm">udevadm</h3>
+<p>Interacts with the <code>udev device manager</code>:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>udevadm <span style="color:#204a87">command</span> <span style="color:#ce5c00;font-weight:bold">[</span>OPTIONS<span style="color:#ce5c00;font-weight:bold">]</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8f5902;font-style:italic"># view info about USD drive</span>
+</span></span><span style="display:flex;"><span>udevadm info /dev/sda
+</span></span><span style="display:flex;"><span>P: /devices/pci0000:00/0000:00:0d.0/ata3/host2/target2:0:0/2:0:0:0/block/sda
+</span></span><span style="display:flex;"><span>N: sda
+</span></span><span style="display:flex;"><span>L: <span style="color:#0000cf;font-weight:bold">0</span>
+</span></span><span style="display:flex;"><span>S: disk/by-path/pci-0000:00:0d.0-ata-1.0
+</span></span><span style="display:flex;"><span>S: disk/by-id/ata-VBOX_HARDDISK_VBc96b84e1-50baf623
+</span></span><span style="display:flex;"><span>...
+</span></span></code></pre></div><h2 id="troubleshooting">Troubleshooting</h2>
+<h3 id="dmidecode">dmidecode</h3>
+<blockquote>
+<p>DO NOT rely on <code>dmidecode</code> alone for hardware information, especially when running a virtual machine.</p></blockquote>
+<p>The Distributed Management Task Force (DMTF) is a nonprofit whose goal is to simplify the management of network-accessible technologies through standards. Created the following standards:</p>
+<ul>
+<li><strong>Desktop Management Interface (DMI)</strong>: Consists of four components that provide information about the hardware being used on a computer.</li>
+<li><strong>System Management BIOS (SMBIOS)</strong>: items such as datastructures that read management info produces by a system&rsquo;s BIOS.</li>
+</ul>
+<p>You can interact with these standards with the <code>dmidecode</code> utility. It pulls info from the <code>sysfs</code> filesystem, specifically the <code>/sys/firmware/dmi/tables/</code> dir:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#8f5902;font-style:italic"># view sysfs tables</span>
+</span></span><span style="display:flex;"><span>ls /sys/firmware/dmi/tables/
+</span></span><span style="display:flex;"><span>DMI  smbios_entry_point
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8f5902;font-style:italic"># view help</span>
+</span></span><span style="display:flex;"><span>dmidecode -h
+</span></span><span style="display:flex;"><span>Usage: dmidecode <span style="color:#ce5c00;font-weight:bold">[</span>OPTIONS<span style="color:#ce5c00;font-weight:bold">]</span>
+</span></span><span style="display:flex;"><span>Options are:
+</span></span><span style="display:flex;"><span> -d, --dev-mem FILE     Read memory from device FILE <span style="color:#ce5c00;font-weight:bold">(</span>default: /dev/mem<span style="color:#ce5c00;font-weight:bold">)</span>
+</span></span><span style="display:flex;"><span> -h, --help             Display this <span style="color:#204a87">help</span> text and <span style="color:#204a87">exit</span>
+</span></span><span style="display:flex;"><span> -q, --quiet            Less verbose output
+</span></span><span style="display:flex;"><span> -s, --string KEYWORD   Only display the value of the given DMI string
+</span></span><span style="display:flex;"><span> -t, --type TYPE        Only display the entries of given <span style="color:#204a87">type</span>
+</span></span><span style="display:flex;"><span> -H, --handle HANDLE    Only display the entry of given handle
+</span></span><span style="display:flex;"><span> -u, --dump             Do not decode the entries
+</span></span><span style="display:flex;"><span>     --dump-bin FILE    Dump the DMI data to a binary file
+</span></span><span style="display:flex;"><span>     --from-dump FILE   Read the DMI data from a binary file
+</span></span><span style="display:flex;"><span>     --no-sysfs         Do not attempt to <span style="color:#204a87">read</span> DMI data from sysfs files
+</span></span><span style="display:flex;"><span>     --oem-string N     Only display the value of the given OEM string
+</span></span><span style="display:flex;"><span> -V, --version          Display the version and <span style="color:#204a87">exit</span>
+</span></span></code></pre></div><p><code>-t, --type TYPE</code> arguments:</p>
+<ul>
+<li><code>baseboard</code></li>
+<li><code>bios</code></li>
+<li><code>cache</code></li>
+<li><code>chassis</code></li>
+<li><code>connector</code></li>
+<li><code>memory</code></li>
+<li><code>processor</code></li>
+<li><code>slot</code></li>
+<li><code>system</code></li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#8f5902;font-style:italic"># view memory info</span>
+</span></span><span style="display:flex;"><span>sudo dmidecode -t memory
+</span></span><span style="display:flex;"><span><span style="color:#8f5902;font-style:italic"># dmidecode 3.3</span>
+</span></span><span style="display:flex;"><span>Getting SMBIOS data from sysfs.
+</span></span><span style="display:flex;"><span>SMBIOS 3.2.0 present.
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Handle 0x0037, DMI <span style="color:#204a87">type</span> 16, <span style="color:#0000cf;font-weight:bold">23</span> bytes
+</span></span><span style="display:flex;"><span>Physical Memory Array
+</span></span><span style="display:flex;"><span>	Location: System Board Or Motherboard
+</span></span><span style="display:flex;"><span>	Use: System Memory
+</span></span><span style="display:flex;"><span>	Error Correction Type: None
+</span></span><span style="display:flex;"><span>	Maximum Capacity: <span style="color:#0000cf;font-weight:bold">32</span> GB
+</span></span><span style="display:flex;"><span>	Error Information Handle: Not Provided
+</span></span><span style="display:flex;"><span>	Number Of Devices: <span style="color:#0000cf;font-weight:bold">2</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Handle 0x0044, DMI <span style="color:#204a87">type</span> 17, <span style="color:#0000cf;font-weight:bold">84</span> bytes
+</span></span><span style="display:flex;"><span>Memory Device
+</span></span><span style="display:flex;"><span>	Array Handle: 0x0037
+</span></span><span style="display:flex;"><span>	Error Information Handle: Not Provided
+</span></span><span style="display:flex;"><span>	Total Width: <span style="color:#0000cf;font-weight:bold">64</span> bits
+</span></span><span style="display:flex;"><span>	Data Width: <span style="color:#0000cf;font-weight:bold">64</span> bits
+</span></span><span style="display:flex;"><span>	Size: <span style="color:#0000cf;font-weight:bold">16</span> GB
+</span></span><span style="display:flex;"><span>...
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8f5902;font-style:italic"># view system table info</span>
+</span></span><span style="display:flex;"><span>sudo dmidecode -t system
+</span></span><span style="display:flex;"><span><span style="color:#8f5902;font-style:italic"># dmidecode 3.3</span>
+</span></span><span style="display:flex;"><span>Getting SMBIOS data from sysfs.
+</span></span><span style="display:flex;"><span>SMBIOS 3.2.0 present.
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Handle 0x0001, DMI <span style="color:#204a87">type</span> 1, <span style="color:#0000cf;font-weight:bold">27</span> bytes
+</span></span><span style="display:flex;"><span>System Information
+</span></span><span style="display:flex;"><span>	Manufacturer: Dell Inc.
+</span></span><span style="display:flex;"><span>	Product Name: Precision <span style="color:#0000cf;font-weight:bold">5540</span>
+</span></span><span style="display:flex;"><span>	Version: Not Specified
+</span></span><span style="display:flex;"><span>	Serial Number: GHWCP73
+</span></span><span style="display:flex;"><span>...
+</span></span></code></pre></div><h3 id="lshw">lshw</h3>
+<p>Retrieves information about your hardware from the <code>/proc</code> directory files. Useful options include <code>-short</code>, <code>-businfo</code>, and <code>-class</code>:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#8f5902;font-style:italic"># table-formatted hardware data</span>
+</span></span><span style="display:flex;"><span>lshw -short
+</span></span><span style="display:flex;"><span>H/W path           Device          Class          <span style="color:#000">Description</span>
+</span></span><span style="display:flex;"><span><span style="color:#ce5c00;font-weight:bold">=============================================================</span>
+</span></span><span style="display:flex;"><span>                                   system         Precision <span style="color:#0000cf;font-weight:bold">5540</span> <span style="color:#ce5c00;font-weight:bold">(</span>0906<span style="color:#ce5c00;font-weight:bold">)</span>
+</span></span><span style="display:flex;"><span>/0                                 bus            07C17G
+</span></span><span style="display:flex;"><span>/0/0                               memory         64KiB BIOS
+</span></span><span style="display:flex;"><span>/0/37                              memory         32GiB System Memory
+</span></span><span style="display:flex;"><span>/0/37/0                            memory         16GiB SODIMM DDR4 Synchronous <span style="color:#0000cf;font-weight:bold">2667</span> MHz <span style="color:#ce5c00;font-weight:bold">(</span>0.4 ns<span style="color:#ce5c00;font-weight:bold">)</span>
+</span></span><span style="display:flex;"><span>/0/37/1                            memory         16GiB SODIMM DDR4 Synchronous <span style="color:#0000cf;font-weight:bold">2667</span> MHz <span style="color:#ce5c00;font-weight:bold">(</span>0.4 ns<span style="color:#ce5c00;font-weight:bold">)</span>
+</span></span><span style="display:flex;"><span>/0/40                              memory         384KiB L1 cache
+</span></span><span style="display:flex;"><span>/0/41                              memory         1536KiB L2 cache
+</span></span><span style="display:flex;"><span>/0/42                              memory         12MiB L3 cache
+</span></span><span style="display:flex;"><span>/0/43                              processor      Intel<span style="color:#ce5c00;font-weight:bold">(</span>R<span style="color:#ce5c00;font-weight:bold">)</span> Core<span style="color:#ce5c00;font-weight:bold">(</span>TM<span style="color:#ce5c00;font-weight:bold">)</span> i7-9750H CPU @ 2.60GHz
+</span></span><span style="display:flex;"><span>/0/100                             bridge         8th Gen Core Processor Host Bridge/DRAM Registers
+</span></span><span style="display:flex;"><span>/0/100/1                           bridge         6th-10th Gen Core Processor PCIe Controller <span style="color:#ce5c00;font-weight:bold">(</span>x16<span style="color:#ce5c00;font-weight:bold">)</span>
+</span></span><span style="display:flex;"><span>/0/100/1/0                         display        TU117GLM <span style="color:#ce5c00;font-weight:bold">[</span>Quadro T1000 Mobile<span style="color:#ce5c00;font-weight:bold">]</span>
+</span></span><span style="display:flex;"><span>/0/100/2           /dev/fb0        display        CoffeeLake-H GT2 <span style="color:#ce5c00;font-weight:bold">[</span>UHD Graphics 630<span style="color:#ce5c00;font-weight:bold">]</span>
+</span></span><span style="display:flex;"><span>/0/100/4                           generic        Xeon E3-1200 v5/E3-1500 v5/6th Gen Core Processor Therm
+</span></span><span style="display:flex;"><span>/0/100/8                           generic        Xeon E3-1200 v5/v6 / E3-1500 v5 / 6th/7th/8th Gen Core 
+</span></span><span style="display:flex;"><span>/0/100/12                          generic        Cannon Lake PCH Thermal Controller
+</span></span><span style="display:flex;"><span>/0/100/14                          bus            Cannon Lake PCH USB 3.1 xHCI Host Controller
+</span></span><span style="display:flex;"><span>/0/100/14/0        usb1            bus            xHCI Host Controller
+</span></span><span style="display:flex;"><span>/0/100/14/0/4                      communication  AX200 Bluetooth
+</span></span><span style="display:flex;"><span>/0/100/14/0/7                      communication  Goodix Fingerprint Device
+</span></span><span style="display:flex;"><span>/0/100/14/0/c                      multimedia     Integrated_Webcam_HD
+</span></span><span style="display:flex;"><span>/0/100/14/1        usb2            bus            xHCI Host Controller
+</span></span><span style="display:flex;"><span>/0/100/14.2                        memory         RAM memory
+</span></span><span style="display:flex;"><span>...
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8f5902;font-style:italic"># view SCSI, USB, IDE, PCI device data</span>
+</span></span><span style="display:flex;"><span>lshw -businfo
+</span></span><span style="display:flex;"><span>Bus info          Device          Class          <span style="color:#000">Description</span>
+</span></span><span style="display:flex;"><span><span style="color:#ce5c00;font-weight:bold">============================================================</span>
+</span></span><span style="display:flex;"><span>                                  system         Precision <span style="color:#0000cf;font-weight:bold">5540</span> <span style="color:#ce5c00;font-weight:bold">(</span>0906<span style="color:#ce5c00;font-weight:bold">)</span>
+</span></span><span style="display:flex;"><span>                                  bus            07C17G
+</span></span><span style="display:flex;"><span>                                  memory         64KiB BIOS
+</span></span><span style="display:flex;"><span>                                  memory         32GiB System Memory
+</span></span><span style="display:flex;"><span>                                  memory         16GiB SODIMM DDR4 Synchronous <span style="color:#0000cf;font-weight:bold">2667</span> MHz <span style="color:#ce5c00;font-weight:bold">(</span>0.4 ns<span style="color:#ce5c00;font-weight:bold">)</span>
+</span></span><span style="display:flex;"><span>                                  memory         16GiB SODIMM DDR4 Synchronous <span style="color:#0000cf;font-weight:bold">2667</span> MHz <span style="color:#ce5c00;font-weight:bold">(</span>0.4 ns<span style="color:#ce5c00;font-weight:bold">)</span>
+</span></span><span style="display:flex;"><span>                                  memory         384KiB L1 cache
+</span></span><span style="display:flex;"><span>                                  memory         1536KiB L2 cache
+</span></span><span style="display:flex;"><span>                                  memory         12MiB L3 cache
+</span></span><span style="display:flex;"><span>cpu@0                             processor      Intel<span style="color:#ce5c00;font-weight:bold">(</span>R<span style="color:#ce5c00;font-weight:bold">)</span> Core<span style="color:#ce5c00;font-weight:bold">(</span>TM<span style="color:#ce5c00;font-weight:bold">)</span> i7-9750H CPU @ 2.60GHz
+</span></span><span style="display:flex;"><span>...
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8f5902;font-style:italic"># view class info (get class from -short cmd)</span>
+</span></span><span style="display:flex;"><span>lshw -class display
+</span></span><span style="display:flex;"><span>  *-display UNCLAIMED       
+</span></span><span style="display:flex;"><span>       description: 3D controller
+</span></span><span style="display:flex;"><span>       product: TU117GLM <span style="color:#ce5c00;font-weight:bold">[</span>Quadro T1000 Mobile<span style="color:#ce5c00;font-weight:bold">]</span>
+</span></span><span style="display:flex;"><span>       vendor: NVIDIA Corporation
+</span></span><span style="display:flex;"><span>       physical id: <span style="color:#0000cf;font-weight:bold">0</span>
+</span></span><span style="display:flex;"><span>       bus info: pci@0000:01:00.0
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8f5902;font-style:italic"># view RAM information</span>
+</span></span><span style="display:flex;"><span>lshw -class memory
+</span></span><span style="display:flex;"><span>  *-firmware                
+</span></span><span style="display:flex;"><span>       description: BIOS
+</span></span><span style="display:flex;"><span>       vendor: Dell Inc.
+</span></span><span style="display:flex;"><span>       physical id: <span style="color:#0000cf;font-weight:bold">0</span>
+</span></span><span style="display:flex;"><span>       version: 1.20.0
+</span></span><span style="display:flex;"><span>       date: 12/23/2022
+</span></span><span style="display:flex;"><span>       size: 64KiB
+</span></span><span style="display:flex;"><span>       capacity: 32MiB
+</span></span><span style="display:flex;"><span>       capabilities: pci pnp upgrade shadowing cdboot bootselect edd int13floppynec int13floppy1200 int13floppy720 int13floppy2880 int5printscreen int9keyboard int14serial int17printer acpi usb smartbattery biosbootspecification netboot uefi
+</span></span><span style="display:flex;"><span>  *-memory
+</span></span><span style="display:flex;"><span>       description: System Memory
+</span></span><span style="display:flex;"><span>       physical id: <span style="color:#0000cf;font-weight:bold">37</span>
+</span></span><span style="display:flex;"><span>       slot: System board or motherboard
+</span></span><span style="display:flex;"><span>       size: 32GiB
+</span></span><span style="display:flex;"><span>     *-bank:0
+</span></span><span style="display:flex;"><span>          description: SODIMM DDR4 Synchronous <span style="color:#0000cf;font-weight:bold">2667</span> MHz <span style="color:#ce5c00;font-weight:bold">(</span>0.4 ns<span style="color:#ce5c00;font-weight:bold">)</span>
+</span></span><span style="display:flex;"><span>          product: AO1P26KCST2-BZISHC
+</span></span><span style="display:flex;"><span>          vendor: Fujitsu
+</span></span><span style="display:flex;"><span>          physical id: <span style="color:#0000cf;font-weight:bold">0</span>
+</span></span><span style="display:flex;"><span>          serial: EAB80200
+</span></span><span style="display:flex;"><span>          slot: DIMM A
+</span></span><span style="display:flex;"><span>          size: 16GiB
+</span></span><span style="display:flex;"><span>          width: <span style="color:#0000cf;font-weight:bold">64</span> bits
+</span></span><span style="display:flex;"><span>          clock: 2667MHz <span style="color:#ce5c00;font-weight:bold">(</span>0.4ns<span style="color:#ce5c00;font-weight:bold">)</span>
+</span></span><span style="display:flex;"><span>     *-bank:1
+</span></span><span style="display:flex;"><span>     ...
+</span></span><span style="display:flex;"><span>  *-cache:0
+</span></span><span style="display:flex;"><span>       description: L1 cache
+</span></span><span style="display:flex;"><span>       physical id: <span style="color:#0000cf;font-weight:bold">40</span>
+</span></span><span style="display:flex;"><span>       slot: L1 Cache
+</span></span><span style="display:flex;"><span>       size: 384KiB
+</span></span><span style="display:flex;"><span>       capacity: 384KiB
+</span></span><span style="display:flex;"><span>       capabilities: synchronous internal write-back unified
+</span></span><span style="display:flex;"><span>       configuration: <span style="color:#000">level</span><span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#0000cf;font-weight:bold">1</span>
+</span></span><span style="display:flex;"><span>  *-cache:1
+</span></span><span style="display:flex;"><span>  ...
+</span></span><span style="display:flex;"><span>  *-memory UNCLAIMED
+</span></span><span style="display:flex;"><span>       description: RAM memory
+</span></span><span style="display:flex;"><span>       product: Cannon Lake PCH Shared SRAM
+</span></span><span style="display:flex;"><span>       vendor: Intel Corporation
+</span></span><span style="display:flex;"><span>       physical id: 14.2
+</span></span><span style="display:flex;"><span>       bus info: pci@0000:00:14.2
+</span></span><span style="display:flex;"><span>       version: <span style="color:#0000cf;font-weight:bold">10</span>
+</span></span><span style="display:flex;"><span>       width: <span style="color:#0000cf;font-weight:bold">64</span> bits
+</span></span><span style="display:flex;"><span>       clock: 33MHz <span style="color:#ce5c00;font-weight:bold">(</span>30.3ns<span style="color:#ce5c00;font-weight:bold">)</span>
+</span></span><span style="display:flex;"><span>       capabilities: pm cap_list
+</span></span><span style="display:flex;"><span>       configuration: <span style="color:#000">latency</span><span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#0000cf;font-weight:bold">0</span>
+</span></span><span style="display:flex;"><span>       resources: memory:ed51e000-ed51ffff memory:ed526000-ed526fff
+</span></span><span style="display:flex;"><span>...
+</span></span></code></pre></div><h3 id="keyboard-mappings">Keyboard mappings</h3>
+<p>Check your distro mappings for correctness:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#8f5902;font-style:italic"># RHEL</span>
+</span></span><span style="display:flex;"><span>localectl
+</span></span><span style="display:flex;"><span>   System Locale: <span style="color:#000">LANG</span><span style="color:#ce5c00;font-weight:bold">=</span>en_US.UTF-8
+</span></span><span style="display:flex;"><span>       VC Keymap: us
+</span></span><span style="display:flex;"><span>      X11 Layout: us
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8f5902;font-style:italic"># view keymappings</span>
+</span></span><span style="display:flex;"><span>localectl list-keymaps
+</span></span><span style="display:flex;"><span>ANSI-dvorak
+</span></span><span style="display:flex;"><span>al
+</span></span><span style="display:flex;"><span>al-plisi
+</span></span><span style="display:flex;"><span>amiga-de
+</span></span><span style="display:flex;"><span>amiga-us
+</span></span><span style="display:flex;"><span>applkey
+</span></span><span style="display:flex;"><span>at
+</span></span><span style="display:flex;"><span>at-mac
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8f5902;font-style:italic"># change keymappings</span>
+</span></span><span style="display:flex;"><span>localctl set-keymap &lt;keymap-name&gt;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8f5902;font-style:italic"># -------</span>
+</span></span><span style="display:flex;"><span><span style="color:#8f5902;font-style:italic"># Debian</span>
+</span></span><span style="display:flex;"><span>dpkg-reconfigure keyboard-configuration
+</span></span></code></pre></div>
+	
+</div>
+
+
+          </main>
+        </div>
+      </div>
+      <footer class="td-footer row d-print-none">
+  <div class="container-fluid">
+    <div class="row mx-md-2">
+      <div class="td-footer__left col-6 col-sm-4 order-sm-1">
+        
+      </div><div class="td-footer__right col-6 col-sm-4 order-sm-3">
+        
+      </div><div class="td-footer__center col-12 col-sm-4 py-2 order-sm-2">
+        <span class="td-footer__copyright">&copy;
+    2025
+    <span class="td-footer__authors">The Docsy Authors</span></span><span class="td-footer__all_rights_reserved">All Rights Reserved</span><span class="ms-2"><a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Privacy Policy</a></span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <script src="/js/main.js"></script>
+<script defer src="/js/click-to-copy.js" crossorigin="anonymous"></script>
+<script src='/js/tabpane-persist.js'></script>
+
+  </body>
+</html>

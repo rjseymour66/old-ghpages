@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Inkscape on Goldydocs</title>
+    <link>//localhost:1313/docs/inkscape/</link>
+    <description>Recent content in Inkscape on Goldydocs</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <atom:link href="//localhost:1313/docs/inkscape/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Basics</title>
+      <link>//localhost:1313/docs/inkscape/basics/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/docs/inkscape/basics/</guid>
+      <description>&lt;h2 id=&#34;layout-overview&#34;&gt;Layout overview&lt;/h2&gt;&#xA;&lt;p&gt;Stroke is an Outline. To remove, Shift + click the X in the bottom-left corner&#xA;Fill is the color. To remove, click X in the bottom-left corner&lt;/p&gt;&#xA;&lt;h2 id=&#34;navigating-the-canvas&#34;&gt;Navigating the Canvas&lt;/h2&gt;&#xA;&lt;p&gt;Zoom in: press 1 key&#xA;Scroll bars: add/rm with Ctrl + b&#xA;Grab canvas: zoom wheel or right click and drag&lt;/p&gt;&#xA;&lt;h2 id=&#34;select-tool&#34;&gt;Select tool&lt;/h2&gt;&#xA;&lt;p&gt;After you select an object and make it active:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Hold CTRL to lock an object on the vertical or horizontal axis&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;Scaling handles (arrows):&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Menus</title>
+      <link>//localhost:1313/docs/inkscape/menus/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/docs/inkscape/menus/</guid>
+      <description>&lt;h1 id=&#34;file-menu&#34;&gt;File Menu&lt;/h1&gt;&#xA;&lt;p&gt;File &amp;gt; New From Template to create an image with default sizing.&lt;/p&gt;&#xA;&lt;p&gt;File &amp;gt; Open&amp;ndash;you should only open vector documents:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;.svg&lt;/li&gt;&#xA;&lt;li&gt;.eps&lt;/li&gt;&#xA;&lt;li&gt;.ai&lt;/li&gt;&#xA;&lt;li&gt;.pdf (sometimes)&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;Opened files are often grouped together by default. To ungroup, select the object, Obect &amp;gt; Ungroup as many times as you ned to.&lt;/p&gt;&#xA;&lt;p&gt;Import means that you are importing a file into an open file.&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;File &amp;gt; Import &amp;gt; select file&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;Clipart with File &amp;gt; Import Web Image&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Repo dump</title>
+      <link>//localhost:1313/docs/inkscape/repo-dump/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/docs/inkscape/repo-dump/</guid>
+      <description>&lt;p&gt;v1.0.2-2&lt;/p&gt;&#xA;&lt;p&gt;Features to learn:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Live Path Effects (LPE)&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Perspective&lt;/li&gt;&#xA;&lt;li&gt;Pattern Along a Path&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;Power Stroke&lt;/li&gt;&#xA;&lt;li&gt;Gradient mesh&lt;/li&gt;&#xA;&lt;li&gt;Measurement tool&lt;/li&gt;&#xA;&lt;li&gt;View &amp;gt; Split Mode&lt;/li&gt;&#xA;&lt;li&gt;Outline overlay&lt;/li&gt;&#xA;&lt;li&gt;Page: manages page setup and the usage of multiple paged Inkscape documents&lt;/li&gt;&#xA;&lt;li&gt;WEBP format&lt;/li&gt;&#xA;&lt;li&gt;Batch export&lt;/li&gt;&#xA;&lt;li&gt;Shape builder&lt;/li&gt;&#xA;&lt;li&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;What is a path?&lt;/p&gt;&#xA;&lt;p&gt;Path &amp;gt; Object to path changes the object to a vector path?&lt;/p&gt;&#xA;&lt;p&gt;Live Path Effects (LPE) make dynamic changes to any path. Use this in the following circumstances:&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

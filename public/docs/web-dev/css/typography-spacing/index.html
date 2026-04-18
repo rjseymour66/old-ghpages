@@ -1,0 +1,1243 @@
+<!doctype html>
+<html itemscope itemtype="http://schema.org/WebPage" lang="en" class="no-js">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="noindex, nofollow">
+
+
+<link rel="shortcut icon" href="/favicons/favicon.ico" >
+<link rel="apple-touch-icon" href="/favicons/apple-touch-icon-180x180.png" sizes="180x180">
+<link rel="icon" type="image/png" href="/favicons/favicon-16x16.png" sizes="16x16">
+<link rel="icon" type="image/png" href="/favicons/favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="/favicons/android-36x36.png" sizes="36x36">
+<link rel="icon" type="image/png" href="/favicons/android-48x48.png" sizes="48x48">
+<link rel="icon" type="image/png" href="/favicons/android-72x72.png" sizes="72x72">
+<link rel="icon" type="image/png" href="/favicons/android-96x96.png" sizes="96x96">
+<link rel="icon" type="image/png" href="/favicons/android-144x144.png" sizes="144x144">
+<link rel="icon" type="image/png" href="/favicons/android-192x192.png" sizes="192x192">
+
+<title>Typography and spacing | Goldydocs</title>
+<meta name="description" content="Text and typography Good article: Modern CSS Techniques to Improve Legibility
+If your font-family property setting uses this hierarchy:
+First setting Fallback font Default user agent style System font stack You can make sure you get the font that you want with the system font stack, which is a long list of fallback fonts.
+With variables:
+:root { --system-ui: system-ui, &#34;Segoe UI&#34;, Roboto, Helvetica, Arial, sans-serif, &#34;Apple Color Emoji&#34;, &#34;Segoe UI Emoji&#34;, &#34;Segoe UI Symbol&#34;; } .element { font-family: var(--system-ui); } Without variables:">
+<meta property="og:url" content="//localhost:1313/docs/web-dev/css/typography-spacing/">
+  <meta property="og:site_name" content="Goldydocs">
+  <meta property="og:title" content="Typography and spacing">
+  <meta property="og:description" content="Text and typography Good article: Modern CSS Techniques to Improve Legibility
+If your font-family property setting uses this hierarchy:
+First setting Fallback font Default user agent style System font stack You can make sure you get the font that you want with the system font stack, which is a long list of fallback fonts.
+With variables:
+:root { --system-ui: system-ui, &#34;Segoe UI&#34;, Roboto, Helvetica, Arial, sans-serif, &#34;Apple Color Emoji&#34;, &#34;Segoe UI Emoji&#34;, &#34;Segoe UI Symbol&#34;; } .element { font-family: var(--system-ui); } Without variables:">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="docs">
+    <meta property="article:modified_time" content="2025-04-25T10:10:34-04:00">
+
+  <meta itemprop="name" content="Typography and spacing">
+  <meta itemprop="description" content="Text and typography Good article: Modern CSS Techniques to Improve Legibility
+If your font-family property setting uses this hierarchy:
+First setting Fallback font Default user agent style System font stack You can make sure you get the font that you want with the system font stack, which is a long list of fallback fonts.
+With variables:
+:root { --system-ui: system-ui, &#34;Segoe UI&#34;, Roboto, Helvetica, Arial, sans-serif, &#34;Apple Color Emoji&#34;, &#34;Segoe UI Emoji&#34;, &#34;Segoe UI Symbol&#34;; } .element { font-family: var(--system-ui); } Without variables:">
+  <meta itemprop="dateModified" content="2025-04-25T10:10:34-04:00">
+  <meta itemprop="wordCount" content="2730">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Typography and spacing">
+  <meta name="twitter:description" content="Text and typography Good article: Modern CSS Techniques to Improve Legibility
+If your font-family property setting uses this hierarchy:
+First setting Fallback font Default user agent style System font stack You can make sure you get the font that you want with the system font stack, which is a long list of fallback fonts.
+With variables:
+:root { --system-ui: system-ui, &#34;Segoe UI&#34;, Roboto, Helvetica, Arial, sans-serif, &#34;Apple Color Emoji&#34;, &#34;Segoe UI Emoji&#34;, &#34;Segoe UI Symbol&#34;; } .element { font-family: var(--system-ui); } Without variables:">
+<link href="/scss/main.css" rel="stylesheet">
+<script
+  src="https://code.jquery.com/jquery-3.7.1.min.js"
+  integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+  crossorigin="anonymous"></script>
+
+  </head>
+  <body class="td-page">
+    <header>
+      <nav class="td-navbar js-navbar-scroll" data-bs-theme="dark">
+<div class="container-fluid flex-column flex-md-row">
+  <a class="navbar-brand" href="/"><span class="navbar-brand__logo navbar-logo"><svg id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 500 500" style="enable-background:new 0 0 500 500"><g><path style="fill:#fff" d="M116.8525 421.9722c-5.7041.0-10.3442-4.3127-10.3442-9.6129V88.183c0-5.3002 4.6401-9.6117 10.3442-9.6117H320.858c3.0347.0 9.3959.5498 11.7506 2.6302l.3545.3442 58.905 63.2912c2.3101 2.491 2.9202 8.4928 2.9202 11.3184v256.2039c0 5.3002-4.6407 9.6129-10.3436 9.6129H116.8525z"/><g><g><g><path style="fill:#767676" d="M384.4445 423.2066H116.852c-6.3839.0-11.5786-4.8658-11.5786-10.8474V88.1831c0-5.9804 5.1947-10.8461 11.5786-10.8461h204.0062c.377.0 9.2786.0329 12.568 2.9389l.3947.3833 58.9508 63.337c3.2135 3.4652 3.2514 11.7924 3.2514 12.1593v256.2036C396.0231 418.3408 390.8284 423.2066 384.4445 423.2066zM116.5079 411.9189c.0848.0278.1999.0531.3441.0531h267.5925c.1442.0.2581-.0253.3441-.0531V156.1556c-.0076-.9033-.3593-3.7347-.7034-5.0037l-57.6527-61.9416c-1.4651-.3176-4.4533-.6389-5.5742-.6389H116.852c-.143.0-.2594.024-.3441.0531V411.9189zm267.4533-261.149zM327.0321 89.371v.0013V89.371z"/></g></g></g><g><g><path style="fill:#5b7fc0" d="M189.0874 210.1754l.0012-.0012c7.7751.0012 15.0295 4.1862 18.932 10.9234 1.9177 3.3159 2.9305 7.1011 2.9293 10.9378.0 5.8394-2.2733 11.3304-6.4032 15.4604-4.1288 4.1288-9.6186 6.4032-15.458 6.4032s-11.328-2.2733-15.458-6.4032-6.4032-9.6186-6.4056-15.4628c.0012-6.025 2.454-11.4897 6.4116-15.4473C177.5953 212.627 183.0601 210.1742 189.0874 210.1754zm7.993 21.8576c.0012-1.4042-.3687-2.7868-1.063-3.9887-1.4293-2.4684-4.0833-3.9995-6.9299-4.0019-4.4077.0024-7.993 3.5877-7.993 7.993.0 2.1356.832 4.1431 2.3427 5.6539 1.5083 1.5083 3.5159 2.3403 5.6503 2.3415 2.1356.0 4.1443-.8308 5.6539-2.3403S197.0816 234.1722 197.0804 232.033z"/><path style="opacity:.3;fill:#fff" d="M189.0898 210.176c7.7763.0 15.0283 4.1826 18.926 10.9151 1.9201 3.3136 2.9377 7.0988 2.9353 10.9462.0024 12.0643-9.8065 21.8636-21.8613 21.8613-12.0547.0024-21.8636-9.8066-21.8612-21.8613.0-6.0285 2.4516-11.4921 6.4116-15.452C177.5977 212.6276 183.0612 210.176 189.0898 210.176zm7.9941 21.8612c0-1.4078-.3711-2.7892-1.0702-3.9959-1.4269-2.466-4.0797-3.9983-6.924-3.9983-4.4005-.0048-7.9918 3.5817-7.9942 7.9942.0024 4.4077 3.5865 7.9918 7.9942 7.9942 2.2027.0 4.2018-.8978 5.6479-2.3439C196.1861 236.239 197.0839 234.2399 197.0839 232.0372z"/><g><defs><path id="SVGID_1_" d="M194.7376 237.6875c-1.4461 1.4461-3.4452 2.3439-5.6479 2.3439-4.4077-.0024-7.9918-3.5865-7.9942-7.9942.0024-4.4125 3.5937-7.999 7.9942-7.9942 2.8443.0 5.497 1.5323 6.924 3.9983.6991 1.2067 1.0702 2.5881 1.0702 3.9959C197.0839 234.2399 196.1861 236.239 194.7376 237.6875z"/></defs><clipPath id="SVGID_2_"><use xlink:href="#SVGID_1_" style="overflow:visible"/></clipPath><path style="clip-path:url(#SVGID_2_);fill:#fff" d="M190.0704 225.0237c-4.4005-.0048-7.9918 3.5817-7.9942 7.9942.0011 1.9546.7088 3.7452 1.8782 5.1354-1.7447-1.4674-2.8575-3.663-2.8588-6.116.0024-4.4125 3.5936-7.999 7.9942-7.9942 2.3802-1e-4 4.616 1.0833 6.1218 2.8788C193.7885 225.7247 191.9774 225.0237 190.0704 225.0237z"/><path style="opacity:.13;clip-path:url(#SVGID_2_);fill:#020202" d="M190.0704 225.0237c-4.4005-.0048-7.9918 3.5817-7.9942 7.9942.0011 1.9546.7088 3.7452 1.8782 5.1354-1.7447-1.4674-2.8575-3.663-2.8588-6.116.0024-4.4125 3.5936-7.999 7.9942-7.9942 2.3802-1e-4 4.616 1.0833 6.1218 2.8788C193.7885 225.7247 191.9774 225.0237 190.0704 225.0237z"/></g><g><defs><path id="SVGID_3_" d="M189.0898 210.176c7.7763.0 15.0283 4.1826 18.926 10.9151 1.9201 3.3136 2.9377 7.0988 2.9353 10.9462.0024 12.0643-9.8065 21.8636-21.8613 21.8613-12.0547.0024-21.8636-9.8066-21.8612-21.8613.0-6.0285 2.4516-11.4921 6.4116-15.452C177.5977 212.6276 183.0612 210.176 189.0898 210.176zm7.9941 21.8612c0-1.4078-.3711-2.7892-1.0702-3.9959-1.4269-2.466-4.0797-3.9983-6.924-3.9983-4.4005-.0048-7.9918 3.5817-7.9942 7.9942.0024 4.4077 3.5865 7.9918 7.9942 7.9942 2.2027.0 4.2018-.8978 5.6479-2.3439C196.1861 236.239 197.0839 234.2399 197.0839 232.0372z"/></defs><clipPath id="SVGID_4_"><use xlink:href="#SVGID_3_" style="overflow:visible"/></clipPath><path style="clip-path:url(#SVGID_4_);fill:#5b7fc0" d="M172.6595 215.6045c-3.96 3.96-6.4116 9.4235-6.4116 15.452-.0024 12.0547 9.8066 21.8636 21.8613 21.8612 12.0547.0024 21.8636-9.797 21.8613-21.8612.0024-3.8475-1.0151-7.6326-2.9353-10.9462-3.8977-6.7324-11.1497-10.9151-18.926-10.9151C182.0806 209.1953 176.6171 211.647 172.6595 215.6045z"/></g></g><rect x="198.8952" y="225.1043" style="fill:#5b7fc0" width="122.6266" height="13.8671"/></g><g><path style="fill:#d95140" d="M189.0874 155.7611l.0012-.0012c7.7751.0012 15.0295 4.1862 18.932 10.9234 1.9177 3.3159 2.9305 7.1011 2.9293 10.9378.0 5.8394-2.2733 11.3304-6.4032 15.4604-4.1288 4.1288-9.6186 6.4032-15.458 6.4032s-11.328-2.2733-15.458-6.4032-6.4032-9.6186-6.4056-15.4628c.0012-6.0249 2.454-11.4897 6.4116-15.4473C177.5953 158.2128 183.0601 155.7599 189.0874 155.7611zm7.993 21.8577c.0012-1.4042-.3687-2.7868-1.063-3.9887-1.4293-2.4684-4.0833-3.9995-6.9299-4.0019-4.4077.0024-7.993 3.5877-7.993 7.993.0 2.1356.832 4.1431 2.3427 5.6539 1.5083 1.5083 3.5159 2.3403 5.6503 2.3415 2.1356.0 4.1443-.8308 5.6539-2.3403C196.2508 181.7667 197.0816 179.758 197.0804 177.6188z"/><path style="opacity:.3;fill:#fff" d="M189.0898 155.7617c7.7763.0 15.0283 4.1826 18.926 10.9151 1.9201 3.3135 2.9377 7.0987 2.9353 10.9462.0024 12.0643-9.8065 21.8636-21.8613 21.8613-12.0547.0024-21.8636-9.8066-21.8612-21.8613.0-6.0285 2.4516-11.4921 6.4116-15.452C177.5977 158.2134 183.0612 155.7617 189.0898 155.7617zm7.9941 21.8613c0-1.4078-.3711-2.7892-1.0702-3.9959-1.4269-2.466-4.0797-3.9983-6.924-3.9983-4.4005-.0048-7.9918 3.5817-7.9942 7.9942.0024 4.4077 3.5865 7.9918 7.9942 7.9942 2.2027.0 4.2018-.8978 5.6479-2.3439C196.1861 181.8248 197.0839 179.8256 197.0839 177.623z"/><g><defs><path id="SVGID_5_" d="M194.7376 183.2733c-1.4461 1.4461-3.4452 2.3439-5.6479 2.3439-4.4077-.0024-7.9918-3.5865-7.9942-7.9942.0024-4.4125 3.5937-7.9989 7.9942-7.9942 2.8443.0 5.497 1.5323 6.924 3.9983.6991 1.2067 1.0702 2.5881 1.0702 3.9959C197.0839 179.8256 196.1861 181.8248 194.7376 183.2733z"/></defs><clipPath id="SVGID_6_"><use xlink:href="#SVGID_5_" style="overflow:visible"/></clipPath><path style="clip-path:url(#SVGID_6_);fill:#fff" d="M190.0704 170.6095c-4.4005-.0048-7.9918 3.5817-7.9942 7.9942.0011 1.9546.7088 3.7452 1.8782 5.1354-1.7447-1.4674-2.8575-3.663-2.8588-6.116.0024-4.4125 3.5936-7.999 7.9942-7.9942 2.3802-1e-4 4.616 1.0833 6.1218 2.8788C193.7885 171.3104 191.9774 170.6095 190.0704 170.6095z"/><path style="opacity:.13;clip-path:url(#SVGID_6_);fill:#020202" d="M190.0704 170.6095c-4.4005-.0048-7.9918 3.5817-7.9942 7.9942.0011 1.9546.7088 3.7452 1.8782 5.1354-1.7447-1.4674-2.8575-3.663-2.8588-6.116.0024-4.4125 3.5936-7.999 7.9942-7.9942 2.3802-1e-4 4.616 1.0833 6.1218 2.8788C193.7885 171.3104 191.9774 170.6095 190.0704 170.6095z"/></g><g><defs><path id="SVGID_7_" d="M189.0898 155.7617c7.7763.0 15.0283 4.1826 18.926 10.9151 1.9201 3.3135 2.9377 7.0987 2.9353 10.9462.0024 12.0643-9.8065 21.8636-21.8613 21.8613-12.0547.0024-21.8636-9.8066-21.8612-21.8613.0-6.0285 2.4516-11.4921 6.4116-15.452C177.5977 158.2134 183.0612 155.7617 189.0898 155.7617zm7.9941 21.8613c0-1.4078-.3711-2.7892-1.0702-3.9959-1.4269-2.466-4.0797-3.9983-6.924-3.9983-4.4005-.0048-7.9918 3.5817-7.9942 7.9942.0024 4.4077 3.5865 7.9918 7.9942 7.9942 2.2027.0 4.2018-.8978 5.6479-2.3439C196.1861 181.8248 197.0839 179.8256 197.0839 177.623z"/></defs><clipPath id="SVGID_8_"><use xlink:href="#SVGID_7_" style="overflow:visible"/></clipPath><path style="clip-path:url(#SVGID_8_);fill:#d95140" d="M172.6595 161.1903c-3.96 3.96-6.4116 9.4235-6.4116 15.452-.0024 12.0547 9.8066 21.8636 21.8613 21.8613 12.0547.0024 21.8636-9.797 21.8613-21.8613.0024-3.8474-1.0151-7.6326-2.9353-10.9462-3.8977-6.7324-11.1497-10.9151-18.926-10.9151C182.0806 154.7811 176.6171 157.2327 172.6595 161.1903z"/></g><rect x="198.8952" y="170.69" style="fill:#d95140" width="122.6266" height="13.8671"/></g><g><g><path style="fill:#56a55c" d="M189.5379 264.6147l.0012-.0012c7.7751.0012 15.0294 4.1862 18.932 10.9235 1.9177 3.3159 2.9305 7.1011 2.9293 10.9378.0 5.8394-2.2733 11.3304-6.4032 15.4604-4.1288 4.1288-9.6186 6.4032-15.458 6.4032-5.8394.0-11.3281-2.2733-15.458-6.4032-4.13-4.13-6.4032-9.6186-6.4056-15.4628.0012-6.0249 2.454-11.4897 6.4116-15.4472C178.0458 267.0663 183.5105 264.6135 189.5379 264.6147zm7.993 21.8576c.0012-1.4042-.3687-2.7868-1.063-3.9887-1.4293-2.4684-4.0833-3.9995-6.9299-4.0019-4.4077.0024-7.993 3.5877-7.993 7.993.0 2.1356.832 4.1431 2.3427 5.6538 1.5083 1.5083 3.5159 2.3403 5.6503 2.3415 2.1356.0 4.1443-.8308 5.6539-2.3403C196.7013 290.6202 197.5321 288.6115 197.5309 286.4723z"/><path style="opacity:.3;fill:#fff" d="M189.5403 264.6153c7.7763.0 15.0283 4.1826 18.926 10.9151 1.9201 3.3135 2.9377 7.0987 2.9353 10.9462.0024 12.0643-9.8065 21.8636-21.8613 21.8613-12.0547.0024-21.8636-9.8065-21.8612-21.8613.0-6.0285 2.4516-11.492 6.4116-15.452C178.0482 267.0669 183.5117 264.6153 189.5403 264.6153zm7.9941 21.8612c0-1.4078-.3711-2.7892-1.0702-3.9959-1.4269-2.466-4.0797-3.9983-6.924-3.9983-4.4005-.0048-7.9918 3.5817-7.9942 7.9941.0024 4.4077 3.5865 7.9918 7.9942 7.9942 2.2027.0 4.2018-.8978 5.6479-2.3439C196.6366 290.6783 197.5344 288.6792 197.5344 286.4765z"/><g><defs><path id="SVGID_9_" d="M195.1881 292.1268c-1.4461 1.4461-3.4452 2.3439-5.6479 2.3439-4.4077-.0024-7.9918-3.5865-7.9942-7.9942.0024-4.4125 3.5937-7.9989 7.9942-7.9941 2.8443.0 5.497 1.5323 6.924 3.9983.6991 1.2067 1.0702 2.5881 1.0702 3.9959C197.5344 288.6792 196.6366 290.6783 195.1881 292.1268z"/></defs><clipPath id="SVGID_10_"><use xlink:href="#SVGID_9_" style="overflow:visible"/></clipPath><path style="clip-path:url(#SVGID_10_);fill:#fff" d="M190.5209 279.463c-4.4005-.0048-7.9918 3.5817-7.9942 7.9941.0011 1.9547.7088 3.7452 1.8782 5.1354-1.7446-1.4674-2.8575-3.6631-2.8588-6.1161.0024-4.4125 3.5936-7.999 7.9942-7.9941 2.3802-1e-4 4.616 1.0833 6.1218 2.8788C194.239 280.164 192.4279 279.463 190.5209 279.463z"/><path style="opacity:.13;clip-path:url(#SVGID_10_);fill:#020202" d="M190.5209 279.463c-4.4005-.0048-7.9918 3.5817-7.9942 7.9941.0011 1.9547.7088 3.7452 1.8782 5.1354-1.7446-1.4674-2.8575-3.6631-2.8588-6.1161.0024-4.4125 3.5936-7.999 7.9942-7.9941 2.3802-1e-4 4.616 1.0833 6.1218 2.8788C194.239 280.164 192.4279 279.463 190.5209 279.463z"/></g><g><defs><path id="SVGID_11_" d="M189.5403 264.6153c7.7763.0 15.0283 4.1826 18.926 10.9151 1.9201 3.3135 2.9377 7.0987 2.9353 10.9462.0024 12.0643-9.8065 21.8636-21.8613 21.8613-12.0547.0024-21.8636-9.8065-21.8612-21.8613.0-6.0285 2.4516-11.492 6.4116-15.452C178.0482 267.0669 183.5117 264.6153 189.5403 264.6153zm7.9941 21.8612c0-1.4078-.3711-2.7892-1.0702-3.9959-1.4269-2.466-4.0797-3.9983-6.924-3.9983-4.4005-.0048-7.9918 3.5817-7.9942 7.9941.0024 4.4077 3.5865 7.9918 7.9942 7.9942 2.2027.0 4.2018-.8978 5.6479-2.3439C196.6366 290.6783 197.5344 288.6792 197.5344 286.4765z"/></defs><clipPath id="SVGID_12_"><use xlink:href="#SVGID_11_" style="overflow:visible"/></clipPath><path style="clip-path:url(#SVGID_12_);fill:#56a55c" d="M173.11 270.0439c-3.96 3.96-6.4116 9.4235-6.4116 15.452-.0024 12.0547 9.8066 21.8636 21.8613 21.8613 12.0547.0024 21.8636-9.797 21.8613-21.8613.0024-3.8474-1.0151-7.6326-2.9353-10.9462-3.8977-6.7325-11.1497-10.9151-18.926-10.9151C182.5311 263.6346 177.0676 266.0863 173.11 270.0439z"/></g></g><rect x="199.3456" y="279.5436" style="fill:#56a55c" width="122.6266" height="13.8671"/></g><g><g><path style="fill:#f1bc42" d="M189.0874 318.7208l.0012-.0012c7.7751.0012 15.0295 4.1862 18.932 10.9234 1.9177 3.3159 2.9305 7.1011 2.9293 10.9378.0 5.8394-2.2733 11.3305-6.4032 15.4604-4.1288 4.1288-9.6186 6.4032-15.458 6.4032s-11.328-2.2733-15.458-6.4032-6.4032-9.6186-6.4056-15.4628c.0012-6.025 2.454-11.4897 6.4116-15.4472C177.5953 321.1724 183.0601 318.7196 189.0874 318.7208zm7.993 21.8576c.0012-1.4042-.3687-2.7868-1.063-3.9887-1.4293-2.4684-4.0833-3.9995-6.9299-4.0019-4.4077.0024-7.993 3.5877-7.993 7.993.0 2.1356.832 4.1431 2.3427 5.6539 1.5083 1.5083 3.5159 2.3403 5.6503 2.3415 2.1356.0 4.1443-.8308 5.6539-2.3403S197.0816 342.7176 197.0804 340.5784z"/><path style="opacity:.3;fill:#fff" d="M189.0898 318.7214c7.7763.0 15.0283 4.1826 18.926 10.915 1.9201 3.3136 2.9377 7.0988 2.9353 10.9462.0024 12.0643-9.8065 21.8636-21.8613 21.8612-12.0547.0024-21.8636-9.8065-21.8612-21.8612.0-6.0285 2.4516-11.4921 6.4116-15.452C177.5977 321.173 183.0612 318.7214 189.0898 318.7214zm7.9941 21.8612c0-1.4078-.3711-2.7892-1.0702-3.9959-1.4269-2.466-4.0797-3.9983-6.924-3.9983-4.4005-.0048-7.9918 3.5817-7.9942 7.9942.0024 4.4077 3.5865 7.9918 7.9942 7.9942 2.2027.0 4.2018-.8978 5.6479-2.3439C196.1861 344.7844 197.0839 342.7853 197.0839 340.5826z"/><g><defs><path id="SVGID_13_" d="M194.7376 346.2329c-1.4461 1.4461-3.4452 2.3439-5.6479 2.3439-4.4077-.0024-7.9918-3.5865-7.9942-7.9942.0024-4.4125 3.5937-7.999 7.9942-7.9942 2.8443.0 5.497 1.5323 6.924 3.9983.6991 1.2067 1.0702 2.5881 1.0702 3.9959C197.0839 342.7853 196.1861 344.7844 194.7376 346.2329z"/></defs><clipPath id="SVGID_14_"><use xlink:href="#SVGID_13_" style="overflow:visible"/></clipPath><path style="clip-path:url(#SVGID_14_);fill:#fff" d="M190.0704 333.5691c-4.4005-.0048-7.9918 3.5817-7.9942 7.9942.0011 1.9547.7088 3.7452 1.8782 5.1354-1.7447-1.4674-2.8575-3.6631-2.8588-6.1161.0024-4.4125 3.5936-7.999 7.9942-7.9942 2.3802-1e-4 4.616 1.0834 6.1218 2.8788C193.7885 334.2701 191.9774 333.5691 190.0704 333.5691z"/><path style="opacity:.13;clip-path:url(#SVGID_14_);fill:#020202" d="M190.0704 333.5691c-4.4005-.0048-7.9918 3.5817-7.9942 7.9942.0011 1.9547.7088 3.7452 1.8782 5.1354-1.7447-1.4674-2.8575-3.6631-2.8588-6.1161.0024-4.4125 3.5936-7.999 7.9942-7.9942 2.3802-1e-4 4.616 1.0834 6.1218 2.8788C193.7885 334.2701 191.9774 333.5691 190.0704 333.5691z"/></g><g><defs><path id="SVGID_15_" d="M189.0898 318.7214c7.7763.0 15.0283 4.1826 18.926 10.915 1.9201 3.3136 2.9377 7.0988 2.9353 10.9462.0024 12.0643-9.8065 21.8636-21.8613 21.8612-12.0547.0024-21.8636-9.8065-21.8612-21.8612.0-6.0285 2.4516-11.4921 6.4116-15.452C177.5977 321.173 183.0612 318.7214 189.0898 318.7214zm7.9941 21.8612c0-1.4078-.3711-2.7892-1.0702-3.9959-1.4269-2.466-4.0797-3.9983-6.924-3.9983-4.4005-.0048-7.9918 3.5817-7.9942 7.9942.0024 4.4077 3.5865 7.9918 7.9942 7.9942 2.2027.0 4.2018-.8978 5.6479-2.3439C196.1861 344.7844 197.0839 342.7853 197.0839 340.5826z"/></defs><clipPath id="SVGID_16_"><use xlink:href="#SVGID_15_" style="overflow:visible"/></clipPath><path style="clip-path:url(#SVGID_16_);fill:#f1bc42" d="M172.6595 324.15c-3.96 3.96-6.4116 9.4235-6.4116 15.452-.0024 12.0547 9.8066 21.8636 21.8613 21.8612 12.0547.0024 21.8636-9.797 21.8613-21.8612.0024-3.8474-1.0151-7.6327-2.9353-10.9462-3.8977-6.7324-11.1497-10.9151-18.926-10.9151C182.0806 317.7407 176.6171 320.1924 172.6595 324.15z"/></g></g><rect x="198.8952" y="333.6497" style="fill:#f1bc42" width="122.6266" height="13.8671"/></g></g></svg></span><span class="navbar-brand__name">Goldydocs</span></a>
+  <div class="td-navbar-nav-scroll ms-md-auto" id="main_navbar">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link active" href="/docs/"><span>Documentation</span></a>
+      </li>
+      <li class="nav-item dropdown d-none d-lg-block">
+        <div class="dropdown">
+  <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">English</a>
+  <ul class="dropdown-menu">
+    <li><a class="dropdown-item" href="/no/">Norsk</a></li>
+    <li><a class="dropdown-item" href="/fa/">فارسی</a></li>
+    </ul>
+</div></li>
+      </ul>
+  </div>
+  <div class="d-none d-lg-block">
+    <div class="td-search">
+  <div class="td-search__icon"></div>
+  <input type="search" class="td-search__input form-control td-search-input" placeholder="Search this site…" aria-label="Search this site…" autocomplete="off">
+</div>
+  </div>
+</div>
+</nav>
+    </header>
+    <div class="container-fluid td-outer">
+      <div class="td-main">
+        <div class="row flex-xl-nowrap">
+          <aside class="col-12 col-md-3 col-xl-2 td-sidebar d-print-none">
+            <div id="td-sidebar-menu" class="td-sidebar__inner">
+  <form class="td-sidebar__search d-flex align-items-center">
+    <div class="td-search">
+  <div class="td-search__icon"></div>
+  <input type="search" class="td-search__input form-control td-search-input" placeholder="Search this site…" aria-label="Search this site…" autocomplete="off">
+</div>
+    <button class="btn btn-link td-sidebar__toggle d-md-none p-0 ms-3 fas fa-bars" type="button" data-bs-toggle="collapse" data-bs-target="#td-section-nav" aria-controls="td-section-nav" aria-expanded="false" aria-label="Toggle section navigation">
+    </button>
+  </form>
+  <nav class="td-sidebar-nav collapse" id="td-section-nav">
+    <div class="td-sidebar-nav__section nav-item dropdown d-block d-lg-none">
+      <div class="dropdown">
+  <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">English</a>
+  <ul class="dropdown-menu">
+    <li><a class="dropdown-item" href="/no/">Norsk</a></li>
+    <li><a class="dropdown-item" href="/fa/">فارسی</a></li>
+    </ul>
+</div>
+    </div>
+    <ul class="td-sidebar-nav__section pe-md-3 ul-0">
+      <li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child active-path" id="m-docs-li">
+  <a href="/docs/" class="align-left ps-0 td-sidebar-link td-sidebar-link__section tree-root" id="m-docs"><span class="">Documentation</span></a>
+  <ul class="ul-1">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-docslinux-li">
+  <a href="/docs/linux/" class="align-left ps-0 td-sidebar-link td-sidebar-link__section" id="m-docslinux"><span class="">Linux</span></a>
+  <ul class="ul-2 foldable">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docslinuxbasics-li">
+  <a href="/docs/linux/basics/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docslinuxbasics"><span class="">Basics</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docslinuxkernel-li">
+  <a href="/docs/linux/kernel/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docslinuxkernel"><span class="">Kernel</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docslinuxmemory-li">
+  <a href="/docs/linux/memory/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docslinuxmemory"><span class="">Memory</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docslinuxnetworking-li">
+  <a href="/docs/linux/networking/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docslinuxnetworking"><span class="">Networking</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docslinuxperformance-li">
+  <a href="/docs/linux/performance/" title="Systems performance" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docslinuxperformance"><span class="">Performance</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docslinuxpermissions-li">
+  <a href="/docs/linux/permissions/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docslinuxpermissions"><span class="">Permissions and ownership</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docslinuxssh-li">
+  <a href="/docs/linux/ssh/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docslinuxssh"><span class="">SSH</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docslinuxsystem-info-li">
+  <a href="/docs/linux/system-info/" title="System information" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docslinuxsystem-info"><span class="">System info</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docslinuxsystemd-li">
+  <a href="/docs/linux/systemd/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docslinuxsystemd"><span class="">Systemd</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docslinuxtext-li">
+  <a href="/docs/linux/text/" title="Text tools and processing" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docslinuxtext"><span class="">Text</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docslinuxtodo-li">
+  <a href="/docs/linux/todo/" title="Todo list" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docslinuxtodo"><span class="">Todo</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docslinuxvpn-li">
+  <a href="/docs/linux/vpn/" title="Virtual Private Networks (VPNs)" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docslinuxvpn"><span class="">VPNs</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docslinuxweb-servers-li">
+  <a href="/docs/linux/web-servers/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docslinuxweb-servers"><span class="">Web servers</span></a>
+</li>
+  </ul>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-docswriting-li">
+  <a href="/docs/writing/" class="align-left ps-0 td-sidebar-link td-sidebar-link__section" id="m-docswriting"><span class="">Writing</span></a>
+  <ul class="ul-2 foldable">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docswritingterms-li">
+  <a href="/docs/writing/terms/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docswritingterms"><span class="">Terms and definitions</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docswritingphrases-clauses-li">
+  <a href="/docs/writing/phrases-clauses/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docswritingphrases-clauses"><span class="">Phrases and clauses</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docswritingnouns-li">
+  <a href="/docs/writing/nouns/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docswritingnouns"><span class="">Nouns</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docswritingpronouns-li">
+  <a href="/docs/writing/pronouns/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docswritingpronouns"><span class="">Pronouns</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docswritingverbs-li">
+  <a href="/docs/writing/verbs/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docswritingverbs"><span class="">Verbs</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docswritingadjectives-li">
+  <a href="/docs/writing/adjectives/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docswritingadjectives"><span class="">Adjectives</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docswritingadverbs-li">
+  <a href="/docs/writing/adverbs/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docswritingadverbs"><span class="">Adverbs</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docswritingconjunctions-li">
+  <a href="/docs/writing/conjunctions/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docswritingconjunctions"><span class="">Conjunctions</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docswritingprepositions-li">
+  <a href="/docs/writing/prepositions/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docswritingprepositions"><span class="">Prepositions</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docswritingdeterminers-li">
+  <a href="/docs/writing/determiners/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docswritingdeterminers"><span class="">Determiners</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docswritinggrammer-phrases-li">
+  <a href="/docs/writing/grammer-phrases/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docswritinggrammer-phrases"><span class="">Grammar of phrases</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docswritinggrammar-clauses-li">
+  <a href="/docs/writing/grammar-clauses/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docswritinggrammar-clauses"><span class="">Grammar of clauses</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docswritingcoordination-li">
+  <a href="/docs/writing/coordination/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docswritingcoordination"><span class="">Coordination</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docswritingusage-li">
+  <a href="/docs/writing/usage/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docswritingusage"><span class="">Usage</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docswritingsentences-li">
+  <a href="/docs/writing/sentences/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docswritingsentences"><span class="">Sentences</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docswritingparagraphs-li">
+  <a href="/docs/writing/paragraphs/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docswritingparagraphs"><span class="">Paragraphs</span></a>
+</li>
+  </ul>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-docsgit-li">
+  <a href="/docs/git/" class="align-left ps-0 td-sidebar-link td-sidebar-link__section" id="m-docsgit"><span class="">git</span></a>
+  <ul class="ul-2 foldable">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsgitbranching-li">
+  <a href="/docs/git/branching/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsgitbranching"><span class="">Branching</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsgitlinux-plus-li">
+  <a href="/docs/git/linux-plus/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsgitlinux-plus"><span class="">Linux&#43; git</span></a>
+</li>
+  </ul>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-docsnetworking-li">
+  <a href="/docs/networking/" class="align-left ps-0 td-sidebar-link td-sidebar-link__section" id="m-docsnetworking"><span class="">Networking</span></a>
+  <ul class="ul-2 foldable">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsnetworkingintro-networks-li">
+  <a href="/docs/networking/intro-networks/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsnetworkingintro-networks"><span class="">Intro to networks</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsnetworkingosi-model-li">
+  <a href="/docs/networking/osi-model/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsnetworkingosi-model"><span class="">OSI model</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsnetworkingconnectors-wiring-li">
+  <a href="/docs/networking/connectors-wiring/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsnetworkingconnectors-wiring"><span class="">Ethernet</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsnetworkingnetwork-devices-li">
+  <a href="/docs/networking/network-devices/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsnetworkingnetwork-devices"><span class="">Networking devices</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsnetworkinginternet-protocol-li">
+  <a href="/docs/networking/internet-protocol/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsnetworkinginternet-protocol"><span class="">Internet Protocol</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsnetworkingip-addressing-li">
+  <a href="/docs/networking/ip-addressing/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsnetworkingip-addressing"><span class="">IP addressing</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsnetworkingsubnet-nat-li">
+  <a href="/docs/networking/subnet-nat/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsnetworkingsubnet-nat"><span class="">Subnets and NAT</span></a>
+</li>
+  </ul>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-docsbash-li">
+  <a href="/docs/bash/" title="Bash scripting" class="align-left ps-0 td-sidebar-link td-sidebar-link__section" id="m-docsbash"><span class="">Bash</span></a>
+  <ul class="ul-2 foldable">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child collapse" id="m-docsbashefficiency-li">
+  <a href="/docs/bash/efficiency/" title="Efficient command line" class="align-left ps-0 td-sidebar-link td-sidebar-link__section" id="m-docsbashefficiency"><span class="">Efficient</span></a>
+  <ul class="ul-3 foldable">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsbashefficiencycore-li">
+  <a href="/docs/bash/efficiency/core/" title="Core commands" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsbashefficiencycore"><span class="">Core</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsbashefficiencyshell-li">
+  <a href="/docs/bash/efficiency/shell/" title="Introducing the shell" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsbashefficiencyshell"><span class="">Shell</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsbashefficiencyrerun-commands-li">
+  <a href="/docs/bash/efficiency/rerun-commands/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsbashefficiencyrerun-commands"><span class="">Rerunning commands</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsbashefficiencyfilesystem-li">
+  <a href="/docs/bash/efficiency/filesystem/" title="Cruising the filesystem" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsbashefficiencyfilesystem"><span class="">Filesystem</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsbashefficiencytext-commands-li">
+  <a href="/docs/bash/efficiency/text-commands/" title="Producing, isolating, combining, and transforming text" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsbashefficiencytext-commands"><span class="">Text commands</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsbashefficiencyparents-child-envs-li">
+  <a href="/docs/bash/efficiency/parents-child-envs/" title="Parent, children, and environments" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsbashefficiencyparents-child-envs"><span class="">Environments</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsbashefficiencyrunning-commands-li">
+  <a href="/docs/bash/efficiency/running-commands/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsbashefficiencyrunning-commands"><span class="">Running commands</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsbashefficiencybrash-li">
+  <a href="/docs/bash/efficiency/brash/" title="Brash one-liners" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsbashefficiencybrash"><span class="">Brash</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsbashefficiencytext-files-li">
+  <a href="/docs/bash/efficiency/text-files/" title="Leveraging text files" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsbashefficiencytext-files"><span class="">Text files</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsbashefficiencykeyboard-li">
+  <a href="/docs/bash/efficiency/keyboard/" title="Keyboard efficiency" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsbashefficiencykeyboard"><span class="">Keyboard</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsbashefficiencytime-savers-li">
+  <a href="/docs/bash/efficiency/time-savers/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsbashefficiencytime-savers"><span class="">Time savers</span></a>
+</li>
+  </ul>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsbashcyberops-li">
+  <a href="/docs/bash/cyberops/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsbashcyberops"><span class="">Cyberops bash notes</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsbashcommands-li">
+  <a href="/docs/bash/commands/" title="Common commands" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsbashcommands"><span class="">Commands</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsbashsyntax-li">
+  <a href="/docs/bash/syntax/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsbashsyntax"><span class="">Syntax</span></a>
+</li>
+  </ul>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-docsgithub-li">
+  <a href="/docs/github/" class="align-left ps-0 td-sidebar-link td-sidebar-link__section" id="m-docsgithub"><span class="">GitHub</span></a>
+  <ul class="ul-2 foldable">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsgithubgh-actions-li">
+  <a href="/docs/github/gh-actions/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsgithubgh-actions"><span class="">GitHub actions</span></a>
+</li>
+  </ul>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-docsgo-li">
+  <a href="/docs/go/" class="align-left ps-0 td-sidebar-link td-sidebar-link__section" id="m-docsgo"><span class="">Go</span></a>
+  <ul class="ul-2 foldable">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsgolearn-go-with-tests-li">
+  <a href="/docs/go/learn-go-with-tests/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsgolearn-go-with-tests"><span class="">Learn with tests</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child collapse" id="m-docsgooverhead-li">
+  <a href="/docs/go/overhead/" class="align-left ps-0 td-sidebar-link td-sidebar-link__section" id="m-docsgooverhead"><span class="">Project organization</span></a>
+  <ul class="ul-3 foldable">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsgooverheadproject-setup-li">
+  <a href="/docs/go/overhead/project-setup/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsgooverheadproject-setup"><span class="">Project setup</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsgooverheadtooling-li">
+  <a href="/docs/go/overhead/tooling/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsgooverheadtooling"><span class="">Go tooling</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsgooverheadidioms-li">
+  <a href="/docs/go/overhead/idioms/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsgooverheadidioms"><span class="">Idioms</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsgooverheadblueprints-li">
+  <a href="/docs/go/overhead/blueprints/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsgooverheadblueprints"><span class="">Blueprints</span></a>
+</li>
+  </ul>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child collapse" id="m-docsgobasics-li">
+  <a href="/docs/go/basics/" title="Getting started with Go" class="align-left ps-0 td-sidebar-link td-sidebar-link__section" id="m-docsgobasics"><span class="">Getting started</span></a>
+  <ul class="ul-3 foldable">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsgobasicserrors-li">
+  <a href="/docs/go/basics/errors/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsgobasicserrors"><span class="">Errors</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsgobasicstypes-li">
+  <a href="/docs/go/basics/types/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsgobasicstypes"><span class="">Types and collections</span></a>
+</li>
+  </ul>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child collapse" id="m-docsgoio-li">
+  <a href="/docs/go/io/" title="Input and output" class="align-left ps-0 td-sidebar-link td-sidebar-link__section" id="m-docsgoio"><span class="">I/O</span></a>
+  <ul class="ul-3 foldable">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsgoiojson-li">
+  <a href="/docs/go/io/json/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsgoiojson"><span class="">JSON data</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsgoiorw-files-li">
+  <a href="/docs/go/io/rw-files/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsgoiorw-files"><span class="">Reading, writing, files</span></a>
+</li>
+  </ul>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child collapse" id="m-docsgonetwork-li">
+  <a href="/docs/go/network/" class="align-left ps-0 td-sidebar-link td-sidebar-link__section" id="m-docsgonetwork"><span class="">Network</span></a>
+  <ul class="ul-3 foldable">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsgonetworkclients-li">
+  <a href="/docs/go/network/clients/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsgonetworkclients"><span class="">Clients</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsgonetworkservers-li">
+  <a href="/docs/go/network/servers/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsgonetworkservers"><span class="">Servers</span></a>
+</li>
+  </ul>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child collapse" id="m-docsgodatabases-li">
+  <a href="/docs/go/databases/" class="align-left ps-0 td-sidebar-link td-sidebar-link__section" id="m-docsgodatabases"><span class="">Databases</span></a>
+  <ul class="ul-3 foldable">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsgodatabasespatterns-li">
+  <a href="/docs/go/databases/patterns/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsgodatabasespatterns"><span class="">Patterns</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsgodatabasessql-package-li">
+  <a href="/docs/go/databases/sql-package/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsgodatabasessql-package"><span class="">SQL package</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsgodatabasesmysql-li">
+  <a href="/docs/go/databases/mysql/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsgodatabasesmysql"><span class="">MySQL</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsgodatabasespostgres-li">
+  <a href="/docs/go/databases/postgres/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsgodatabasespostgres"><span class="">PostgreSQL</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsgodatabasessqlite-li">
+  <a href="/docs/go/databases/sqlite/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsgodatabasessqlite"><span class="">SQLite</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsgodatabasesmigrations-li">
+  <a href="/docs/go/databases/migrations/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsgodatabasesmigrations"><span class="">Migrations</span></a>
+</li>
+  </ul>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsgotesting-li">
+  <a href="/docs/go/testing/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsgotesting"><span class="">Testing</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsgoconcurrency-li">
+  <a href="/docs/go/concurrency/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsgoconcurrency"><span class="">Concurrency</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsgocli-tools-li">
+  <a href="/docs/go/cli-tools/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsgocli-tools"><span class="">CLI tools</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsgoobservability-li">
+  <a href="/docs/go/observability/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsgoobservability"><span class="">Observability</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsgocontainers-li">
+  <a href="/docs/go/containers/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsgocontainers"><span class="">Containers</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsgocontext-li">
+  <a href="/docs/go/context/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsgocontext"><span class="">Context</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsgotemplates-li">
+  <a href="/docs/go/templates/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsgotemplates"><span class="">Templates</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsgologging-li">
+  <a href="/docs/go/logging/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsgologging"><span class="">Logging</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsgosecurity-li">
+  <a href="/docs/go/security/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsgosecurity"><span class="">Security</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsgoapis-li">
+  <a href="/docs/go/apis/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsgoapis"><span class="">APIs</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsgorepo-dump-li">
+  <a href="/docs/go/repo-dump/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsgorepo-dump"><span class="">Repo dump</span></a>
+</li>
+  </ul>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-docshugo-li">
+  <a href="/docs/hugo/" class="align-left ps-0 td-sidebar-link td-sidebar-link__section" id="m-docshugo"><span class="">Hugo</span></a>
+  <ul class="ul-2 foldable">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docshugopragmatic-li">
+  <a href="/docs/hugo/pragmatic/" title="Pragmatic book" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docshugopragmatic"><span class="">Pragmatic</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docshugobasics-li">
+  <a href="/docs/hugo/basics/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docshugobasics"><span class="">Basics</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docshugohosting-li">
+  <a href="/docs/hugo/hosting/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docshugohosting"><span class="">Hosting</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docshugoconfiguration-li">
+  <a href="/docs/hugo/configuration/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docshugoconfiguration"><span class="">Configuration</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docshugoimages-li">
+  <a href="/docs/hugo/images/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docshugoimages"><span class="">Images</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docshugoshortcodes-li">
+  <a href="/docs/hugo/shortcodes/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docshugoshortcodes"><span class="">Shortcodes</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child collapse" id="m-docshugotemplates-li">
+  <a href="/docs/hugo/templates/" class="align-left ps-0 td-sidebar-link td-sidebar-link__section" id="m-docshugotemplates"><span class="">Templates</span></a>
+  <ul class="ul-3 foldable">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docshugotemplatescheat-sheet-li">
+  <a href="/docs/hugo/templates/cheat-sheet/" title="Templates cheat sheet" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docshugotemplatescheat-sheet"><span class="">Cheat sheet</span></a>
+</li>
+  </ul>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docshugoassets-li">
+  <a href="/docs/hugo/assets/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docshugoassets"><span class="">Assets</span></a>
+</li>
+  </ul>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-docsinkscape-li">
+  <a href="/docs/inkscape/" class="align-left ps-0 td-sidebar-link td-sidebar-link__section" id="m-docsinkscape"><span class="">Inkscape</span></a>
+  <ul class="ul-2 foldable">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsinkscapebasics-li">
+  <a href="/docs/inkscape/basics/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsinkscapebasics"><span class="">Basics</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsinkscapemenus-li">
+  <a href="/docs/inkscape/menus/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsinkscapemenus"><span class="">Menus</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsinkscaperepo-dump-li">
+  <a href="/docs/inkscape/repo-dump/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsinkscaperepo-dump"><span class="">Repo dump</span></a>
+</li>
+  </ul>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-docsllm-li">
+  <a href="/docs/llm/" title="Large Language Models" class="align-left ps-0 td-sidebar-link td-sidebar-link__section" id="m-docsllm"><span class="">LLMs</span></a>
+  <ul class="ul-2 foldable">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsllmrhel-li">
+  <a href="/docs/llm/rhel/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsllmrhel"><span class="">RHEL</span></a>
+</li>
+  </ul>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docspython-li">
+  <a href="/docs/python/" class="align-left ps-0 td-sidebar-link td-sidebar-link__section" id="m-docspython"><span class="">Python</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-docssql-li">
+  <a href="/docs/sql/" class="align-left ps-0 td-sidebar-link td-sidebar-link__section" id="m-docssql"><span class="">SQL</span></a>
+  <ul class="ul-2 foldable">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docssqlmysql-li">
+  <a href="/docs/sql/mysql/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docssqlmysql"><span class="">MySQL</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docssqlpostgres-li">
+  <a href="/docs/sql/postgres/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docssqlpostgres"><span class="">Postgres</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docssqlsql-li">
+  <a href="/docs/sql/sql/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docssqlsql"><span class="">Repo dump</span></a>
+</li>
+  </ul>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-docsubuntu-server-li">
+  <a href="/docs/ubuntu-server/" title="Ubuntu Server" class="align-left ps-0 td-sidebar-link td-sidebar-link__section" id="m-docsubuntu-server"><span class="">Ubuntu</span></a>
+  <ul class="ul-2 foldable">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsubuntu-serverinstallation-li">
+  <a href="/docs/ubuntu-server/installation/" title="Installing Ubuntu Server" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsubuntu-serverinstallation"><span class="">Installation</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsubuntu-serverusers-permissions-li">
+  <a href="/docs/ubuntu-server/users-permissions/" title="Users, groups, and permissions" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsubuntu-serverusers-permissions"><span class="">Users/groups</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsubuntu-serverpackages-li">
+  <a href="/docs/ubuntu-server/packages/" title="Software Packages" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsubuntu-serverpackages"><span class="">Packages</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsubuntu-serverfilesystem-li">
+  <a href="/docs/ubuntu-server/filesystem/" title="Navigating the filesystem" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsubuntu-serverfilesystem"><span class="">Filesystem</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsubuntu-serverfiles-dirs-li">
+  <a href="/docs/ubuntu-server/files-dirs/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsubuntu-serverfiles-dirs"><span class="">Files and directories</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsubuntu-servershell-li">
+  <a href="/docs/ubuntu-server/shell/" title="Bash shell" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsubuntu-servershell"><span class="">Shell</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsubuntu-serverprocesses-li">
+  <a href="/docs/ubuntu-server/processes/" title="Controlling and managing processes" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsubuntu-serverprocesses"><span class="">Processes</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsubuntu-serversys-resources-li">
+  <a href="/docs/ubuntu-server/sys-resources/" title="Monitoring system resources" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsubuntu-serversys-resources"><span class="">System resources</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsubuntu-serverstorage-li">
+  <a href="/docs/ubuntu-server/storage/" title="Managing storage volumes" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsubuntu-serverstorage"><span class="">Storage</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsubuntu-servernetworks-li">
+  <a href="/docs/ubuntu-server/networks/" title="Connecting to networks" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsubuntu-servernetworks"><span class="">Networks</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsubuntu-servernetwork-services-li">
+  <a href="/docs/ubuntu-server/network-services/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsubuntu-servernetwork-services"><span class="">Network services</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsubuntu-serversharing-files-li">
+  <a href="/docs/ubuntu-server/sharing-files/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsubuntu-serversharing-files"><span class="">Sharing and transferring files</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsubuntu-serverdatabase-li">
+  <a href="/docs/ubuntu-server/database/" title="Managing databases" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsubuntu-serverdatabase"><span class="">Databases</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsubuntu-serverweb-server-li">
+  <a href="/docs/ubuntu-server/web-server/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsubuntu-serverweb-server"><span class="">Web servers</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsubuntu-serveransible-li">
+  <a href="/docs/ubuntu-server/ansible/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsubuntu-serveransible"><span class="">Ansible</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsubuntu-servervirtualization-li">
+  <a href="/docs/ubuntu-server/virtualization/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsubuntu-servervirtualization"><span class="">Virtualization</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsubuntu-servercontainers-li">
+  <a href="/docs/ubuntu-server/containers/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsubuntu-servercontainers"><span class="">Containers</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsubuntu-servercontainer-orchestration-li">
+  <a href="/docs/ubuntu-server/container-orchestration/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsubuntu-servercontainer-orchestration"><span class="">Container orchestration</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsubuntu-servercloud-li">
+  <a href="/docs/ubuntu-server/cloud/" title="Deploying Ubuntu in the Cloud" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsubuntu-servercloud"><span class="">Cloud</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsubuntu-serverterraform-li">
+  <a href="/docs/ubuntu-server/terraform/" title="Terraform cloud deployments" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsubuntu-serverterraform"><span class="">Terraform</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsubuntu-serversecurity-li">
+  <a href="/docs/ubuntu-server/security/" title="Securing your server" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsubuntu-serversecurity"><span class="">Security</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsubuntu-servertroubleshooting-li">
+  <a href="/docs/ubuntu-server/troubleshooting/" title="Troubleshooting your server" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsubuntu-servertroubleshooting"><span class="">Troubleshooting</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsubuntu-serverdisasters-li">
+  <a href="/docs/ubuntu-server/disasters/" title="Preventing disasters" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsubuntu-serverdisasters"><span class="">Disasters</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsubuntu-serverregex-li">
+  <a href="/docs/ubuntu-server/regex/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsubuntu-serverregex"><span class="">Regex</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsubuntu-serverbackups-li">
+  <a href="/docs/ubuntu-server/backups/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsubuntu-serverbackups"><span class="">Backups</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsubuntu-servercompression-li">
+  <a href="/docs/ubuntu-server/compression/" title="Compression and archives" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsubuntu-servercompression"><span class="">Compression</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsubuntu-serverenvironment-li">
+  <a href="/docs/ubuntu-server/environment/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsubuntu-serverenvironment"><span class="">Environment</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsubuntu-serverfirewalls-li">
+  <a href="/docs/ubuntu-server/firewalls/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsubuntu-serverfirewalls"><span class="">Firewalls</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsubuntu-serverlogs-li">
+  <a href="/docs/ubuntu-server/logs/" title="Logging" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsubuntu-serverlogs"><span class="">Logs</span></a>
+</li>
+  </ul>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child active-path" id="m-docsweb-dev-li">
+  <a href="/docs/web-dev/" title="Web Development" class="align-left ps-0 td-sidebar-link td-sidebar-link__section" id="m-docsweb-dev"><span class="">Web Dev</span></a>
+  <ul class="ul-2 foldable">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-docsweb-devaccessibility-li">
+  <a href="/docs/web-dev/accessibility/" class="align-left ps-0 td-sidebar-link td-sidebar-link__section" id="m-docsweb-devaccessibility"><span class="">Accessibility</span></a>
+  <ul class="ul-3 foldable">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsweb-devaccessibilityaria-li">
+  <a href="/docs/web-dev/accessibility/aria/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsweb-devaccessibilityaria"><span class="">ARIA attributes</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsweb-devaccessibilitydocs-structure-li">
+  <a href="/docs/web-dev/accessibility/docs-structure/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsweb-devaccessibilitydocs-structure"><span class="">Document structure</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsweb-devaccessibilitypage-structure-li">
+  <a href="/docs/web-dev/accessibility/page-structure/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsweb-devaccessibilitypage-structure"><span class="">Page structure</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsweb-devaccessibilitylinking-li">
+  <a href="/docs/web-dev/accessibility/linking/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsweb-devaccessibilitylinking"><span class="">Linking content</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsweb-devaccessibilitybuttons-li">
+  <a href="/docs/web-dev/accessibility/buttons/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsweb-devaccessibilitybuttons"><span class="">Buttons</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsweb-devaccessibilitystyling-content-li">
+  <a href="/docs/web-dev/accessibility/styling-content/" title="Styling content" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsweb-devaccessibilitystyling-content"><span class="">Styles</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsweb-devaccessibilityfocus-li">
+  <a href="/docs/web-dev/accessibility/focus/" title="Managing Focus" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsweb-devaccessibilityfocus"><span class="">Focus</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsweb-devaccessibilitynavigation-li">
+  <a href="/docs/web-dev/accessibility/navigation/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsweb-devaccessibilitynavigation"><span class="">Navigation</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsweb-devaccessibilityvisibility-li">
+  <a href="/docs/web-dev/accessibility/visibility/" title="Toggling content visibility" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsweb-devaccessibilityvisibility"><span class="">Visibility</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsweb-devaccessibilityforms-li">
+  <a href="/docs/web-dev/accessibility/forms/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsweb-devaccessibilityforms"><span class="">Forms</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsweb-devaccessibilityfiltering-data-li">
+  <a href="/docs/web-dev/accessibility/filtering-data/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsweb-devaccessibilityfiltering-data"><span class="">Filtering data</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsweb-devaccessibilitytables-li">
+  <a href="/docs/web-dev/accessibility/tables/" title="Presenting tabular data" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsweb-devaccessibilitytables"><span class="">Tables</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsweb-devaccessibilitydebugging-li">
+  <a href="/docs/web-dev/accessibility/debugging/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsweb-devaccessibilitydebugging"><span class="">Debugging</span></a>
+</li>
+  </ul>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-docsweb-devhtml-li">
+  <a href="/docs/web-dev/html/" class="align-left ps-0 td-sidebar-link td-sidebar-link__section" id="m-docsweb-devhtml"><span class="">HTML</span></a>
+  <ul class="ul-3 foldable">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsweb-devhtmldoc-structure-li">
+  <a href="/docs/web-dev/html/doc-structure/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsweb-devhtmldoc-structure"><span class="">Document structure</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsweb-devhtmlmetadata-li">
+  <a href="/docs/web-dev/html/metadata/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsweb-devhtmlmetadata"><span class="">Metadata</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsweb-devhtmlsemantic-html-li">
+  <a href="/docs/web-dev/html/semantic-html/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsweb-devhtmlsemantic-html"><span class="">Semantic HTML</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsweb-devhtmlheadings-sections-li">
+  <a href="/docs/web-dev/html/headings-sections/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsweb-devhtmlheadings-sections"><span class="">Headings and sections</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsweb-devhtmlattributes-li">
+  <a href="/docs/web-dev/html/attributes/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsweb-devhtmlattributes"><span class="">Attributes</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsweb-devhtmltext-links-li">
+  <a href="/docs/web-dev/html/text-links/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsweb-devhtmltext-links"><span class="">Text and links</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsweb-devhtmllists-li">
+  <a href="/docs/web-dev/html/lists/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsweb-devhtmllists"><span class="">Lists</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsweb-devhtmlnavigation-li">
+  <a href="/docs/web-dev/html/navigation/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsweb-devhtmlnavigation"><span class="">Navigation</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsweb-devhtmltables-li">
+  <a href="/docs/web-dev/html/tables/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsweb-devhtmltables"><span class="">Tables</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsweb-devhtmlforms-li">
+  <a href="/docs/web-dev/html/forms/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsweb-devhtmlforms"><span class="">Forms</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsweb-devhtmlimages-li">
+  <a href="/docs/web-dev/html/images/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsweb-devhtmlimages"><span class="">Images</span></a>
+</li>
+  </ul>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-docsweb-devcomponents-li">
+  <a href="/docs/web-dev/components/" class="align-left ps-0 td-sidebar-link td-sidebar-link__section" id="m-docsweb-devcomponents"><span class="">Components</span></a>
+  <ul class="ul-3 foldable">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsweb-devcomponentstoggle-button-li">
+  <a href="/docs/web-dev/components/toggle-button/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsweb-devcomponentstoggle-button"><span class="">Toggle buttons</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsweb-devcomponentstodo-list-li">
+  <a href="/docs/web-dev/components/todo-list/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsweb-devcomponentstodo-list"><span class="">Todo list</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsweb-devcomponentsmenus-li">
+  <a href="/docs/web-dev/components/menus/" title="Menus and menu buttons" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsweb-devcomponentsmenus"><span class="">Menus</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsweb-devcomponentstooltips-li">
+  <a href="/docs/web-dev/components/tooltips/" title="Tooltips and toggletips" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsweb-devcomponentstooltips"><span class="">Tooltips</span></a>
+</li>
+  </ul>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child active-path" id="m-docsweb-devcss-li">
+  <a href="/docs/web-dev/css/" class="align-left ps-0 td-sidebar-link td-sidebar-link__section" id="m-docsweb-devcss"><span class="">CSS</span></a>
+  <ul class="ul-3 foldable">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsweb-devcsssecrets-li">
+  <a href="/docs/web-dev/css/secrets/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsweb-devcsssecrets"><span class="">Secrets</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsweb-devcsssyntax-selectors-li">
+  <a href="/docs/web-dev/css/syntax-selectors/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsweb-devcsssyntax-selectors"><span class="">Syntax and selectors</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsweb-devcssrelative-units-li">
+  <a href="/docs/web-dev/css/relative-units/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsweb-devcssrelative-units"><span class="">Relative Units</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsweb-devcssdoc-flow-li">
+  <a href="/docs/web-dev/css/doc-flow/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsweb-devcssdoc-flow"><span class="">Doc flow and layout</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsweb-devcssbox-model-li">
+  <a href="/docs/web-dev/css/box-model/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsweb-devcssbox-model"><span class="">Box Model</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsweb-devcssflexbox-li">
+  <a href="/docs/web-dev/css/flexbox/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsweb-devcssflexbox"><span class="">Flexbox</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsweb-devcssgrid-li">
+  <a href="/docs/web-dev/css/grid/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsweb-devcssgrid"><span class="">Grid</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsweb-devcsspositioning-stacking-li">
+  <a href="/docs/web-dev/css/positioning-stacking/" title="Positioning and stacking context" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsweb-devcsspositioning-stacking"><span class="">Positioning</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsweb-devcssresponsive-li">
+  <a href="/docs/web-dev/css/responsive/" title="Responsive design" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsweb-devcssresponsive"><span class="">Responsive</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsweb-devcsslayers-li">
+  <a href="/docs/web-dev/css/layers/" title="Cascade Layers" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsweb-devcsslayers"><span class="">Layers</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsweb-devcssmodular-li">
+  <a href="/docs/web-dev/css/modular/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsweb-devcssmodular"><span class="">Modular CSS</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsweb-devcsscontainer-queries-li">
+  <a href="/docs/web-dev/css/container-queries/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsweb-devcsscontainer-queries"><span class="">Container queries</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsweb-devcsscolor-contrast-li">
+  <a href="/docs/web-dev/css/color-contrast/" title="Color and contrast" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsweb-devcsscolor-contrast"><span class="">Color</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child active-path" id="m-docsweb-devcsstypography-spacing-li">
+  <a href="/docs/web-dev/css/typography-spacing/" title="Typography and spacing" class="align-left ps-0 active td-sidebar-link td-sidebar-link__page" id="m-docsweb-devcsstypography-spacing"><span class="td-sidebar-nav-active-item">Typography</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsweb-devcssgradients-shadows-blends-li">
+  <a href="/docs/web-dev/css/gradients-shadows-blends/" title="Gradients, shadows, and blend modes" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsweb-devcssgradients-shadows-blends"><span class="">Gradients, shadows, blends</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsweb-devcssmasks-shapes-clip-li">
+  <a href="/docs/web-dev/css/masks-shapes-clip/" title="Masks, shapes, and clipping" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsweb-devcssmasks-shapes-clip"><span class="">Masks, shapes, clipping</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsweb-devcsstransitions-li">
+  <a href="/docs/web-dev/css/transitions/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsweb-devcsstransitions"><span class="">Transitions</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsweb-devcsstransforms-li">
+  <a href="/docs/web-dev/css/transforms/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsweb-devcsstransforms"><span class="">Transforms</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsweb-devcssanimations-li">
+  <a href="/docs/web-dev/css/animations/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsweb-devcssanimations"><span class="">Animations</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsweb-devcsspreprocessors-li">
+  <a href="/docs/web-dev/css/preprocessors/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsweb-devcsspreprocessors"><span class="">Preprocessors</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsweb-devcssimages-li">
+  <a href="/docs/web-dev/css/images/" title="Images and SVGs" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsweb-devcssimages"><span class="">Images</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsweb-devcssforms-li">
+  <a href="/docs/web-dev/css/forms/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsweb-devcssforms"><span class="">Forms</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsweb-devcssemmet-li">
+  <a href="/docs/web-dev/css/emmet/" title="Emmet for VSCode" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsweb-devcssemmet"><span class="">Emmet</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsweb-devcsspatterns-li">
+  <a href="/docs/web-dev/css/patterns/" title="Patterns and components" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsweb-devcsspatterns"><span class="">Patterns</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsweb-devcsssample-li">
+  <a href="/docs/web-dev/css/sample/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsweb-devcsssample"><span class="">Sample styling sheet</span></a>
+</li>
+  </ul>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-docsweb-devjavascript-li">
+  <a href="/docs/web-dev/javascript/" class="align-left ps-0 td-sidebar-link td-sidebar-link__section" id="m-docsweb-devjavascript"><span class="">Javascript</span></a>
+  <ul class="ul-3 foldable">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsweb-devjavascriptbuild-tools-li">
+  <a href="/docs/web-dev/javascript/build-tools/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsweb-devjavascriptbuild-tools"><span class="">Build tools</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsweb-devjavascriptenvironment-li">
+  <a href="/docs/web-dev/javascript/environment/" title="Programming environment" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsweb-devjavascriptenvironment"><span class="">Environment</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsweb-devjavascriptbasics-li">
+  <a href="/docs/web-dev/javascript/basics/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsweb-devjavascriptbasics"><span class="">Basics</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsweb-devjavascriptobjects-li">
+  <a href="/docs/web-dev/javascript/objects/" title="Objects and organization" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsweb-devjavascriptobjects"><span class="">Objects</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsweb-devjavascriptevents-li">
+  <a href="/docs/web-dev/javascript/events/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsweb-devjavascriptevents"><span class="">Events</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsweb-devjavascriptscripting-li">
+  <a href="/docs/web-dev/javascript/scripting/" title="Scripting documents" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsweb-devjavascriptscripting"><span class="">Scripting</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsweb-devjavascriptgeometry-scrolling-li">
+  <a href="/docs/web-dev/javascript/geometry-scrolling/" title="Document geometry and scrolling" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsweb-devjavascriptgeometry-scrolling"><span class="">Geometry and scrolling</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsweb-devjavascriptlocation-nav-history-li">
+  <a href="/docs/web-dev/javascript/location-nav-history/" title="Location, navigation, and history" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsweb-devjavascriptlocation-nav-history"><span class="">Location, nav, history</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsweb-devjavascriptnetworking-li">
+  <a href="/docs/web-dev/javascript/networking/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsweb-devjavascriptnetworking"><span class="">Networking</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsweb-devjavascriptstorage-li">
+  <a href="/docs/web-dev/javascript/storage/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsweb-devjavascriptstorage"><span class="">Storage</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsweb-devjavascriptasync-li">
+  <a href="/docs/web-dev/javascript/async/" title="Asynchronous JS" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsweb-devjavascriptasync"><span class="">Async</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsweb-devjavascriptarrays-li">
+  <a href="/docs/web-dev/javascript/arrays/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsweb-devjavascriptarrays"><span class="">Arrays</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsweb-devjavascriptpatterns-li">
+  <a href="/docs/web-dev/javascript/patterns/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsweb-devjavascriptpatterns"><span class="">Patterns</span></a>
+</li>
+  </ul>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsweb-devrefactoring-ui-li">
+  <a href="/docs/web-dev/refactoring-ui/" class="align-left ps-0 td-sidebar-link td-sidebar-link__section" id="m-docsweb-devrefactoring-ui"><span class="">Refactoring UI</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-docsweb-devdesign-li">
+  <a href="/docs/web-dev/design/" title="Web Design" class="align-left ps-0 td-sidebar-link td-sidebar-link__section" id="m-docsweb-devdesign"><span class="">Design</span></a>
+  <ul class="ul-3 foldable">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsweb-devdesignlinks-li">
+  <a href="/docs/web-dev/design/links/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsweb-devdesignlinks"><span class="">Links</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsweb-devdesigndesign-fundamentals-li">
+  <a href="/docs/web-dev/design/design-fundamentals/" title="Design fundamentals" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsweb-devdesigndesign-fundamentals"><span class="">Fundamentals</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsweb-devdesignux-li">
+  <a href="/docs/web-dev/design/ux/" title="User experience" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsweb-devdesignux"><span class="">UX</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsweb-devdesignux-research-li">
+  <a href="/docs/web-dev/design/ux-research/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsweb-devdesignux-research"><span class="">User research</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsweb-devdesignux-design-li">
+  <a href="/docs/web-dev/design/ux-design/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsweb-devdesignux-design"><span class="">User design</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsweb-devdesignlayout-composition-li">
+  <a href="/docs/web-dev/design/layout-composition/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsweb-devdesignlayout-composition"><span class="">Layout and composition</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsweb-devdesignanimations-li">
+  <a href="/docs/web-dev/design/animations/" title="Enhancing layouts with animation" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsweb-devdesignanimations"><span class="">Animations</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsweb-devdesigntypography-li">
+  <a href="/docs/web-dev/design/typography/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsweb-devdesigntypography"><span class="">Typography</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsweb-devdesigncolor-li">
+  <a href="/docs/web-dev/design/color/" title="Color theory" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsweb-devdesigncolor"><span class="">Color</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsweb-devdesigntutorial-li">
+  <a href="/docs/web-dev/design/tutorial/" title="Process outline: Building a website" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsweb-devdesigntutorial"><span class="">Process outline</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsweb-devdesigntesting-li">
+  <a href="/docs/web-dev/design/testing/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsweb-devdesigntesting"><span class="">Testing</span></a>
+</li>
+  </ul>
+</li>
+  </ul>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-docsxlinux-old-li">
+  <a href="/docs/xlinux-old/" class="align-left ps-0 td-sidebar-link td-sidebar-link__section" id="m-docsxlinux-old"><span class="">xLinux (old)</span></a>
+  <ul class="ul-2 foldable">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsxlinux-oldcommand-reference-li">
+  <a href="/docs/xlinux-old/command-reference/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsxlinux-oldcommand-reference"><span class="">Linux commands</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsxlinux-oldservices-li">
+  <a href="/docs/xlinux-old/services/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsxlinux-oldservices"><span class="">Services overview</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsxlinux-oldfiles-directories-li">
+  <a href="/docs/xlinux-old/files-directories/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsxlinux-oldfiles-directories"><span class="">Files and directories</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsxlinux-oldsearch-analyze-text-li">
+  <a href="/docs/xlinux-old/search-analyze-text/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsxlinux-oldsearch-analyze-text"><span class="">Searching and analyzing text</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsxlinux-oldboot-process-li">
+  <a href="/docs/xlinux-old/boot-process/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsxlinux-oldboot-process"><span class="">Boot process</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsxlinux-oldsystem-startup-services-li">
+  <a href="/docs/xlinux-old/system-startup-services/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsxlinux-oldsystem-startup-services"><span class="">System startup and services</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsxlinux-oldnetwork-connections-li">
+  <a href="/docs/xlinux-old/network-connections/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsxlinux-oldnetwork-connections"><span class="">Network connections</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsxlinux-oldlocalization-li">
+  <a href="/docs/xlinux-old/localization/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsxlinux-oldlocalization"><span class="">Localization</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsxlinux-oldusers-groups-li">
+  <a href="/docs/xlinux-old/users-groups/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsxlinux-oldusers-groups"><span class="">Users and groups</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsxlinux-oldstorage-li">
+  <a href="/docs/xlinux-old/storage/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsxlinux-oldstorage"><span class="">Storage</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsxlinux-oldprotecting-files-li">
+  <a href="/docs/xlinux-old/protecting-files/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsxlinux-oldprotecting-files"><span class="">Protecting files</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsxlinux-oldgoverning-software-li">
+  <a href="/docs/xlinux-old/governing-software/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsxlinux-oldgoverning-software"><span class="">Governing software</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsxlinux-oldkernel-modules-li">
+  <a href="/docs/xlinux-old/kernel-modules/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsxlinux-oldkernel-modules"><span class="">Kernel modules</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsxlinux-oldownership-permissions-li">
+  <a href="/docs/xlinux-old/ownership-permissions/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsxlinux-oldownership-permissions"><span class="">Ownership and permissions</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsxlinux-oldaccess-auth-li">
+  <a href="/docs/xlinux-old/access-auth/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsxlinux-oldaccess-auth"><span class="">Access and authorization</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsxlinux-oldlogging-li">
+  <a href="/docs/xlinux-old/logging/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsxlinux-oldlogging"><span class="">Logging services</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsxlinux-oldfirewalls-li">
+  <a href="/docs/xlinux-old/firewalls/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsxlinux-oldfirewalls"><span class="">Firewalls</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsxlinux-oldsecurity-best-practices-li">
+  <a href="/docs/xlinux-old/security-best-practices/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsxlinux-oldsecurity-best-practices"><span class="">Security best practices</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsxlinux-oldcpu-memory-li">
+  <a href="/docs/xlinux-old/cpu-memory/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsxlinux-oldcpu-memory"><span class="">CPU and memory</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsxlinux-oldperformance-li">
+  <a href="/docs/xlinux-old/performance/" title="Optimizing performance" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsxlinux-oldperformance"><span class="">Performance</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsxlinux-olddevices-li">
+  <a href="/docs/xlinux-old/devices/" title="Linux devices" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsxlinux-olddevices"><span class="">Devices</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsxlinux-oldautomating-jobs-li">
+  <a href="/docs/xlinux-old/automating-jobs/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsxlinux-oldautomating-jobs"><span class="">Automating jobs</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsxlinux-oldcloud-virtualization-li">
+  <a href="/docs/xlinux-old/cloud-virtualization/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsxlinux-oldcloud-virtualization"><span class="">Cloud and virtualization</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsxlinux-oldorchestration-li">
+  <a href="/docs/xlinux-old/orchestration/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsxlinux-oldorchestration"><span class="">Orchestration</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsxlinux-oldtmux-li">
+  <a href="/docs/xlinux-old/tmux/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsxlinux-oldtmux"><span class="">tmux</span></a>
+</li>
+  </ul>
+</li>
+  </ul>
+</li>
+    </ul>
+  </nav>
+</div>
+
+          </aside>
+          <aside class="d-none d-xl-block col-xl-2 td-sidebar-toc d-print-none">
+            <div class="td-page-meta ms-2 pb-1 pt-2 mb-0">
+
+</div>
+
+            <div class="td-toc">
+        <nav id="TableOfContents">
+  <ul>
+    <li><a href="#text-and-typography">Text and typography</a>
+      <ul>
+        <li><a href="#system-font-stack">System font stack</a></li>
+      </ul>
+    </li>
+    <li><a href="#font-size">Font size</a>
+      <ul>
+        <li><a href="#responsive-font-sizes">Responsive font sizes</a></li>
+        <li><a href="#ch-unit">ch unit</a></li>
+      </ul>
+    </li>
+    <li><a href="#numbers">Numbers</a>
+      <ul>
+        <li><a href="#font-variant-numeric">font-variant-numeric</a></li>
+      </ul>
+    </li>
+    <li><a href="#ems-vs-px">ems vs px</a></li>
+    <li><a href="#line-height">Line height</a>
+      <ul>
+        <li><a href="#inline-elements">Inline elements</a></li>
+      </ul>
+    </li>
+    <li><a href="#web-fonts-and-local-fonts">Web fonts and local fonts</a>
+      <ul>
+        <li><a href="#adding-web-fonts">Adding web fonts</a></li>
+        <li><a href="#font-face">@font-face</a></li>
+        <li><a href="#common-file-types">Common file types</a></li>
+        <li><a href="#custom-font-face">Custom @font-face</a></li>
+        <li><a href="#italic-fonts">Italic fonts</a></li>
+        <li><a href="#variable-fonts">Variable fonts</a></li>
+      </ul>
+    </li>
+    <li><a href="#performance">Performance</a>
+      <ul>
+        <li><a href="#testing-font-loading">Testing font-loading</a></li>
+      </ul>
+    </li>
+    <li><a href="#spacing">Spacing</a>
+      <ul>
+        <li><a href="#line-height-1">line-height</a></li>
+        <li><a href="#letter-spacing">letter-spacing</a></li>
+        <li><a href="#justified-text">Justified text</a></li>
+        <li><a href="#drop-caps">Drop caps</a></li>
+        <li><a href="#headings-small-elements-and-spacing">Headings, small elements, and spacing</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+      </div>
+    
+            
+	
+          </aside>
+          <main class="col-12 col-md-9 col-xl-8 ps-md-5" role="main">
+            
+  
+
+            <nav aria-label="breadcrumb" class="td-breadcrumbs">
+  <ol class="breadcrumb">
+  <li class="breadcrumb-item">
+    <a href="/docs/">Documentation</a></li>
+  <li class="breadcrumb-item">
+    <a href="/docs/web-dev/">Web Dev</a></li>
+  <li class="breadcrumb-item">
+    <a href="/docs/web-dev/css/">CSS</a></li>
+  <li class="breadcrumb-item active" aria-current="page">
+    Typography</li>
+  </ol>
+</nav>
+<div class="td-content">
+	<h1>Typography and spacing</h1>
+	
+	<header class="article-meta">
+		
+  </header>
+	<h2 id="text-and-typography">Text and typography</h2>
+<p>Good article: <a href="https://www.smashingmagazine.com/2020/07/css-techniques-legibility/">Modern CSS Techniques to Improve Legibility</a></p>
+<p>If your <code>font-family</code> property setting uses this hierarchy:</p>
+<ol>
+<li>First setting</li>
+<li>Fallback font</li>
+<li>Default user agent style</li>
+</ol>
+<h3 id="system-font-stack">System font stack</h3>
+<p>You can make sure you get the font that you want with the <a href="https://css-tricks.com/snippets/css/system-font-stack/">system font stack</a>, which is a long list of fallback fonts.</p>
+<p>With variables:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-css" data-lang="css"><span style="display:flex;"><span><span style="color:#000;font-weight:bold">:</span><span style="color:#5c35cc;font-weight:bold">root</span> <span style="color:#000;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#000">--system-ui</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#000">system-ui</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#4e9a06">&#34;Segoe UI&#34;</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">Roboto</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">Helvetica</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">Arial</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#204a87;font-weight:bold">sans-serif</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#4e9a06">&#34;Apple Color Emoji&#34;</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#4e9a06">&#34;Segoe UI Emoji&#34;</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#4e9a06">&#34;Segoe UI Symbol&#34;</span><span style="color:#000;font-weight:bold">;</span>
+</span></span><span style="display:flex;"><span><span style="color:#000;font-weight:bold">}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">element</span> <span style="color:#000;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#204a87;font-weight:bold">font-family</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#000">var</span><span style="color:#000;font-weight:bold">(</span><span style="color:#ce5c00;font-weight:bold">--</span><span style="color:#000">system</span><span style="color:#ce5c00;font-weight:bold">-</span><span style="color:#000">ui</span><span style="color:#000;font-weight:bold">);</span>
+</span></span><span style="display:flex;"><span><span style="color:#000;font-weight:bold">}</span>
+</span></span></code></pre></div><p>Without variables:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-css" data-lang="css"><span style="display:flex;"><span><span style="color:#8f5902;font-style:italic">/* Define the &#34;system&#34; font family */</span>
+</span></span><span style="display:flex;"><span><span style="color:#000;font-weight:bold">@</span><span style="color:#204a87;font-weight:bold">font-face</span> <span style="color:#000;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#204a87;font-weight:bold">font-family</span><span style="color:#ce5c00;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">system-ui</span><span style="color:#ce5c00;font-weight:bold">;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#204a87;font-weight:bold">font-style</span><span style="color:#ce5c00;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">normal</span><span style="color:#ce5c00;font-weight:bold">;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#204a87;font-weight:bold">font-weight</span><span style="color:#ce5c00;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">300</span><span style="color:#ce5c00;font-weight:bold">;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#204a87;font-weight:bold">src</span><span style="color:#ce5c00;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">local</span><span style="color:#ce5c00;font-weight:bold">(</span><span style="color:#4e9a06">&#34;.SFNSText-Light&#34;</span><span style="color:#ce5c00;font-weight:bold">),</span> <span style="color:#204a87;font-weight:bold">local</span><span style="color:#ce5c00;font-weight:bold">(</span><span style="color:#4e9a06">&#34;.HelveticaNeueDeskInterface-Light&#34;</span><span style="color:#ce5c00;font-weight:bold">),</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">local</span><span style="color:#ce5c00;font-weight:bold">(</span><span style="color:#4e9a06">&#34;.LucidaGrandeUI&#34;</span><span style="color:#ce5c00;font-weight:bold">),</span> <span style="color:#204a87;font-weight:bold">local</span><span style="color:#ce5c00;font-weight:bold">(</span><span style="color:#4e9a06">&#34;Ubuntu Light&#34;</span><span style="color:#ce5c00;font-weight:bold">),</span> <span style="color:#204a87;font-weight:bold">local</span><span style="color:#ce5c00;font-weight:bold">(</span><span style="color:#4e9a06">&#34;Segoe UI Light&#34;</span><span style="color:#ce5c00;font-weight:bold">),</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">local</span><span style="color:#ce5c00;font-weight:bold">(</span><span style="color:#4e9a06">&#34;Roboto-Light&#34;</span><span style="color:#ce5c00;font-weight:bold">),</span> <span style="color:#204a87;font-weight:bold">local</span><span style="color:#ce5c00;font-weight:bold">(</span><span style="color:#4e9a06">&#34;DroidSans&#34;</span><span style="color:#ce5c00;font-weight:bold">),</span> <span style="color:#204a87;font-weight:bold">local</span><span style="color:#ce5c00;font-weight:bold">(</span><span style="color:#4e9a06">&#34;Tahoma&#34;</span><span style="color:#ce5c00;font-weight:bold">);</span>
+</span></span><span style="display:flex;"><span><span style="color:#000;font-weight:bold">}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8f5902;font-style:italic">/* Now, let&#39;s apply it on an element */</span>
+</span></span><span style="display:flex;"><span><span style="color:#204a87;font-weight:bold">body</span> <span style="color:#000;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#204a87;font-weight:bold">font-family</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;system-ui&#34;</span><span style="color:#000;font-weight:bold">;</span>
+</span></span><span style="display:flex;"><span><span style="color:#000;font-weight:bold">}</span>
+</span></span></code></pre></div><h2 id="font-size">Font size</h2>
+<p>Set the <code>font-size</code> in the <code>:root</code> pseudo-class. Use <code>em</code> to set the font size with the <code>:root</code> pseudo-class, and then <code>rem</code> throughout the stylesheet to change the size, relative to the <code>:root</code> setting.</p>
+<p>The most top-level element in the DOM is the <code>&lt;html&gt;</code> element. You can select it with <code>:root</code>, a special pseudo-class selector:</p>
+<ul>
+<li>rems are relative to the root element, not the current element</li>
+<li>this makes it consistent across the document</li>
+</ul>
+<p>Set the root element font-size to <code>1em</code> to set it equal to the browsers default font-size of 16px:</p>
+<ul>
+<li>usability tools resize fonts with relative units, no absolute - use relative to define font size</li>
+</ul>
+<p>The following example sets the inherited font size to 14px:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-css" data-lang="css"><span style="display:flex;"><span><span style="color:#000;font-weight:bold">:</span><span style="color:#5c35cc;font-weight:bold">root</span> <span style="color:#000;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#204a87;font-weight:bold">font-size</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#0000cf;font-weight:bold">0.875</span><span style="color:#204a87;font-weight:bold">em</span><span style="color:#000;font-weight:bold">;</span>
+</span></span><span style="display:flex;"><span><span style="color:#000;font-weight:bold">}</span>
+</span></span></code></pre></div><p>If you change the font size for an element with rems, you do not have to change the padding or other relative properties because their values are calculated according to the local <code>font-size</code> value.</p>
+<h3 id="responsive-font-sizes">Responsive font sizes</h3>
+<p>If your font sizes change between screen sizes, they can change drastically at your breakpoints. Address this with the <code>clamp()</code> or <code>calc()</code> functions.</p>
+<p>Setting a responsive font size means that other elements on the page scale appropriately, and without breakpoints.</p>
+<h4 id="clamp">clamp()</h4>
+<p>Accepts a minimum, preferred, and maximum value:</p>
+<ul>
+<li>the preferred value must be a calculation or it just applies the preferred value across all viewport sizes</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-css" data-lang="css"><span style="display:flex;"><span><span style="color:#204a87;font-weight:bold">clamp</span><span style="color:#ce5c00;font-weight:bold">(</span><span style="color:#204a87;font-weight:bold">min-val</span><span style="color:#ce5c00;font-weight:bold">,</span> <span style="color:#204a87;font-weight:bold">preferred-val-expression</span><span style="color:#ce5c00;font-weight:bold">,</span> <span style="color:#204a87;font-weight:bold">max-val</span><span style="color:#ce5c00;font-weight:bold">)</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#000;font-weight:bold">:</span><span style="color:#5c35cc;font-weight:bold">root</span> <span style="color:#000;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">font-size</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#000">clamp</span><span style="color:#000;font-weight:bold">(</span><span style="color:#0000cf;font-weight:bold">0.9</span><span style="color:#204a87;font-weight:bold">rem</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#0000cf;font-weight:bold">0.6</span><span style="color:#204a87;font-weight:bold">rem</span> <span style="color:#ce5c00;font-weight:bold">+</span> <span style="color:#0000cf;font-weight:bold">1</span><span style="color:#000">svw</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#0000cf;font-weight:bold">1.5</span><span style="color:#204a87;font-weight:bold">rem</span><span style="color:#000;font-weight:bold">)</span>
+</span></span><span style="display:flex;"><span><span style="color:#000;font-weight:bold">}</span>
+</span></span></code></pre></div><h4 id="calc">calc()</h4>
+<blockquote>
+<p>When working with font sizes, prefer <code>clamp()</code>.</p></blockquote>
+<p>Perform basic arithmetic with two or more values:</p>
+<ul>
+<li>good when you want to use values with different units</li>
+<li>when calculating font size, always use one unit with em or rem</li>
+</ul>
+<p>This ruleset uses <code>0.5em</code> as the minimum font size, and it scales by <code>1svw</code> as you change the screen size:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-css" data-lang="css"><span style="display:flex;"><span><span style="color:#000;font-weight:bold">:</span><span style="color:#5c35cc;font-weight:bold">root</span> <span style="color:#000;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">font-size</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87">calc</span><span style="color:#000;font-weight:bold">(</span><span style="color:#0000cf;font-weight:bold">0.5</span><span style="color:#204a87;font-weight:bold">em</span> <span style="color:#ce5c00;font-weight:bold">+</span> <span style="color:#0000cf;font-weight:bold">1</span><span style="color:#000">svw</span><span style="color:#000;font-weight:bold">);</span>
+</span></span><span style="display:flex;"><span><span style="color:#000;font-weight:bold">}</span>
+</span></span></code></pre></div><h3 id="ch-unit">ch unit</h3>
+<p>To ensure each line of content does not extend beyond a readable size, you can use the <code>ch</code> unit to set the <code>max-width</code> of a content block. A <code>ch</code> unit is as wide as the <code>0</code> (zero) character of the current font size:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-css" data-lang="css"><span style="display:flex;"><span><span style="color:#204a87;font-weight:bold">body</span> <span style="color:#000;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a40000">...</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#204a87;font-weight:bold">max-width</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#0000cf;font-weight:bold">78</span><span style="color:#204a87;font-weight:bold">ch</span><span style="color:#000;font-weight:bold">;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#204a87;font-weight:bold">margin</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#0000cf;font-weight:bold">0</span> <span style="color:#204a87;font-weight:bold">auto</span><span style="color:#000;font-weight:bold">;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#204a87;font-weight:bold">font-family</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;Times New Roman&#34;</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">Times</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#204a87;font-weight:bold">serif</span><span style="color:#000;font-weight:bold">;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#204a87;font-weight:bold">border-left</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#0000cf;font-weight:bold">5</span><span style="color:#204a87;font-weight:bold">px</span> <span style="color:#204a87;font-weight:bold">double</span> <span style="color:#204a87">rgba</span><span style="color:#000;font-weight:bold">(</span><span style="color:#0000cf;font-weight:bold">0</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#0000cf;font-weight:bold">0</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#0000cf;font-weight:bold">0</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#0000cf;font-weight:bold">0.16</span><span style="color:#000;font-weight:bold">);</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#204a87;font-weight:bold">min-height</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#0000cf;font-weight:bold">100</span><span style="color:#204a87;font-weight:bold">vh</span><span style="color:#000;font-weight:bold">;</span>
+</span></span><span style="display:flex;"><span><span style="color:#000;font-weight:bold">}</span>
+</span></span></code></pre></div><h2 id="numbers">Numbers</h2>
+<p>Fonts might use either old-style or modern numbers. Old-style numbers can display above the meanline (top of the font line) and below the baseline of the text. Modern numbers display within the meanline and baseline. Control this and other number features with <code>font-variant-numeric</code>.</p>
+<h3 id="font-variant-numeric">font-variant-numeric</h3>
+<p>This property lets you control the following:</p>
+<ul>
+<li>whether zeros have a slash</li>
+<li>number alignment</li>
+<li>how fractions are displayed</li>
+</ul>
+<p>To change old-style number alignment to modern, apply this ruleset:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-css" data-lang="css"><span style="display:flex;"><span><span style="color:#204a87;font-weight:bold">body</span> <span style="color:#000;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#204a87;font-weight:bold">font-family</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;Raleway&#34;</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#204a87;font-weight:bold">sans-serif</span><span style="color:#000;font-weight:bold">;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#204a87;font-weight:bold">color</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#0000cf;font-weight:bold">#171717</span><span style="color:#000;font-weight:bold">;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#204a87;font-weight:bold">font-variant-numeric</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#000">lining-nums</span><span style="color:#000;font-weight:bold">;</span>
+</span></span><span style="display:flex;"><span><span style="color:#000;font-weight:bold">}</span>
+</span></span></code></pre></div><h2 id="ems-vs-px">ems vs px</h2>
+<p>Use ems or rems when you think that spacing should resize if the user has a different font setting.</p>
+<ul>
+<li>ems might be the better choice for small measurements that immediately surround text or buttons</li>
+<li>px is fine if gaps or spaces do not need to scale for larger fonts</li>
+</ul>
+<p>When to use margins vs padding:</p>
+<ul>
+<li>padding if you need to apply spacing to an entire container</li>
+<li>margin when you need to apply spacing to the outside of elements and there is a background color or image</li>
+</ul>
+<h2 id="line-height">Line height</h2>
+<p>In the box model, the elements content box is surrounded by padding, then border, then margin, but the <strong>height of the content box is determined by the font size and line height</strong>:</p>
+<ul>
+<li>line height is usually defined in the body and inherited</li>
+<li>multiply the line height by the font size, and that is the total line height + font size. The measurement uses the same unit as the font size</li>
+<li>line height is distributed evenly above and below the text</li>
+<li>Ex: line height is 1.4, and font size is 16px, then the total height of the content box is 1.4 x 16 = <strong>22.4px</strong>. This means that there is an additonal 6.4px of space in the content box, with 3.2px on top, and 3.2px on the bottom.
+<ul>
+<li>Line height complicates margin calculations. If you give 10px of margin, then you have 13.2px margin due to line height</li>
+</ul>
+</li>
+</ul>
+<p>The fix is to subtract from the margin the extra space provided by line height. So, subtract the line height from the top element and the bottom element:</p>
+<ul>
+<li><code>leading-trim</code> is an upcoming property that will remove the extra space from the content box</li>
+</ul>
+<h3 id="inline-elements">Inline elements</h3>
+<p>The height of an inline element is determined by line height only. You can&rsquo;t change the height with padding.</p>
+<ul>
+<li>If you have to add distance between inline elements that might wrap, you have to set the line height.</li>
+</ul>
+<p>This example updates the line height on an inline list of metadata tags. Because they are inline, their height has to be set with <code>line-height</code>. The line height set on the body is <code>1.4</code>. If you try to change the height with padding, the padding will overlap when the elements wrap on the line. You can achieve this with flexbox, but it requires that you add horizontal and vertical margins:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-css" data-lang="css"><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#000;font-weight:bold">@</span><span style="color:#204a87;font-weight:bold">layer</span> <span style="color:#204a87;font-weight:bold">modules</span> <span style="color:#000;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#000;font-weight:bold">.</span><span style="color:#000">tag-list</span> <span style="color:#000;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">list-style</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">none</span><span style="color:#000;font-weight:bold">;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#000">padding-inline-start</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">unset</span><span style="color:#000;font-weight:bold">;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#000;font-weight:bold">}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#000;font-weight:bold">.</span><span style="color:#000">tag-list</span> <span style="color:#ce5c00;font-weight:bold">&gt;</span> <span style="color:#204a87;font-weight:bold">li</span> <span style="color:#000;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">display</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">inline</span><span style="color:#000;font-weight:bold">;</span>                    <span style="color:#8f5902;font-style:italic">/* inline elements */</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">padding</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#0000cf;font-weight:bold">0.3</span><span style="color:#204a87;font-weight:bold">rem</span> <span style="color:#0000cf;font-weight:bold">0.5</span><span style="color:#204a87;font-weight:bold">rem</span><span style="color:#000;font-weight:bold">;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">font-size</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#0000cf;font-weight:bold">0.8</span><span style="color:#204a87;font-weight:bold">rem</span><span style="color:#000;font-weight:bold">;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">border-radius</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#0000cf;font-weight:bold">0.2</span><span style="color:#204a87;font-weight:bold">rem</span><span style="color:#000;font-weight:bold">;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">background-color</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#000">var</span><span style="color:#000;font-weight:bold">(</span><span style="color:#ce5c00;font-weight:bold">--</span><span style="color:#000">light</span><span style="color:#ce5c00;font-weight:bold">-</span><span style="color:#204a87;font-weight:bold">gray</span><span style="color:#000;font-weight:bold">);</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">line-height</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#0000cf;font-weight:bold">2.6</span><span style="color:#000;font-weight:bold">;</span>                   <span style="color:#8f5902;font-style:italic">/* added line height */</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#000;font-weight:bold">}</span>
+</span></span><span style="display:flex;"><span><span style="color:#000;font-weight:bold">}</span>
+</span></span></code></pre></div><h2 id="web-fonts-and-local-fonts">Web fonts and local fonts</h2>
+<p>A <em>font</em> is a variant or weight of a specific type of fonts. <em>Typeface</em> is the entire family of fonts&ndash;all available font weights, sizes, etc.</p>
+<p>Historically, web designers had to choose from a limited set of typefaces called <em>web-safe fonts</em>, like Arial, Helvetica, and Georgia. If you specified less-safe fonts, they would only show up for users that had those fonts installed on their systems.</p>
+<p>You can use web fonts or local/self-hosted fonts. Web fonts are imported from a service like Google Fonts, either in the HTML with a <code>&lt;link&gt;</code> tag or with an <code>@import</code> statement in the stylesheet. Local or self-hosted fonts are stored locally on your machine and imported using <code>@font-face</code>.</p>
+<p>Here are the advantages and disadvantages of each:</p>
+<table>
+  <thead>
+      <tr>
+          <th></th>
+          <th>Advantages</th>
+          <th>Disadvantages</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>web font</td>
+          <td>Easy imports<br>Cached on user machine</td>
+          <td>Extra call to import file<br>Privacy concerns<br>Service might discontinue font</td>
+      </tr>
+      <tr>
+          <td>local font</td>
+          <td>No dependencies<br>More performance control</td>
+          <td>Manage performance<br>User won&rsquo;t have font cached</td>
+      </tr>
+  </tbody>
+</table>
+<h3 id="adding-web-fonts">Adding web fonts</h3>
+<p>Web fonts tell the browser where to download the fonts for the web page. Easiest way to use fonts is through an online service:</p>
+<ul>
+<li><a href="https://fonts.google.com/">Google Fonts</a></li>
+<li><a href="https://fontlibrary.org/">Font Library</a></li>
+<li><a href="https://fonts.adobe.com/">Adobe Fonts (not free)</a></li>
+</ul>
+<p>You can include them with link tags in the HTML or <code>@import</code> statement at the top of the stylesheet.</p>
+<p>Google serves fonts in the WOFF2 format&ndash;Web Open Font Format, which is a compressed format designed for use over a network.</p>
+<p>After images, online fonts are the largest resource that a page loads. <strong>Do not download all fonts for a typeface, only select the ones that you need</strong>.</p>
+<p>If you use a font that you do not have downloaded or linked, then the browser approximates the style. This can have unwanted consequences.</p>
+<p>This adds <a href="https://fonts.google.com/">Google Fonts</a>:</p>
+<ol>
+<li>
+<p>After you select your fonts, add the <code>&lt;link&gt;</code> tag to your HTML:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span><span style="color:#000;font-weight:bold">&lt;</span><span style="color:#204a87;font-weight:bold">link</span> <span style="color:#c4a000">rel</span><span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#4e9a06">&#34;preconnect&#34;</span> <span style="color:#c4a000">href</span><span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#4e9a06">&#34;https://fonts.googleapis.com&#34;</span><span style="color:#000;font-weight:bold">&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#000;font-weight:bold">&lt;</span><span style="color:#204a87;font-weight:bold">link</span> <span style="color:#c4a000">rel</span><span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#4e9a06">&#34;preconnect&#34;</span> <span style="color:#c4a000">href</span><span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#4e9a06">&#34;https://fonts.gstatic.com&#34;</span> <span style="color:#c4a000">crossorigin</span><span style="color:#000;font-weight:bold">&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#000;font-weight:bold">&lt;</span><span style="color:#204a87;font-weight:bold">link</span> <span style="color:#c4a000">href</span><span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#4e9a06">&#34;https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;1,300&amp;family=Sansita:wght@800&amp;display=swap&#34;</span> <span style="color:#c4a000">rel</span><span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#4e9a06">&#34;stylesheet&#34;</span><span style="color:#000;font-weight:bold">&gt;</span>
+</span></span></code></pre></div><p>The last link is a stylesheet that Google provides. You can view it in a browser.</p>
+</li>
+<li>
+<p>Next, add the fonts to your elements with the <code>font-family</code> property:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-css" data-lang="css"><span style="display:flex;"><span><span style="color:#000;font-weight:bold">@</span><span style="color:#204a87;font-weight:bold">layer</span> <span style="color:#204a87;font-weight:bold">global</span> <span style="color:#000;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>     <span style="color:#204a87;font-weight:bold">body</span> <span style="color:#000;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>       <span style="color:#204a87;font-weight:bold">font-family</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#000">Roboto</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#204a87;font-weight:bold">sans-serif</span><span style="color:#000;font-weight:bold">;</span>
+</span></span><span style="display:flex;"><span>       <span style="color:#204a87;font-weight:bold">line-height</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#0000cf;font-weight:bold">1.4</span><span style="color:#000;font-weight:bold">;</span>
+</span></span><span style="display:flex;"><span>       <span style="color:#204a87;font-weight:bold">background-color</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#000">var</span><span style="color:#000;font-weight:bold">(</span><span style="color:#ce5c00;font-weight:bold">--</span><span style="color:#000">extra</span><span style="color:#ce5c00;font-weight:bold">-</span><span style="color:#000">light</span><span style="color:#ce5c00;font-weight:bold">-</span><span style="color:#204a87;font-weight:bold">gray</span><span style="color:#000;font-weight:bold">);</span>
+</span></span><span style="display:flex;"><span>       <span style="color:#204a87;font-weight:bold">color</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#000">var</span><span style="color:#000;font-weight:bold">(</span><span style="color:#ce5c00;font-weight:bold">--</span><span style="color:#204a87;font-weight:bold">text</span><span style="color:#ce5c00;font-weight:bold">-</span><span style="color:#204a87;font-weight:bold">color</span><span style="color:#000;font-weight:bold">);</span>
+</span></span><span style="display:flex;"><span>     <span style="color:#000;font-weight:bold">}</span>
+</span></span><span style="display:flex;"><span>     <span style="color:#ce5c00;font-weight:bold">...</span>
+</span></span><span style="display:flex;"><span> <span style="color:#000;font-weight:bold">}</span>
+</span></span></code></pre></div></li>
+</ol>
+<h3 id="font-face">@font-face</h3>
+<p><strong>Add <code>@font-face</code> at the top of the stylesheet.</strong></p>
+<p>Use <code>@font-face</code> for locally-stored, purchased fonts that aren&rsquo;t available at an online service. <code>@font-face</code> only makes the fonts avaialble to your CSS&ndash;you still have to apply it to elements.</p>
+<p>If you follow the last link in the Google fonts <code>&lt;link&gt;</code> set, you see a page that lists all font faces available to your page. Here is a specific rule for italic Roboto with font weight of 300. Each variant that you select has its own rule:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-css" data-lang="css"><span style="display:flex;"><span><span style="color:#8f5902;font-style:italic">/* latin */</span>
+</span></span><span style="display:flex;"><span><span style="color:#000;font-weight:bold">@</span><span style="color:#204a87;font-weight:bold">font-face</span> <span style="color:#000;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#204a87;font-weight:bold">font-family</span><span style="color:#ce5c00;font-weight:bold">:</span> <span style="color:#4e9a06">&#39;Roboto&#39;</span><span style="color:#ce5c00;font-weight:bold">;</span>            <span style="color:#8f5902;font-style:italic">/* What you can reference in your stylesheet */</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#204a87;font-weight:bold">font-style</span><span style="color:#ce5c00;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">italic</span><span style="color:#ce5c00;font-weight:bold">;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#204a87;font-weight:bold">font-weight</span><span style="color:#ce5c00;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">300</span> <span style="color:#204a87;font-weight:bold">700</span><span style="color:#ce5c00;font-weight:bold">;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#204a87;font-weight:bold">font-stretch</span><span style="color:#ce5c00;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">100</span><span style="color:#ce5c00;font-weight:bold">%;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#204a87;font-weight:bold">font-display</span><span style="color:#ce5c00;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">swap</span><span style="color:#ce5c00;font-weight:bold">;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#8f5902;font-style:italic">/* Font file location for download */</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#204a87;font-weight:bold">src</span><span style="color:#ce5c00;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">url</span><span style="color:#ce5c00;font-weight:bold">(</span><span style="color:#204a87;font-weight:bold">https</span><span style="color:#ce5c00;font-weight:bold">://</span><span style="color:#204a87;font-weight:bold">fonts</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">gstatic</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">com</span><span style="color:#ce5c00;font-weight:bold">/</span><span style="color:#204a87;font-weight:bold">s</span><span style="color:#ce5c00;font-weight:bold">/</span><span style="color:#204a87;font-weight:bold">roboto</span><span style="color:#ce5c00;font-weight:bold">/</span><span style="color:#204a87;font-weight:bold">v47</span><span style="color:#ce5c00;font-weight:bold">/</span><span style="color:#204a87;font-weight:bold">KFOKCnqEu92Fr1Mu53ZEC9_Vu3r1gIhOszmOClHrs6ljXfMMLt_QuAj-kw</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">woff2</span><span style="color:#ce5c00;font-weight:bold">)</span> <span style="color:#204a87;font-weight:bold">format</span><span style="color:#ce5c00;font-weight:bold">(</span><span style="color:#4e9a06">&#39;woff2&#39;</span><span style="color:#ce5c00;font-weight:bold">);</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#8f5902;font-style:italic">/* Google puts the most often used characters in a font file for performance optimization */</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#204a87;font-weight:bold">unicode-range</span><span style="color:#ce5c00;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">U</span><span style="color:#ce5c00;font-weight:bold">+</span><span style="color:#204a87;font-weight:bold">0000-00FF</span><span style="color:#ce5c00;font-weight:bold">,</span> <span style="color:#204a87;font-weight:bold">U</span><span style="color:#ce5c00;font-weight:bold">+</span><span style="color:#204a87;font-weight:bold">0131</span><span style="color:#ce5c00;font-weight:bold">,</span> <span style="color:#204a87;font-weight:bold">U</span><span style="color:#ce5c00;font-weight:bold">+</span><span style="color:#204a87;font-weight:bold">0152-0153</span><span style="color:#ce5c00;font-weight:bold">,</span> <span style="color:#204a87;font-weight:bold">U</span><span style="color:#ce5c00;font-weight:bold">+</span><span style="color:#204a87;font-weight:bold">02BB-02BC</span><span style="color:#ce5c00;font-weight:bold">,</span> <span style="color:#204a87;font-weight:bold">U</span><span style="color:#ce5c00;font-weight:bold">+</span><span style="color:#204a87;font-weight:bold">02C6</span><span style="color:#ce5c00;font-weight:bold">,</span> <span style="color:#204a87;font-weight:bold">U</span><span style="color:#ce5c00;font-weight:bold">+</span><span style="color:#204a87;font-weight:bold">02DA</span><span style="color:#ce5c00;font-weight:bold">,</span> <span style="color:#204a87;font-weight:bold">U</span><span style="color:#ce5c00;font-weight:bold">+</span><span style="color:#204a87;font-weight:bold">02DC</span><span style="color:#ce5c00;font-weight:bold">,</span> <span style="color:#204a87;font-weight:bold">U</span><span style="color:#ce5c00;font-weight:bold">+</span><span style="color:#204a87;font-weight:bold">0304</span><span style="color:#ce5c00;font-weight:bold">,</span> <span style="color:#204a87;font-weight:bold">U</span><span style="color:#ce5c00;font-weight:bold">+</span><span style="color:#204a87;font-weight:bold">0308</span><span style="color:#ce5c00;font-weight:bold">,</span> <span style="color:#204a87;font-weight:bold">U</span><span style="color:#ce5c00;font-weight:bold">+</span><span style="color:#204a87;font-weight:bold">0329</span><span style="color:#ce5c00;font-weight:bold">,</span> <span style="color:#204a87;font-weight:bold">U</span><span style="color:#ce5c00;font-weight:bold">+</span><span style="color:#204a87;font-weight:bold">2000-206F</span><span style="color:#ce5c00;font-weight:bold">,</span> <span style="color:#204a87;font-weight:bold">U</span><span style="color:#ce5c00;font-weight:bold">+</span><span style="color:#204a87;font-weight:bold">20AC</span><span style="color:#ce5c00;font-weight:bold">,</span> <span style="color:#204a87;font-weight:bold">U</span><span style="color:#ce5c00;font-weight:bold">+</span><span style="color:#204a87;font-weight:bold">2122</span><span style="color:#ce5c00;font-weight:bold">,</span> <span style="color:#204a87;font-weight:bold">U</span><span style="color:#ce5c00;font-weight:bold">+</span><span style="color:#204a87;font-weight:bold">2191</span><span style="color:#ce5c00;font-weight:bold">,</span> <span style="color:#204a87;font-weight:bold">U</span><span style="color:#ce5c00;font-weight:bold">+</span><span style="color:#204a87;font-weight:bold">2193</span><span style="color:#ce5c00;font-weight:bold">,</span> <span style="color:#204a87;font-weight:bold">U</span><span style="color:#ce5c00;font-weight:bold">+</span><span style="color:#204a87;font-weight:bold">2212</span><span style="color:#ce5c00;font-weight:bold">,</span> <span style="color:#204a87;font-weight:bold">U</span><span style="color:#ce5c00;font-weight:bold">+</span><span style="color:#204a87;font-weight:bold">2215</span><span style="color:#ce5c00;font-weight:bold">,</span> <span style="color:#204a87;font-weight:bold">U</span><span style="color:#ce5c00;font-weight:bold">+</span><span style="color:#204a87;font-weight:bold">FEFF</span><span style="color:#ce5c00;font-weight:bold">,</span> <span style="color:#204a87;font-weight:bold">U</span><span style="color:#ce5c00;font-weight:bold">+</span><span style="color:#204a87;font-weight:bold">FFFD</span><span style="color:#ce5c00;font-weight:bold">;</span>
+</span></span><span style="display:flex;"><span><span style="color:#000;font-weight:bold">}</span>
+</span></span></code></pre></div><ul>
+<li><code>font-family</code>: Name we use to refer to our font</li>
+<li><code>font-style</code>:</li>
+<li><code>font-weight</code>: Can load multiple font weights</li>
+<li><code>font-stretch</code>:</li>
+<li><code>font-display</code>: How the font is loaded. Font loading blocks other resources. <code>swap</code> means that the browser will load the font for a period of time. If the font isn&rsquo;t loaded after that time is up, then it loads other resources and finishes loading the font later.</li>
+<li><code>src</code>: Font file location for download. Accepts a comma-separated list of locations and formats that are loaded in order until success</li>
+</ul>
+<p>Here are some links:</p>
+<ul>
+<li><a href="https://www.w3schools.com/css/css3_fonts.asp">W3 general info</a></li>
+<li><a href="https://fileinfo.com/filetypes/font">Font file formats</a></li>
+</ul>
+<h3 id="common-file-types">Common file types</h3>
+<p>TLDR; Use WOFF or WOFF2</p>
+<ul>
+<li><strong>TrueType (TTF)</strong>: Not compressed</li>
+<li><strong>Open Type (OTF)</strong>: Evolution of TFF, more chars</li>
+<li><strong>Embedded Open Type (EOT)</strong>: Developed by MS, only supported by IE</li>
+<li><strong>Web Open Font Format (WOFF)</strong>: Recommended by W3C. Created for web, compressed, contains copyright metadata</li>
+<li><strong>Web Open Font Format 2 (WOFF2)</strong>: Continuation of WOFF, 30% more compressed</li>
+<li><strong>SVG</strong>: Created to allow embedded glyph information in SVGs before web fonts were widespread</li>
+</ul>
+<h3 id="custom-font-face">Custom @font-face</h3>
+<p>Here is a <code>@font-face</code> rule that you would add to your stylesheet. The <code>local()</code> function tells the browser to check the user&rsquo;s system before searching the network:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-css" data-lang="css"><span style="display:flex;"><span><span style="color:#000;font-weight:bold">@</span><span style="color:#204a87;font-weight:bold">font-face</span> <span style="color:#000;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#204a87;font-weight:bold">font-family</span><span style="color:#ce5c00;font-weight:bold">:</span> <span style="color:#4e9a06">&#39;Roboto&#39;</span><span style="color:#ce5c00;font-weight:bold">;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#204a87;font-weight:bold">font-style</span><span style="color:#ce5c00;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">normal</span><span style="color:#ce5c00;font-weight:bold">;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#204a87;font-weight:bold">font-weight</span><span style="color:#ce5c00;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">300</span><span style="color:#ce5c00;font-weight:bold">;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#204a87;font-weight:bold">src</span><span style="color:#ce5c00;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">local</span><span style="color:#ce5c00;font-weight:bold">(</span><span style="color:#4e9a06">&#34;Roboto Light&#34;</span><span style="color:#ce5c00;font-weight:bold">),</span> <span style="color:#204a87;font-weight:bold">local</span> <span style="color:#ce5c00;font-weight:bold">(</span><span style="color:#4e9a06">&#34;Roboto-light&#34;</span><span style="color:#ce5c00;font-weight:bold">),</span>
+</span></span><span style="display:flex;"><span>       <span style="color:#204a87;font-weight:bold">url</span><span style="color:#ce5c00;font-weight:bold">(</span><span style="color:#204a87;font-weight:bold">https</span><span style="color:#ce5c00;font-weight:bold">://</span><span style="color:#204a87;font-weight:bold">path</span><span style="color:#ce5c00;font-weight:bold">/</span><span style="color:#204a87;font-weight:bold">to</span><span style="color:#ce5c00;font-weight:bold">/</span><span style="color:#204a87;font-weight:bold">file</span><span style="color:#ce5c00;font-weight:bold">)</span> <span style="color:#204a87;font-weight:bold">format</span><span style="color:#ce5c00;font-weight:bold">(</span><span style="color:#4e9a06">&#39;woff2&#39;</span><span style="color:#ce5c00;font-weight:bold">);</span>
+</span></span><span style="display:flex;"><span><span style="color:#000;font-weight:bold">}</span>
+</span></span></code></pre></div><h3 id="italic-fonts">Italic fonts</h3>
+<ul>
+<li><code>font-style</code>:
+<ul>
+<li>If italics are for styling purposes, use <code>font-style: italic;</code></li>
+<li>If italics are for emphasis, use <code>&lt;em&gt;</code> tags</li>
+</ul>
+</li>
+<li><code>letter-spacing</code>: space between letters</li>
+<li><code>line-height</code>: space between lines in wrapped text.</li>
+<li><code>text-transform</code>: Changes the case of the text (ex: all UPPERCASE)</li>
+<li><code>text-shadow</code>: Shadow around text. <code>text-shadow: offset-x | offset-y | blur-radius | color</code> <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/text-shadow">MDN docs</a></li>
+<li><code>ellipsis</code>: Use this with other properties to put an ellipsis in place of overflowing text:
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-css" data-lang="css"><span style="display:flex;"><span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">overflowing</span> <span style="color:#000;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#204a87;font-weight:bold">white-space</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">nowrap</span><span style="color:#000;font-weight:bold">;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#204a87;font-weight:bold">overflow</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">hidden</span><span style="color:#000;font-weight:bold">;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#204a87;font-weight:bold">text-overflow</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">ellipsis</span><span style="color:#000;font-weight:bold">;</span>
+</span></span><span style="display:flex;"><span><span style="color:#000;font-weight:bold">}</span>
+</span></span></code></pre></div>You need this because text will write outside of its container, by default. See <a href="https://css-tricks.com/snippets/css/truncate-string-with-ellipsis/">CSS Tricks</a> for in-depth info.</li>
+</ul>
+<h3 id="variable-fonts">Variable fonts</h3>
+<p>Newer fonts are available as variable fonts, where you can use a single font file for a range of fonts. (Read page 348-49 for details).</p>
+<p>Basically, web fonts for different weights or sizes are included in a single font file. Italics are generally in their own file.</p>
+<p>Variable fonts are not widely supported. You should add them with a <code>@supports</code> at-rule so they are applied when supported. This example loads the fonts when they are supported and uses a <code>not</code> clause to load fallbacks:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-css" data-lang="css"><span style="display:flex;"><span><span style="color:#000;font-weight:bold">@</span><span style="color:#204a87;font-weight:bold">supports</span> <span style="color:#ce5c00;font-weight:bold">(</span><span style="color:#204a87;font-weight:bold">font-variation-settings</span><span style="color:#ce5c00;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">normal</span><span style="color:#ce5c00;font-weight:bold">)</span> <span style="color:#000;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#000;font-weight:bold">@</span><span style="color:#204a87;font-weight:bold">font-face</span> <span style="color:#000;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">font-family</span><span style="color:#ce5c00;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;Open Sans&#34;</span><span style="color:#ce5c00;font-weight:bold">;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">src</span><span style="color:#ce5c00;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">url</span><span style="color:#ce5c00;font-weight:bold">(</span><span style="color:#4e9a06">&#34;fonts/open-sans-variable.woff2&#34;</span><span style="color:#ce5c00;font-weight:bold">)</span> <span style="color:#204a87;font-weight:bold">format</span><span style="color:#ce5c00;font-weight:bold">(</span><span style="color:#4e9a06">&#34;woff2-variations&#34;</span><span style="color:#ce5c00;font-weight:bold">);</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">font-style</span><span style="color:#ce5c00;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">normal</span><span style="color:#ce5c00;font-weight:bold">;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">font-weight</span><span style="color:#ce5c00;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">100</span> <span style="color:#204a87;font-weight:bold">800</span><span style="color:#ce5c00;font-weight:bold">;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">font-display</span><span style="color:#ce5c00;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">swap</span><span style="color:#ce5c00;font-weight:bold">;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#000;font-weight:bold">}</span>
+</span></span><span style="display:flex;"><span><span style="color:#000;font-weight:bold">}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#000;font-weight:bold">@</span><span style="color:#204a87;font-weight:bold">supports</span> <span style="color:#204a87;font-weight:bold">not</span> <span style="color:#ce5c00;font-weight:bold">(</span><span style="color:#204a87;font-weight:bold">font-variation-settings</span><span style="color:#ce5c00;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">normal</span><span style="color:#ce5c00;font-weight:bold">)</span> <span style="color:#000;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#000;font-weight:bold">@</span><span style="color:#204a87;font-weight:bold">font-face</span> <span style="color:#000;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">font-family</span><span style="color:#ce5c00;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;Open Sans&#34;</span><span style="color:#ce5c00;font-weight:bold">;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">src</span><span style="color:#ce5c00;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">local</span><span style="color:#ce5c00;font-weight:bold">(</span><span style="color:#4e9a06">&#34;Open Sans Regular&#34;</span><span style="color:#ce5c00;font-weight:bold">),</span> <span style="color:#204a87;font-weight:bold">local</span><span style="color:#ce5c00;font-weight:bold">(</span><span style="color:#4e9a06">&#34;OpenSans-Regular&#34;</span><span style="color:#ce5c00;font-weight:bold">),</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#204a87;font-weight:bold">url</span><span style="color:#ce5c00;font-weight:bold">(</span><span style="color:#4e9a06">&#34;fonts/open-sans-regular.woff2&#34;</span><span style="color:#ce5c00;font-weight:bold">)</span> <span style="color:#204a87;font-weight:bold">format</span><span style="color:#ce5c00;font-weight:bold">(</span><span style="color:#4e9a06">&#34;woff2&#34;</span><span style="color:#ce5c00;font-weight:bold">),</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#204a87;font-weight:bold">url</span><span style="color:#ce5c00;font-weight:bold">(</span><span style="color:#4e9a06">&#34;fonts/open-sans-regular.woff&#34;</span><span style="color:#ce5c00;font-weight:bold">)</span> <span style="color:#204a87;font-weight:bold">format</span><span style="color:#ce5c00;font-weight:bold">(</span><span style="color:#4e9a06">&#34;woff&#34;</span><span style="color:#ce5c00;font-weight:bold">);</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">font-weight</span><span style="color:#ce5c00;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">normal</span><span style="color:#ce5c00;font-weight:bold">;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">font-display</span><span style="color:#ce5c00;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">swap</span><span style="color:#ce5c00;font-weight:bold">;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#000;font-weight:bold">}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#000;font-weight:bold">@</span><span style="color:#204a87;font-weight:bold">font-face</span> <span style="color:#000;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">font-family</span><span style="color:#ce5c00;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;Open Sans&#34;</span><span style="color:#ce5c00;font-weight:bold">;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">src</span><span style="color:#ce5c00;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">local</span><span style="color:#ce5c00;font-weight:bold">(</span><span style="color:#4e9a06">&#34;Open SansBold&#34;</span><span style="color:#ce5c00;font-weight:bold">),</span> <span style="color:#204a87;font-weight:bold">local</span><span style="color:#ce5c00;font-weight:bold">(</span><span style="color:#4e9a06">&#34;OpenSans-Bold&#34;</span><span style="color:#ce5c00;font-weight:bold">),</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#204a87;font-weight:bold">url</span><span style="color:#ce5c00;font-weight:bold">(</span><span style="color:#4e9a06">&#34;fonts/open-sans-regular.woff2&#34;</span><span style="color:#ce5c00;font-weight:bold">)</span> <span style="color:#204a87;font-weight:bold">format</span><span style="color:#ce5c00;font-weight:bold">(</span><span style="color:#4e9a06">&#34;woff2&#34;</span><span style="color:#ce5c00;font-weight:bold">),</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#204a87;font-weight:bold">url</span><span style="color:#ce5c00;font-weight:bold">(</span><span style="color:#4e9a06">&#34;fonts/open-sans-regular.woff&#34;</span><span style="color:#ce5c00;font-weight:bold">)</span> <span style="color:#204a87;font-weight:bold">format</span><span style="color:#ce5c00;font-weight:bold">(</span><span style="color:#4e9a06">&#34;woff&#34;</span><span style="color:#ce5c00;font-weight:bold">);</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">font-weight</span><span style="color:#ce5c00;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">bold</span><span style="color:#ce5c00;font-weight:bold">;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">font-display</span><span style="color:#ce5c00;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">swap</span><span style="color:#ce5c00;font-weight:bold">;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#000;font-weight:bold">}</span>
+</span></span><span style="display:flex;"><span><span style="color:#000;font-weight:bold">}</span>
+</span></span></code></pre></div><h2 id="performance">Performance</h2>
+<p>As the browser downloads font files, the page might be ready to render. In some scenarios&ndash;if a fallback font is installed on the user&rsquo;s system&ndash;another font might render first, and then the web font renders when it is downloaded. This causes a shift in the page layout, which is called <strong>FOUT</strong> (Flash of Unstyled Text).</p>
+<p>To avoid this, browsers first render the layout but do not render the text. This is called <strong>FOIT</strong>, Flash of Invisible Text.</p>
+<p><code>font-display</code> is how you manage font loading. It goes inside the <code>@font-face</code> rule:</p>
+<ul>
+<li><code>swap</code>: Enables FOUT, where the fallback is displayed immediately and then the primary font displays when loaded.</li>
+<li><code>auto</code>: Default browser behavior</li>
+<li><code>block</code>: Enables FOIT, whih displays invisible text when loading. After a timeout period, the browser displays unstyled text until it is replaced with the primary web font.</li>
+<li><code>fallback</code>: Compromise between <code>block</code> and <code>swap</code>. Text is invisible, then the fallback is used, then the web font is used.</li>
+<li><code>optional</code>: Similar to <code>fallback</code>, but lets the fallback font stay in place if the web font doesn&rsquo;t load. Slower connections may never download the web font.</li>
+</ul>
+<p>The Google Fonts URL has a <code>&amp;display=swap</code> query parameter that you can edit to use any of these values.</p>
+<p>Recommended usage:</p>
+<ul>
+<li><code>fallback</code> for fast connections</li>
+<li><code>swap</code> for slow connections</li>
+<li><code>optional</code> when web font is not important to the design</li>
+</ul>
+<h3 id="testing-font-loading">Testing font-loading</h3>
+<p>You can artificially slow down font-loading speeds with your dev tools:</p>
+<ol>
+<li>In Chrome dev tools, select the <strong>Network</strong> tab.</li>
+<li>Select <strong>Disable cache</strong>.</li>
+<li>In the dropdown beside <strong>Disable cache</strong>, select the speed you want to test. For example, <strong>Regular 3G</strong>.</li>
+</ol>
+<h2 id="spacing">Spacing</h2>
+<p>Text spacing involves adjusting these properties:</p>
+<ul>
+<li><code>line-height</code>: Vertical space between lines of text</li>
+<li><code>letter-spacing</code>: Horizontal space between individual characters</li>
+</ul>
+<p>Typographical terminology includes leading and tracking:</p>
+<ul>
+<li>leading rhymes with bedding, and is equal to the font size plus the distance between the next line. Its the same as line height, but expressed in <code>pt</code> units.
+To convert <code>pt</code> to line height, multiply the value by 1.333, then divide by your font size to find the unitless line height.</li>
+<li>tracking is the space between characters and is usually expressed in a number such as 100, which represents thousandths of an em: 100 / 1000 = 0.1em.</li>
+</ul>
+<h3 id="line-height-1">line-height</h3>
+<p>To find the right values, test using values that are too tight and then too far apart and select the one that looks best. There are some general rules of thumb to help:</p>
+<ul>
+<li><code>line-height</code> is 1.2 by default. <strong>This is usually too small&ndash;aim for 1.4 to 1.6</strong>. Set this on the <code>&lt;body&gt;</code> element.</li>
+<li>Unitless <code>line-height</code> values are computed relative to the font size of the element. Use unitless values!</li>
+<li>Setting <code>line-height</code> to 1.2 is equivalent to setting it to <code>120%</code>.</li>
+<li>Longer lines of text should have larger line height for readability</li>
+<li>Lines should be <strong>no longer than 45 - 75 characters</strong></li>
+</ul>
+<h3 id="letter-spacing">letter-spacing</h3>
+<p>Usually, the default letter spacing is fine, but it might require some tweaks, including on buttons and headings:</p>
+<ul>
+<li><code>letter-spacing</code> takes a length, which is the distance between each letter</li>
+<li>Use very small values, 1px is too much. Use increments, starting with <code>0.01em</code>.</li>
+<li>body text and heading text should use different spacing.
+<ul>
+<li>Always make your headings too long to test the vertical line wrap spacing</li>
+</ul>
+</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-css" data-lang="css"><span style="display:flex;"><span><span style="color:#000;font-weight:bold">@</span><span style="color:#204a87;font-weight:bold">layer</span> <span style="color:#204a87;font-weight:bold">global</span> <span style="color:#000;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#204a87;font-weight:bold">body</span> <span style="color:#000;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">font-family</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#000">Roboto</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#204a87;font-weight:bold">sans-serif</span><span style="color:#000;font-weight:bold">;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">line-height</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#0000cf;font-weight:bold">1.4</span><span style="color:#000;font-weight:bold">;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">letter-spacing</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#0000cf;font-weight:bold">0.01</span><span style="color:#204a87;font-weight:bold">em</span><span style="color:#000;font-weight:bold">;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a40000">...</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#000;font-weight:bold">}</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#ce5c00;font-weight:bold">...</span>
+</span></span><span style="display:flex;"><span><span style="color:#000;font-weight:bold">}</span>
+</span></span></code></pre></div><h3 id="justified-text">Justified text</h3>
+<p>Apply <code>text-align: justify;</code> to justify text:</p>
+<ul>
+<li><code>text-justify</code> property to determine how space is distributed between words. When omitted, the browser determines the space.</li>
+<li><code>hyphens: auto;</code> tells the browser to add hyphens at the end of the line. This will help reduce the amount of whitespace between words.</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-css" data-lang="css"><span style="display:flex;"><span><span style="color:#204a87;font-weight:bold">p</span> <span style="color:#000;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#204a87;font-weight:bold">text-align</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">justify</span><span style="color:#000;font-weight:bold">;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#204a87;font-weight:bold">hyphens</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">auto</span><span style="color:#000;font-weight:bold">;</span>
+</span></span><span style="display:flex;"><span><span style="color:#000;font-weight:bold">}</span>
+</span></span></code></pre></div><h3 id="drop-caps">Drop caps</h3>
+<p>A drop cap is a large, decorative capital letter used as the first letter in a paragraph or section. This example targets the letter with pseudo-classes and uses <code>float</code> to place first letter on the left and let the text wrap around it. It also sets the <code>line-height</code> low because it is calculated using the larger font size:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-css" data-lang="css"><span style="display:flex;"><span><span style="color:#204a87;font-weight:bold">p</span><span style="color:#000;font-weight:bold">:</span><span style="color:#5c35cc;font-weight:bold">first-of-type</span><span style="color:#000;font-weight:bold">::</span><span style="color:#5c35cc;font-weight:bold">first-letter</span> <span style="color:#000;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#204a87;font-weight:bold">font-size</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#0000cf;font-weight:bold">6</span><span style="color:#204a87;font-weight:bold">em</span><span style="color:#000;font-weight:bold">;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#204a87;font-weight:bold">float</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">left</span><span style="color:#000;font-weight:bold">;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#204a87;font-weight:bold">line-height</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#0000cf;font-weight:bold">0.5</span><span style="color:#000;font-weight:bold">;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#204a87;font-weight:bold">font-family</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;Passions Conflict&#34;</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#204a87;font-weight:bold">cursive</span><span style="color:#000;font-weight:bold">;</span>
+</span></span><span style="display:flex;"><span><span style="color:#000;font-weight:bold">}</span>
+</span></span></code></pre></div><h3 id="headings-small-elements-and-spacing">Headings, small elements, and spacing</h3>
+<p>Body text and heading text should use different spacing.</p>
+<ul>
+<li>Always make your headings too long to test the vertical line wrap spacing</li>
+<li>Headings can use negative spacing, which is useful for short spans of text</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-css" data-lang="css"><span style="display:flex;"><span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">hero</span> <span style="color:#204a87;font-weight:bold">h2</span> <span style="color:#000;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#000">margin-block</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#0000cf;font-weight:bold">0</span> <span style="color:#0000cf;font-weight:bold">10</span><span style="color:#204a87;font-weight:bold">px</span><span style="color:#000;font-weight:bold">;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">font-size</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#0000cf;font-weight:bold">1.95</span><span style="color:#204a87;font-weight:bold">rem</span><span style="color:#000;font-weight:bold">;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">letter-spacing</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#0000cf;font-weight:bold">-0.02</span><span style="color:#204a87;font-weight:bold">em</span><span style="color:#000;font-weight:bold">;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#000;font-weight:bold">}</span>
+</span></span><span style="display:flex;"><span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">top-nav</span> <span style="color:#204a87;font-weight:bold">a</span> <span style="color:#000;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">font-size</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#0000cf;font-weight:bold">0.8</span><span style="color:#204a87;font-weight:bold">rem</span><span style="color:#000;font-weight:bold">;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a40000">...</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">padding</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#0000cf;font-weight:bold">0.3</span><span style="color:#204a87;font-weight:bold">rem</span> <span style="color:#0000cf;font-weight:bold">1.25</span><span style="color:#204a87;font-weight:bold">rem</span><span style="color:#000;font-weight:bold">;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a40000">...</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">text-transform</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">uppercase</span><span style="color:#000;font-weight:bold">;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#204a87;font-weight:bold">letter-spacing</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#0000cf;font-weight:bold">0.03</span><span style="color:#204a87;font-weight:bold">em</span><span style="color:#000;font-weight:bold">;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#000;font-weight:bold">}</span>
+</span></span></code></pre></div>
+	
+</div>
+
+
+          </main>
+        </div>
+      </div>
+      <footer class="td-footer row d-print-none">
+  <div class="container-fluid">
+    <div class="row mx-md-2">
+      <div class="td-footer__left col-6 col-sm-4 order-sm-1">
+        
+      </div><div class="td-footer__right col-6 col-sm-4 order-sm-3">
+        
+      </div><div class="td-footer__center col-12 col-sm-4 py-2 order-sm-2">
+        <span class="td-footer__copyright">&copy;
+    2025
+    <span class="td-footer__authors">The Docsy Authors</span></span><span class="td-footer__all_rights_reserved">All Rights Reserved</span><span class="ms-2"><a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Privacy Policy</a></span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <script src="/js/main.js"></script>
+<script defer src="/js/click-to-copy.js" crossorigin="anonymous"></script>
+<script src='/js/tabpane-persist.js'></script>
+
+  </body>
+</html>

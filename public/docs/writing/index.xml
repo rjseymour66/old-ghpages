@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Writing on Goldydocs</title>
+    <link>//localhost:1313/docs/writing/</link>
+    <description>Recent content in Writing on Goldydocs</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <atom:link href="//localhost:1313/docs/writing/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Terms and definitions</title>
+      <link>//localhost:1313/docs/writing/terms/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/docs/writing/terms/</guid>
+      <description>&lt;dl&gt;&#xA;&lt;dt&gt;adjective&lt;/dt&gt;&#xA;&lt;dd&gt;Describes things.&lt;/dd&gt;&#xA;&lt;dt&gt;adverb&lt;/dt&gt;&#xA;&lt;dd&gt;Describes actions.&lt;/dd&gt;&#xA;&lt;dt&gt;article&lt;/dt&gt;&#xA;&lt;dd&gt;Points to or modifies a noun or pronoun. Articles specify the definiteness, indefiniteness, or quantity of the noun they modify. There are two main types: definite and indefinite.&lt;/dd&gt;&#xA;&lt;dt&gt;complement&lt;/dt&gt;&#xA;&lt;dd&gt;Completes the meaning of a verb by providing additional information about the subject or object.&lt;/dd&gt;&#xA;&lt;dt&gt;complex transitive verb&lt;/dt&gt;&#xA;&lt;dd&gt;Not common. A verb that has both an object and an object predicative.&lt;/dd&gt;&#xA;&lt;dt&gt;conjunction&lt;/dt&gt;&#xA;&lt;dd&gt;Word that connects clauses or sentences or coordinates words in the same clause.&lt;/dd&gt;&#xA;&lt;dt&gt;copular verb&lt;/dt&gt;&#xA;&lt;dd&gt;Also called a linking verb, a verb that refers back to the subject. A word that follows does not receive the action of the verb.&#xA;&lt;p&gt;Main copular verbs include the following:&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Phrases and clauses</title>
+      <link>//localhost:1313/docs/writing/phrases-clauses/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/docs/writing/phrases-clauses/</guid>
+      <description>&lt;h2 id=&#34;phrases&#34;&gt;Phrases&lt;/h2&gt;&#xA;&lt;p&gt;In syntactical analysis, a phrase is a unit of one or more words doing the job (function) of a noun, verb, adjective, adverb, or preposition. Phrases can be a single word because a noun can function the same as a number of words. For example, &amp;ldquo;&lt;em&gt;The smelly cat&lt;/em&gt; meowed&amp;rdquo; and &amp;ldquo;&lt;em&gt;Cats&lt;/em&gt; meow&amp;rdquo;.&lt;/p&gt;&#xA;&lt;p&gt;Phrases can contain phrases. The function that we&amp;rsquo;re analyzing&amp;ndash;the noun, verb, adjective, etc&amp;ndash;determines what we call the phrase (ex: noun phrase). We define the function by the head word we are looking for.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Nouns</title>
+      <link>//localhost:1313/docs/writing/nouns/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/docs/writing/nouns/</guid>
+      <description>&lt;p&gt;A person, place, or thing that performs one of the following functions (pronouns do the same job):&lt;/p&gt;&#xA;&lt;table&gt;&#xA;  &lt;thead&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;th&gt;Function&lt;/th&gt;&#xA;          &lt;th&gt;Example&lt;/th&gt;&#xA;      &lt;/tr&gt;&#xA;  &lt;/thead&gt;&#xA;  &lt;tbody&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;subject of the verb&lt;/td&gt;&#xA;          &lt;td&gt;Sally cried. She cried.&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;head up the noun phrase&lt;/td&gt;&#xA;          &lt;td&gt;&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;subject of a clause&lt;/td&gt;&#xA;          &lt;td&gt;&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;object of transitive verb&lt;/td&gt;&#xA;          &lt;td&gt;The crowd hated Ricky. She loved him.&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;object of a preposition&lt;/td&gt;&#xA;          &lt;td&gt;The sun shines on her.&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;complement of a copular verb&lt;/td&gt;&#xA;          &lt;td&gt;Charlie smelled.&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;  &lt;/tbody&gt;&#xA;&lt;/table&gt;&#xA;&lt;h2 id=&#34;categories&#34;&gt;Categories&lt;/h2&gt;&#xA;&lt;h3 id=&#34;number&#34;&gt;Number&lt;/h3&gt;&#xA;&lt;p&gt;Numbers related to nouns and pronouns:&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Pronouns</title>
+      <link>//localhost:1313/docs/writing/pronouns/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/docs/writing/pronouns/</guid>
+      <description>&lt;h2 id=&#34;nouns-vs-pronouns&#34;&gt;Nouns vs Pronouns&lt;/h2&gt;&#xA;&lt;p&gt;Pronouns have different forms when they are working as the subject (nominative), object (objective), or possessor (genitive) case:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;subject: he&lt;/li&gt;&#xA;&lt;li&gt;object: him&lt;/li&gt;&#xA;&lt;li&gt;possessive: his&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;Pronouns do not take determiners:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;the&lt;/li&gt;&#xA;&lt;li&gt;a&lt;/li&gt;&#xA;&lt;li&gt;an&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;Pronouns do not take demontratives:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;those&lt;/li&gt;&#xA;&lt;li&gt;that&lt;/li&gt;&#xA;&lt;li&gt;these&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;categories&#34;&gt;Categories&lt;/h2&gt;&#xA;&lt;table&gt;&#xA;  &lt;thead&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;th&gt;Type&lt;/th&gt;&#xA;          &lt;th&gt;Examples&lt;/th&gt;&#xA;      &lt;/tr&gt;&#xA;  &lt;/thead&gt;&#xA;  &lt;tbody&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;Personal&lt;/td&gt;&#xA;          &lt;td&gt;I, you, he, she, etc. and other cases and forms like me, my, and mine&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;Relative&lt;/td&gt;&#xA;          &lt;td&gt;that, which, who/whom, whoever/whomever&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;Reflexive&lt;/td&gt;&#xA;          &lt;td&gt;myself, yourself, himself, etc&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;Indefinite&lt;/td&gt;&#xA;          &lt;td&gt;anyone, somebody, one, all, any, etc.&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;Interrogative&lt;/td&gt;&#xA;          &lt;td&gt;who, which, what, where, how&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;Demonstrative&lt;/td&gt;&#xA;          &lt;td&gt;this, that, these, etc.&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;Reciprocal&lt;/td&gt;&#xA;          &lt;td&gt;each other, one another&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;Conditional&lt;/td&gt;&#xA;          &lt;td&gt;whatever, whichever, wherever, whoever, whomever&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;  &lt;/tbody&gt;&#xA;&lt;/table&gt;&#xA;&lt;h2 id=&#34;noun-phrase&#34;&gt;Noun phrase&lt;/h2&gt;&#xA;&lt;p&gt;A pronoun can be a noun phrase:&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Verbs</title>
+      <link>//localhost:1313/docs/writing/verbs/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/docs/writing/verbs/</guid>
+      <description>&lt;p&gt;Verbs convey action or a state of being.&lt;/p&gt;&#xA;&lt;h2 id=&#34;verb-forms&#34;&gt;Verb forms&lt;/h2&gt;&#xA;&lt;p&gt;Regardless of the verb&amp;rsquo;s inflection, all verbs have a form-type:&lt;/p&gt;&#xA;&lt;table&gt;&#xA;  &lt;thead&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;th&gt;Form&lt;/th&gt;&#xA;          &lt;th&gt;Description&lt;/th&gt;&#xA;          &lt;th&gt;Example&lt;/th&gt;&#xA;      &lt;/tr&gt;&#xA;  &lt;/thead&gt;&#xA;  &lt;tbody&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;Base form&lt;/td&gt;&#xA;          &lt;td&gt;The infinitive form, does not require &amp;rsquo;to&#39;&lt;/td&gt;&#xA;          &lt;td&gt;walk&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;-s form&lt;/td&gt;&#xA;          &lt;td&gt;Third-person singular&lt;/td&gt;&#xA;          &lt;td&gt;walks&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;-ing (progressive) participle&lt;/td&gt;&#xA;          &lt;td&gt;Used in progressive verb tenses.&lt;/td&gt;&#xA;          &lt;td&gt;walking&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;Past form (-ed)&lt;/td&gt;&#xA;          &lt;td&gt;&lt;/td&gt;&#xA;          &lt;td&gt;he walked&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;Past participle (-ed)&lt;/td&gt;&#xA;          &lt;td&gt;Goes with some form of &amp;lsquo;have&amp;rsquo;&lt;/td&gt;&#xA;          &lt;td&gt;he has walked&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;  &lt;/tbody&gt;&#xA;&lt;/table&gt;&#xA;&lt;h2 id=&#34;tense&#34;&gt;Tense&lt;/h2&gt;&#xA;&lt;p&gt;Tense refers to when the action expressed by the verb occurred:&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Adjectives</title>
+      <link>//localhost:1313/docs/writing/adjectives/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/docs/writing/adjectives/</guid>
+      <description>&lt;p&gt;Adjectives describe nouns.&lt;/p&gt;&#xA;&lt;h2 id=&#34;basic-types&#34;&gt;Basic types&lt;/h2&gt;&#xA;&lt;p&gt;Attributive adjectives come before nouns:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;a &lt;em&gt;silly&lt;/em&gt; idea&lt;/li&gt;&#xA;&lt;li&gt;eight &lt;em&gt;red&lt;/em&gt; cars&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;Predicate adjectives are in the predicate and linked to the subject by a linking verb:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Her patience is &lt;em&gt;thin&lt;/em&gt;.&lt;/li&gt;&#xA;&lt;li&gt;My dog is &lt;em&gt;deaf&lt;/em&gt;.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;comparatives&#34;&gt;Comparatives&lt;/h2&gt;&#xA;&lt;p&gt;Adjectives that have an &lt;em&gt;-er&lt;/em&gt; form are called &lt;em&gt;comparatives&lt;/em&gt;:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;taller&lt;/li&gt;&#xA;&lt;li&gt;faster&lt;/li&gt;&#xA;&lt;li&gt;lighter&lt;/li&gt;&#xA;&lt;li&gt;smaller&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;If the adjective does not have an &lt;em&gt;-er&lt;/em&gt; form, you can make it a comparative by preceding it with &lt;em&gt;more&lt;/em&gt;:&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Adverbs</title>
+      <link>//localhost:1313/docs/writing/adverbs/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/docs/writing/adverbs/</guid>
+      <description>&lt;p&gt;An adverb is a word that modifies a whole clause or answers the following questions:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;When?&lt;/li&gt;&#xA;&lt;li&gt;Where?&lt;/li&gt;&#xA;&lt;li&gt;In what manner?&lt;/li&gt;&#xA;&lt;li&gt;To what degree?&lt;/li&gt;&#xA;&lt;li&gt;How frequently?&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;Manner adverbs describe actions and end in &lt;em&gt;-ly&lt;/em&gt;:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;It was &lt;em&gt;greatly&lt;/em&gt; exaggerated.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;table&gt;&#xA;  &lt;thead&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;th&gt;Question&lt;/th&gt;&#xA;          &lt;th&gt;Example&lt;/th&gt;&#xA;      &lt;/tr&gt;&#xA;  &lt;/thead&gt;&#xA;  &lt;tbody&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;When?&lt;/td&gt;&#xA;          &lt;td&gt;I saw him &lt;em&gt;yesterday&lt;/em&gt;.&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;Where?&lt;/td&gt;&#xA;          &lt;td&gt;Rick is &lt;em&gt;inside&lt;/em&gt;.&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;In what manner?&lt;/td&gt;&#xA;          &lt;td&gt;The day came together &lt;em&gt;beautifully&lt;/em&gt;.&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;To what degree?&lt;/td&gt;&#xA;          &lt;td&gt;The glass was &lt;em&gt;very&lt;/em&gt; cold.&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;Modify whole clause*&lt;/td&gt;&#xA;          &lt;td&gt;&lt;em&gt;Luckily&lt;/em&gt;, we hit a green light.&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;Modify whole clause*&lt;/td&gt;&#xA;          &lt;td&gt;&lt;em&gt;Futhermore&lt;/em&gt;, we concluded that no action was necessary.&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;  &lt;/tbody&gt;&#xA;&lt;/table&gt;&#xA;&lt;p&gt;The last two examples are sentence adverbs bc they modify the entire sentence. Within sentence adverbs are &lt;em&gt;conjunctive&lt;/em&gt; adverbs that join clauses while adding information like the logical connection between ideas:&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Conjunctions</title>
+      <link>//localhost:1313/docs/writing/conjunctions/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/docs/writing/conjunctions/</guid>
+      <description>&lt;p&gt;Conjunctions join words, phrases, and clauses.&lt;/p&gt;&#xA;&lt;h2 id=&#34;coordinating-conjunctions&#34;&gt;Coordinating conjunctions&lt;/h2&gt;&#xA;&lt;p&gt;Connect units of equal grammatical status, which means you can change their order without changing their meaning. The most common ones spell out FANBOYS:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;for&lt;/li&gt;&#xA;&lt;li&gt;and&lt;/li&gt;&#xA;&lt;li&gt;nor&lt;/li&gt;&#xA;&lt;li&gt;but&lt;/li&gt;&#xA;&lt;li&gt;or&lt;/li&gt;&#xA;&lt;li&gt;yet&lt;/li&gt;&#xA;&lt;li&gt;so&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;Other properties:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Some of these words are other parts of speech. Pay attention to when they act as joiners&lt;/li&gt;&#xA;&lt;li&gt;often work with commas&lt;/li&gt;&#xA;&lt;li&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h3 id=&#34;coordinate-noun-phrase&#34;&gt;Coordinate noun phrase&lt;/h3&gt;&#xA;&lt;p&gt;These can do the same job as an individual noun, including being an object:&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Prepositions</title>
+      <link>//localhost:1313/docs/writing/prepositions/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/docs/writing/prepositions/</guid>
+      <description>&lt;p&gt;It is hard to define a preposition. A preposition is a headword in a prepositional phrase, which often includes an object&amp;ndash;a noun phrase:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Somewhere &lt;em&gt;over [the rainbow]&lt;/em&gt;.&lt;/li&gt;&#xA;&lt;li&gt;Take me &lt;em&gt;to [the river]&lt;/em&gt;.&lt;/li&gt;&#xA;&lt;li&gt;This is &lt;em&gt;between [those guys]&lt;/em&gt;.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;Prepositions are often interchangeable:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;I was bored &lt;em&gt;by&lt;/em&gt; her speech. | I was bored &lt;em&gt;with&lt;/em&gt; her speech.&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
+    </item>
+    <item>
+      <title>Determiners</title>
+      <link>//localhost:1313/docs/writing/determiners/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/docs/writing/determiners/</guid>
+      <description>&lt;p&gt;Determiners introduce noun phrases and convey information like quantity and definiteness:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;I want some pie.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;If the word doesn&amp;rsquo;t introduce a noun phrase, it is a pronoun:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;I want some.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;definite-and-indefinite-articles&#34;&gt;Definite and indefinite articles&lt;/h2&gt;&#xA;&lt;p&gt;&lt;em&gt;The&lt;/em&gt; is the only definite article. It refers to a specific thing or things:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;The woman next door.&lt;/li&gt;&#xA;&lt;li&gt;The jokes were funny.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;Use &lt;em&gt;an&lt;/em&gt; based on sound, not spelling:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;A university.&lt;/li&gt;&#xA;&lt;li&gt;An FBI agent.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;types-of-determiners&#34;&gt;Types of determiners&lt;/h2&gt;&#xA;&lt;p&gt;The following examples are determiners only when they introduce noun phrases:&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Grammar of phrases</title>
+      <link>//localhost:1313/docs/writing/grammer-phrases/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/docs/writing/grammer-phrases/</guid>
+      <description>&lt;p&gt;A phrase is a unit that functions as a particular part of speech, such as a noun, verb, adjective, adverb, or preposition. A phrase can be a single word or it can contain other phrases.&lt;/p&gt;&#xA;&lt;h2 id=&#34;noun-phrases&#34;&gt;Noun phrases&lt;/h2&gt;&#xA;&lt;p&gt;Usually headed by nouns or pronouns, other words are called dependents because you can delete them without damaging the sentence syntax. They commonly act as the following:&lt;/p&gt;&#xA;&lt;table&gt;&#xA;  &lt;thead&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;th&gt;Function&lt;/th&gt;&#xA;          &lt;th&gt;Example&lt;/th&gt;&#xA;      &lt;/tr&gt;&#xA;  &lt;/thead&gt;&#xA;  &lt;tbody&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;subject&lt;/td&gt;&#xA;          &lt;td&gt;&lt;em&gt;Steaks&lt;/em&gt; are the best food.&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;object of transitive verbs&lt;/td&gt;&#xA;          &lt;td&gt;We will eat &lt;em&gt;steaks&lt;/em&gt;.&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;object of prepositions&lt;/td&gt;&#xA;          &lt;td&gt;The buffet was different kinds &lt;em&gt;of steaks&lt;/em&gt;.&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;indirect object&lt;/td&gt;&#xA;          &lt;td&gt;I gave &lt;em&gt;John&lt;/em&gt; a free taco.&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;subject predicative&lt;/td&gt;&#xA;          &lt;td&gt;Jack is &lt;em&gt;the man&lt;/em&gt;.&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;object predicative&lt;/td&gt;&#xA;          &lt;td&gt;Everyone considers Bill Gates &lt;em&gt;a genius&lt;/em&gt;.&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;premodifier of other nouns&lt;/td&gt;&#xA;          &lt;td&gt;the &lt;em&gt;shoe&lt;/em&gt; store&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;vocative (direct address/what you call someone)&lt;/td&gt;&#xA;          &lt;td&gt;I hope you are doing well, &lt;em&gt;Josie&lt;/em&gt;.&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;appositive (restate with extra info)&lt;/td&gt;&#xA;          &lt;td&gt;Vince, &lt;em&gt;a salesman&lt;/em&gt;, always has an angle.&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;  &lt;/tbody&gt;&#xA;&lt;/table&gt;&#xA;&lt;h3 id=&#34;appositives&#34;&gt;Appositives&lt;/h3&gt;&#xA;&lt;p&gt;An appositive restates the noun and adds additional information. You can distinguish between the subject and appositive by looking at how commas set them apart:&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Grammar of clauses</title>
+      <link>//localhost:1313/docs/writing/grammar-clauses/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/docs/writing/grammar-clauses/</guid>
+      <description>&lt;h2 id=&#34;independent-clauses&#34;&gt;Independent clauses&lt;/h2&gt;&#xA;&lt;p&gt;Contain a subject and a conjugated verb that form the core of the sentence:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;stands alone&lt;/li&gt;&#xA;&lt;li&gt;can be coordinated with one or more clauses, joined by a coordinating conjunction&lt;/li&gt;&#xA;&lt;li&gt;works with subordinate clauses&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;subordinate-clauses&#34;&gt;Subordinate clauses&lt;/h2&gt;&#xA;&lt;p&gt;Called dependent clause because they cannot stand alone.&lt;/p&gt;&#xA;&lt;h2 id=&#34;form&#34;&gt;Form&lt;/h2&gt;&#xA;&lt;h3 id=&#34;finite&#34;&gt;Finite&lt;/h3&gt;&#xA;&lt;p&gt;&amp;ldquo;Finite&amp;rdquo; describes how the verb works&amp;ndash;it has a subject and shows tense. Contain a subject and a conjugated verb. Can be main or subordinate:&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Coordination</title>
+      <link>//localhost:1313/docs/writing/coordination/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/docs/writing/coordination/</guid>
+      <description>&lt;p&gt;You can coordinate noun phrases and clauses with coordinating conjunctions:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;em&gt;Salt and vinegar&lt;/em&gt; taste good on chips. (noun phrases)&lt;/li&gt;&#xA;&lt;li&gt;&lt;em&gt;I can go to the game&lt;/em&gt; or &lt;em&gt;I can go to the concert&lt;/em&gt;.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;verb-phrases&#34;&gt;Verb phrases&lt;/h2&gt;&#xA;&lt;p&gt;When a single noun is the subject of multiple verbs:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;I &lt;em&gt;ate&lt;/em&gt; the burger and &lt;em&gt;drank&lt;/em&gt; the soda.&lt;/li&gt;&#xA;&lt;li&gt;Sally was &lt;em&gt;singing&lt;/em&gt;, &lt;em&gt;laughing&lt;/em&gt;, and &lt;em&gt;skipping&lt;/em&gt; all the way to the show.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;commas-and-adjectives&#34;&gt;Commas and adjectives&lt;/h2&gt;&#xA;&lt;p&gt;To figure out whether they are coordinate, check the following:&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Usage</title>
+      <link>//localhost:1313/docs/writing/usage/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/docs/writing/usage/</guid>
+      <description>&lt;h2 id=&#34;pronouns-in-coordinate-noun-phrases&#34;&gt;Pronouns in coordinate noun phrases&lt;/h2&gt;&#xA;&lt;p&gt;&lt;em&gt;I&lt;/em&gt; when it is nominative (subject form):&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Jack &lt;em&gt;and I&lt;/em&gt; went to the store.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;&lt;em&gt;me&lt;/em&gt; when it is objective (object of noun or prep. phrase):&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Sally went to the store &lt;em&gt;[with] Jack and me&lt;/em&gt;.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h3 id=&#34;between-you-and-me&#34;&gt;between you and me&lt;/h3&gt;&#xA;&lt;p&gt;Always use &lt;em&gt;me&lt;/em&gt; because &lt;em&gt;between&lt;/em&gt; is always a preposition and prepositions always take the object form:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;em&gt;Between you and me&lt;/em&gt;, this grammar rule is confusing.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;dangling-modifiers&#34;&gt;Dangling modifiers&lt;/h2&gt;&#xA;&lt;p&gt;Place the modifier as close as possible to the sentence element that they modify. A phrase should point clearly to the thing they&amp;rsquo;re modifying&amp;ndash;you can do that with space. If it doesn&amp;rsquo;t, then it is a dangling modifier. If the phrase has a participle (&lt;em&gt;-ing&lt;/em&gt; verb), then its a dangling participle:&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Sentences</title>
+      <link>//localhost:1313/docs/writing/sentences/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/docs/writing/sentences/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Paragraphs</title>
+      <link>//localhost:1313/docs/writing/paragraphs/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/docs/writing/paragraphs/</guid>
+      <description></description>
+    </item>
+  </channel>
+</rss>

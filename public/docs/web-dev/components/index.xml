@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Components on Goldydocs</title>
+    <link>//localhost:1313/docs/web-dev/components/</link>
+    <description>Recent content in Components on Goldydocs</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <atom:link href="//localhost:1313/docs/web-dev/components/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Toggle buttons</title>
+      <link>//localhost:1313/docs/web-dev/components/toggle-button/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/docs/web-dev/components/toggle-button/</guid>
+      <description>&lt;p&gt;Buttons are inherently accessible to keyboards and screen readers. If the button is not submitting a form, use &lt;code&gt;type=button&lt;/code&gt;. This means that you don&amp;rsquo;t have to add &lt;code&gt;e.preventDefault()&lt;/code&gt; to keep the browser from submitting a form.&lt;/p&gt;&#xA;&lt;h3 id=&#34;pressed-button-styles&#34;&gt;Pressed button styles&lt;/h3&gt;&#xA;&lt;p&gt;If you are creating a button that looks like an actual button&amp;ndash;is depressed after a click&amp;ndash;add &lt;code&gt;aria-pressed&lt;/code&gt;. This makes some screen readers announce the button as a toggle button.&lt;/p&gt;&#xA;&lt;p&gt;Use &lt;code&gt;position: relative;&lt;/code&gt; so you can move the element without removing it from the doc flow. This is better for performance because it does not trigger GPU acceleration or trigger a new stacking context. In addition, its great for subtle static layout tweaks that need to include shadows or outlines. Shadows, outlines, and background layers are shifted with the element.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Todo list</title>
+      <link>//localhost:1313/docs/web-dev/components/todo-list/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/docs/web-dev/components/todo-list/</guid>
+      <description>&lt;p&gt;This todo list example is really about making inclusive components that you create or delete.&lt;/p&gt;&#xA;&lt;h2 id=&#34;empty-state&#34;&gt;Empty state&lt;/h2&gt;&#xA;&lt;p&gt;Before you add items to your todo list, you will have an empty space. You need to inform users and screen readers there is a part of the page that can contain content, even if it does not currently contain content.&lt;/p&gt;&#xA;&lt;p&gt;To accomplish this, place an element with an &lt;code&gt;empty-state&lt;/code&gt; class after the &lt;code&gt;&amp;lt;ul&amp;gt;&lt;/code&gt; element:&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Menus and menu buttons</title>
+      <link>//localhost:1313/docs/web-dev/components/menus/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/docs/web-dev/components/menus/</guid>
+      <description>&lt;h2 id=&#34;navigation-menus&#34;&gt;Navigation menus&lt;/h2&gt;&#xA;&lt;p&gt;When creating navigation menus with submenus, be careful with these ARIA attributes. Make sure you use &lt;code&gt;aria-expanded=&amp;quot;true|false&amp;quot;&lt;/code&gt; on the top level menu item. Use this attribute on click, not on focus.&lt;/p&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;These ARIA attributes are for application menus and not navs:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;code&gt;aria-haspopup=&amp;quot;true&amp;quot;&lt;/code&gt;: activated on click and only reveal a secret menu&lt;/li&gt;&#xA;&lt;li&gt;&lt;code&gt;role=&amp;quot;menu&amp;quot;&lt;/code&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;code&gt;role=&amp;quot;menuitem&amp;quot;&lt;/code&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;&lt;/blockquote&gt;&#xA;&lt;p&gt;For touch screens, top-level destination pages should have a table of contents rather than a submenu.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Tooltips and toggletips</title>
+      <link>//localhost:1313/docs/web-dev/components/tooltips/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/docs/web-dev/components/tooltips/</guid>
+      <description></description>
+    </item>
+  </channel>
+</rss>

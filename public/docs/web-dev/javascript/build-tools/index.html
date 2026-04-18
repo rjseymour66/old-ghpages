@@ -1,0 +1,1194 @@
+<!doctype html>
+<html itemscope itemtype="http://schema.org/WebPage" lang="en" class="no-js">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="noindex, nofollow">
+
+
+<link rel="shortcut icon" href="/favicons/favicon.ico" >
+<link rel="apple-touch-icon" href="/favicons/apple-touch-icon-180x180.png" sizes="180x180">
+<link rel="icon" type="image/png" href="/favicons/favicon-16x16.png" sizes="16x16">
+<link rel="icon" type="image/png" href="/favicons/favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="/favicons/android-36x36.png" sizes="36x36">
+<link rel="icon" type="image/png" href="/favicons/android-48x48.png" sizes="48x48">
+<link rel="icon" type="image/png" href="/favicons/android-72x72.png" sizes="72x72">
+<link rel="icon" type="image/png" href="/favicons/android-96x96.png" sizes="96x96">
+<link rel="icon" type="image/png" href="/favicons/android-144x144.png" sizes="144x144">
+<link rel="icon" type="image/png" href="/favicons/android-192x192.png" sizes="192x192">
+
+<title>Build tools | Goldydocs</title>
+<meta name="description" content="Toolchains to manage your environments and distribute your code.">
+<meta property="og:url" content="//localhost:1313/docs/web-dev/javascript/build-tools/">
+  <meta property="og:site_name" content="Goldydocs">
+  <meta property="og:title" content="Build tools">
+  <meta property="og:description" content="Toolchains to manage your environments and distribute your code.">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="docs">
+    <meta property="article:modified_time" content="2025-03-20T15:14:59-04:00">
+
+  <meta itemprop="name" content="Build tools">
+  <meta itemprop="description" content="Toolchains to manage your environments and distribute your code.">
+  <meta itemprop="dateModified" content="2025-03-20T15:14:59-04:00">
+  <meta itemprop="wordCount" content="2166">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Build tools">
+  <meta name="twitter:description" content="Toolchains to manage your environments and distribute your code.">
+<link href="/scss/main.css" rel="stylesheet">
+<script
+  src="https://code.jquery.com/jquery-3.7.1.min.js"
+  integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+  crossorigin="anonymous"></script>
+
+  </head>
+  <body class="td-page">
+    <header>
+      <nav class="td-navbar js-navbar-scroll" data-bs-theme="dark">
+<div class="container-fluid flex-column flex-md-row">
+  <a class="navbar-brand" href="/"><span class="navbar-brand__logo navbar-logo"><svg id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 500 500" style="enable-background:new 0 0 500 500"><g><path style="fill:#fff" d="M116.8525 421.9722c-5.7041.0-10.3442-4.3127-10.3442-9.6129V88.183c0-5.3002 4.6401-9.6117 10.3442-9.6117H320.858c3.0347.0 9.3959.5498 11.7506 2.6302l.3545.3442 58.905 63.2912c2.3101 2.491 2.9202 8.4928 2.9202 11.3184v256.2039c0 5.3002-4.6407 9.6129-10.3436 9.6129H116.8525z"/><g><g><g><path style="fill:#767676" d="M384.4445 423.2066H116.852c-6.3839.0-11.5786-4.8658-11.5786-10.8474V88.1831c0-5.9804 5.1947-10.8461 11.5786-10.8461h204.0062c.377.0 9.2786.0329 12.568 2.9389l.3947.3833 58.9508 63.337c3.2135 3.4652 3.2514 11.7924 3.2514 12.1593v256.2036C396.0231 418.3408 390.8284 423.2066 384.4445 423.2066zM116.5079 411.9189c.0848.0278.1999.0531.3441.0531h267.5925c.1442.0.2581-.0253.3441-.0531V156.1556c-.0076-.9033-.3593-3.7347-.7034-5.0037l-57.6527-61.9416c-1.4651-.3176-4.4533-.6389-5.5742-.6389H116.852c-.143.0-.2594.024-.3441.0531V411.9189zm267.4533-261.149zM327.0321 89.371v.0013V89.371z"/></g></g></g><g><g><path style="fill:#5b7fc0" d="M189.0874 210.1754l.0012-.0012c7.7751.0012 15.0295 4.1862 18.932 10.9234 1.9177 3.3159 2.9305 7.1011 2.9293 10.9378.0 5.8394-2.2733 11.3304-6.4032 15.4604-4.1288 4.1288-9.6186 6.4032-15.458 6.4032s-11.328-2.2733-15.458-6.4032-6.4032-9.6186-6.4056-15.4628c.0012-6.025 2.454-11.4897 6.4116-15.4473C177.5953 212.627 183.0601 210.1742 189.0874 210.1754zm7.993 21.8576c.0012-1.4042-.3687-2.7868-1.063-3.9887-1.4293-2.4684-4.0833-3.9995-6.9299-4.0019-4.4077.0024-7.993 3.5877-7.993 7.993.0 2.1356.832 4.1431 2.3427 5.6539 1.5083 1.5083 3.5159 2.3403 5.6503 2.3415 2.1356.0 4.1443-.8308 5.6539-2.3403S197.0816 234.1722 197.0804 232.033z"/><path style="opacity:.3;fill:#fff" d="M189.0898 210.176c7.7763.0 15.0283 4.1826 18.926 10.9151 1.9201 3.3136 2.9377 7.0988 2.9353 10.9462.0024 12.0643-9.8065 21.8636-21.8613 21.8613-12.0547.0024-21.8636-9.8066-21.8612-21.8613.0-6.0285 2.4516-11.4921 6.4116-15.452C177.5977 212.6276 183.0612 210.176 189.0898 210.176zm7.9941 21.8612c0-1.4078-.3711-2.7892-1.0702-3.9959-1.4269-2.466-4.0797-3.9983-6.924-3.9983-4.4005-.0048-7.9918 3.5817-7.9942 7.9942.0024 4.4077 3.5865 7.9918 7.9942 7.9942 2.2027.0 4.2018-.8978 5.6479-2.3439C196.1861 236.239 197.0839 234.2399 197.0839 232.0372z"/><g><defs><path id="SVGID_1_" d="M194.7376 237.6875c-1.4461 1.4461-3.4452 2.3439-5.6479 2.3439-4.4077-.0024-7.9918-3.5865-7.9942-7.9942.0024-4.4125 3.5937-7.999 7.9942-7.9942 2.8443.0 5.497 1.5323 6.924 3.9983.6991 1.2067 1.0702 2.5881 1.0702 3.9959C197.0839 234.2399 196.1861 236.239 194.7376 237.6875z"/></defs><clipPath id="SVGID_2_"><use xlink:href="#SVGID_1_" style="overflow:visible"/></clipPath><path style="clip-path:url(#SVGID_2_);fill:#fff" d="M190.0704 225.0237c-4.4005-.0048-7.9918 3.5817-7.9942 7.9942.0011 1.9546.7088 3.7452 1.8782 5.1354-1.7447-1.4674-2.8575-3.663-2.8588-6.116.0024-4.4125 3.5936-7.999 7.9942-7.9942 2.3802-1e-4 4.616 1.0833 6.1218 2.8788C193.7885 225.7247 191.9774 225.0237 190.0704 225.0237z"/><path style="opacity:.13;clip-path:url(#SVGID_2_);fill:#020202" d="M190.0704 225.0237c-4.4005-.0048-7.9918 3.5817-7.9942 7.9942.0011 1.9546.7088 3.7452 1.8782 5.1354-1.7447-1.4674-2.8575-3.663-2.8588-6.116.0024-4.4125 3.5936-7.999 7.9942-7.9942 2.3802-1e-4 4.616 1.0833 6.1218 2.8788C193.7885 225.7247 191.9774 225.0237 190.0704 225.0237z"/></g><g><defs><path id="SVGID_3_" d="M189.0898 210.176c7.7763.0 15.0283 4.1826 18.926 10.9151 1.9201 3.3136 2.9377 7.0988 2.9353 10.9462.0024 12.0643-9.8065 21.8636-21.8613 21.8613-12.0547.0024-21.8636-9.8066-21.8612-21.8613.0-6.0285 2.4516-11.4921 6.4116-15.452C177.5977 212.6276 183.0612 210.176 189.0898 210.176zm7.9941 21.8612c0-1.4078-.3711-2.7892-1.0702-3.9959-1.4269-2.466-4.0797-3.9983-6.924-3.9983-4.4005-.0048-7.9918 3.5817-7.9942 7.9942.0024 4.4077 3.5865 7.9918 7.9942 7.9942 2.2027.0 4.2018-.8978 5.6479-2.3439C196.1861 236.239 197.0839 234.2399 197.0839 232.0372z"/></defs><clipPath id="SVGID_4_"><use xlink:href="#SVGID_3_" style="overflow:visible"/></clipPath><path style="clip-path:url(#SVGID_4_);fill:#5b7fc0" d="M172.6595 215.6045c-3.96 3.96-6.4116 9.4235-6.4116 15.452-.0024 12.0547 9.8066 21.8636 21.8613 21.8612 12.0547.0024 21.8636-9.797 21.8613-21.8612.0024-3.8475-1.0151-7.6326-2.9353-10.9462-3.8977-6.7324-11.1497-10.9151-18.926-10.9151C182.0806 209.1953 176.6171 211.647 172.6595 215.6045z"/></g></g><rect x="198.8952" y="225.1043" style="fill:#5b7fc0" width="122.6266" height="13.8671"/></g><g><path style="fill:#d95140" d="M189.0874 155.7611l.0012-.0012c7.7751.0012 15.0295 4.1862 18.932 10.9234 1.9177 3.3159 2.9305 7.1011 2.9293 10.9378.0 5.8394-2.2733 11.3304-6.4032 15.4604-4.1288 4.1288-9.6186 6.4032-15.458 6.4032s-11.328-2.2733-15.458-6.4032-6.4032-9.6186-6.4056-15.4628c.0012-6.0249 2.454-11.4897 6.4116-15.4473C177.5953 158.2128 183.0601 155.7599 189.0874 155.7611zm7.993 21.8577c.0012-1.4042-.3687-2.7868-1.063-3.9887-1.4293-2.4684-4.0833-3.9995-6.9299-4.0019-4.4077.0024-7.993 3.5877-7.993 7.993.0 2.1356.832 4.1431 2.3427 5.6539 1.5083 1.5083 3.5159 2.3403 5.6503 2.3415 2.1356.0 4.1443-.8308 5.6539-2.3403C196.2508 181.7667 197.0816 179.758 197.0804 177.6188z"/><path style="opacity:.3;fill:#fff" d="M189.0898 155.7617c7.7763.0 15.0283 4.1826 18.926 10.9151 1.9201 3.3135 2.9377 7.0987 2.9353 10.9462.0024 12.0643-9.8065 21.8636-21.8613 21.8613-12.0547.0024-21.8636-9.8066-21.8612-21.8613.0-6.0285 2.4516-11.4921 6.4116-15.452C177.5977 158.2134 183.0612 155.7617 189.0898 155.7617zm7.9941 21.8613c0-1.4078-.3711-2.7892-1.0702-3.9959-1.4269-2.466-4.0797-3.9983-6.924-3.9983-4.4005-.0048-7.9918 3.5817-7.9942 7.9942.0024 4.4077 3.5865 7.9918 7.9942 7.9942 2.2027.0 4.2018-.8978 5.6479-2.3439C196.1861 181.8248 197.0839 179.8256 197.0839 177.623z"/><g><defs><path id="SVGID_5_" d="M194.7376 183.2733c-1.4461 1.4461-3.4452 2.3439-5.6479 2.3439-4.4077-.0024-7.9918-3.5865-7.9942-7.9942.0024-4.4125 3.5937-7.9989 7.9942-7.9942 2.8443.0 5.497 1.5323 6.924 3.9983.6991 1.2067 1.0702 2.5881 1.0702 3.9959C197.0839 179.8256 196.1861 181.8248 194.7376 183.2733z"/></defs><clipPath id="SVGID_6_"><use xlink:href="#SVGID_5_" style="overflow:visible"/></clipPath><path style="clip-path:url(#SVGID_6_);fill:#fff" d="M190.0704 170.6095c-4.4005-.0048-7.9918 3.5817-7.9942 7.9942.0011 1.9546.7088 3.7452 1.8782 5.1354-1.7447-1.4674-2.8575-3.663-2.8588-6.116.0024-4.4125 3.5936-7.999 7.9942-7.9942 2.3802-1e-4 4.616 1.0833 6.1218 2.8788C193.7885 171.3104 191.9774 170.6095 190.0704 170.6095z"/><path style="opacity:.13;clip-path:url(#SVGID_6_);fill:#020202" d="M190.0704 170.6095c-4.4005-.0048-7.9918 3.5817-7.9942 7.9942.0011 1.9546.7088 3.7452 1.8782 5.1354-1.7447-1.4674-2.8575-3.663-2.8588-6.116.0024-4.4125 3.5936-7.999 7.9942-7.9942 2.3802-1e-4 4.616 1.0833 6.1218 2.8788C193.7885 171.3104 191.9774 170.6095 190.0704 170.6095z"/></g><g><defs><path id="SVGID_7_" d="M189.0898 155.7617c7.7763.0 15.0283 4.1826 18.926 10.9151 1.9201 3.3135 2.9377 7.0987 2.9353 10.9462.0024 12.0643-9.8065 21.8636-21.8613 21.8613-12.0547.0024-21.8636-9.8066-21.8612-21.8613.0-6.0285 2.4516-11.4921 6.4116-15.452C177.5977 158.2134 183.0612 155.7617 189.0898 155.7617zm7.9941 21.8613c0-1.4078-.3711-2.7892-1.0702-3.9959-1.4269-2.466-4.0797-3.9983-6.924-3.9983-4.4005-.0048-7.9918 3.5817-7.9942 7.9942.0024 4.4077 3.5865 7.9918 7.9942 7.9942 2.2027.0 4.2018-.8978 5.6479-2.3439C196.1861 181.8248 197.0839 179.8256 197.0839 177.623z"/></defs><clipPath id="SVGID_8_"><use xlink:href="#SVGID_7_" style="overflow:visible"/></clipPath><path style="clip-path:url(#SVGID_8_);fill:#d95140" d="M172.6595 161.1903c-3.96 3.96-6.4116 9.4235-6.4116 15.452-.0024 12.0547 9.8066 21.8636 21.8613 21.8613 12.0547.0024 21.8636-9.797 21.8613-21.8613.0024-3.8474-1.0151-7.6326-2.9353-10.9462-3.8977-6.7324-11.1497-10.9151-18.926-10.9151C182.0806 154.7811 176.6171 157.2327 172.6595 161.1903z"/></g><rect x="198.8952" y="170.69" style="fill:#d95140" width="122.6266" height="13.8671"/></g><g><g><path style="fill:#56a55c" d="M189.5379 264.6147l.0012-.0012c7.7751.0012 15.0294 4.1862 18.932 10.9235 1.9177 3.3159 2.9305 7.1011 2.9293 10.9378.0 5.8394-2.2733 11.3304-6.4032 15.4604-4.1288 4.1288-9.6186 6.4032-15.458 6.4032-5.8394.0-11.3281-2.2733-15.458-6.4032-4.13-4.13-6.4032-9.6186-6.4056-15.4628.0012-6.0249 2.454-11.4897 6.4116-15.4472C178.0458 267.0663 183.5105 264.6135 189.5379 264.6147zm7.993 21.8576c.0012-1.4042-.3687-2.7868-1.063-3.9887-1.4293-2.4684-4.0833-3.9995-6.9299-4.0019-4.4077.0024-7.993 3.5877-7.993 7.993.0 2.1356.832 4.1431 2.3427 5.6538 1.5083 1.5083 3.5159 2.3403 5.6503 2.3415 2.1356.0 4.1443-.8308 5.6539-2.3403C196.7013 290.6202 197.5321 288.6115 197.5309 286.4723z"/><path style="opacity:.3;fill:#fff" d="M189.5403 264.6153c7.7763.0 15.0283 4.1826 18.926 10.9151 1.9201 3.3135 2.9377 7.0987 2.9353 10.9462.0024 12.0643-9.8065 21.8636-21.8613 21.8613-12.0547.0024-21.8636-9.8065-21.8612-21.8613.0-6.0285 2.4516-11.492 6.4116-15.452C178.0482 267.0669 183.5117 264.6153 189.5403 264.6153zm7.9941 21.8612c0-1.4078-.3711-2.7892-1.0702-3.9959-1.4269-2.466-4.0797-3.9983-6.924-3.9983-4.4005-.0048-7.9918 3.5817-7.9942 7.9941.0024 4.4077 3.5865 7.9918 7.9942 7.9942 2.2027.0 4.2018-.8978 5.6479-2.3439C196.6366 290.6783 197.5344 288.6792 197.5344 286.4765z"/><g><defs><path id="SVGID_9_" d="M195.1881 292.1268c-1.4461 1.4461-3.4452 2.3439-5.6479 2.3439-4.4077-.0024-7.9918-3.5865-7.9942-7.9942.0024-4.4125 3.5937-7.9989 7.9942-7.9941 2.8443.0 5.497 1.5323 6.924 3.9983.6991 1.2067 1.0702 2.5881 1.0702 3.9959C197.5344 288.6792 196.6366 290.6783 195.1881 292.1268z"/></defs><clipPath id="SVGID_10_"><use xlink:href="#SVGID_9_" style="overflow:visible"/></clipPath><path style="clip-path:url(#SVGID_10_);fill:#fff" d="M190.5209 279.463c-4.4005-.0048-7.9918 3.5817-7.9942 7.9941.0011 1.9547.7088 3.7452 1.8782 5.1354-1.7446-1.4674-2.8575-3.6631-2.8588-6.1161.0024-4.4125 3.5936-7.999 7.9942-7.9941 2.3802-1e-4 4.616 1.0833 6.1218 2.8788C194.239 280.164 192.4279 279.463 190.5209 279.463z"/><path style="opacity:.13;clip-path:url(#SVGID_10_);fill:#020202" d="M190.5209 279.463c-4.4005-.0048-7.9918 3.5817-7.9942 7.9941.0011 1.9547.7088 3.7452 1.8782 5.1354-1.7446-1.4674-2.8575-3.6631-2.8588-6.1161.0024-4.4125 3.5936-7.999 7.9942-7.9941 2.3802-1e-4 4.616 1.0833 6.1218 2.8788C194.239 280.164 192.4279 279.463 190.5209 279.463z"/></g><g><defs><path id="SVGID_11_" d="M189.5403 264.6153c7.7763.0 15.0283 4.1826 18.926 10.9151 1.9201 3.3135 2.9377 7.0987 2.9353 10.9462.0024 12.0643-9.8065 21.8636-21.8613 21.8613-12.0547.0024-21.8636-9.8065-21.8612-21.8613.0-6.0285 2.4516-11.492 6.4116-15.452C178.0482 267.0669 183.5117 264.6153 189.5403 264.6153zm7.9941 21.8612c0-1.4078-.3711-2.7892-1.0702-3.9959-1.4269-2.466-4.0797-3.9983-6.924-3.9983-4.4005-.0048-7.9918 3.5817-7.9942 7.9941.0024 4.4077 3.5865 7.9918 7.9942 7.9942 2.2027.0 4.2018-.8978 5.6479-2.3439C196.6366 290.6783 197.5344 288.6792 197.5344 286.4765z"/></defs><clipPath id="SVGID_12_"><use xlink:href="#SVGID_11_" style="overflow:visible"/></clipPath><path style="clip-path:url(#SVGID_12_);fill:#56a55c" d="M173.11 270.0439c-3.96 3.96-6.4116 9.4235-6.4116 15.452-.0024 12.0547 9.8066 21.8636 21.8613 21.8613 12.0547.0024 21.8636-9.797 21.8613-21.8613.0024-3.8474-1.0151-7.6326-2.9353-10.9462-3.8977-6.7325-11.1497-10.9151-18.926-10.9151C182.5311 263.6346 177.0676 266.0863 173.11 270.0439z"/></g></g><rect x="199.3456" y="279.5436" style="fill:#56a55c" width="122.6266" height="13.8671"/></g><g><g><path style="fill:#f1bc42" d="M189.0874 318.7208l.0012-.0012c7.7751.0012 15.0295 4.1862 18.932 10.9234 1.9177 3.3159 2.9305 7.1011 2.9293 10.9378.0 5.8394-2.2733 11.3305-6.4032 15.4604-4.1288 4.1288-9.6186 6.4032-15.458 6.4032s-11.328-2.2733-15.458-6.4032-6.4032-9.6186-6.4056-15.4628c.0012-6.025 2.454-11.4897 6.4116-15.4472C177.5953 321.1724 183.0601 318.7196 189.0874 318.7208zm7.993 21.8576c.0012-1.4042-.3687-2.7868-1.063-3.9887-1.4293-2.4684-4.0833-3.9995-6.9299-4.0019-4.4077.0024-7.993 3.5877-7.993 7.993.0 2.1356.832 4.1431 2.3427 5.6539 1.5083 1.5083 3.5159 2.3403 5.6503 2.3415 2.1356.0 4.1443-.8308 5.6539-2.3403S197.0816 342.7176 197.0804 340.5784z"/><path style="opacity:.3;fill:#fff" d="M189.0898 318.7214c7.7763.0 15.0283 4.1826 18.926 10.915 1.9201 3.3136 2.9377 7.0988 2.9353 10.9462.0024 12.0643-9.8065 21.8636-21.8613 21.8612-12.0547.0024-21.8636-9.8065-21.8612-21.8612.0-6.0285 2.4516-11.4921 6.4116-15.452C177.5977 321.173 183.0612 318.7214 189.0898 318.7214zm7.9941 21.8612c0-1.4078-.3711-2.7892-1.0702-3.9959-1.4269-2.466-4.0797-3.9983-6.924-3.9983-4.4005-.0048-7.9918 3.5817-7.9942 7.9942.0024 4.4077 3.5865 7.9918 7.9942 7.9942 2.2027.0 4.2018-.8978 5.6479-2.3439C196.1861 344.7844 197.0839 342.7853 197.0839 340.5826z"/><g><defs><path id="SVGID_13_" d="M194.7376 346.2329c-1.4461 1.4461-3.4452 2.3439-5.6479 2.3439-4.4077-.0024-7.9918-3.5865-7.9942-7.9942.0024-4.4125 3.5937-7.999 7.9942-7.9942 2.8443.0 5.497 1.5323 6.924 3.9983.6991 1.2067 1.0702 2.5881 1.0702 3.9959C197.0839 342.7853 196.1861 344.7844 194.7376 346.2329z"/></defs><clipPath id="SVGID_14_"><use xlink:href="#SVGID_13_" style="overflow:visible"/></clipPath><path style="clip-path:url(#SVGID_14_);fill:#fff" d="M190.0704 333.5691c-4.4005-.0048-7.9918 3.5817-7.9942 7.9942.0011 1.9547.7088 3.7452 1.8782 5.1354-1.7447-1.4674-2.8575-3.6631-2.8588-6.1161.0024-4.4125 3.5936-7.999 7.9942-7.9942 2.3802-1e-4 4.616 1.0834 6.1218 2.8788C193.7885 334.2701 191.9774 333.5691 190.0704 333.5691z"/><path style="opacity:.13;clip-path:url(#SVGID_14_);fill:#020202" d="M190.0704 333.5691c-4.4005-.0048-7.9918 3.5817-7.9942 7.9942.0011 1.9547.7088 3.7452 1.8782 5.1354-1.7447-1.4674-2.8575-3.6631-2.8588-6.1161.0024-4.4125 3.5936-7.999 7.9942-7.9942 2.3802-1e-4 4.616 1.0834 6.1218 2.8788C193.7885 334.2701 191.9774 333.5691 190.0704 333.5691z"/></g><g><defs><path id="SVGID_15_" d="M189.0898 318.7214c7.7763.0 15.0283 4.1826 18.926 10.915 1.9201 3.3136 2.9377 7.0988 2.9353 10.9462.0024 12.0643-9.8065 21.8636-21.8613 21.8612-12.0547.0024-21.8636-9.8065-21.8612-21.8612.0-6.0285 2.4516-11.4921 6.4116-15.452C177.5977 321.173 183.0612 318.7214 189.0898 318.7214zm7.9941 21.8612c0-1.4078-.3711-2.7892-1.0702-3.9959-1.4269-2.466-4.0797-3.9983-6.924-3.9983-4.4005-.0048-7.9918 3.5817-7.9942 7.9942.0024 4.4077 3.5865 7.9918 7.9942 7.9942 2.2027.0 4.2018-.8978 5.6479-2.3439C196.1861 344.7844 197.0839 342.7853 197.0839 340.5826z"/></defs><clipPath id="SVGID_16_"><use xlink:href="#SVGID_15_" style="overflow:visible"/></clipPath><path style="clip-path:url(#SVGID_16_);fill:#f1bc42" d="M172.6595 324.15c-3.96 3.96-6.4116 9.4235-6.4116 15.452-.0024 12.0547 9.8066 21.8636 21.8613 21.8612 12.0547.0024 21.8636-9.797 21.8613-21.8612.0024-3.8474-1.0151-7.6327-2.9353-10.9462-3.8977-6.7324-11.1497-10.9151-18.926-10.9151C182.0806 317.7407 176.6171 320.1924 172.6595 324.15z"/></g></g><rect x="198.8952" y="333.6497" style="fill:#f1bc42" width="122.6266" height="13.8671"/></g></g></svg></span><span class="navbar-brand__name">Goldydocs</span></a>
+  <div class="td-navbar-nav-scroll ms-md-auto" id="main_navbar">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link active" href="/docs/"><span>Documentation</span></a>
+      </li>
+      <li class="nav-item dropdown d-none d-lg-block">
+        <div class="dropdown">
+  <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">English</a>
+  <ul class="dropdown-menu">
+    <li><a class="dropdown-item" href="/no/">Norsk</a></li>
+    <li><a class="dropdown-item" href="/fa/">فارسی</a></li>
+    </ul>
+</div></li>
+      </ul>
+  </div>
+  <div class="d-none d-lg-block">
+    <div class="td-search">
+  <div class="td-search__icon"></div>
+  <input type="search" class="td-search__input form-control td-search-input" placeholder="Search this site…" aria-label="Search this site…" autocomplete="off">
+</div>
+  </div>
+</div>
+</nav>
+    </header>
+    <div class="container-fluid td-outer">
+      <div class="td-main">
+        <div class="row flex-xl-nowrap">
+          <aside class="col-12 col-md-3 col-xl-2 td-sidebar d-print-none">
+            <div id="td-sidebar-menu" class="td-sidebar__inner">
+  <form class="td-sidebar__search d-flex align-items-center">
+    <div class="td-search">
+  <div class="td-search__icon"></div>
+  <input type="search" class="td-search__input form-control td-search-input" placeholder="Search this site…" aria-label="Search this site…" autocomplete="off">
+</div>
+    <button class="btn btn-link td-sidebar__toggle d-md-none p-0 ms-3 fas fa-bars" type="button" data-bs-toggle="collapse" data-bs-target="#td-section-nav" aria-controls="td-section-nav" aria-expanded="false" aria-label="Toggle section navigation">
+    </button>
+  </form>
+  <nav class="td-sidebar-nav collapse" id="td-section-nav">
+    <div class="td-sidebar-nav__section nav-item dropdown d-block d-lg-none">
+      <div class="dropdown">
+  <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">English</a>
+  <ul class="dropdown-menu">
+    <li><a class="dropdown-item" href="/no/">Norsk</a></li>
+    <li><a class="dropdown-item" href="/fa/">فارسی</a></li>
+    </ul>
+</div>
+    </div>
+    <ul class="td-sidebar-nav__section pe-md-3 ul-0">
+      <li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child active-path" id="m-docs-li">
+  <a href="/docs/" class="align-left ps-0 td-sidebar-link td-sidebar-link__section tree-root" id="m-docs"><span class="">Documentation</span></a>
+  <ul class="ul-1">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-docslinux-li">
+  <a href="/docs/linux/" class="align-left ps-0 td-sidebar-link td-sidebar-link__section" id="m-docslinux"><span class="">Linux</span></a>
+  <ul class="ul-2 foldable">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docslinuxbasics-li">
+  <a href="/docs/linux/basics/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docslinuxbasics"><span class="">Basics</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docslinuxkernel-li">
+  <a href="/docs/linux/kernel/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docslinuxkernel"><span class="">Kernel</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docslinuxmemory-li">
+  <a href="/docs/linux/memory/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docslinuxmemory"><span class="">Memory</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docslinuxnetworking-li">
+  <a href="/docs/linux/networking/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docslinuxnetworking"><span class="">Networking</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docslinuxperformance-li">
+  <a href="/docs/linux/performance/" title="Systems performance" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docslinuxperformance"><span class="">Performance</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docslinuxpermissions-li">
+  <a href="/docs/linux/permissions/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docslinuxpermissions"><span class="">Permissions and ownership</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docslinuxssh-li">
+  <a href="/docs/linux/ssh/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docslinuxssh"><span class="">SSH</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docslinuxsystem-info-li">
+  <a href="/docs/linux/system-info/" title="System information" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docslinuxsystem-info"><span class="">System info</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docslinuxsystemd-li">
+  <a href="/docs/linux/systemd/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docslinuxsystemd"><span class="">Systemd</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docslinuxtext-li">
+  <a href="/docs/linux/text/" title="Text tools and processing" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docslinuxtext"><span class="">Text</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docslinuxtodo-li">
+  <a href="/docs/linux/todo/" title="Todo list" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docslinuxtodo"><span class="">Todo</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docslinuxvpn-li">
+  <a href="/docs/linux/vpn/" title="Virtual Private Networks (VPNs)" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docslinuxvpn"><span class="">VPNs</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docslinuxweb-servers-li">
+  <a href="/docs/linux/web-servers/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docslinuxweb-servers"><span class="">Web servers</span></a>
+</li>
+  </ul>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-docswriting-li">
+  <a href="/docs/writing/" class="align-left ps-0 td-sidebar-link td-sidebar-link__section" id="m-docswriting"><span class="">Writing</span></a>
+  <ul class="ul-2 foldable">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docswritingterms-li">
+  <a href="/docs/writing/terms/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docswritingterms"><span class="">Terms and definitions</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docswritingphrases-clauses-li">
+  <a href="/docs/writing/phrases-clauses/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docswritingphrases-clauses"><span class="">Phrases and clauses</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docswritingnouns-li">
+  <a href="/docs/writing/nouns/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docswritingnouns"><span class="">Nouns</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docswritingpronouns-li">
+  <a href="/docs/writing/pronouns/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docswritingpronouns"><span class="">Pronouns</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docswritingverbs-li">
+  <a href="/docs/writing/verbs/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docswritingverbs"><span class="">Verbs</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docswritingadjectives-li">
+  <a href="/docs/writing/adjectives/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docswritingadjectives"><span class="">Adjectives</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docswritingadverbs-li">
+  <a href="/docs/writing/adverbs/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docswritingadverbs"><span class="">Adverbs</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docswritingconjunctions-li">
+  <a href="/docs/writing/conjunctions/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docswritingconjunctions"><span class="">Conjunctions</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docswritingprepositions-li">
+  <a href="/docs/writing/prepositions/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docswritingprepositions"><span class="">Prepositions</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docswritingdeterminers-li">
+  <a href="/docs/writing/determiners/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docswritingdeterminers"><span class="">Determiners</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docswritinggrammer-phrases-li">
+  <a href="/docs/writing/grammer-phrases/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docswritinggrammer-phrases"><span class="">Grammar of phrases</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docswritinggrammar-clauses-li">
+  <a href="/docs/writing/grammar-clauses/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docswritinggrammar-clauses"><span class="">Grammar of clauses</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docswritingcoordination-li">
+  <a href="/docs/writing/coordination/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docswritingcoordination"><span class="">Coordination</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docswritingusage-li">
+  <a href="/docs/writing/usage/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docswritingusage"><span class="">Usage</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docswritingsentences-li">
+  <a href="/docs/writing/sentences/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docswritingsentences"><span class="">Sentences</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docswritingparagraphs-li">
+  <a href="/docs/writing/paragraphs/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docswritingparagraphs"><span class="">Paragraphs</span></a>
+</li>
+  </ul>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-docsgit-li">
+  <a href="/docs/git/" class="align-left ps-0 td-sidebar-link td-sidebar-link__section" id="m-docsgit"><span class="">git</span></a>
+  <ul class="ul-2 foldable">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsgitbranching-li">
+  <a href="/docs/git/branching/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsgitbranching"><span class="">Branching</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsgitlinux-plus-li">
+  <a href="/docs/git/linux-plus/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsgitlinux-plus"><span class="">Linux&#43; git</span></a>
+</li>
+  </ul>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-docsnetworking-li">
+  <a href="/docs/networking/" class="align-left ps-0 td-sidebar-link td-sidebar-link__section" id="m-docsnetworking"><span class="">Networking</span></a>
+  <ul class="ul-2 foldable">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsnetworkingintro-networks-li">
+  <a href="/docs/networking/intro-networks/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsnetworkingintro-networks"><span class="">Intro to networks</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsnetworkingosi-model-li">
+  <a href="/docs/networking/osi-model/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsnetworkingosi-model"><span class="">OSI model</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsnetworkingconnectors-wiring-li">
+  <a href="/docs/networking/connectors-wiring/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsnetworkingconnectors-wiring"><span class="">Ethernet</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsnetworkingnetwork-devices-li">
+  <a href="/docs/networking/network-devices/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsnetworkingnetwork-devices"><span class="">Networking devices</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsnetworkinginternet-protocol-li">
+  <a href="/docs/networking/internet-protocol/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsnetworkinginternet-protocol"><span class="">Internet Protocol</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsnetworkingip-addressing-li">
+  <a href="/docs/networking/ip-addressing/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsnetworkingip-addressing"><span class="">IP addressing</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsnetworkingsubnet-nat-li">
+  <a href="/docs/networking/subnet-nat/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsnetworkingsubnet-nat"><span class="">Subnets and NAT</span></a>
+</li>
+  </ul>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-docsbash-li">
+  <a href="/docs/bash/" title="Bash scripting" class="align-left ps-0 td-sidebar-link td-sidebar-link__section" id="m-docsbash"><span class="">Bash</span></a>
+  <ul class="ul-2 foldable">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child collapse" id="m-docsbashefficiency-li">
+  <a href="/docs/bash/efficiency/" title="Efficient command line" class="align-left ps-0 td-sidebar-link td-sidebar-link__section" id="m-docsbashefficiency"><span class="">Efficient</span></a>
+  <ul class="ul-3 foldable">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsbashefficiencycore-li">
+  <a href="/docs/bash/efficiency/core/" title="Core commands" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsbashefficiencycore"><span class="">Core</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsbashefficiencyshell-li">
+  <a href="/docs/bash/efficiency/shell/" title="Introducing the shell" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsbashefficiencyshell"><span class="">Shell</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsbashefficiencyrerun-commands-li">
+  <a href="/docs/bash/efficiency/rerun-commands/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsbashefficiencyrerun-commands"><span class="">Rerunning commands</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsbashefficiencyfilesystem-li">
+  <a href="/docs/bash/efficiency/filesystem/" title="Cruising the filesystem" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsbashefficiencyfilesystem"><span class="">Filesystem</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsbashefficiencytext-commands-li">
+  <a href="/docs/bash/efficiency/text-commands/" title="Producing, isolating, combining, and transforming text" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsbashefficiencytext-commands"><span class="">Text commands</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsbashefficiencyparents-child-envs-li">
+  <a href="/docs/bash/efficiency/parents-child-envs/" title="Parent, children, and environments" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsbashefficiencyparents-child-envs"><span class="">Environments</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsbashefficiencyrunning-commands-li">
+  <a href="/docs/bash/efficiency/running-commands/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsbashefficiencyrunning-commands"><span class="">Running commands</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsbashefficiencybrash-li">
+  <a href="/docs/bash/efficiency/brash/" title="Brash one-liners" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsbashefficiencybrash"><span class="">Brash</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsbashefficiencytext-files-li">
+  <a href="/docs/bash/efficiency/text-files/" title="Leveraging text files" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsbashefficiencytext-files"><span class="">Text files</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsbashefficiencykeyboard-li">
+  <a href="/docs/bash/efficiency/keyboard/" title="Keyboard efficiency" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsbashefficiencykeyboard"><span class="">Keyboard</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsbashefficiencytime-savers-li">
+  <a href="/docs/bash/efficiency/time-savers/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsbashefficiencytime-savers"><span class="">Time savers</span></a>
+</li>
+  </ul>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsbashcyberops-li">
+  <a href="/docs/bash/cyberops/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsbashcyberops"><span class="">Cyberops bash notes</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsbashcommands-li">
+  <a href="/docs/bash/commands/" title="Common commands" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsbashcommands"><span class="">Commands</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsbashsyntax-li">
+  <a href="/docs/bash/syntax/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsbashsyntax"><span class="">Syntax</span></a>
+</li>
+  </ul>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-docsgithub-li">
+  <a href="/docs/github/" class="align-left ps-0 td-sidebar-link td-sidebar-link__section" id="m-docsgithub"><span class="">GitHub</span></a>
+  <ul class="ul-2 foldable">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsgithubgh-actions-li">
+  <a href="/docs/github/gh-actions/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsgithubgh-actions"><span class="">GitHub actions</span></a>
+</li>
+  </ul>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-docsgo-li">
+  <a href="/docs/go/" class="align-left ps-0 td-sidebar-link td-sidebar-link__section" id="m-docsgo"><span class="">Go</span></a>
+  <ul class="ul-2 foldable">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsgolearn-go-with-tests-li">
+  <a href="/docs/go/learn-go-with-tests/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsgolearn-go-with-tests"><span class="">Learn with tests</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child collapse" id="m-docsgosetup-li">
+  <a href="/docs/go/setup/" class="align-left ps-0 td-sidebar-link td-sidebar-link__section" id="m-docsgosetup"><span class="">Project organization</span></a>
+  <ul class="ul-3 foldable">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsgosetupproject-setup-li">
+  <a href="/docs/go/setup/project-setup/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsgosetupproject-setup"><span class="">Project setup</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsgosetuptooling-li">
+  <a href="/docs/go/setup/tooling/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsgosetuptooling"><span class="">Go tooling</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsgosetupidioms-li">
+  <a href="/docs/go/setup/idioms/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsgosetupidioms"><span class="">Idioms</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsgosetupblueprints-li">
+  <a href="/docs/go/setup/blueprints/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsgosetupblueprints"><span class="">Blueprints</span></a>
+</li>
+  </ul>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child collapse" id="m-docsgobasics-li">
+  <a href="/docs/go/basics/" title="Getting started with Go" class="align-left ps-0 td-sidebar-link td-sidebar-link__section" id="m-docsgobasics"><span class="">Getting started</span></a>
+  <ul class="ul-3 foldable">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsgobasicserrors-li">
+  <a href="/docs/go/basics/errors/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsgobasicserrors"><span class="">Errors</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsgobasicstypes-li">
+  <a href="/docs/go/basics/types/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsgobasicstypes"><span class="">Types and collections</span></a>
+</li>
+  </ul>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child collapse" id="m-docsgoio-li">
+  <a href="/docs/go/io/" title="Input and output" class="align-left ps-0 td-sidebar-link td-sidebar-link__section" id="m-docsgoio"><span class="">I/O</span></a>
+  <ul class="ul-3 foldable">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsgoiojson-li">
+  <a href="/docs/go/io/json/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsgoiojson"><span class="">JSON data</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsgoiorw-files-li">
+  <a href="/docs/go/io/rw-files/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsgoiorw-files"><span class="">Reading, writing, files</span></a>
+</li>
+  </ul>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child collapse" id="m-docsgonetwork-li">
+  <a href="/docs/go/network/" class="align-left ps-0 td-sidebar-link td-sidebar-link__section" id="m-docsgonetwork"><span class="">Network</span></a>
+  <ul class="ul-3 foldable">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsgonetworkclients-li">
+  <a href="/docs/go/network/clients/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsgonetworkclients"><span class="">Clients</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsgonetworkservers-li">
+  <a href="/docs/go/network/servers/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsgonetworkservers"><span class="">Servers</span></a>
+</li>
+  </ul>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child collapse" id="m-docsgodatabases-li">
+  <a href="/docs/go/databases/" class="align-left ps-0 td-sidebar-link td-sidebar-link__section" id="m-docsgodatabases"><span class="">Databases</span></a>
+  <ul class="ul-3 foldable">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsgodatabasespatterns-li">
+  <a href="/docs/go/databases/patterns/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsgodatabasespatterns"><span class="">Patterns</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsgodatabasessql-package-li">
+  <a href="/docs/go/databases/sql-package/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsgodatabasessql-package"><span class="">SQL package</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsgodatabasesmysql-li">
+  <a href="/docs/go/databases/mysql/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsgodatabasesmysql"><span class="">MySQL</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsgodatabasespostgres-li">
+  <a href="/docs/go/databases/postgres/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsgodatabasespostgres"><span class="">PostgreSQL</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsgodatabasessqlite-li">
+  <a href="/docs/go/databases/sqlite/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsgodatabasessqlite"><span class="">SQLite</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsgodatabasesmigrations-li">
+  <a href="/docs/go/databases/migrations/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsgodatabasesmigrations"><span class="">Migrations</span></a>
+</li>
+  </ul>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsgotesting-li">
+  <a href="/docs/go/testing/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsgotesting"><span class="">Testing</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsgoconcurrency-li">
+  <a href="/docs/go/concurrency/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsgoconcurrency"><span class="">Concurrency</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsgocli-tools-li">
+  <a href="/docs/go/cli-tools/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsgocli-tools"><span class="">CLI tools</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsgoobservability-li">
+  <a href="/docs/go/observability/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsgoobservability"><span class="">Observability</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsgocontainers-li">
+  <a href="/docs/go/containers/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsgocontainers"><span class="">Containers</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsgocontext-li">
+  <a href="/docs/go/context/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsgocontext"><span class="">Context</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsgotemplates-li">
+  <a href="/docs/go/templates/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsgotemplates"><span class="">Templates</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsgologging-li">
+  <a href="/docs/go/logging/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsgologging"><span class="">Logging</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsgosecurity-li">
+  <a href="/docs/go/security/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsgosecurity"><span class="">Security</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsgoapis-li">
+  <a href="/docs/go/apis/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsgoapis"><span class="">APIs</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsgorepo-dump-li">
+  <a href="/docs/go/repo-dump/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsgorepo-dump"><span class="">Repo dump</span></a>
+</li>
+  </ul>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-docshugo-li">
+  <a href="/docs/hugo/" class="align-left ps-0 td-sidebar-link td-sidebar-link__section" id="m-docshugo"><span class="">Hugo</span></a>
+  <ul class="ul-2 foldable">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docshugopragmatic-li">
+  <a href="/docs/hugo/pragmatic/" title="Pragmatic book" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docshugopragmatic"><span class="">Pragmatic</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docshugobasics-li">
+  <a href="/docs/hugo/basics/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docshugobasics"><span class="">Basics</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docshugohosting-li">
+  <a href="/docs/hugo/hosting/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docshugohosting"><span class="">Hosting</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docshugoconfiguration-li">
+  <a href="/docs/hugo/configuration/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docshugoconfiguration"><span class="">Configuration</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docshugoimages-li">
+  <a href="/docs/hugo/images/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docshugoimages"><span class="">Images</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docshugoshortcodes-li">
+  <a href="/docs/hugo/shortcodes/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docshugoshortcodes"><span class="">Shortcodes</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child collapse" id="m-docshugotemplates-li">
+  <a href="/docs/hugo/templates/" class="align-left ps-0 td-sidebar-link td-sidebar-link__section" id="m-docshugotemplates"><span class="">Templates</span></a>
+  <ul class="ul-3 foldable">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docshugotemplatescheat-sheet-li">
+  <a href="/docs/hugo/templates/cheat-sheet/" title="Templates cheat sheet" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docshugotemplatescheat-sheet"><span class="">Cheat sheet</span></a>
+</li>
+  </ul>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docshugoassets-li">
+  <a href="/docs/hugo/assets/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docshugoassets"><span class="">Assets</span></a>
+</li>
+  </ul>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-docsinkscape-li">
+  <a href="/docs/inkscape/" class="align-left ps-0 td-sidebar-link td-sidebar-link__section" id="m-docsinkscape"><span class="">Inkscape</span></a>
+  <ul class="ul-2 foldable">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsinkscapebasics-li">
+  <a href="/docs/inkscape/basics/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsinkscapebasics"><span class="">Basics</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsinkscapemenus-li">
+  <a href="/docs/inkscape/menus/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsinkscapemenus"><span class="">Menus</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsinkscaperepo-dump-li">
+  <a href="/docs/inkscape/repo-dump/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsinkscaperepo-dump"><span class="">Repo dump</span></a>
+</li>
+  </ul>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-docsllm-li">
+  <a href="/docs/llm/" title="Large Language Models" class="align-left ps-0 td-sidebar-link td-sidebar-link__section" id="m-docsllm"><span class="">LLMs</span></a>
+  <ul class="ul-2 foldable">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsllmrhel-li">
+  <a href="/docs/llm/rhel/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsllmrhel"><span class="">RHEL</span></a>
+</li>
+  </ul>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docspython-li">
+  <a href="/docs/python/" class="align-left ps-0 td-sidebar-link td-sidebar-link__section" id="m-docspython"><span class="">Python</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-docssql-li">
+  <a href="/docs/sql/" class="align-left ps-0 td-sidebar-link td-sidebar-link__section" id="m-docssql"><span class="">SQL</span></a>
+  <ul class="ul-2 foldable">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docssqlmysql-li">
+  <a href="/docs/sql/mysql/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docssqlmysql"><span class="">MySQL</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docssqlpostgres-li">
+  <a href="/docs/sql/postgres/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docssqlpostgres"><span class="">Postgres</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docssqlsql-li">
+  <a href="/docs/sql/sql/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docssqlsql"><span class="">Repo dump</span></a>
+</li>
+  </ul>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-docsubuntu-server-li">
+  <a href="/docs/ubuntu-server/" title="Ubuntu Server" class="align-left ps-0 td-sidebar-link td-sidebar-link__section" id="m-docsubuntu-server"><span class="">Ubuntu</span></a>
+  <ul class="ul-2 foldable">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsubuntu-serverinstallation-li">
+  <a href="/docs/ubuntu-server/installation/" title="Installing Ubuntu Server" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsubuntu-serverinstallation"><span class="">Installation</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsubuntu-serverusers-permissions-li">
+  <a href="/docs/ubuntu-server/users-permissions/" title="Users, groups, and permissions" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsubuntu-serverusers-permissions"><span class="">Users/groups</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsubuntu-serverpackages-li">
+  <a href="/docs/ubuntu-server/packages/" title="Software Packages" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsubuntu-serverpackages"><span class="">Packages</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsubuntu-serverfilesystem-li">
+  <a href="/docs/ubuntu-server/filesystem/" title="Navigating the filesystem" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsubuntu-serverfilesystem"><span class="">Filesystem</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsubuntu-serverfiles-dirs-li">
+  <a href="/docs/ubuntu-server/files-dirs/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsubuntu-serverfiles-dirs"><span class="">Files and directories</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsubuntu-servershell-li">
+  <a href="/docs/ubuntu-server/shell/" title="Bash shell" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsubuntu-servershell"><span class="">Shell</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsubuntu-serverprocesses-li">
+  <a href="/docs/ubuntu-server/processes/" title="Controlling and managing processes" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsubuntu-serverprocesses"><span class="">Processes</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsubuntu-serversys-resources-li">
+  <a href="/docs/ubuntu-server/sys-resources/" title="Monitoring system resources" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsubuntu-serversys-resources"><span class="">System resources</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsubuntu-serverstorage-li">
+  <a href="/docs/ubuntu-server/storage/" title="Managing storage volumes" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsubuntu-serverstorage"><span class="">Storage</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsubuntu-servernetworks-li">
+  <a href="/docs/ubuntu-server/networks/" title="Connecting to networks" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsubuntu-servernetworks"><span class="">Networks</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsubuntu-servernetwork-services-li">
+  <a href="/docs/ubuntu-server/network-services/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsubuntu-servernetwork-services"><span class="">Network services</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsubuntu-serversharing-files-li">
+  <a href="/docs/ubuntu-server/sharing-files/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsubuntu-serversharing-files"><span class="">Sharing and transferring files</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsubuntu-serverdatabase-li">
+  <a href="/docs/ubuntu-server/database/" title="Managing databases" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsubuntu-serverdatabase"><span class="">Databases</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsubuntu-serverweb-server-li">
+  <a href="/docs/ubuntu-server/web-server/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsubuntu-serverweb-server"><span class="">Web servers</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsubuntu-serveransible-li">
+  <a href="/docs/ubuntu-server/ansible/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsubuntu-serveransible"><span class="">Ansible</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsubuntu-servervirtualization-li">
+  <a href="/docs/ubuntu-server/virtualization/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsubuntu-servervirtualization"><span class="">Virtualization</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsubuntu-servercontainers-li">
+  <a href="/docs/ubuntu-server/containers/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsubuntu-servercontainers"><span class="">Containers</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsubuntu-servercontainer-orchestration-li">
+  <a href="/docs/ubuntu-server/container-orchestration/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsubuntu-servercontainer-orchestration"><span class="">Container orchestration</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsubuntu-servercloud-li">
+  <a href="/docs/ubuntu-server/cloud/" title="Deploying Ubuntu in the Cloud" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsubuntu-servercloud"><span class="">Cloud</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsubuntu-serverterraform-li">
+  <a href="/docs/ubuntu-server/terraform/" title="Terraform cloud deployments" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsubuntu-serverterraform"><span class="">Terraform</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsubuntu-serversecurity-li">
+  <a href="/docs/ubuntu-server/security/" title="Securing your server" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsubuntu-serversecurity"><span class="">Security</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsubuntu-servertroubleshooting-li">
+  <a href="/docs/ubuntu-server/troubleshooting/" title="Troubleshooting your server" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsubuntu-servertroubleshooting"><span class="">Troubleshooting</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsubuntu-serverdisasters-li">
+  <a href="/docs/ubuntu-server/disasters/" title="Preventing disasters" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsubuntu-serverdisasters"><span class="">Disasters</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsubuntu-serverregex-li">
+  <a href="/docs/ubuntu-server/regex/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsubuntu-serverregex"><span class="">Regex</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsubuntu-serverbackups-li">
+  <a href="/docs/ubuntu-server/backups/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsubuntu-serverbackups"><span class="">Backups</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsubuntu-servercompression-li">
+  <a href="/docs/ubuntu-server/compression/" title="Compression and archives" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsubuntu-servercompression"><span class="">Compression</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsubuntu-serverenvironment-li">
+  <a href="/docs/ubuntu-server/environment/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsubuntu-serverenvironment"><span class="">Environment</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsubuntu-serverfirewalls-li">
+  <a href="/docs/ubuntu-server/firewalls/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsubuntu-serverfirewalls"><span class="">Firewalls</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsubuntu-serverlogs-li">
+  <a href="/docs/ubuntu-server/logs/" title="Logging" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsubuntu-serverlogs"><span class="">Logs</span></a>
+</li>
+  </ul>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child active-path" id="m-docsweb-dev-li">
+  <a href="/docs/web-dev/" title="Web Development" class="align-left ps-0 td-sidebar-link td-sidebar-link__section" id="m-docsweb-dev"><span class="">Web Dev</span></a>
+  <ul class="ul-2 foldable">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-docsweb-devaccessibility-li">
+  <a href="/docs/web-dev/accessibility/" class="align-left ps-0 td-sidebar-link td-sidebar-link__section" id="m-docsweb-devaccessibility"><span class="">Accessibility</span></a>
+  <ul class="ul-3 foldable">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsweb-devaccessibilityaria-li">
+  <a href="/docs/web-dev/accessibility/aria/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsweb-devaccessibilityaria"><span class="">ARIA attributes</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsweb-devaccessibilitydocs-structure-li">
+  <a href="/docs/web-dev/accessibility/docs-structure/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsweb-devaccessibilitydocs-structure"><span class="">Document structure</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsweb-devaccessibilitypage-structure-li">
+  <a href="/docs/web-dev/accessibility/page-structure/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsweb-devaccessibilitypage-structure"><span class="">Page structure</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsweb-devaccessibilitylinking-li">
+  <a href="/docs/web-dev/accessibility/linking/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsweb-devaccessibilitylinking"><span class="">Linking content</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsweb-devaccessibilitybuttons-li">
+  <a href="/docs/web-dev/accessibility/buttons/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsweb-devaccessibilitybuttons"><span class="">Buttons</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsweb-devaccessibilitystyling-content-li">
+  <a href="/docs/web-dev/accessibility/styling-content/" title="Styling content" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsweb-devaccessibilitystyling-content"><span class="">Styles</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsweb-devaccessibilityfocus-li">
+  <a href="/docs/web-dev/accessibility/focus/" title="Managing Focus" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsweb-devaccessibilityfocus"><span class="">Focus</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsweb-devaccessibilitynavigation-li">
+  <a href="/docs/web-dev/accessibility/navigation/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsweb-devaccessibilitynavigation"><span class="">Navigation</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsweb-devaccessibilityvisibility-li">
+  <a href="/docs/web-dev/accessibility/visibility/" title="Toggling content visibility" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsweb-devaccessibilityvisibility"><span class="">Visibility</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsweb-devaccessibilityforms-li">
+  <a href="/docs/web-dev/accessibility/forms/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsweb-devaccessibilityforms"><span class="">Forms</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsweb-devaccessibilityfiltering-data-li">
+  <a href="/docs/web-dev/accessibility/filtering-data/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsweb-devaccessibilityfiltering-data"><span class="">Filtering data</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsweb-devaccessibilitytables-li">
+  <a href="/docs/web-dev/accessibility/tables/" title="Presenting tabular data" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsweb-devaccessibilitytables"><span class="">Tables</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsweb-devaccessibilitydebugging-li">
+  <a href="/docs/web-dev/accessibility/debugging/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsweb-devaccessibilitydebugging"><span class="">Debugging</span></a>
+</li>
+  </ul>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-docsweb-devhtml-li">
+  <a href="/docs/web-dev/html/" class="align-left ps-0 td-sidebar-link td-sidebar-link__section" id="m-docsweb-devhtml"><span class="">HTML</span></a>
+  <ul class="ul-3 foldable">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsweb-devhtmldoc-structure-li">
+  <a href="/docs/web-dev/html/doc-structure/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsweb-devhtmldoc-structure"><span class="">Document structure</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsweb-devhtmlmetadata-li">
+  <a href="/docs/web-dev/html/metadata/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsweb-devhtmlmetadata"><span class="">Metadata</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsweb-devhtmlsemantic-html-li">
+  <a href="/docs/web-dev/html/semantic-html/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsweb-devhtmlsemantic-html"><span class="">Semantic HTML</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsweb-devhtmlheadings-sections-li">
+  <a href="/docs/web-dev/html/headings-sections/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsweb-devhtmlheadings-sections"><span class="">Headings and sections</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsweb-devhtmlattributes-li">
+  <a href="/docs/web-dev/html/attributes/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsweb-devhtmlattributes"><span class="">Attributes</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsweb-devhtmltext-links-li">
+  <a href="/docs/web-dev/html/text-links/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsweb-devhtmltext-links"><span class="">Text and links</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsweb-devhtmllists-li">
+  <a href="/docs/web-dev/html/lists/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsweb-devhtmllists"><span class="">Lists</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsweb-devhtmlnavigation-li">
+  <a href="/docs/web-dev/html/navigation/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsweb-devhtmlnavigation"><span class="">Navigation</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsweb-devhtmltables-li">
+  <a href="/docs/web-dev/html/tables/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsweb-devhtmltables"><span class="">Tables</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsweb-devhtmlforms-li">
+  <a href="/docs/web-dev/html/forms/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsweb-devhtmlforms"><span class="">Forms</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsweb-devhtmlimages-li">
+  <a href="/docs/web-dev/html/images/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsweb-devhtmlimages"><span class="">Images</span></a>
+</li>
+  </ul>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-docsweb-devcomponents-li">
+  <a href="/docs/web-dev/components/" class="align-left ps-0 td-sidebar-link td-sidebar-link__section" id="m-docsweb-devcomponents"><span class="">Components</span></a>
+  <ul class="ul-3 foldable">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsweb-devcomponentstoggle-button-li">
+  <a href="/docs/web-dev/components/toggle-button/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsweb-devcomponentstoggle-button"><span class="">Toggle buttons</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsweb-devcomponentstodo-list-li">
+  <a href="/docs/web-dev/components/todo-list/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsweb-devcomponentstodo-list"><span class="">Todo list</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsweb-devcomponentsmenus-li">
+  <a href="/docs/web-dev/components/menus/" title="Menus and menu buttons" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsweb-devcomponentsmenus"><span class="">Menus</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsweb-devcomponentstooltips-li">
+  <a href="/docs/web-dev/components/tooltips/" title="Tooltips and toggletips" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsweb-devcomponentstooltips"><span class="">Tooltips</span></a>
+</li>
+  </ul>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-docsweb-devcss-li">
+  <a href="/docs/web-dev/css/" class="align-left ps-0 td-sidebar-link td-sidebar-link__section" id="m-docsweb-devcss"><span class="">CSS</span></a>
+  <ul class="ul-3 foldable">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsweb-devcsssecrets-li">
+  <a href="/docs/web-dev/css/secrets/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsweb-devcsssecrets"><span class="">Secrets</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsweb-devcsssyntax-selectors-li">
+  <a href="/docs/web-dev/css/syntax-selectors/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsweb-devcsssyntax-selectors"><span class="">Syntax and selectors</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsweb-devcssrelative-units-li">
+  <a href="/docs/web-dev/css/relative-units/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsweb-devcssrelative-units"><span class="">Relative Units</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsweb-devcssdoc-flow-li">
+  <a href="/docs/web-dev/css/doc-flow/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsweb-devcssdoc-flow"><span class="">Doc flow and layout</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsweb-devcssbox-model-li">
+  <a href="/docs/web-dev/css/box-model/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsweb-devcssbox-model"><span class="">Box Model</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsweb-devcssflexbox-li">
+  <a href="/docs/web-dev/css/flexbox/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsweb-devcssflexbox"><span class="">Flexbox</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsweb-devcssgrid-li">
+  <a href="/docs/web-dev/css/grid/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsweb-devcssgrid"><span class="">Grid</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsweb-devcsspositioning-stacking-li">
+  <a href="/docs/web-dev/css/positioning-stacking/" title="Positioning and stacking context" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsweb-devcsspositioning-stacking"><span class="">Positioning</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsweb-devcssresponsive-li">
+  <a href="/docs/web-dev/css/responsive/" title="Responsive design" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsweb-devcssresponsive"><span class="">Responsive</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsweb-devcsslayers-li">
+  <a href="/docs/web-dev/css/layers/" title="Cascade Layers" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsweb-devcsslayers"><span class="">Layers</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsweb-devcssmodular-li">
+  <a href="/docs/web-dev/css/modular/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsweb-devcssmodular"><span class="">Modular CSS</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsweb-devcsscontainer-queries-li">
+  <a href="/docs/web-dev/css/container-queries/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsweb-devcsscontainer-queries"><span class="">Container queries</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsweb-devcsscolor-contrast-li">
+  <a href="/docs/web-dev/css/color-contrast/" title="Color and contrast" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsweb-devcsscolor-contrast"><span class="">Color</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsweb-devcsstypography-spacing-li">
+  <a href="/docs/web-dev/css/typography-spacing/" title="Typography and spacing" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsweb-devcsstypography-spacing"><span class="">Typography</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsweb-devcssgradients-shadows-blends-li">
+  <a href="/docs/web-dev/css/gradients-shadows-blends/" title="Gradients, shadows, and blend modes" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsweb-devcssgradients-shadows-blends"><span class="">Gradients, shadows, blends</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsweb-devcssmasks-shapes-clip-li">
+  <a href="/docs/web-dev/css/masks-shapes-clip/" title="Masks, shapes, and clipping" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsweb-devcssmasks-shapes-clip"><span class="">Masks, shapes, clipping</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsweb-devcsstransitions-li">
+  <a href="/docs/web-dev/css/transitions/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsweb-devcsstransitions"><span class="">Transitions</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsweb-devcsstransforms-li">
+  <a href="/docs/web-dev/css/transforms/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsweb-devcsstransforms"><span class="">Transforms</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsweb-devcssanimations-li">
+  <a href="/docs/web-dev/css/animations/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsweb-devcssanimations"><span class="">Animations</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsweb-devcsspreprocessors-li">
+  <a href="/docs/web-dev/css/preprocessors/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsweb-devcsspreprocessors"><span class="">Preprocessors</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsweb-devcssimages-li">
+  <a href="/docs/web-dev/css/images/" title="Images and SVGs" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsweb-devcssimages"><span class="">Images</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsweb-devcssforms-li">
+  <a href="/docs/web-dev/css/forms/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsweb-devcssforms"><span class="">Forms</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsweb-devcssemmet-li">
+  <a href="/docs/web-dev/css/emmet/" title="Emmet for VSCode" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsweb-devcssemmet"><span class="">Emmet</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsweb-devcsspatterns-li">
+  <a href="/docs/web-dev/css/patterns/" title="Patterns and components" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsweb-devcsspatterns"><span class="">Patterns</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsweb-devcsssample-li">
+  <a href="/docs/web-dev/css/sample/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsweb-devcsssample"><span class="">Sample styling sheet</span></a>
+</li>
+  </ul>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child active-path" id="m-docsweb-devjavascript-li">
+  <a href="/docs/web-dev/javascript/" class="align-left ps-0 td-sidebar-link td-sidebar-link__section" id="m-docsweb-devjavascript"><span class="">Javascript</span></a>
+  <ul class="ul-3 foldable">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child active-path" id="m-docsweb-devjavascriptbuild-tools-li">
+  <a href="/docs/web-dev/javascript/build-tools/" class="align-left ps-0 active td-sidebar-link td-sidebar-link__page" id="m-docsweb-devjavascriptbuild-tools"><span class="td-sidebar-nav-active-item">Build tools</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsweb-devjavascriptenvironment-li">
+  <a href="/docs/web-dev/javascript/environment/" title="Programming environment" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsweb-devjavascriptenvironment"><span class="">Environment</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsweb-devjavascriptbasics-li">
+  <a href="/docs/web-dev/javascript/basics/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsweb-devjavascriptbasics"><span class="">Basics</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsweb-devjavascriptobjects-li">
+  <a href="/docs/web-dev/javascript/objects/" title="Objects and organization" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsweb-devjavascriptobjects"><span class="">Objects</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsweb-devjavascriptevents-li">
+  <a href="/docs/web-dev/javascript/events/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsweb-devjavascriptevents"><span class="">Events</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsweb-devjavascriptscripting-li">
+  <a href="/docs/web-dev/javascript/scripting/" title="Scripting documents" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsweb-devjavascriptscripting"><span class="">Scripting</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsweb-devjavascriptgeometry-scrolling-li">
+  <a href="/docs/web-dev/javascript/geometry-scrolling/" title="Document geometry and scrolling" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsweb-devjavascriptgeometry-scrolling"><span class="">Geometry and scrolling</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsweb-devjavascriptlocation-nav-history-li">
+  <a href="/docs/web-dev/javascript/location-nav-history/" title="Location, navigation, and history" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsweb-devjavascriptlocation-nav-history"><span class="">Location, nav, history</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsweb-devjavascriptnetworking-li">
+  <a href="/docs/web-dev/javascript/networking/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsweb-devjavascriptnetworking"><span class="">Networking</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsweb-devjavascriptstorage-li">
+  <a href="/docs/web-dev/javascript/storage/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsweb-devjavascriptstorage"><span class="">Storage</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsweb-devjavascriptasync-li">
+  <a href="/docs/web-dev/javascript/async/" title="Asynchronous JS" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsweb-devjavascriptasync"><span class="">Async</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsweb-devjavascriptarrays-li">
+  <a href="/docs/web-dev/javascript/arrays/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsweb-devjavascriptarrays"><span class="">Arrays</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsweb-devjavascriptpatterns-li">
+  <a href="/docs/web-dev/javascript/patterns/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsweb-devjavascriptpatterns"><span class="">Patterns</span></a>
+</li>
+  </ul>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsweb-devrefactoring-ui-li">
+  <a href="/docs/web-dev/refactoring-ui/" class="align-left ps-0 td-sidebar-link td-sidebar-link__section" id="m-docsweb-devrefactoring-ui"><span class="">Refactoring UI</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-docsweb-devdesign-li">
+  <a href="/docs/web-dev/design/" title="Web Design" class="align-left ps-0 td-sidebar-link td-sidebar-link__section" id="m-docsweb-devdesign"><span class="">Design</span></a>
+  <ul class="ul-3 foldable">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsweb-devdesignlinks-li">
+  <a href="/docs/web-dev/design/links/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsweb-devdesignlinks"><span class="">Links</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsweb-devdesigndesign-fundamentals-li">
+  <a href="/docs/web-dev/design/design-fundamentals/" title="Design fundamentals" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsweb-devdesigndesign-fundamentals"><span class="">Fundamentals</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsweb-devdesignux-li">
+  <a href="/docs/web-dev/design/ux/" title="User experience" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsweb-devdesignux"><span class="">UX</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsweb-devdesignux-research-li">
+  <a href="/docs/web-dev/design/ux-research/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsweb-devdesignux-research"><span class="">User research</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsweb-devdesignux-design-li">
+  <a href="/docs/web-dev/design/ux-design/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsweb-devdesignux-design"><span class="">User design</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsweb-devdesignlayout-composition-li">
+  <a href="/docs/web-dev/design/layout-composition/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsweb-devdesignlayout-composition"><span class="">Layout and composition</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsweb-devdesignanimations-li">
+  <a href="/docs/web-dev/design/animations/" title="Enhancing layouts with animation" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsweb-devdesignanimations"><span class="">Animations</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsweb-devdesigntypography-li">
+  <a href="/docs/web-dev/design/typography/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsweb-devdesigntypography"><span class="">Typography</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsweb-devdesigncolor-li">
+  <a href="/docs/web-dev/design/color/" title="Color theory" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsweb-devdesigncolor"><span class="">Color</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsweb-devdesigntutorial-li">
+  <a href="/docs/web-dev/design/tutorial/" title="Process outline: Building a website" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsweb-devdesigntutorial"><span class="">Process outline</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsweb-devdesigntesting-li">
+  <a href="/docs/web-dev/design/testing/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsweb-devdesigntesting"><span class="">Testing</span></a>
+</li>
+  </ul>
+</li>
+  </ul>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-docsxlinux-old-li">
+  <a href="/docs/xlinux-old/" class="align-left ps-0 td-sidebar-link td-sidebar-link__section" id="m-docsxlinux-old"><span class="">xLinux (old)</span></a>
+  <ul class="ul-2 foldable">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsxlinux-oldcommand-reference-li">
+  <a href="/docs/xlinux-old/command-reference/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsxlinux-oldcommand-reference"><span class="">Linux commands</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsxlinux-oldservices-li">
+  <a href="/docs/xlinux-old/services/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsxlinux-oldservices"><span class="">Services overview</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsxlinux-oldfiles-directories-li">
+  <a href="/docs/xlinux-old/files-directories/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsxlinux-oldfiles-directories"><span class="">Files and directories</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsxlinux-oldsearch-analyze-text-li">
+  <a href="/docs/xlinux-old/search-analyze-text/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsxlinux-oldsearch-analyze-text"><span class="">Searching and analyzing text</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsxlinux-oldboot-process-li">
+  <a href="/docs/xlinux-old/boot-process/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsxlinux-oldboot-process"><span class="">Boot process</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsxlinux-oldsystem-startup-services-li">
+  <a href="/docs/xlinux-old/system-startup-services/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsxlinux-oldsystem-startup-services"><span class="">System startup and services</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsxlinux-oldnetwork-connections-li">
+  <a href="/docs/xlinux-old/network-connections/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsxlinux-oldnetwork-connections"><span class="">Network connections</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsxlinux-oldlocalization-li">
+  <a href="/docs/xlinux-old/localization/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsxlinux-oldlocalization"><span class="">Localization</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsxlinux-oldusers-groups-li">
+  <a href="/docs/xlinux-old/users-groups/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsxlinux-oldusers-groups"><span class="">Users and groups</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsxlinux-oldstorage-li">
+  <a href="/docs/xlinux-old/storage/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsxlinux-oldstorage"><span class="">Storage</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsxlinux-oldprotecting-files-li">
+  <a href="/docs/xlinux-old/protecting-files/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsxlinux-oldprotecting-files"><span class="">Protecting files</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsxlinux-oldgoverning-software-li">
+  <a href="/docs/xlinux-old/governing-software/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsxlinux-oldgoverning-software"><span class="">Governing software</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsxlinux-oldkernel-modules-li">
+  <a href="/docs/xlinux-old/kernel-modules/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsxlinux-oldkernel-modules"><span class="">Kernel modules</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsxlinux-oldownership-permissions-li">
+  <a href="/docs/xlinux-old/ownership-permissions/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsxlinux-oldownership-permissions"><span class="">Ownership and permissions</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsxlinux-oldaccess-auth-li">
+  <a href="/docs/xlinux-old/access-auth/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsxlinux-oldaccess-auth"><span class="">Access and authorization</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsxlinux-oldlogging-li">
+  <a href="/docs/xlinux-old/logging/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsxlinux-oldlogging"><span class="">Logging services</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsxlinux-oldfirewalls-li">
+  <a href="/docs/xlinux-old/firewalls/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsxlinux-oldfirewalls"><span class="">Firewalls</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsxlinux-oldsecurity-best-practices-li">
+  <a href="/docs/xlinux-old/security-best-practices/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsxlinux-oldsecurity-best-practices"><span class="">Security best practices</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsxlinux-oldcpu-memory-li">
+  <a href="/docs/xlinux-old/cpu-memory/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsxlinux-oldcpu-memory"><span class="">CPU and memory</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsxlinux-oldperformance-li">
+  <a href="/docs/xlinux-old/performance/" title="Optimizing performance" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsxlinux-oldperformance"><span class="">Performance</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsxlinux-olddevices-li">
+  <a href="/docs/xlinux-old/devices/" title="Linux devices" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsxlinux-olddevices"><span class="">Devices</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsxlinux-oldautomating-jobs-li">
+  <a href="/docs/xlinux-old/automating-jobs/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsxlinux-oldautomating-jobs"><span class="">Automating jobs</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsxlinux-oldcloud-virtualization-li">
+  <a href="/docs/xlinux-old/cloud-virtualization/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsxlinux-oldcloud-virtualization"><span class="">Cloud and virtualization</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsxlinux-oldorchestration-li">
+  <a href="/docs/xlinux-old/orchestration/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsxlinux-oldorchestration"><span class="">Orchestration</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsxlinux-oldtmux-li">
+  <a href="/docs/xlinux-old/tmux/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsxlinux-oldtmux"><span class="">tmux</span></a>
+</li>
+  </ul>
+</li>
+  </ul>
+</li>
+    </ul>
+  </nav>
+</div>
+
+          </aside>
+          <aside class="d-none d-xl-block col-xl-2 td-sidebar-toc d-print-none">
+            <div class="td-page-meta ms-2 pb-1 pt-2 mb-0">
+
+</div>
+
+            <div class="td-toc">
+        <nav id="TableOfContents">
+  <ul>
+    <li><a href="#project-quickstart">Project quickstart</a></li>
+    <li><a href="#history">History</a></li>
+    <li><a href="#npm">npm</a></li>
+    <li><a href="#webpack">Webpack</a>
+      <ul>
+        <li><a href="#commands">Commands</a></li>
+        <li><a href="#key-concepts">Key concepts</a></li>
+        <li><a href="#task-runners">Task runners</a></li>
+        <li><a href="#html-webpack-plugin">html-webpack-plugin</a></li>
+        <li><a href="#asset-management">Asset management</a></li>
+        <li><a href="#development">Development</a></li>
+        <li><a href="#production">Production</a></li>
+        <li><a href="#dev--prod">Dev + prod</a></li>
+        <li><a href="#babel">babel</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+      </div>
+    
+            
+	
+          </aside>
+          <main class="col-12 col-md-9 col-xl-8 ps-md-5" role="main">
+            
+  
+
+            <nav aria-label="breadcrumb" class="td-breadcrumbs">
+  <ol class="breadcrumb">
+  <li class="breadcrumb-item">
+    <a href="/docs/">Documentation</a></li>
+  <li class="breadcrumb-item">
+    <a href="/docs/web-dev/">Web Dev</a></li>
+  <li class="breadcrumb-item">
+    <a href="/docs/web-dev/javascript/">Javascript</a></li>
+  <li class="breadcrumb-item active" aria-current="page">
+    Build tools</li>
+  </ol>
+</nav>
+<div class="td-content">
+	<h1>Build tools</h1>
+	<div class="lead">Toolchains to manage your environments and distribute your code.</div>
+	<header class="article-meta">
+		
+  </header>
+	<h2 id="project-quickstart">Project quickstart</h2>
+<ol>
+<li>Generate the package.json file with npm:
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>$ npm init -y
+</span></span></code></pre></div></li>
+<li>Install webpack and the webpack-cli as development dependencies:
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>$ npm install webpack webpack-cli --save-dev
+</span></span></code></pre></div></li>
+<li>Create the following directory structure with src/ and dist/ directories:
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>project-root
+</span></span><span style="display:flex;"><span>├── dist
+</span></span><span style="display:flex;"><span>│   └── index.html
+</span></span><span style="display:flex;"><span>├── package.json
+</span></span><span style="display:flex;"><span>├── package-lock.json
+</span></span><span style="display:flex;"><span>├── src
+</span></span><span style="display:flex;"><span>│   └── index.js
+</span></span><span style="display:flex;"><span>└── webpack.config.js
+</span></span></code></pre></div></li>
+<li>Create a webpack.config.js file with at least the following configuration:
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#204a87;font-weight:bold">const</span> <span style="color:#000">path</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">require</span><span style="color:#000;font-weight:bold">(</span><span style="color:#4e9a06">&#39;path&#39;</span><span style="color:#000;font-weight:bold">);</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#000">module</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">exports</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#000">entry</span><span style="color:#ce5c00;font-weight:bold">:</span> <span style="color:#4e9a06">&#39;./src/index.js&#39;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#000">output</span><span style="color:#ce5c00;font-weight:bold">:</span> <span style="color:#000;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#000">filename</span><span style="color:#ce5c00;font-weight:bold">:</span> <span style="color:#4e9a06">&#39;main.js&#39;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#000">path</span><span style="color:#ce5c00;font-weight:bold">:</span> <span style="color:#000">path</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">resolve</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">__dirname</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#4e9a06">&#39;dist&#39;</span><span style="color:#000;font-weight:bold">),</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#8f5902;font-style:italic">// clean: true,
+</span></span></span><span style="display:flex;"><span><span style="color:#8f5902;font-style:italic"></span>    <span style="color:#000;font-weight:bold">},</span>
+</span></span><span style="display:flex;"><span><span style="color:#000;font-weight:bold">};</span>
+</span></span></code></pre></div></li>
+<li></li>
+</ol>
+<h2 id="history">History</h2>
+<p>In its simplest form, Javascript files are linked directly in the HTML <code>&lt;head&gt;</code> with the <code>&lt;script&gt;</code> tag. If you want to add an external library, you would have to download the library, store the library in a file, and then link that file with another <code>&lt;script&gt;</code> tag:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span><span style="color:#8f5902;font-style:italic">&lt;!DOCTYPE html&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#000;font-weight:bold">&lt;</span><span style="color:#204a87;font-weight:bold">html</span> <span style="color:#c4a000">lang</span><span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#4e9a06">&#34;en&#34;</span><span style="color:#000;font-weight:bold">&gt;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#000;font-weight:bold">&lt;</span><span style="color:#204a87;font-weight:bold">head</span><span style="color:#000;font-weight:bold">&gt;</span>
+</span></span><span style="display:flex;"><span>    ...
+</span></span><span style="display:flex;"><span>    <span style="color:#000;font-weight:bold">&lt;</span><span style="color:#204a87;font-weight:bold">script</span> <span style="color:#c4a000">src</span><span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#4e9a06">&#34;library.min.js&#34;</span><span style="color:#000;font-weight:bold">&gt;&lt;/</span><span style="color:#204a87;font-weight:bold">script</span><span style="color:#000;font-weight:bold">&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#000;font-weight:bold">&lt;</span><span style="color:#204a87;font-weight:bold">script</span> <span style="color:#c4a000">src</span><span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#4e9a06">&#34;index.js&#34;</span><span style="color:#000;font-weight:bold">&gt;&lt;/</span><span style="color:#204a87;font-weight:bold">script</span><span style="color:#000;font-weight:bold">&gt;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#000;font-weight:bold">&lt;/</span><span style="color:#204a87;font-weight:bold">head</span><span style="color:#000;font-weight:bold">&gt;</span>
+</span></span><span style="display:flex;"><span>  ...
+</span></span><span style="display:flex;"><span><span style="color:#000;font-weight:bold">&lt;/</span><span style="color:#204a87;font-weight:bold">html</span><span style="color:#000;font-weight:bold">&gt;</span>
+</span></span></code></pre></div><p>This creates a global variable (maybe named <code>library</code>) that is avaiable to any file loaded under the <code>library.min.js</code> script tag. Managing packages like this is tedious, so frontend developers use a package manager like <code>npm</code> to handle packages. <code>npm</code> creates a <code>package.json</code> file to track project dependencies, which allows you to easily share projects.</p>
+<p>After you add a library to the project, npm creates the <code>node_modules/</code> directory which contains all downloaded libraries as modules. There is an issue&ndash;Javascript runs in the browser, and the browser cannot access local directories. You could explicitly link the desired library in <code>node_modules</code> with a script tag containing the path (<code>node_modules/librar/library.min.js</code>), but that is tedious, too.</p>
+<h2 id="npm">npm</h2>
+<p><code>npm</code> is the node package manager, which handles dependencies for Node.js. It consists of the following:</p>
+<ul>
+<li><a href="https://www.npmjs.com/">website</a></li>
+<li><a href="https://docs.npmjs.com/cli/v10/commands/npm">CLI</a></li>
+<li><a href="https://docs.npmjs.com/cli/v10/using-npm/registry">registry</a>: the database of JS software</li>
+</ul>
+<p>You can use it to manage dependencies for your Javascript projects with the following commands:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span><span style="color:#8f5902;font-style:italic"># create package.json file</span>
+</span></span><span style="display:flex;"><span>$ npm init
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8f5902;font-style:italic"># create default package.json file</span>
+</span></span><span style="display:flex;"><span>$ npm init -y
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8f5902;font-style:italic"># set default options for init command</span>
+</span></span><span style="display:flex;"><span>$ npm <span style="color:#204a87">set</span> init-author-email <span style="color:#4e9a06">&#34;example-user@example.com&#34;</span>
+</span></span><span style="display:flex;"><span>$ npm <span style="color:#204a87">set</span> init-author-name <span style="color:#4e9a06">&#34;example_user&#34;</span>
+</span></span><span style="display:flex;"><span>$ npm <span style="color:#204a87">set</span> init-license <span style="color:#4e9a06">&#34;MIT&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8f5902;font-style:italic"># save as prod dependency and included in production version</span>
+</span></span><span style="display:flex;"><span>$ npm install &lt;package-name&gt; --save
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8f5902;font-style:italic"># save as dev dependency, NOT included in production version</span>
+</span></span><span style="display:flex;"><span>$ npm install &lt;package-name&gt; --save-dev
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8f5902;font-style:italic"># install the dependencies lists in package.json</span>
+</span></span><span style="display:flex;"><span>$ npm install
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8f5902;font-style:italic"># uninstall a package</span>
+</span></span><span style="display:flex;"><span>$ npm uninstall &lt;package-name&gt;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8f5902;font-style:italic"># install a specific version with a tag</span>
+</span></span><span style="display:flex;"><span>$ npm install &lt;package-name&gt;@&lt;tag&gt;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8f5902;font-style:italic"># check the node_modules contents</span>
+</span></span><span style="display:flex;"><span>$ ls node_modules
+</span></span></code></pre></div><p><em><code>devDependencies</code></em> are added to <code>package.json</code> when a package is installed as a development dependency. Examples include babel plugins and presets, test runners, and linters. Those listed under <em><code>dependencies</code></em> are production dependencies. Development dependencies are included in the application so they are present at runtime. Development <code>dependencies</code> are available in both development and production, so any packages that are used in both workflows are listed under <code>dependencies</code> only.</p>
+<h2 id="webpack">Webpack</h2>
+<p>Read the <a href="https://webpack.js.org/guides/">guides</a>.</p>
+<p>Webpack is a bundler. A bundler takes all of your application dependencies and &ldquo;bundles&rdquo; them up into a single static file that is available to your application at runtime. As a general rule, you should try to limit the number of production dependencies that your application relies on.</p>
+<p>A bundler takes an entry point and builds a dependency graph of your source files and third-party libraries. This is called <strong>dependency resolution</strong>. This is beneficial because it only bundles modules that are in use.</p>
+<p>Node.js uses the <code>require()</code> statement to import libraries from the filesystem, but this does not work with Javascript in the browser because there is no file system access. The solution is a module bundler.</p>
+<p>A Javascript module bundler has a build step that accesses the file system and makes JS files available to the browser. Essentially, it finds all <code>require()</code> statements in <code>.js</code> files and replaces them with the contents of the required file (npm tracks the file system location of all dependencies).</p>
+<p>Read the <a href="https://webpack.js.org/">Webpack docs</a> and the <a href="https://webpack.js.org/guides/development/">Webpack developer docs</a>.</p>
+<h3 id="commands">Commands</h3>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8f5902;font-style:italic"># start a project</span>
+</span></span><span style="display:flex;"><span>$ mkdir project-name
+</span></span><span style="display:flex;"><span>$ <span style="color:#204a87">cd</span> project-name
+</span></span><span style="display:flex;"><span>$ npm init -y
+</span></span><span style="display:flex;"><span>$ npm install webpack webpack-cli --save-dev
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8f5902;font-style:italic"># manually run webpack to convert</span>
+</span></span><span style="display:flex;"><span>$ ./node_modules/.bin/webpack &lt;source-file&gt;.js --mode<span style="color:#ce5c00;font-weight:bold">=</span>development
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8f5902;font-style:italic"># manually run with config file</span>
+</span></span><span style="display:flex;"><span>$ npx webpack --config webpack.config.js
+</span></span></code></pre></div><p>You can simplify the webpack command with the <code>webpack.config.js</code> file:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#000">module</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">exports</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#000">mode</span><span style="color:#ce5c00;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;development&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#000">entry</span><span style="color:#ce5c00;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;./index.js&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#000">output</span><span style="color:#ce5c00;font-weight:bold">:</span> <span style="color:#000;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#000">filename</span><span style="color:#ce5c00;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;main.js&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#000">publicPath</span><span style="color:#ce5c00;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;dist&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#000;font-weight:bold">},</span>
+</span></span><span style="display:flex;"><span><span style="color:#000;font-weight:bold">};</span>
+</span></span></code></pre></div><p>Now, the webpack command reads this config file, and you can run it with the following format:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>$ ./node_modules/.bin/webpack
+</span></span></code></pre></div><h3 id="key-concepts">Key concepts</h3>
+<p>These concepts were taken from <a href="https://snipcart.com/blog/javascript-module-bundler">this article</a> and defined in the <a href="https://webpack.js.org/concepts/">official docs</a>.</p>
+<dl>
+<dt>entry</dt>
+<dd>The file that Webpack uses to initiate its dependency graph:</dd>
+</dl>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#000">module</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">exports</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#000">entry</span><span style="color:#ce5c00;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;./app/index.js&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span><span style="color:#000;font-weight:bold">};</span>
+</span></span></code></pre></div><dl>
+<dt>output</dt>
+<dd>The location that Webpack outputs the packaged code. This usually includes the output path and the output filename:</dd>
+</dl>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#000">module</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">exports</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#000">entry</span><span style="color:#ce5c00;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;./app/index.js&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#000">output</span><span style="color:#ce5c00;font-weight:bold">:</span> <span style="color:#000;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#000">path</span><span style="color:#ce5c00;font-weight:bold">:</span> <span style="color:#000">path</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">resolve</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">__dirname</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#4e9a06">&#34;dist&#34;</span><span style="color:#000;font-weight:bold">),</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#000">filename</span><span style="color:#ce5c00;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;webpack-app.bundle.js&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#000">clean</span><span style="color:#ce5c00;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">true</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#000;font-weight:bold">},</span>
+</span></span><span style="display:flex;"><span><span style="color:#000;font-weight:bold">};</span>
+</span></span></code></pre></div><blockquote>
+<p><code>clean</code> empties the <code>dist/</code> directory when you build the project. This helps make sure that the <code>dist/</code> directory contains only files that your project actively uses.</p></blockquote>
+<dl>
+<dt>loaders</dt>
+<dd>Transform and bundle non-JS files such as CSS or images. For example, you might link to images in your HTML, CSS, or JS files. You configure a loader so that Webpack doesn&rsquo;t bundle all these assets in with your minified JS.</dd>
+<dt>plugins</dt>
+<dd>Webpack can perform more advanced features.</dd>
+<dt>mode</dt>
+<dd>Dynamically configures operations to production or development modes.</dd>
+<dt>Browser compatiblity</dt>
+<dd>Build bundles that support new and old browsers.</dd>
+</dl>
+<h3 id="task-runners">Task runners</h3>
+<p>A task runner is a tool that automates parts of the build process. This includes:</p>
+<ul>
+<li>minifying code</li>
+<li>optimizing images</li>
+<li>running tests</li>
+<li>automatically refreshing the browser</li>
+</ul>
+<p>We can execute task runners with npm directly in the <code>scripts</code> object in <code>package.json</code>:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#4e9a06">&#34;scripts&#34;</span><span style="color:#ce5c00;font-weight:bold">:</span> <span style="color:#000;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#4e9a06">&#34;test&#34;</span><span style="color:#ce5c00;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;echo \&#34;Error: no test specified\&#34; &amp;&amp; exit 1&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#8f5902;font-style:italic">// production minifies the js files
+</span></span></span><span style="display:flex;"><span><span style="color:#8f5902;font-style:italic"></span>  <span style="color:#4e9a06">&#34;build&#34;</span><span style="color:#ce5c00;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;webpack --progress --mode=production&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#8f5902;font-style:italic">// watch runs the webpack command when a .js file changes
+</span></span></span><span style="display:flex;"><span><span style="color:#8f5902;font-style:italic"></span>  <span style="color:#4e9a06">&#34;watch&#34;</span><span style="color:#ce5c00;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;webpack --progress --watch&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#000;font-weight:bold">},</span>
+</span></span></code></pre></div><p>The script commands do not need to specify the full path to webpack (<code>./node_modules/.bin/webpack</code>) because npm knows the file system location of each node module.</p>
+<p>Execute these scripts with <code>npm run &lt;script-key&gt;</code>:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>$ npm run build
+</span></span><span style="display:flex;"><span>$ npm run watch
+</span></span></code></pre></div><h3 id="html-webpack-plugin">html-webpack-plugin</h3>
+<p><a href="https://rapidevelop.org/webpack/setup-html-webpack-plugin">Helpful link</a></p>
+<p>We only want to write code in the <code>src/</code> directory&ndash;we do not want to manually add the <code>index.html</code> file in the <code>dist/</code> directory.</p>
+<p>Webpack&rsquo;s <code>html-webpack-plugin</code> automatically builds the HTML file in the <code>dist/</code> during a build, which includes a script tag for the minified bundle.
+Install the package:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>$ npm install --save-dev html-webpack-plugin
+</span></span></code></pre></div><p>Now we can use the module as a plugin in <code>webpack.config.js</code>. The module accepts an object that defines the HTML file:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#204a87;font-weight:bold">const</span> <span style="color:#000">HtmlWebpackPlugin</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">require</span><span style="color:#000;font-weight:bold">(</span><span style="color:#4e9a06">&#39;html-webpack-plugin&#39;</span><span style="color:#000;font-weight:bold">);</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#000">module</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">exports</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#000;font-weight:bold">...,</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#000">plugins</span><span style="color:#ce5c00;font-weight:bold">:</span> <span style="color:#000;font-weight:bold">[</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">new</span> <span style="color:#000">HtmlWebpackPlugin</span><span style="color:#000;font-weight:bold">({</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#000">template</span><span style="color:#ce5c00;font-weight:bold">:</span> <span style="color:#4e9a06">&#39;./src/index.html&#39;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#000">title</span><span style="color:#ce5c00;font-weight:bold">:</span> <span style="color:#4e9a06">&#39;Webpack 5 Video Tutorials&#39;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#000">filename</span><span style="color:#ce5c00;font-weight:bold">:</span> <span style="color:#4e9a06">&#39;index.html&#39;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#8f5902;font-style:italic">// inject: &#39;body&#39;,
+</span></span></span><span style="display:flex;"><span><span style="color:#8f5902;font-style:italic"></span>            <span style="color:#000">inject</span><span style="color:#ce5c00;font-weight:bold">:</span> <span style="color:#4e9a06">&#39;head&#39;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#8f5902;font-style:italic">// scriptLoading: &#39;defer&#39;, // this is the default
+</span></span></span><span style="display:flex;"><span><span style="color:#8f5902;font-style:italic"></span>        <span style="color:#000;font-weight:bold">})</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#000;font-weight:bold">]</span>
+</span></span><span style="display:flex;"><span><span style="color:#000;font-weight:bold">};</span>
+</span></span></code></pre></div><p>In the previous example:</p>
+<ul>
+<li><code>template</code> is the path to the HTML template that you provide.</li>
+<li><code>title</code> is the title of the HTML file</li>
+<li><code>filename</code> is the name of the HTML file output in <code>dist/</code></li>
+<li><code>inject</code> is where you want the script tag. By default, it includes the <code>defer</code> option.</li>
+</ul>
+<p>The <a href="https://github.com/jantimon/html-webpack-plugin#options">GitHub repo lists</a> the available options.</p>
+<h4 id="caching">Caching</h4>
+<p><a href="https://webpack.js.org/guides/caching/">Caching article</a></p>
+<p>To prevent caching, you can put hashes in the filename that Webpack generates.</p>
+<h3 id="asset-management">Asset management</h3>
+<p>Notes from <a href="https://webpack.js.org/guides/asset-management/">this tutorial</a>.</p>
+<h4 id="css">CSS</h4>
+<p>The following loaders let you import CSS within a JS module:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>$ npm install --save-dev style-loader css-loader
+</span></span></code></pre></div><p>Now, you have to update <code>webpack.config.js</code> to use the loaders. The <code>use</code> array chains loaders, so files are processed by <code>style-loader</code>, and then that processed information is passed to <code>css-loader</code>:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#000">module</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">exports</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#000;font-weight:bold">...</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#000">module</span><span style="color:#ce5c00;font-weight:bold">:</span> <span style="color:#000;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#000">rules</span><span style="color:#ce5c00;font-weight:bold">:</span> <span style="color:#000;font-weight:bold">[</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#000;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#000">test</span><span style="color:#ce5c00;font-weight:bold">:</span> <span style="color:#4e9a06">/\.css$/i</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#000">use</span><span style="color:#ce5c00;font-weight:bold">:</span> <span style="color:#000;font-weight:bold">[</span><span style="color:#4e9a06">&#39;style-loader&#39;</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#4e9a06">&#39;css-loader&#39;</span><span style="color:#000;font-weight:bold">],</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#000;font-weight:bold">},</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#000;font-weight:bold">],</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#000;font-weight:bold">},</span>
+</span></span><span style="display:flex;"><span><span style="color:#000;font-weight:bold">};</span>
+</span></span></code></pre></div><p>After you import and use CSS in a JS file, a <code>&lt;style&gt;</code> tag is added to the HTML in the browser after you run webpack.</p>
+<h4 id="images">Images</h4>
+<p>Add the following rule to perform minimal image processing:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span>    <span style="color:#000;font-weight:bold">...</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#000">module</span><span style="color:#ce5c00;font-weight:bold">:</span> <span style="color:#000;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#000">rules</span><span style="color:#ce5c00;font-weight:bold">:</span> <span style="color:#000;font-weight:bold">[</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#000;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#000">test</span><span style="color:#ce5c00;font-weight:bold">:</span> <span style="color:#4e9a06">/\.css$/i</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#000">use</span><span style="color:#ce5c00;font-weight:bold">:</span> <span style="color:#000;font-weight:bold">[</span><span style="color:#4e9a06">&#39;style-loader&#39;</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#4e9a06">&#39;css-loader&#39;</span><span style="color:#000;font-weight:bold">],</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#000;font-weight:bold">},</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#000;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#000">test</span><span style="color:#ce5c00;font-weight:bold">:</span> <span style="color:#4e9a06">/\.(png|svg|jpg|jpeg|gif)$/i</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#000">type</span><span style="color:#ce5c00;font-weight:bold">:</span> <span style="color:#4e9a06">&#39;asset/resource&#39;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#000;font-weight:bold">}</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#000;font-weight:bold">],</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#000;font-weight:bold">},</span>
+</span></span><span style="display:flex;"><span><span style="color:#000;font-weight:bold">};</span>
+</span></span></code></pre></div><p>These rules process images from your <code>src/</code> directory and place the product in the output directory. When you import an image into your JS file or CSS, the <code>css-loader</code> replaces the path to your image with the final path in your <code>output.path</code> directory (defined in <code>module.exports</code>, not shown above).</p>
+<h4 id="data">Data</h4>
+<p>This <a href="https://webpack.js.org/guides/asset-management/#loading-data">tutorial section</a> explains it well.</p>
+<p>This <a href="https://webpack.js.org/guides/asset-management/#customize-parser-of-json-modules">tutorial section</a> covers toml, yaml, and json5.</p>
+<h3 id="development">Development</h3>
+<p>When you are in development mode, you want to have strong source maps and a local server that reloads with every change.</p>
+<p>You can set your config file in development mode:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#000">module</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">exports</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#000">mode</span><span style="color:#ce5c00;font-weight:bold">:</span> <span style="color:#4e9a06">&#39;development&#39;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#000;font-weight:bold">...</span>
+</span></span><span style="display:flex;"><span><span style="color:#000;font-weight:bold">};</span>
+</span></span></code></pre></div><h4 id="source-maps">Source maps</h4>
+<p>A source map is tool that maps code in your bundle back to your source files. When Webpack bundles all source code, it makes it difficult to locate errors in your source files. You can use a source map so that the terminal tells you were errors occur in the source files, <strong>not</strong> in the bundled JS file:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#000">module</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">exports</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#000">mode</span><span style="color:#ce5c00;font-weight:bold">:</span> <span style="color:#4e9a06">&#39;development&#39;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#000">entry</span><span style="color:#ce5c00;font-weight:bold">:</span> <span style="color:#000;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#000;font-weight:bold">...</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#000;font-weight:bold">},</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#000">devtool</span><span style="color:#ce5c00;font-weight:bold">:</span> <span style="color:#4e9a06">&#39;inline-source-map&#39;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#000">plugins</span><span style="color:#ce5c00;font-weight:bold">:</span> <span style="color:#000;font-weight:bold">[</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#000;font-weight:bold">...</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#000;font-weight:bold">],</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#000">output</span><span style="color:#ce5c00;font-weight:bold">:</span> <span style="color:#000;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#000;font-weight:bold">...</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#000;font-weight:bold">},</span>
+</span></span><span style="display:flex;"><span><span style="color:#000;font-weight:bold">};</span>
+</span></span></code></pre></div><p>Read the <a href="https://webpack.js.org/configuration/devtool/">devtool docs</a> for more options.</p>
+<h4 id="watch">Watch</h4>
+<p><code>Watch</code> watches your source files and recompiles them when there is a change. You can implement this by adding a script with the <code>--watch</code> option to your <code>package.json</code> file:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span>  <span style="color:#4e9a06">&#34;scripts&#34;</span><span style="color:#ce5c00;font-weight:bold">:</span> <span style="color:#000;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#000;font-weight:bold">...</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#4e9a06">&#34;watch&#34;</span><span style="color:#ce5c00;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;webpack --watch&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#4e9a06">&#34;build&#34;</span><span style="color:#ce5c00;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;webpack&#34;</span>
+</span></span></code></pre></div><h4 id="devserver">DevServer</h4>
+<p><code>Watch</code> is great, but you have to manually reload your browser when you make a change to your source files. <code>DevServer</code> provides a lightweight server that automatically refreshes your browser. Read the <a href="https://webpack.js.org/configuration/dev-server/"><code>DevServer</code> docs here</a>.</p>
+<p>Install it with the following command:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>$ npm install --save-dev webpack-dev-server
+</span></span></code></pre></div><p>In <code>webpack.config.js</code>, tell the dev server where to serve the files from. Use <code>src/</code> because you will keep all your work in this directory:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#000">module</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">exports</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#000">mode</span><span style="color:#ce5c00;font-weight:bold">:</span> <span style="color:#4e9a06">&#39;development&#39;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#000;font-weight:bold">...</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#000">devServer</span><span style="color:#ce5c00;font-weight:bold">:</span> <span style="color:#000;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">static</span><span style="color:#ce5c00;font-weight:bold">:</span> <span style="color:#4e9a06">&#39;./src&#39;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#000;font-weight:bold">},</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#000;font-weight:bold">...</span>
+</span></span><span style="display:flex;"><span><span style="color:#000;font-weight:bold">};</span>
+</span></span></code></pre></div><blockquote>
+<p>If you have more than one entrypoint in your build, add the optimization object to your config file:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#000">module</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">exports</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#000">entry</span><span style="color:#ce5c00;font-weight:bold">:</span> <span style="color:#000;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#000">index</span><span style="color:#ce5c00;font-weight:bold">:</span> <span style="color:#4e9a06">&#39;./src/index.js&#39;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#000">print</span><span style="color:#ce5c00;font-weight:bold">:</span> <span style="color:#4e9a06">&#39;./src/print.js&#39;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#000;font-weight:bold">},</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#000;font-weight:bold">...</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#000">optimization</span><span style="color:#ce5c00;font-weight:bold">:</span> <span style="color:#000;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#000">runtimeChunk</span><span style="color:#ce5c00;font-weight:bold">:</span> <span style="color:#4e9a06">&#39;single&#39;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#000;font-weight:bold">},</span>
+</span></span><span style="display:flex;"><span><span style="color:#000;font-weight:bold">};</span>
+</span></span></code></pre></div></blockquote>
+<p>Finally, update <code>package.json</code> with the script to run the dev server:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#000;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#000;font-weight:bold">...</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#4e9a06">&#34;scripts&#34;</span><span style="color:#ce5c00;font-weight:bold">:</span> <span style="color:#000;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#4e9a06">&#34;start&#34;</span><span style="color:#ce5c00;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;webpack serve --open&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#4e9a06">&#34;build&#34;</span><span style="color:#ce5c00;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;webpack&#34;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#000;font-weight:bold">},</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#000;font-weight:bold">...</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#4e9a06">&#34;devDependencies&#34;</span><span style="color:#ce5c00;font-weight:bold">:</span> <span style="color:#000;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#000;font-weight:bold">...</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#4e9a06">&#34;webpack&#34;</span><span style="color:#ce5c00;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;^5.89.0&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#4e9a06">&#34;webpack-cli&#34;</span><span style="color:#ce5c00;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;^5.1.4&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#4e9a06">&#34;webpack-dev-server&#34;</span><span style="color:#ce5c00;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;^4.15.1&#34;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#000;font-weight:bold">},</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#000;font-weight:bold">...</span>
+</span></span><span style="display:flex;"><span><span style="color:#000;font-weight:bold">}</span>
+</span></span></code></pre></div><h3 id="production">Production</h3>
+<p>Read the <a href="https://webpack.js.org/guides/production/">Webpack tutorial</a>.</p>
+<p>In production builds, you want minified bundles, lightweight source maps, and opitimized assets. Set the mode to <code>production</code>:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#000">module</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">exports</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">merge</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">common</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#000">mode</span><span style="color:#ce5c00;font-weight:bold">:</span> <span style="color:#4e9a06">&#39;production&#39;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span><span style="color:#000;font-weight:bold">});</span>
+</span></span></code></pre></div><p>One benefit of production mode is that it drops dead code (code that is not used in the final build in <code>dist/</code>). To better understand the plugins that make this possible, see the <a href="https://webpack.js.org/guides/tree-shaking/">tree shaking guide</a>.</p>
+<h4 id="minification">Minification</h4>
+<p>Webpack ships with the <a href="https://webpack.js.org/plugins/terser-webpack-plugin/"><code>TerserPlugin</code></a> minification module, but another good option is <a href="https://github.com/webpack-contrib/closure-webpack-plugin"><code>ClosureWebpackPlugin</code></a>.</p>
+<p>For CSS minification, see <a href="https://webpack.js.org/plugins/mini-css-extract-plugin/#minimizing-for-production">Minimizing for prodcution</a>.</p>
+<h4 id="source-maps-1">Source maps</h4>
+<p>Source maps should build quickly. Use the <code>source-map</code> instead of the <code>inline-source-map</code> that is better for development:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#000">module</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">exports</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">merge</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">common</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#000;font-weight:bold">...</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#000">devtool</span><span style="color:#ce5c00;font-weight:bold">:</span> <span style="color:#4e9a06">&#39;source-map&#39;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span><span style="color:#000;font-weight:bold">});</span>
+</span></span></code></pre></div><h3 id="dev--prod">Dev + prod</h3>
+<p>You can specify only one mode in <code>webpack.config.js</code>, which is an issue if you want to run both development and production builds from the same project. You can use <code>webpack-merge</code> to define the build processes across multiple configuration files:</p>
+<ul>
+<li><code>webpack.common.js</code>: Settings that both dev and prod share, such as entrypoints and output file locations.</li>
+<li><code>webpack.dev.js</code>: Development-specific settings</li>
+<li><code>webpack.prod.js</code>: Production-specific settings.</li>
+</ul>
+<blockquote>
+<p>If you use <code>webpack-merge</code>, make sure you delete the <code>webpack.config.js</code> file from the project because Webpack looks for that file by default.</p></blockquote>
+<p>First, install the tool:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#000">npm</span> <span style="color:#000">install</span> <span style="color:#ce5c00;font-weight:bold">--</span><span style="color:#000">save</span><span style="color:#ce5c00;font-weight:bold">-</span><span style="color:#000">dev</span> <span style="color:#000">webpack</span><span style="color:#ce5c00;font-weight:bold">-</span><span style="color:#000">merge</span>
+</span></span></code></pre></div><p>Next, split up the files. <code>webpack-common.js</code> should look familiar:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#204a87;font-weight:bold">const</span> <span style="color:#000">path</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">require</span><span style="color:#000;font-weight:bold">(</span><span style="color:#4e9a06">&#39;path&#39;</span><span style="color:#000;font-weight:bold">);</span>
+</span></span><span style="display:flex;"><span><span style="color:#204a87;font-weight:bold">const</span> <span style="color:#000">HtmlWebpackPlugin</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">require</span><span style="color:#000;font-weight:bold">(</span><span style="color:#4e9a06">&#39;html-webpack-plugin&#39;</span><span style="color:#000;font-weight:bold">);</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#000">module</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">exports</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#000">entry</span><span style="color:#ce5c00;font-weight:bold">:</span> <span style="color:#000;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#000">index</span><span style="color:#ce5c00;font-weight:bold">:</span> <span style="color:#4e9a06">&#39;./src/index.js&#39;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#000">print</span><span style="color:#ce5c00;font-weight:bold">:</span> <span style="color:#4e9a06">&#39;./src/print.js&#39;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#000;font-weight:bold">},</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#000">plugins</span><span style="color:#ce5c00;font-weight:bold">:</span> <span style="color:#000;font-weight:bold">[</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">new</span> <span style="color:#000">HtmlWebpackPlugin</span><span style="color:#000;font-weight:bold">({</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#000">title</span><span style="color:#ce5c00;font-weight:bold">:</span> <span style="color:#4e9a06">&#39;Development&#39;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#000;font-weight:bold">})</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#000;font-weight:bold">],</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#000">output</span><span style="color:#ce5c00;font-weight:bold">:</span> <span style="color:#000;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#000">filename</span><span style="color:#ce5c00;font-weight:bold">:</span> <span style="color:#4e9a06">&#39;[name].bundle.js&#39;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#000">path</span><span style="color:#ce5c00;font-weight:bold">:</span> <span style="color:#000">path</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">resolve</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">__dirname</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#4e9a06">&#39;dist&#39;</span><span style="color:#000;font-weight:bold">),</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#000">clean</span><span style="color:#ce5c00;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">true</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#000;font-weight:bold">},</span>
+</span></span><span style="display:flex;"><span><span style="color:#000;font-weight:bold">};</span>
+</span></span></code></pre></div><p>Next, create the <code>webpack.{dev | prod}.js</code> files. These files require that you import both the <code>merge</code> tool and the <code>webpack-common.js</code> file:</p>
+<p>When you define <code>module.exports</code>, use the <code>merge</code> tool. It accepts the common configuration and an object that defines the settings for that mode.</p>
+<p><code>webpack.dev.js</code>:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#204a87;font-weight:bold">const</span> <span style="color:#000;font-weight:bold">{</span> <span style="color:#000">merge</span> <span style="color:#000;font-weight:bold">}</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">require</span><span style="color:#000;font-weight:bold">(</span><span style="color:#4e9a06">&#39;webpack-merge&#39;</span><span style="color:#000;font-weight:bold">);</span>
+</span></span><span style="display:flex;"><span><span style="color:#204a87;font-weight:bold">const</span> <span style="color:#000">common</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">require</span><span style="color:#000;font-weight:bold">(</span><span style="color:#4e9a06">&#39;./webpack.common.js&#39;</span><span style="color:#000;font-weight:bold">);</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#000">module</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">exports</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">merge</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">common</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#000">mode</span><span style="color:#ce5c00;font-weight:bold">:</span> <span style="color:#4e9a06">&#39;development&#39;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#000">devtool</span><span style="color:#ce5c00;font-weight:bold">:</span> <span style="color:#4e9a06">&#39;inline-source-map&#39;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#000">devServer</span><span style="color:#ce5c00;font-weight:bold">:</span> <span style="color:#000;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#204a87;font-weight:bold">static</span><span style="color:#ce5c00;font-weight:bold">:</span> <span style="color:#4e9a06">&#39;./dist&#39;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#000;font-weight:bold">},</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#000">optimization</span><span style="color:#ce5c00;font-weight:bold">:</span> <span style="color:#000;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#000">runtimeChunk</span><span style="color:#ce5c00;font-weight:bold">:</span> <span style="color:#4e9a06">&#39;single&#39;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#000;font-weight:bold">},</span>
+</span></span><span style="display:flex;"><span><span style="color:#000;font-weight:bold">});</span>
+</span></span></code></pre></div><p><code>webpack.prod.js</code>:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#204a87;font-weight:bold">const</span> <span style="color:#000;font-weight:bold">{</span> <span style="color:#000">merge</span> <span style="color:#000;font-weight:bold">}</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">require</span><span style="color:#000;font-weight:bold">(</span><span style="color:#4e9a06">&#39;webpack-merge&#39;</span><span style="color:#000;font-weight:bold">);</span>
+</span></span><span style="display:flex;"><span><span style="color:#204a87;font-weight:bold">const</span> <span style="color:#000">common</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">require</span><span style="color:#000;font-weight:bold">(</span><span style="color:#4e9a06">&#39;./webpack.common.js&#39;</span><span style="color:#000;font-weight:bold">);</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#000">module</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">exports</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">merge</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">common</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#000">mode</span><span style="color:#ce5c00;font-weight:bold">:</span> <span style="color:#4e9a06">&#39;production&#39;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#000">devtool</span><span style="color:#ce5c00;font-weight:bold">:</span> <span style="color:#4e9a06">&#39;source-map&#39;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span><span style="color:#000;font-weight:bold">});</span>
+</span></span></code></pre></div><h3 id="babel">babel</h3>
+<p>The following command installs these packages:</p>
+<ul>
+<li><code>@babel/core</code>: main package</li>
+<li><code>@babel/preset-env</code>: defines which JS features to transpile</li>
+<li><code>babel-loader</code>: lets babel work with webpack</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span><span style="color:#8f5902;font-style:italic"># install babel</span>
+</span></span><span style="display:flex;"><span>$ npm install @babel/core @babel/preset-env babel-loader --save-dev
+</span></span></code></pre></div><p>You also have to configure webpack to use the <code>babel-loader</code>:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#000">module</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">exports</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#000;font-weight:bold">...</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#000">module</span><span style="color:#ce5c00;font-weight:bold">:</span> <span style="color:#000;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#000">rules</span><span style="color:#ce5c00;font-weight:bold">:</span> <span style="color:#000;font-weight:bold">[</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#000;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#000">test</span><span style="color:#ce5c00;font-weight:bold">:</span> <span style="color:#4e9a06">/\.js$/</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#000">exclude</span><span style="color:#ce5c00;font-weight:bold">:</span> <span style="color:#4e9a06">/node_modules/</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#000">use</span><span style="color:#ce5c00;font-weight:bold">:</span> <span style="color:#000;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>          <span style="color:#000">loader</span><span style="color:#ce5c00;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;babel-loader&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span>          <span style="color:#000">options</span><span style="color:#ce5c00;font-weight:bold">:</span> <span style="color:#000;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#000">presets</span><span style="color:#ce5c00;font-weight:bold">:</span> <span style="color:#000;font-weight:bold">[</span><span style="color:#4e9a06">&#34;@babel/preset-env&#34;</span><span style="color:#000;font-weight:bold">],</span>
+</span></span><span style="display:flex;"><span>          <span style="color:#000;font-weight:bold">},</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#000;font-weight:bold">},</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#000;font-weight:bold">},</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#000;font-weight:bold">],</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#000;font-weight:bold">},</span>
+</span></span><span style="display:flex;"><span><span style="color:#000;font-weight:bold">};</span>
+</span></span></code></pre></div><p>This configuration tells webpack to find any files ending in <code>.js</code> except for those in <code>node_modules</code>, and transpile them with <code>babel-loader</code> using the <code>@babel/preset-env</code> presets. This means we can use newer syntax, like the <code>import</code> statement:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#204a87;font-weight:bold">import</span> <span style="color:#000">library</span><span style="color:#ce5c00;font-weight:bold">-</span><span style="color:#000">name</span> <span style="color:#000">from</span> <span style="color:#4e9a06">&#39;library&#39;</span><span style="color:#000;font-weight:bold">;</span>
+</span></span></code></pre></div>
+	
+</div>
+
+
+          </main>
+        </div>
+      </div>
+      <footer class="td-footer row d-print-none">
+  <div class="container-fluid">
+    <div class="row mx-md-2">
+      <div class="td-footer__left col-6 col-sm-4 order-sm-1">
+        
+      </div><div class="td-footer__right col-6 col-sm-4 order-sm-3">
+        
+      </div><div class="td-footer__center col-12 col-sm-4 py-2 order-sm-2">
+        <span class="td-footer__copyright">&copy;
+    2025
+    <span class="td-footer__authors">The Docsy Authors</span></span><span class="td-footer__all_rights_reserved">All Rights Reserved</span><span class="ms-2"><a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Privacy Policy</a></span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <script src="/js/main.js"></script>
+<script defer src="/js/click-to-copy.js" crossorigin="anonymous"></script>
+<script src='/js/tabpane-persist.js'></script>
+
+  </body>
+</html>

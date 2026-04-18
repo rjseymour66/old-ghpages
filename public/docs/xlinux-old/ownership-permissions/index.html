@@ -1,0 +1,1354 @@
+<!doctype html>
+<html itemscope itemtype="http://schema.org/WebPage" lang="en" class="no-js">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="noindex, nofollow">
+
+
+<link rel="shortcut icon" href="/favicons/favicon.ico" >
+<link rel="apple-touch-icon" href="/favicons/apple-touch-icon-180x180.png" sizes="180x180">
+<link rel="icon" type="image/png" href="/favicons/favicon-16x16.png" sizes="16x16">
+<link rel="icon" type="image/png" href="/favicons/favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="/favicons/android-36x36.png" sizes="36x36">
+<link rel="icon" type="image/png" href="/favicons/android-48x48.png" sizes="48x48">
+<link rel="icon" type="image/png" href="/favicons/android-72x72.png" sizes="72x72">
+<link rel="icon" type="image/png" href="/favicons/android-96x96.png" sizes="96x96">
+<link rel="icon" type="image/png" href="/favicons/android-144x144.png" sizes="144x144">
+<link rel="icon" type="image/png" href="/favicons/android-192x192.png" sizes="192x192">
+
+<title>Ownership and permissions | Goldydocs</title>
+<meta name="description" content="File and directory permissions Linux assigns each file and directory an owner and allows the owner to set basic security settings on the file or directory.
+Ownership Linux has a three-tiered approach to protecting files and directories:
+Owner Linux assigns each file and directory is assigned to an owner. The admin can assign the owner privileges to the file or directory. Group Linux can assign each file and directory a single group of users. The admin can assign the group privileges that are different than the owner Others Assigned to any user account that is not the owner or in the assigned group. # ubuntu and rocky assign each user account to a separate group with the same name as the user acct ll -rw-rw-r-- 1 &lt;ownername&gt; &lt;groupname&gt; 31 Mar 18 19:19 alphabet.txt chown Change the owner assigned to a file or directory.">
+<meta property="og:url" content="//localhost:1313/docs/xlinux-old/ownership-permissions/">
+  <meta property="og:site_name" content="Goldydocs">
+  <meta property="og:title" content="Ownership and permissions">
+  <meta property="og:description" content="File and directory permissions Linux assigns each file and directory an owner and allows the owner to set basic security settings on the file or directory.
+Ownership Linux has a three-tiered approach to protecting files and directories:
+Owner Linux assigns each file and directory is assigned to an owner. The admin can assign the owner privileges to the file or directory. Group Linux can assign each file and directory a single group of users. The admin can assign the group privileges that are different than the owner Others Assigned to any user account that is not the owner or in the assigned group. # ubuntu and rocky assign each user account to a separate group with the same name as the user acct ll -rw-rw-r-- 1 &lt;ownername&gt; &lt;groupname&gt; 31 Mar 18 19:19 alphabet.txt chown Change the owner assigned to a file or directory.">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="docs">
+    <meta property="article:modified_time" content="2024-11-02T12:48:42-04:00">
+
+  <meta itemprop="name" content="Ownership and permissions">
+  <meta itemprop="description" content="File and directory permissions Linux assigns each file and directory an owner and allows the owner to set basic security settings on the file or directory.
+Ownership Linux has a three-tiered approach to protecting files and directories:
+Owner Linux assigns each file and directory is assigned to an owner. The admin can assign the owner privileges to the file or directory. Group Linux can assign each file and directory a single group of users. The admin can assign the group privileges that are different than the owner Others Assigned to any user account that is not the owner or in the assigned group. # ubuntu and rocky assign each user account to a separate group with the same name as the user acct ll -rw-rw-r-- 1 &lt;ownername&gt; &lt;groupname&gt; 31 Mar 18 19:19 alphabet.txt chown Change the owner assigned to a file or directory.">
+  <meta itemprop="dateModified" content="2024-11-02T12:48:42-04:00">
+  <meta itemprop="wordCount" content="2298">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Ownership and permissions">
+  <meta name="twitter:description" content="File and directory permissions Linux assigns each file and directory an owner and allows the owner to set basic security settings on the file or directory.
+Ownership Linux has a three-tiered approach to protecting files and directories:
+Owner Linux assigns each file and directory is assigned to an owner. The admin can assign the owner privileges to the file or directory. Group Linux can assign each file and directory a single group of users. The admin can assign the group privileges that are different than the owner Others Assigned to any user account that is not the owner or in the assigned group. # ubuntu and rocky assign each user account to a separate group with the same name as the user acct ll -rw-rw-r-- 1 &lt;ownername&gt; &lt;groupname&gt; 31 Mar 18 19:19 alphabet.txt chown Change the owner assigned to a file or directory.">
+<link href="/scss/main.css" rel="stylesheet">
+<script
+  src="https://code.jquery.com/jquery-3.7.1.min.js"
+  integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+  crossorigin="anonymous"></script>
+
+  </head>
+  <body class="td-page">
+    <header>
+      <nav class="td-navbar js-navbar-scroll" data-bs-theme="dark">
+<div class="container-fluid flex-column flex-md-row">
+  <a class="navbar-brand" href="/"><span class="navbar-brand__logo navbar-logo"><svg id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 500 500" style="enable-background:new 0 0 500 500"><g><path style="fill:#fff" d="M116.8525 421.9722c-5.7041.0-10.3442-4.3127-10.3442-9.6129V88.183c0-5.3002 4.6401-9.6117 10.3442-9.6117H320.858c3.0347.0 9.3959.5498 11.7506 2.6302l.3545.3442 58.905 63.2912c2.3101 2.491 2.9202 8.4928 2.9202 11.3184v256.2039c0 5.3002-4.6407 9.6129-10.3436 9.6129H116.8525z"/><g><g><g><path style="fill:#767676" d="M384.4445 423.2066H116.852c-6.3839.0-11.5786-4.8658-11.5786-10.8474V88.1831c0-5.9804 5.1947-10.8461 11.5786-10.8461h204.0062c.377.0 9.2786.0329 12.568 2.9389l.3947.3833 58.9508 63.337c3.2135 3.4652 3.2514 11.7924 3.2514 12.1593v256.2036C396.0231 418.3408 390.8284 423.2066 384.4445 423.2066zM116.5079 411.9189c.0848.0278.1999.0531.3441.0531h267.5925c.1442.0.2581-.0253.3441-.0531V156.1556c-.0076-.9033-.3593-3.7347-.7034-5.0037l-57.6527-61.9416c-1.4651-.3176-4.4533-.6389-5.5742-.6389H116.852c-.143.0-.2594.024-.3441.0531V411.9189zm267.4533-261.149zM327.0321 89.371v.0013V89.371z"/></g></g></g><g><g><path style="fill:#5b7fc0" d="M189.0874 210.1754l.0012-.0012c7.7751.0012 15.0295 4.1862 18.932 10.9234 1.9177 3.3159 2.9305 7.1011 2.9293 10.9378.0 5.8394-2.2733 11.3304-6.4032 15.4604-4.1288 4.1288-9.6186 6.4032-15.458 6.4032s-11.328-2.2733-15.458-6.4032-6.4032-9.6186-6.4056-15.4628c.0012-6.025 2.454-11.4897 6.4116-15.4473C177.5953 212.627 183.0601 210.1742 189.0874 210.1754zm7.993 21.8576c.0012-1.4042-.3687-2.7868-1.063-3.9887-1.4293-2.4684-4.0833-3.9995-6.9299-4.0019-4.4077.0024-7.993 3.5877-7.993 7.993.0 2.1356.832 4.1431 2.3427 5.6539 1.5083 1.5083 3.5159 2.3403 5.6503 2.3415 2.1356.0 4.1443-.8308 5.6539-2.3403S197.0816 234.1722 197.0804 232.033z"/><path style="opacity:.3;fill:#fff" d="M189.0898 210.176c7.7763.0 15.0283 4.1826 18.926 10.9151 1.9201 3.3136 2.9377 7.0988 2.9353 10.9462.0024 12.0643-9.8065 21.8636-21.8613 21.8613-12.0547.0024-21.8636-9.8066-21.8612-21.8613.0-6.0285 2.4516-11.4921 6.4116-15.452C177.5977 212.6276 183.0612 210.176 189.0898 210.176zm7.9941 21.8612c0-1.4078-.3711-2.7892-1.0702-3.9959-1.4269-2.466-4.0797-3.9983-6.924-3.9983-4.4005-.0048-7.9918 3.5817-7.9942 7.9942.0024 4.4077 3.5865 7.9918 7.9942 7.9942 2.2027.0 4.2018-.8978 5.6479-2.3439C196.1861 236.239 197.0839 234.2399 197.0839 232.0372z"/><g><defs><path id="SVGID_1_" d="M194.7376 237.6875c-1.4461 1.4461-3.4452 2.3439-5.6479 2.3439-4.4077-.0024-7.9918-3.5865-7.9942-7.9942.0024-4.4125 3.5937-7.999 7.9942-7.9942 2.8443.0 5.497 1.5323 6.924 3.9983.6991 1.2067 1.0702 2.5881 1.0702 3.9959C197.0839 234.2399 196.1861 236.239 194.7376 237.6875z"/></defs><clipPath id="SVGID_2_"><use xlink:href="#SVGID_1_" style="overflow:visible"/></clipPath><path style="clip-path:url(#SVGID_2_);fill:#fff" d="M190.0704 225.0237c-4.4005-.0048-7.9918 3.5817-7.9942 7.9942.0011 1.9546.7088 3.7452 1.8782 5.1354-1.7447-1.4674-2.8575-3.663-2.8588-6.116.0024-4.4125 3.5936-7.999 7.9942-7.9942 2.3802-1e-4 4.616 1.0833 6.1218 2.8788C193.7885 225.7247 191.9774 225.0237 190.0704 225.0237z"/><path style="opacity:.13;clip-path:url(#SVGID_2_);fill:#020202" d="M190.0704 225.0237c-4.4005-.0048-7.9918 3.5817-7.9942 7.9942.0011 1.9546.7088 3.7452 1.8782 5.1354-1.7447-1.4674-2.8575-3.663-2.8588-6.116.0024-4.4125 3.5936-7.999 7.9942-7.9942 2.3802-1e-4 4.616 1.0833 6.1218 2.8788C193.7885 225.7247 191.9774 225.0237 190.0704 225.0237z"/></g><g><defs><path id="SVGID_3_" d="M189.0898 210.176c7.7763.0 15.0283 4.1826 18.926 10.9151 1.9201 3.3136 2.9377 7.0988 2.9353 10.9462.0024 12.0643-9.8065 21.8636-21.8613 21.8613-12.0547.0024-21.8636-9.8066-21.8612-21.8613.0-6.0285 2.4516-11.4921 6.4116-15.452C177.5977 212.6276 183.0612 210.176 189.0898 210.176zm7.9941 21.8612c0-1.4078-.3711-2.7892-1.0702-3.9959-1.4269-2.466-4.0797-3.9983-6.924-3.9983-4.4005-.0048-7.9918 3.5817-7.9942 7.9942.0024 4.4077 3.5865 7.9918 7.9942 7.9942 2.2027.0 4.2018-.8978 5.6479-2.3439C196.1861 236.239 197.0839 234.2399 197.0839 232.0372z"/></defs><clipPath id="SVGID_4_"><use xlink:href="#SVGID_3_" style="overflow:visible"/></clipPath><path style="clip-path:url(#SVGID_4_);fill:#5b7fc0" d="M172.6595 215.6045c-3.96 3.96-6.4116 9.4235-6.4116 15.452-.0024 12.0547 9.8066 21.8636 21.8613 21.8612 12.0547.0024 21.8636-9.797 21.8613-21.8612.0024-3.8475-1.0151-7.6326-2.9353-10.9462-3.8977-6.7324-11.1497-10.9151-18.926-10.9151C182.0806 209.1953 176.6171 211.647 172.6595 215.6045z"/></g></g><rect x="198.8952" y="225.1043" style="fill:#5b7fc0" width="122.6266" height="13.8671"/></g><g><path style="fill:#d95140" d="M189.0874 155.7611l.0012-.0012c7.7751.0012 15.0295 4.1862 18.932 10.9234 1.9177 3.3159 2.9305 7.1011 2.9293 10.9378.0 5.8394-2.2733 11.3304-6.4032 15.4604-4.1288 4.1288-9.6186 6.4032-15.458 6.4032s-11.328-2.2733-15.458-6.4032-6.4032-9.6186-6.4056-15.4628c.0012-6.0249 2.454-11.4897 6.4116-15.4473C177.5953 158.2128 183.0601 155.7599 189.0874 155.7611zm7.993 21.8577c.0012-1.4042-.3687-2.7868-1.063-3.9887-1.4293-2.4684-4.0833-3.9995-6.9299-4.0019-4.4077.0024-7.993 3.5877-7.993 7.993.0 2.1356.832 4.1431 2.3427 5.6539 1.5083 1.5083 3.5159 2.3403 5.6503 2.3415 2.1356.0 4.1443-.8308 5.6539-2.3403C196.2508 181.7667 197.0816 179.758 197.0804 177.6188z"/><path style="opacity:.3;fill:#fff" d="M189.0898 155.7617c7.7763.0 15.0283 4.1826 18.926 10.9151 1.9201 3.3135 2.9377 7.0987 2.9353 10.9462.0024 12.0643-9.8065 21.8636-21.8613 21.8613-12.0547.0024-21.8636-9.8066-21.8612-21.8613.0-6.0285 2.4516-11.4921 6.4116-15.452C177.5977 158.2134 183.0612 155.7617 189.0898 155.7617zm7.9941 21.8613c0-1.4078-.3711-2.7892-1.0702-3.9959-1.4269-2.466-4.0797-3.9983-6.924-3.9983-4.4005-.0048-7.9918 3.5817-7.9942 7.9942.0024 4.4077 3.5865 7.9918 7.9942 7.9942 2.2027.0 4.2018-.8978 5.6479-2.3439C196.1861 181.8248 197.0839 179.8256 197.0839 177.623z"/><g><defs><path id="SVGID_5_" d="M194.7376 183.2733c-1.4461 1.4461-3.4452 2.3439-5.6479 2.3439-4.4077-.0024-7.9918-3.5865-7.9942-7.9942.0024-4.4125 3.5937-7.9989 7.9942-7.9942 2.8443.0 5.497 1.5323 6.924 3.9983.6991 1.2067 1.0702 2.5881 1.0702 3.9959C197.0839 179.8256 196.1861 181.8248 194.7376 183.2733z"/></defs><clipPath id="SVGID_6_"><use xlink:href="#SVGID_5_" style="overflow:visible"/></clipPath><path style="clip-path:url(#SVGID_6_);fill:#fff" d="M190.0704 170.6095c-4.4005-.0048-7.9918 3.5817-7.9942 7.9942.0011 1.9546.7088 3.7452 1.8782 5.1354-1.7447-1.4674-2.8575-3.663-2.8588-6.116.0024-4.4125 3.5936-7.999 7.9942-7.9942 2.3802-1e-4 4.616 1.0833 6.1218 2.8788C193.7885 171.3104 191.9774 170.6095 190.0704 170.6095z"/><path style="opacity:.13;clip-path:url(#SVGID_6_);fill:#020202" d="M190.0704 170.6095c-4.4005-.0048-7.9918 3.5817-7.9942 7.9942.0011 1.9546.7088 3.7452 1.8782 5.1354-1.7447-1.4674-2.8575-3.663-2.8588-6.116.0024-4.4125 3.5936-7.999 7.9942-7.9942 2.3802-1e-4 4.616 1.0833 6.1218 2.8788C193.7885 171.3104 191.9774 170.6095 190.0704 170.6095z"/></g><g><defs><path id="SVGID_7_" d="M189.0898 155.7617c7.7763.0 15.0283 4.1826 18.926 10.9151 1.9201 3.3135 2.9377 7.0987 2.9353 10.9462.0024 12.0643-9.8065 21.8636-21.8613 21.8613-12.0547.0024-21.8636-9.8066-21.8612-21.8613.0-6.0285 2.4516-11.4921 6.4116-15.452C177.5977 158.2134 183.0612 155.7617 189.0898 155.7617zm7.9941 21.8613c0-1.4078-.3711-2.7892-1.0702-3.9959-1.4269-2.466-4.0797-3.9983-6.924-3.9983-4.4005-.0048-7.9918 3.5817-7.9942 7.9942.0024 4.4077 3.5865 7.9918 7.9942 7.9942 2.2027.0 4.2018-.8978 5.6479-2.3439C196.1861 181.8248 197.0839 179.8256 197.0839 177.623z"/></defs><clipPath id="SVGID_8_"><use xlink:href="#SVGID_7_" style="overflow:visible"/></clipPath><path style="clip-path:url(#SVGID_8_);fill:#d95140" d="M172.6595 161.1903c-3.96 3.96-6.4116 9.4235-6.4116 15.452-.0024 12.0547 9.8066 21.8636 21.8613 21.8613 12.0547.0024 21.8636-9.797 21.8613-21.8613.0024-3.8474-1.0151-7.6326-2.9353-10.9462-3.8977-6.7324-11.1497-10.9151-18.926-10.9151C182.0806 154.7811 176.6171 157.2327 172.6595 161.1903z"/></g><rect x="198.8952" y="170.69" style="fill:#d95140" width="122.6266" height="13.8671"/></g><g><g><path style="fill:#56a55c" d="M189.5379 264.6147l.0012-.0012c7.7751.0012 15.0294 4.1862 18.932 10.9235 1.9177 3.3159 2.9305 7.1011 2.9293 10.9378.0 5.8394-2.2733 11.3304-6.4032 15.4604-4.1288 4.1288-9.6186 6.4032-15.458 6.4032-5.8394.0-11.3281-2.2733-15.458-6.4032-4.13-4.13-6.4032-9.6186-6.4056-15.4628.0012-6.0249 2.454-11.4897 6.4116-15.4472C178.0458 267.0663 183.5105 264.6135 189.5379 264.6147zm7.993 21.8576c.0012-1.4042-.3687-2.7868-1.063-3.9887-1.4293-2.4684-4.0833-3.9995-6.9299-4.0019-4.4077.0024-7.993 3.5877-7.993 7.993.0 2.1356.832 4.1431 2.3427 5.6538 1.5083 1.5083 3.5159 2.3403 5.6503 2.3415 2.1356.0 4.1443-.8308 5.6539-2.3403C196.7013 290.6202 197.5321 288.6115 197.5309 286.4723z"/><path style="opacity:.3;fill:#fff" d="M189.5403 264.6153c7.7763.0 15.0283 4.1826 18.926 10.9151 1.9201 3.3135 2.9377 7.0987 2.9353 10.9462.0024 12.0643-9.8065 21.8636-21.8613 21.8613-12.0547.0024-21.8636-9.8065-21.8612-21.8613.0-6.0285 2.4516-11.492 6.4116-15.452C178.0482 267.0669 183.5117 264.6153 189.5403 264.6153zm7.9941 21.8612c0-1.4078-.3711-2.7892-1.0702-3.9959-1.4269-2.466-4.0797-3.9983-6.924-3.9983-4.4005-.0048-7.9918 3.5817-7.9942 7.9941.0024 4.4077 3.5865 7.9918 7.9942 7.9942 2.2027.0 4.2018-.8978 5.6479-2.3439C196.6366 290.6783 197.5344 288.6792 197.5344 286.4765z"/><g><defs><path id="SVGID_9_" d="M195.1881 292.1268c-1.4461 1.4461-3.4452 2.3439-5.6479 2.3439-4.4077-.0024-7.9918-3.5865-7.9942-7.9942.0024-4.4125 3.5937-7.9989 7.9942-7.9941 2.8443.0 5.497 1.5323 6.924 3.9983.6991 1.2067 1.0702 2.5881 1.0702 3.9959C197.5344 288.6792 196.6366 290.6783 195.1881 292.1268z"/></defs><clipPath id="SVGID_10_"><use xlink:href="#SVGID_9_" style="overflow:visible"/></clipPath><path style="clip-path:url(#SVGID_10_);fill:#fff" d="M190.5209 279.463c-4.4005-.0048-7.9918 3.5817-7.9942 7.9941.0011 1.9547.7088 3.7452 1.8782 5.1354-1.7446-1.4674-2.8575-3.6631-2.8588-6.1161.0024-4.4125 3.5936-7.999 7.9942-7.9941 2.3802-1e-4 4.616 1.0833 6.1218 2.8788C194.239 280.164 192.4279 279.463 190.5209 279.463z"/><path style="opacity:.13;clip-path:url(#SVGID_10_);fill:#020202" d="M190.5209 279.463c-4.4005-.0048-7.9918 3.5817-7.9942 7.9941.0011 1.9547.7088 3.7452 1.8782 5.1354-1.7446-1.4674-2.8575-3.6631-2.8588-6.1161.0024-4.4125 3.5936-7.999 7.9942-7.9941 2.3802-1e-4 4.616 1.0833 6.1218 2.8788C194.239 280.164 192.4279 279.463 190.5209 279.463z"/></g><g><defs><path id="SVGID_11_" d="M189.5403 264.6153c7.7763.0 15.0283 4.1826 18.926 10.9151 1.9201 3.3135 2.9377 7.0987 2.9353 10.9462.0024 12.0643-9.8065 21.8636-21.8613 21.8613-12.0547.0024-21.8636-9.8065-21.8612-21.8613.0-6.0285 2.4516-11.492 6.4116-15.452C178.0482 267.0669 183.5117 264.6153 189.5403 264.6153zm7.9941 21.8612c0-1.4078-.3711-2.7892-1.0702-3.9959-1.4269-2.466-4.0797-3.9983-6.924-3.9983-4.4005-.0048-7.9918 3.5817-7.9942 7.9941.0024 4.4077 3.5865 7.9918 7.9942 7.9942 2.2027.0 4.2018-.8978 5.6479-2.3439C196.6366 290.6783 197.5344 288.6792 197.5344 286.4765z"/></defs><clipPath id="SVGID_12_"><use xlink:href="#SVGID_11_" style="overflow:visible"/></clipPath><path style="clip-path:url(#SVGID_12_);fill:#56a55c" d="M173.11 270.0439c-3.96 3.96-6.4116 9.4235-6.4116 15.452-.0024 12.0547 9.8066 21.8636 21.8613 21.8613 12.0547.0024 21.8636-9.797 21.8613-21.8613.0024-3.8474-1.0151-7.6326-2.9353-10.9462-3.8977-6.7325-11.1497-10.9151-18.926-10.9151C182.5311 263.6346 177.0676 266.0863 173.11 270.0439z"/></g></g><rect x="199.3456" y="279.5436" style="fill:#56a55c" width="122.6266" height="13.8671"/></g><g><g><path style="fill:#f1bc42" d="M189.0874 318.7208l.0012-.0012c7.7751.0012 15.0295 4.1862 18.932 10.9234 1.9177 3.3159 2.9305 7.1011 2.9293 10.9378.0 5.8394-2.2733 11.3305-6.4032 15.4604-4.1288 4.1288-9.6186 6.4032-15.458 6.4032s-11.328-2.2733-15.458-6.4032-6.4032-9.6186-6.4056-15.4628c.0012-6.025 2.454-11.4897 6.4116-15.4472C177.5953 321.1724 183.0601 318.7196 189.0874 318.7208zm7.993 21.8576c.0012-1.4042-.3687-2.7868-1.063-3.9887-1.4293-2.4684-4.0833-3.9995-6.9299-4.0019-4.4077.0024-7.993 3.5877-7.993 7.993.0 2.1356.832 4.1431 2.3427 5.6539 1.5083 1.5083 3.5159 2.3403 5.6503 2.3415 2.1356.0 4.1443-.8308 5.6539-2.3403S197.0816 342.7176 197.0804 340.5784z"/><path style="opacity:.3;fill:#fff" d="M189.0898 318.7214c7.7763.0 15.0283 4.1826 18.926 10.915 1.9201 3.3136 2.9377 7.0988 2.9353 10.9462.0024 12.0643-9.8065 21.8636-21.8613 21.8612-12.0547.0024-21.8636-9.8065-21.8612-21.8612.0-6.0285 2.4516-11.4921 6.4116-15.452C177.5977 321.173 183.0612 318.7214 189.0898 318.7214zm7.9941 21.8612c0-1.4078-.3711-2.7892-1.0702-3.9959-1.4269-2.466-4.0797-3.9983-6.924-3.9983-4.4005-.0048-7.9918 3.5817-7.9942 7.9942.0024 4.4077 3.5865 7.9918 7.9942 7.9942 2.2027.0 4.2018-.8978 5.6479-2.3439C196.1861 344.7844 197.0839 342.7853 197.0839 340.5826z"/><g><defs><path id="SVGID_13_" d="M194.7376 346.2329c-1.4461 1.4461-3.4452 2.3439-5.6479 2.3439-4.4077-.0024-7.9918-3.5865-7.9942-7.9942.0024-4.4125 3.5937-7.999 7.9942-7.9942 2.8443.0 5.497 1.5323 6.924 3.9983.6991 1.2067 1.0702 2.5881 1.0702 3.9959C197.0839 342.7853 196.1861 344.7844 194.7376 346.2329z"/></defs><clipPath id="SVGID_14_"><use xlink:href="#SVGID_13_" style="overflow:visible"/></clipPath><path style="clip-path:url(#SVGID_14_);fill:#fff" d="M190.0704 333.5691c-4.4005-.0048-7.9918 3.5817-7.9942 7.9942.0011 1.9547.7088 3.7452 1.8782 5.1354-1.7447-1.4674-2.8575-3.6631-2.8588-6.1161.0024-4.4125 3.5936-7.999 7.9942-7.9942 2.3802-1e-4 4.616 1.0834 6.1218 2.8788C193.7885 334.2701 191.9774 333.5691 190.0704 333.5691z"/><path style="opacity:.13;clip-path:url(#SVGID_14_);fill:#020202" d="M190.0704 333.5691c-4.4005-.0048-7.9918 3.5817-7.9942 7.9942.0011 1.9547.7088 3.7452 1.8782 5.1354-1.7447-1.4674-2.8575-3.6631-2.8588-6.1161.0024-4.4125 3.5936-7.999 7.9942-7.9942 2.3802-1e-4 4.616 1.0834 6.1218 2.8788C193.7885 334.2701 191.9774 333.5691 190.0704 333.5691z"/></g><g><defs><path id="SVGID_15_" d="M189.0898 318.7214c7.7763.0 15.0283 4.1826 18.926 10.915 1.9201 3.3136 2.9377 7.0988 2.9353 10.9462.0024 12.0643-9.8065 21.8636-21.8613 21.8612-12.0547.0024-21.8636-9.8065-21.8612-21.8612.0-6.0285 2.4516-11.4921 6.4116-15.452C177.5977 321.173 183.0612 318.7214 189.0898 318.7214zm7.9941 21.8612c0-1.4078-.3711-2.7892-1.0702-3.9959-1.4269-2.466-4.0797-3.9983-6.924-3.9983-4.4005-.0048-7.9918 3.5817-7.9942 7.9942.0024 4.4077 3.5865 7.9918 7.9942 7.9942 2.2027.0 4.2018-.8978 5.6479-2.3439C196.1861 344.7844 197.0839 342.7853 197.0839 340.5826z"/></defs><clipPath id="SVGID_16_"><use xlink:href="#SVGID_15_" style="overflow:visible"/></clipPath><path style="clip-path:url(#SVGID_16_);fill:#f1bc42" d="M172.6595 324.15c-3.96 3.96-6.4116 9.4235-6.4116 15.452-.0024 12.0547 9.8066 21.8636 21.8613 21.8612 12.0547.0024 21.8636-9.797 21.8613-21.8612.0024-3.8474-1.0151-7.6327-2.9353-10.9462-3.8977-6.7324-11.1497-10.9151-18.926-10.9151C182.0806 317.7407 176.6171 320.1924 172.6595 324.15z"/></g></g><rect x="198.8952" y="333.6497" style="fill:#f1bc42" width="122.6266" height="13.8671"/></g></g></svg></span><span class="navbar-brand__name">Goldydocs</span></a>
+  <div class="td-navbar-nav-scroll ms-md-auto" id="main_navbar">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link active" href="/docs/"><span>Documentation</span></a>
+      </li>
+      <li class="nav-item dropdown d-none d-lg-block">
+        <div class="dropdown">
+  <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">English</a>
+  <ul class="dropdown-menu">
+    <li><a class="dropdown-item" href="/no/">Norsk</a></li>
+    <li><a class="dropdown-item" href="/fa/">فارسی</a></li>
+    </ul>
+</div></li>
+      </ul>
+  </div>
+  <div class="d-none d-lg-block">
+    <div class="td-search">
+  <div class="td-search__icon"></div>
+  <input type="search" class="td-search__input form-control td-search-input" placeholder="Search this site…" aria-label="Search this site…" autocomplete="off">
+</div>
+  </div>
+</div>
+</nav>
+    </header>
+    <div class="container-fluid td-outer">
+      <div class="td-main">
+        <div class="row flex-xl-nowrap">
+          <aside class="col-12 col-md-3 col-xl-2 td-sidebar d-print-none">
+            <div id="td-sidebar-menu" class="td-sidebar__inner">
+  <form class="td-sidebar__search d-flex align-items-center">
+    <div class="td-search">
+  <div class="td-search__icon"></div>
+  <input type="search" class="td-search__input form-control td-search-input" placeholder="Search this site…" aria-label="Search this site…" autocomplete="off">
+</div>
+    <button class="btn btn-link td-sidebar__toggle d-md-none p-0 ms-3 fas fa-bars" type="button" data-bs-toggle="collapse" data-bs-target="#td-section-nav" aria-controls="td-section-nav" aria-expanded="false" aria-label="Toggle section navigation">
+    </button>
+  </form>
+  <nav class="td-sidebar-nav collapse" id="td-section-nav">
+    <div class="td-sidebar-nav__section nav-item dropdown d-block d-lg-none">
+      <div class="dropdown">
+  <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">English</a>
+  <ul class="dropdown-menu">
+    <li><a class="dropdown-item" href="/no/">Norsk</a></li>
+    <li><a class="dropdown-item" href="/fa/">فارسی</a></li>
+    </ul>
+</div>
+    </div>
+    <ul class="td-sidebar-nav__section pe-md-3 ul-0">
+      <li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child active-path" id="m-docs-li">
+  <a href="/docs/" class="align-left ps-0 td-sidebar-link td-sidebar-link__section tree-root" id="m-docs"><span class="">Documentation</span></a>
+  <ul class="ul-1">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-docslinux-li">
+  <a href="/docs/linux/" class="align-left ps-0 td-sidebar-link td-sidebar-link__section" id="m-docslinux"><span class="">Linux</span></a>
+  <ul class="ul-2 foldable">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docslinuxbasics-li">
+  <a href="/docs/linux/basics/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docslinuxbasics"><span class="">Basics</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docslinuxkernel-li">
+  <a href="/docs/linux/kernel/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docslinuxkernel"><span class="">Kernel</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docslinuxmemory-li">
+  <a href="/docs/linux/memory/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docslinuxmemory"><span class="">Memory</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docslinuxnetworking-li">
+  <a href="/docs/linux/networking/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docslinuxnetworking"><span class="">Networking</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docslinuxperformance-li">
+  <a href="/docs/linux/performance/" title="Systems performance" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docslinuxperformance"><span class="">Performance</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docslinuxpermissions-li">
+  <a href="/docs/linux/permissions/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docslinuxpermissions"><span class="">Permissions and ownership</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docslinuxssh-li">
+  <a href="/docs/linux/ssh/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docslinuxssh"><span class="">SSH</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docslinuxsystem-info-li">
+  <a href="/docs/linux/system-info/" title="System information" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docslinuxsystem-info"><span class="">System info</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docslinuxsystemd-li">
+  <a href="/docs/linux/systemd/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docslinuxsystemd"><span class="">Systemd</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docslinuxtext-li">
+  <a href="/docs/linux/text/" title="Text tools and processing" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docslinuxtext"><span class="">Text</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docslinuxtodo-li">
+  <a href="/docs/linux/todo/" title="Todo list" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docslinuxtodo"><span class="">Todo</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docslinuxvpn-li">
+  <a href="/docs/linux/vpn/" title="Virtual Private Networks (VPNs)" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docslinuxvpn"><span class="">VPNs</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docslinuxweb-servers-li">
+  <a href="/docs/linux/web-servers/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docslinuxweb-servers"><span class="">Web servers</span></a>
+</li>
+  </ul>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-docswriting-li">
+  <a href="/docs/writing/" class="align-left ps-0 td-sidebar-link td-sidebar-link__section" id="m-docswriting"><span class="">Writing</span></a>
+  <ul class="ul-2 foldable">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docswritingterms-li">
+  <a href="/docs/writing/terms/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docswritingterms"><span class="">Terms and definitions</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docswritingphrases-clauses-li">
+  <a href="/docs/writing/phrases-clauses/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docswritingphrases-clauses"><span class="">Phrases and clauses</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docswritingnouns-li">
+  <a href="/docs/writing/nouns/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docswritingnouns"><span class="">Nouns</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docswritingpronouns-li">
+  <a href="/docs/writing/pronouns/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docswritingpronouns"><span class="">Pronouns</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docswritingverbs-li">
+  <a href="/docs/writing/verbs/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docswritingverbs"><span class="">Verbs</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docswritingadjectives-li">
+  <a href="/docs/writing/adjectives/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docswritingadjectives"><span class="">Adjectives</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docswritingadverbs-li">
+  <a href="/docs/writing/adverbs/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docswritingadverbs"><span class="">Adverbs</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docswritingconjunctions-li">
+  <a href="/docs/writing/conjunctions/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docswritingconjunctions"><span class="">Conjunctions</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docswritingprepositions-li">
+  <a href="/docs/writing/prepositions/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docswritingprepositions"><span class="">Prepositions</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docswritingdeterminers-li">
+  <a href="/docs/writing/determiners/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docswritingdeterminers"><span class="">Determiners</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docswritinggrammer-phrases-li">
+  <a href="/docs/writing/grammer-phrases/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docswritinggrammer-phrases"><span class="">Grammar of phrases</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docswritinggrammar-clauses-li">
+  <a href="/docs/writing/grammar-clauses/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docswritinggrammar-clauses"><span class="">Grammar of clauses</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docswritingcoordination-li">
+  <a href="/docs/writing/coordination/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docswritingcoordination"><span class="">Coordination</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docswritingusage-li">
+  <a href="/docs/writing/usage/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docswritingusage"><span class="">Usage</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docswritingsentences-li">
+  <a href="/docs/writing/sentences/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docswritingsentences"><span class="">Sentences</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docswritingparagraphs-li">
+  <a href="/docs/writing/paragraphs/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docswritingparagraphs"><span class="">Paragraphs</span></a>
+</li>
+  </ul>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-docsgit-li">
+  <a href="/docs/git/" class="align-left ps-0 td-sidebar-link td-sidebar-link__section" id="m-docsgit"><span class="">git</span></a>
+  <ul class="ul-2 foldable">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsgitbranching-li">
+  <a href="/docs/git/branching/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsgitbranching"><span class="">Branching</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsgitlinux-plus-li">
+  <a href="/docs/git/linux-plus/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsgitlinux-plus"><span class="">Linux&#43; git</span></a>
+</li>
+  </ul>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-docsnetworking-li">
+  <a href="/docs/networking/" class="align-left ps-0 td-sidebar-link td-sidebar-link__section" id="m-docsnetworking"><span class="">Networking</span></a>
+  <ul class="ul-2 foldable">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsnetworkingintro-networks-li">
+  <a href="/docs/networking/intro-networks/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsnetworkingintro-networks"><span class="">Intro to networks</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsnetworkingosi-model-li">
+  <a href="/docs/networking/osi-model/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsnetworkingosi-model"><span class="">OSI model</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsnetworkingconnectors-wiring-li">
+  <a href="/docs/networking/connectors-wiring/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsnetworkingconnectors-wiring"><span class="">Ethernet</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsnetworkingnetwork-devices-li">
+  <a href="/docs/networking/network-devices/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsnetworkingnetwork-devices"><span class="">Networking devices</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsnetworkinginternet-protocol-li">
+  <a href="/docs/networking/internet-protocol/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsnetworkinginternet-protocol"><span class="">Internet Protocol</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsnetworkingip-addressing-li">
+  <a href="/docs/networking/ip-addressing/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsnetworkingip-addressing"><span class="">IP addressing</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsnetworkingsubnet-nat-li">
+  <a href="/docs/networking/subnet-nat/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsnetworkingsubnet-nat"><span class="">Subnets and NAT</span></a>
+</li>
+  </ul>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-docsbash-li">
+  <a href="/docs/bash/" title="Bash scripting" class="align-left ps-0 td-sidebar-link td-sidebar-link__section" id="m-docsbash"><span class="">Bash</span></a>
+  <ul class="ul-2 foldable">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child collapse" id="m-docsbashefficiency-li">
+  <a href="/docs/bash/efficiency/" title="Efficient command line" class="align-left ps-0 td-sidebar-link td-sidebar-link__section" id="m-docsbashefficiency"><span class="">Efficient</span></a>
+  <ul class="ul-3 foldable">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsbashefficiencycore-li">
+  <a href="/docs/bash/efficiency/core/" title="Core commands" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsbashefficiencycore"><span class="">Core</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsbashefficiencyshell-li">
+  <a href="/docs/bash/efficiency/shell/" title="Introducing the shell" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsbashefficiencyshell"><span class="">Shell</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsbashefficiencyrerun-commands-li">
+  <a href="/docs/bash/efficiency/rerun-commands/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsbashefficiencyrerun-commands"><span class="">Rerunning commands</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsbashefficiencyfilesystem-li">
+  <a href="/docs/bash/efficiency/filesystem/" title="Cruising the filesystem" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsbashefficiencyfilesystem"><span class="">Filesystem</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsbashefficiencytext-commands-li">
+  <a href="/docs/bash/efficiency/text-commands/" title="Producing, isolating, combining, and transforming text" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsbashefficiencytext-commands"><span class="">Text commands</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsbashefficiencyparents-child-envs-li">
+  <a href="/docs/bash/efficiency/parents-child-envs/" title="Parent, children, and environments" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsbashefficiencyparents-child-envs"><span class="">Environments</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsbashefficiencyrunning-commands-li">
+  <a href="/docs/bash/efficiency/running-commands/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsbashefficiencyrunning-commands"><span class="">Running commands</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsbashefficiencybrash-li">
+  <a href="/docs/bash/efficiency/brash/" title="Brash one-liners" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsbashefficiencybrash"><span class="">Brash</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsbashefficiencytext-files-li">
+  <a href="/docs/bash/efficiency/text-files/" title="Leveraging text files" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsbashefficiencytext-files"><span class="">Text files</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsbashefficiencykeyboard-li">
+  <a href="/docs/bash/efficiency/keyboard/" title="Keyboard efficiency" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsbashefficiencykeyboard"><span class="">Keyboard</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsbashefficiencytime-savers-li">
+  <a href="/docs/bash/efficiency/time-savers/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsbashefficiencytime-savers"><span class="">Time savers</span></a>
+</li>
+  </ul>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsbashcyberops-li">
+  <a href="/docs/bash/cyberops/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsbashcyberops"><span class="">Cyberops bash notes</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsbashcommands-li">
+  <a href="/docs/bash/commands/" title="Common commands" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsbashcommands"><span class="">Commands</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsbashsyntax-li">
+  <a href="/docs/bash/syntax/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsbashsyntax"><span class="">Syntax</span></a>
+</li>
+  </ul>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-docsgithub-li">
+  <a href="/docs/github/" class="align-left ps-0 td-sidebar-link td-sidebar-link__section" id="m-docsgithub"><span class="">GitHub</span></a>
+  <ul class="ul-2 foldable">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsgithubgh-actions-li">
+  <a href="/docs/github/gh-actions/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsgithubgh-actions"><span class="">GitHub actions</span></a>
+</li>
+  </ul>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-docsgo-li">
+  <a href="/docs/go/" class="align-left ps-0 td-sidebar-link td-sidebar-link__section" id="m-docsgo"><span class="">Go</span></a>
+  <ul class="ul-2 foldable">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsgolearn-go-with-tests-li">
+  <a href="/docs/go/learn-go-with-tests/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsgolearn-go-with-tests"><span class="">Learn with tests</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child collapse" id="m-docsgooverhead-li">
+  <a href="/docs/go/overhead/" class="align-left ps-0 td-sidebar-link td-sidebar-link__section" id="m-docsgooverhead"><span class="">Project organization</span></a>
+  <ul class="ul-3 foldable">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsgooverheadproject-setup-li">
+  <a href="/docs/go/overhead/project-setup/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsgooverheadproject-setup"><span class="">Project setup</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsgooverheadtooling-li">
+  <a href="/docs/go/overhead/tooling/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsgooverheadtooling"><span class="">Go tooling</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsgooverheadidioms-li">
+  <a href="/docs/go/overhead/idioms/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsgooverheadidioms"><span class="">Idioms</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsgooverheadblueprints-li">
+  <a href="/docs/go/overhead/blueprints/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsgooverheadblueprints"><span class="">Blueprints</span></a>
+</li>
+  </ul>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child collapse" id="m-docsgobasics-li">
+  <a href="/docs/go/basics/" title="Getting started with Go" class="align-left ps-0 td-sidebar-link td-sidebar-link__section" id="m-docsgobasics"><span class="">Getting started</span></a>
+  <ul class="ul-3 foldable">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsgobasicserrors-li">
+  <a href="/docs/go/basics/errors/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsgobasicserrors"><span class="">Errors</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsgobasicstypes-li">
+  <a href="/docs/go/basics/types/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsgobasicstypes"><span class="">Types and collections</span></a>
+</li>
+  </ul>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child collapse" id="m-docsgoio-li">
+  <a href="/docs/go/io/" title="Input and output" class="align-left ps-0 td-sidebar-link td-sidebar-link__section" id="m-docsgoio"><span class="">I/O</span></a>
+  <ul class="ul-3 foldable">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsgoiojson-li">
+  <a href="/docs/go/io/json/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsgoiojson"><span class="">JSON data</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsgoiorw-files-li">
+  <a href="/docs/go/io/rw-files/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsgoiorw-files"><span class="">Reading, writing, files</span></a>
+</li>
+  </ul>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child collapse" id="m-docsgonetwork-li">
+  <a href="/docs/go/network/" class="align-left ps-0 td-sidebar-link td-sidebar-link__section" id="m-docsgonetwork"><span class="">Network</span></a>
+  <ul class="ul-3 foldable">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsgonetworkclients-li">
+  <a href="/docs/go/network/clients/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsgonetworkclients"><span class="">Clients</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsgonetworkservers-li">
+  <a href="/docs/go/network/servers/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsgonetworkservers"><span class="">Servers</span></a>
+</li>
+  </ul>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child collapse" id="m-docsgodatabases-li">
+  <a href="/docs/go/databases/" class="align-left ps-0 td-sidebar-link td-sidebar-link__section" id="m-docsgodatabases"><span class="">Databases</span></a>
+  <ul class="ul-3 foldable">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsgodatabasespatterns-li">
+  <a href="/docs/go/databases/patterns/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsgodatabasespatterns"><span class="">Patterns</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsgodatabasessql-package-li">
+  <a href="/docs/go/databases/sql-package/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsgodatabasessql-package"><span class="">SQL package</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsgodatabasesmysql-li">
+  <a href="/docs/go/databases/mysql/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsgodatabasesmysql"><span class="">MySQL</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsgodatabasespostgres-li">
+  <a href="/docs/go/databases/postgres/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsgodatabasespostgres"><span class="">PostgreSQL</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsgodatabasessqlite-li">
+  <a href="/docs/go/databases/sqlite/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsgodatabasessqlite"><span class="">SQLite</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsgodatabasesmigrations-li">
+  <a href="/docs/go/databases/migrations/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsgodatabasesmigrations"><span class="">Migrations</span></a>
+</li>
+  </ul>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsgotesting-li">
+  <a href="/docs/go/testing/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsgotesting"><span class="">Testing</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsgoconcurrency-li">
+  <a href="/docs/go/concurrency/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsgoconcurrency"><span class="">Concurrency</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsgocli-tools-li">
+  <a href="/docs/go/cli-tools/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsgocli-tools"><span class="">CLI tools</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsgoobservability-li">
+  <a href="/docs/go/observability/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsgoobservability"><span class="">Observability</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsgocontainers-li">
+  <a href="/docs/go/containers/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsgocontainers"><span class="">Containers</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsgocontext-li">
+  <a href="/docs/go/context/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsgocontext"><span class="">Context</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsgotemplates-li">
+  <a href="/docs/go/templates/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsgotemplates"><span class="">Templates</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsgologging-li">
+  <a href="/docs/go/logging/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsgologging"><span class="">Logging</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsgosecurity-li">
+  <a href="/docs/go/security/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsgosecurity"><span class="">Security</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsgoapis-li">
+  <a href="/docs/go/apis/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsgoapis"><span class="">APIs</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsgorepo-dump-li">
+  <a href="/docs/go/repo-dump/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsgorepo-dump"><span class="">Repo dump</span></a>
+</li>
+  </ul>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-docshugo-li">
+  <a href="/docs/hugo/" class="align-left ps-0 td-sidebar-link td-sidebar-link__section" id="m-docshugo"><span class="">Hugo</span></a>
+  <ul class="ul-2 foldable">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docshugopragmatic-li">
+  <a href="/docs/hugo/pragmatic/" title="Pragmatic book" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docshugopragmatic"><span class="">Pragmatic</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docshugobasics-li">
+  <a href="/docs/hugo/basics/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docshugobasics"><span class="">Basics</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docshugohosting-li">
+  <a href="/docs/hugo/hosting/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docshugohosting"><span class="">Hosting</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docshugoconfiguration-li">
+  <a href="/docs/hugo/configuration/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docshugoconfiguration"><span class="">Configuration</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docshugoimages-li">
+  <a href="/docs/hugo/images/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docshugoimages"><span class="">Images</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docshugoshortcodes-li">
+  <a href="/docs/hugo/shortcodes/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docshugoshortcodes"><span class="">Shortcodes</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child collapse" id="m-docshugotemplates-li">
+  <a href="/docs/hugo/templates/" class="align-left ps-0 td-sidebar-link td-sidebar-link__section" id="m-docshugotemplates"><span class="">Templates</span></a>
+  <ul class="ul-3 foldable">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docshugotemplatescheat-sheet-li">
+  <a href="/docs/hugo/templates/cheat-sheet/" title="Templates cheat sheet" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docshugotemplatescheat-sheet"><span class="">Cheat sheet</span></a>
+</li>
+  </ul>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docshugoassets-li">
+  <a href="/docs/hugo/assets/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docshugoassets"><span class="">Assets</span></a>
+</li>
+  </ul>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-docsinkscape-li">
+  <a href="/docs/inkscape/" class="align-left ps-0 td-sidebar-link td-sidebar-link__section" id="m-docsinkscape"><span class="">Inkscape</span></a>
+  <ul class="ul-2 foldable">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsinkscapebasics-li">
+  <a href="/docs/inkscape/basics/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsinkscapebasics"><span class="">Basics</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsinkscapemenus-li">
+  <a href="/docs/inkscape/menus/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsinkscapemenus"><span class="">Menus</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsinkscaperepo-dump-li">
+  <a href="/docs/inkscape/repo-dump/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsinkscaperepo-dump"><span class="">Repo dump</span></a>
+</li>
+  </ul>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-docsllm-li">
+  <a href="/docs/llm/" title="Large Language Models" class="align-left ps-0 td-sidebar-link td-sidebar-link__section" id="m-docsllm"><span class="">LLMs</span></a>
+  <ul class="ul-2 foldable">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsllmrhel-li">
+  <a href="/docs/llm/rhel/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsllmrhel"><span class="">RHEL</span></a>
+</li>
+  </ul>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docspython-li">
+  <a href="/docs/python/" class="align-left ps-0 td-sidebar-link td-sidebar-link__section" id="m-docspython"><span class="">Python</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-docssql-li">
+  <a href="/docs/sql/" class="align-left ps-0 td-sidebar-link td-sidebar-link__section" id="m-docssql"><span class="">SQL</span></a>
+  <ul class="ul-2 foldable">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docssqlmysql-li">
+  <a href="/docs/sql/mysql/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docssqlmysql"><span class="">MySQL</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docssqlpostgres-li">
+  <a href="/docs/sql/postgres/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docssqlpostgres"><span class="">Postgres</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docssqlsql-li">
+  <a href="/docs/sql/sql/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docssqlsql"><span class="">Repo dump</span></a>
+</li>
+  </ul>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-docsubuntu-server-li">
+  <a href="/docs/ubuntu-server/" title="Ubuntu Server" class="align-left ps-0 td-sidebar-link td-sidebar-link__section" id="m-docsubuntu-server"><span class="">Ubuntu</span></a>
+  <ul class="ul-2 foldable">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsubuntu-serverinstallation-li">
+  <a href="/docs/ubuntu-server/installation/" title="Installing Ubuntu Server" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsubuntu-serverinstallation"><span class="">Installation</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsubuntu-serverusers-permissions-li">
+  <a href="/docs/ubuntu-server/users-permissions/" title="Users, groups, and permissions" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsubuntu-serverusers-permissions"><span class="">Users/groups</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsubuntu-serverpackages-li">
+  <a href="/docs/ubuntu-server/packages/" title="Software Packages" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsubuntu-serverpackages"><span class="">Packages</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsubuntu-serverfilesystem-li">
+  <a href="/docs/ubuntu-server/filesystem/" title="Navigating the filesystem" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsubuntu-serverfilesystem"><span class="">Filesystem</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsubuntu-serverfiles-dirs-li">
+  <a href="/docs/ubuntu-server/files-dirs/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsubuntu-serverfiles-dirs"><span class="">Files and directories</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsubuntu-servershell-li">
+  <a href="/docs/ubuntu-server/shell/" title="Bash shell" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsubuntu-servershell"><span class="">Shell</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsubuntu-serverprocesses-li">
+  <a href="/docs/ubuntu-server/processes/" title="Controlling and managing processes" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsubuntu-serverprocesses"><span class="">Processes</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsubuntu-serversys-resources-li">
+  <a href="/docs/ubuntu-server/sys-resources/" title="Monitoring system resources" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsubuntu-serversys-resources"><span class="">System resources</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsubuntu-serverstorage-li">
+  <a href="/docs/ubuntu-server/storage/" title="Managing storage volumes" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsubuntu-serverstorage"><span class="">Storage</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsubuntu-servernetworks-li">
+  <a href="/docs/ubuntu-server/networks/" title="Connecting to networks" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsubuntu-servernetworks"><span class="">Networks</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsubuntu-servernetwork-services-li">
+  <a href="/docs/ubuntu-server/network-services/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsubuntu-servernetwork-services"><span class="">Network services</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsubuntu-serversharing-files-li">
+  <a href="/docs/ubuntu-server/sharing-files/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsubuntu-serversharing-files"><span class="">Sharing and transferring files</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsubuntu-serverdatabase-li">
+  <a href="/docs/ubuntu-server/database/" title="Managing databases" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsubuntu-serverdatabase"><span class="">Databases</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsubuntu-serverweb-server-li">
+  <a href="/docs/ubuntu-server/web-server/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsubuntu-serverweb-server"><span class="">Web servers</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsubuntu-serveransible-li">
+  <a href="/docs/ubuntu-server/ansible/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsubuntu-serveransible"><span class="">Ansible</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsubuntu-servervirtualization-li">
+  <a href="/docs/ubuntu-server/virtualization/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsubuntu-servervirtualization"><span class="">Virtualization</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsubuntu-servercontainers-li">
+  <a href="/docs/ubuntu-server/containers/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsubuntu-servercontainers"><span class="">Containers</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsubuntu-servercontainer-orchestration-li">
+  <a href="/docs/ubuntu-server/container-orchestration/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsubuntu-servercontainer-orchestration"><span class="">Container orchestration</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsubuntu-servercloud-li">
+  <a href="/docs/ubuntu-server/cloud/" title="Deploying Ubuntu in the Cloud" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsubuntu-servercloud"><span class="">Cloud</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsubuntu-serverterraform-li">
+  <a href="/docs/ubuntu-server/terraform/" title="Terraform cloud deployments" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsubuntu-serverterraform"><span class="">Terraform</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsubuntu-serversecurity-li">
+  <a href="/docs/ubuntu-server/security/" title="Securing your server" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsubuntu-serversecurity"><span class="">Security</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsubuntu-servertroubleshooting-li">
+  <a href="/docs/ubuntu-server/troubleshooting/" title="Troubleshooting your server" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsubuntu-servertroubleshooting"><span class="">Troubleshooting</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsubuntu-serverdisasters-li">
+  <a href="/docs/ubuntu-server/disasters/" title="Preventing disasters" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsubuntu-serverdisasters"><span class="">Disasters</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsubuntu-serverregex-li">
+  <a href="/docs/ubuntu-server/regex/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsubuntu-serverregex"><span class="">Regex</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsubuntu-serverbackups-li">
+  <a href="/docs/ubuntu-server/backups/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsubuntu-serverbackups"><span class="">Backups</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsubuntu-servercompression-li">
+  <a href="/docs/ubuntu-server/compression/" title="Compression and archives" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsubuntu-servercompression"><span class="">Compression</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsubuntu-serverenvironment-li">
+  <a href="/docs/ubuntu-server/environment/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsubuntu-serverenvironment"><span class="">Environment</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsubuntu-serverfirewalls-li">
+  <a href="/docs/ubuntu-server/firewalls/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsubuntu-serverfirewalls"><span class="">Firewalls</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsubuntu-serverlogs-li">
+  <a href="/docs/ubuntu-server/logs/" title="Logging" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsubuntu-serverlogs"><span class="">Logs</span></a>
+</li>
+  </ul>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-docsweb-dev-li">
+  <a href="/docs/web-dev/" title="Web Development" class="align-left ps-0 td-sidebar-link td-sidebar-link__section" id="m-docsweb-dev"><span class="">Web Dev</span></a>
+  <ul class="ul-2 foldable">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child collapse" id="m-docsweb-devaccessibility-li">
+  <a href="/docs/web-dev/accessibility/" class="align-left ps-0 td-sidebar-link td-sidebar-link__section" id="m-docsweb-devaccessibility"><span class="">Accessibility</span></a>
+  <ul class="ul-3 foldable">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsweb-devaccessibilityaria-li">
+  <a href="/docs/web-dev/accessibility/aria/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsweb-devaccessibilityaria"><span class="">ARIA attributes</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsweb-devaccessibilitydocs-structure-li">
+  <a href="/docs/web-dev/accessibility/docs-structure/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsweb-devaccessibilitydocs-structure"><span class="">Document structure</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsweb-devaccessibilitypage-structure-li">
+  <a href="/docs/web-dev/accessibility/page-structure/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsweb-devaccessibilitypage-structure"><span class="">Page structure</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsweb-devaccessibilitylinking-li">
+  <a href="/docs/web-dev/accessibility/linking/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsweb-devaccessibilitylinking"><span class="">Linking content</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsweb-devaccessibilitybuttons-li">
+  <a href="/docs/web-dev/accessibility/buttons/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsweb-devaccessibilitybuttons"><span class="">Buttons</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsweb-devaccessibilitystyling-content-li">
+  <a href="/docs/web-dev/accessibility/styling-content/" title="Styling content" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsweb-devaccessibilitystyling-content"><span class="">Styles</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsweb-devaccessibilityfocus-li">
+  <a href="/docs/web-dev/accessibility/focus/" title="Managing Focus" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsweb-devaccessibilityfocus"><span class="">Focus</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsweb-devaccessibilitynavigation-li">
+  <a href="/docs/web-dev/accessibility/navigation/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsweb-devaccessibilitynavigation"><span class="">Navigation</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsweb-devaccessibilityvisibility-li">
+  <a href="/docs/web-dev/accessibility/visibility/" title="Toggling content visibility" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsweb-devaccessibilityvisibility"><span class="">Visibility</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsweb-devaccessibilityforms-li">
+  <a href="/docs/web-dev/accessibility/forms/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsweb-devaccessibilityforms"><span class="">Forms</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsweb-devaccessibilityfiltering-data-li">
+  <a href="/docs/web-dev/accessibility/filtering-data/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsweb-devaccessibilityfiltering-data"><span class="">Filtering data</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsweb-devaccessibilitytables-li">
+  <a href="/docs/web-dev/accessibility/tables/" title="Presenting tabular data" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsweb-devaccessibilitytables"><span class="">Tables</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsweb-devaccessibilitydebugging-li">
+  <a href="/docs/web-dev/accessibility/debugging/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsweb-devaccessibilitydebugging"><span class="">Debugging</span></a>
+</li>
+  </ul>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child collapse" id="m-docsweb-devhtml-li">
+  <a href="/docs/web-dev/html/" class="align-left ps-0 td-sidebar-link td-sidebar-link__section" id="m-docsweb-devhtml"><span class="">HTML</span></a>
+  <ul class="ul-3 foldable">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsweb-devhtmldoc-structure-li">
+  <a href="/docs/web-dev/html/doc-structure/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsweb-devhtmldoc-structure"><span class="">Document structure</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsweb-devhtmlmetadata-li">
+  <a href="/docs/web-dev/html/metadata/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsweb-devhtmlmetadata"><span class="">Metadata</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsweb-devhtmlsemantic-html-li">
+  <a href="/docs/web-dev/html/semantic-html/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsweb-devhtmlsemantic-html"><span class="">Semantic HTML</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsweb-devhtmlheadings-sections-li">
+  <a href="/docs/web-dev/html/headings-sections/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsweb-devhtmlheadings-sections"><span class="">Headings and sections</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsweb-devhtmlattributes-li">
+  <a href="/docs/web-dev/html/attributes/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsweb-devhtmlattributes"><span class="">Attributes</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsweb-devhtmltext-links-li">
+  <a href="/docs/web-dev/html/text-links/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsweb-devhtmltext-links"><span class="">Text and links</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsweb-devhtmllists-li">
+  <a href="/docs/web-dev/html/lists/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsweb-devhtmllists"><span class="">Lists</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsweb-devhtmlnavigation-li">
+  <a href="/docs/web-dev/html/navigation/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsweb-devhtmlnavigation"><span class="">Navigation</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsweb-devhtmltables-li">
+  <a href="/docs/web-dev/html/tables/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsweb-devhtmltables"><span class="">Tables</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsweb-devhtmlforms-li">
+  <a href="/docs/web-dev/html/forms/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsweb-devhtmlforms"><span class="">Forms</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsweb-devhtmlimages-li">
+  <a href="/docs/web-dev/html/images/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsweb-devhtmlimages"><span class="">Images</span></a>
+</li>
+  </ul>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child collapse" id="m-docsweb-devcomponents-li">
+  <a href="/docs/web-dev/components/" class="align-left ps-0 td-sidebar-link td-sidebar-link__section" id="m-docsweb-devcomponents"><span class="">Components</span></a>
+  <ul class="ul-3 foldable">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsweb-devcomponentstoggle-button-li">
+  <a href="/docs/web-dev/components/toggle-button/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsweb-devcomponentstoggle-button"><span class="">Toggle buttons</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsweb-devcomponentstodo-list-li">
+  <a href="/docs/web-dev/components/todo-list/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsweb-devcomponentstodo-list"><span class="">Todo list</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsweb-devcomponentsmenus-li">
+  <a href="/docs/web-dev/components/menus/" title="Menus and menu buttons" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsweb-devcomponentsmenus"><span class="">Menus</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsweb-devcomponentstooltips-li">
+  <a href="/docs/web-dev/components/tooltips/" title="Tooltips and toggletips" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsweb-devcomponentstooltips"><span class="">Tooltips</span></a>
+</li>
+  </ul>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child collapse" id="m-docsweb-devcss-li">
+  <a href="/docs/web-dev/css/" class="align-left ps-0 td-sidebar-link td-sidebar-link__section" id="m-docsweb-devcss"><span class="">CSS</span></a>
+  <ul class="ul-3 foldable">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsweb-devcsssecrets-li">
+  <a href="/docs/web-dev/css/secrets/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsweb-devcsssecrets"><span class="">Secrets</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsweb-devcsssyntax-selectors-li">
+  <a href="/docs/web-dev/css/syntax-selectors/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsweb-devcsssyntax-selectors"><span class="">Syntax and selectors</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsweb-devcssrelative-units-li">
+  <a href="/docs/web-dev/css/relative-units/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsweb-devcssrelative-units"><span class="">Relative Units</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsweb-devcssdoc-flow-li">
+  <a href="/docs/web-dev/css/doc-flow/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsweb-devcssdoc-flow"><span class="">Doc flow and layout</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsweb-devcssbox-model-li">
+  <a href="/docs/web-dev/css/box-model/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsweb-devcssbox-model"><span class="">Box Model</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsweb-devcssflexbox-li">
+  <a href="/docs/web-dev/css/flexbox/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsweb-devcssflexbox"><span class="">Flexbox</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsweb-devcssgrid-li">
+  <a href="/docs/web-dev/css/grid/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsweb-devcssgrid"><span class="">Grid</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsweb-devcsspositioning-stacking-li">
+  <a href="/docs/web-dev/css/positioning-stacking/" title="Positioning and stacking context" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsweb-devcsspositioning-stacking"><span class="">Positioning</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsweb-devcssresponsive-li">
+  <a href="/docs/web-dev/css/responsive/" title="Responsive design" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsweb-devcssresponsive"><span class="">Responsive</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsweb-devcsslayers-li">
+  <a href="/docs/web-dev/css/layers/" title="Cascade Layers" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsweb-devcsslayers"><span class="">Layers</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsweb-devcssmodular-li">
+  <a href="/docs/web-dev/css/modular/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsweb-devcssmodular"><span class="">Modular CSS</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsweb-devcsscontainer-queries-li">
+  <a href="/docs/web-dev/css/container-queries/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsweb-devcsscontainer-queries"><span class="">Container queries</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsweb-devcsscolor-contrast-li">
+  <a href="/docs/web-dev/css/color-contrast/" title="Color and contrast" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsweb-devcsscolor-contrast"><span class="">Color</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsweb-devcsstypography-spacing-li">
+  <a href="/docs/web-dev/css/typography-spacing/" title="Typography and spacing" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsweb-devcsstypography-spacing"><span class="">Typography</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsweb-devcssgradients-shadows-blends-li">
+  <a href="/docs/web-dev/css/gradients-shadows-blends/" title="Gradients, shadows, and blend modes" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsweb-devcssgradients-shadows-blends"><span class="">Gradients, shadows, blends</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsweb-devcssmasks-shapes-clip-li">
+  <a href="/docs/web-dev/css/masks-shapes-clip/" title="Masks, shapes, and clipping" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsweb-devcssmasks-shapes-clip"><span class="">Masks, shapes, clipping</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsweb-devcsstransitions-li">
+  <a href="/docs/web-dev/css/transitions/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsweb-devcsstransitions"><span class="">Transitions</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsweb-devcsstransforms-li">
+  <a href="/docs/web-dev/css/transforms/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsweb-devcsstransforms"><span class="">Transforms</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsweb-devcssanimations-li">
+  <a href="/docs/web-dev/css/animations/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsweb-devcssanimations"><span class="">Animations</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsweb-devcsspreprocessors-li">
+  <a href="/docs/web-dev/css/preprocessors/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsweb-devcsspreprocessors"><span class="">Preprocessors</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsweb-devcssimages-li">
+  <a href="/docs/web-dev/css/images/" title="Images and SVGs" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsweb-devcssimages"><span class="">Images</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsweb-devcssforms-li">
+  <a href="/docs/web-dev/css/forms/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsweb-devcssforms"><span class="">Forms</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsweb-devcssemmet-li">
+  <a href="/docs/web-dev/css/emmet/" title="Emmet for VSCode" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsweb-devcssemmet"><span class="">Emmet</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsweb-devcsspatterns-li">
+  <a href="/docs/web-dev/css/patterns/" title="Patterns and components" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsweb-devcsspatterns"><span class="">Patterns</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsweb-devcsssample-li">
+  <a href="/docs/web-dev/css/sample/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsweb-devcsssample"><span class="">Sample styling sheet</span></a>
+</li>
+  </ul>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child collapse" id="m-docsweb-devjavascript-li">
+  <a href="/docs/web-dev/javascript/" class="align-left ps-0 td-sidebar-link td-sidebar-link__section" id="m-docsweb-devjavascript"><span class="">Javascript</span></a>
+  <ul class="ul-3 foldable">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsweb-devjavascriptbuild-tools-li">
+  <a href="/docs/web-dev/javascript/build-tools/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsweb-devjavascriptbuild-tools"><span class="">Build tools</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsweb-devjavascriptenvironment-li">
+  <a href="/docs/web-dev/javascript/environment/" title="Programming environment" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsweb-devjavascriptenvironment"><span class="">Environment</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsweb-devjavascriptbasics-li">
+  <a href="/docs/web-dev/javascript/basics/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsweb-devjavascriptbasics"><span class="">Basics</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsweb-devjavascriptobjects-li">
+  <a href="/docs/web-dev/javascript/objects/" title="Objects and organization" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsweb-devjavascriptobjects"><span class="">Objects</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsweb-devjavascriptevents-li">
+  <a href="/docs/web-dev/javascript/events/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsweb-devjavascriptevents"><span class="">Events</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsweb-devjavascriptscripting-li">
+  <a href="/docs/web-dev/javascript/scripting/" title="Scripting documents" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsweb-devjavascriptscripting"><span class="">Scripting</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsweb-devjavascriptgeometry-scrolling-li">
+  <a href="/docs/web-dev/javascript/geometry-scrolling/" title="Document geometry and scrolling" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsweb-devjavascriptgeometry-scrolling"><span class="">Geometry and scrolling</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsweb-devjavascriptlocation-nav-history-li">
+  <a href="/docs/web-dev/javascript/location-nav-history/" title="Location, navigation, and history" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsweb-devjavascriptlocation-nav-history"><span class="">Location, nav, history</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsweb-devjavascriptnetworking-li">
+  <a href="/docs/web-dev/javascript/networking/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsweb-devjavascriptnetworking"><span class="">Networking</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsweb-devjavascriptstorage-li">
+  <a href="/docs/web-dev/javascript/storage/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsweb-devjavascriptstorage"><span class="">Storage</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsweb-devjavascriptasync-li">
+  <a href="/docs/web-dev/javascript/async/" title="Asynchronous JS" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsweb-devjavascriptasync"><span class="">Async</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsweb-devjavascriptarrays-li">
+  <a href="/docs/web-dev/javascript/arrays/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsweb-devjavascriptarrays"><span class="">Arrays</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsweb-devjavascriptpatterns-li">
+  <a href="/docs/web-dev/javascript/patterns/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsweb-devjavascriptpatterns"><span class="">Patterns</span></a>
+</li>
+  </ul>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsweb-devrefactoring-ui-li">
+  <a href="/docs/web-dev/refactoring-ui/" class="align-left ps-0 td-sidebar-link td-sidebar-link__section" id="m-docsweb-devrefactoring-ui"><span class="">Refactoring UI</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child collapse" id="m-docsweb-devdesign-li">
+  <a href="/docs/web-dev/design/" title="Web Design" class="align-left ps-0 td-sidebar-link td-sidebar-link__section" id="m-docsweb-devdesign"><span class="">Design</span></a>
+  <ul class="ul-3 foldable">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsweb-devdesignlinks-li">
+  <a href="/docs/web-dev/design/links/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsweb-devdesignlinks"><span class="">Links</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsweb-devdesigndesign-fundamentals-li">
+  <a href="/docs/web-dev/design/design-fundamentals/" title="Design fundamentals" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsweb-devdesigndesign-fundamentals"><span class="">Fundamentals</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsweb-devdesignux-li">
+  <a href="/docs/web-dev/design/ux/" title="User experience" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsweb-devdesignux"><span class="">UX</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsweb-devdesignux-research-li">
+  <a href="/docs/web-dev/design/ux-research/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsweb-devdesignux-research"><span class="">User research</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsweb-devdesignux-design-li">
+  <a href="/docs/web-dev/design/ux-design/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsweb-devdesignux-design"><span class="">User design</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsweb-devdesignlayout-composition-li">
+  <a href="/docs/web-dev/design/layout-composition/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsweb-devdesignlayout-composition"><span class="">Layout and composition</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsweb-devdesignanimations-li">
+  <a href="/docs/web-dev/design/animations/" title="Enhancing layouts with animation" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsweb-devdesignanimations"><span class="">Animations</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsweb-devdesigntypography-li">
+  <a href="/docs/web-dev/design/typography/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsweb-devdesigntypography"><span class="">Typography</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsweb-devdesigncolor-li">
+  <a href="/docs/web-dev/design/color/" title="Color theory" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsweb-devdesigncolor"><span class="">Color</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsweb-devdesigntutorial-li">
+  <a href="/docs/web-dev/design/tutorial/" title="Process outline: Building a website" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsweb-devdesigntutorial"><span class="">Process outline</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsweb-devdesigntesting-li">
+  <a href="/docs/web-dev/design/testing/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsweb-devdesigntesting"><span class="">Testing</span></a>
+</li>
+  </ul>
+</li>
+  </ul>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child active-path" id="m-docsxlinux-old-li">
+  <a href="/docs/xlinux-old/" class="align-left ps-0 td-sidebar-link td-sidebar-link__section" id="m-docsxlinux-old"><span class="">xLinux (old)</span></a>
+  <ul class="ul-2 foldable">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsxlinux-oldcommand-reference-li">
+  <a href="/docs/xlinux-old/command-reference/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsxlinux-oldcommand-reference"><span class="">Linux commands</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsxlinux-oldservices-li">
+  <a href="/docs/xlinux-old/services/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsxlinux-oldservices"><span class="">Services overview</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsxlinux-oldfiles-directories-li">
+  <a href="/docs/xlinux-old/files-directories/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsxlinux-oldfiles-directories"><span class="">Files and directories</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsxlinux-oldsearch-analyze-text-li">
+  <a href="/docs/xlinux-old/search-analyze-text/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsxlinux-oldsearch-analyze-text"><span class="">Searching and analyzing text</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsxlinux-oldboot-process-li">
+  <a href="/docs/xlinux-old/boot-process/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsxlinux-oldboot-process"><span class="">Boot process</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsxlinux-oldsystem-startup-services-li">
+  <a href="/docs/xlinux-old/system-startup-services/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsxlinux-oldsystem-startup-services"><span class="">System startup and services</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsxlinux-oldnetwork-connections-li">
+  <a href="/docs/xlinux-old/network-connections/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsxlinux-oldnetwork-connections"><span class="">Network connections</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsxlinux-oldlocalization-li">
+  <a href="/docs/xlinux-old/localization/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsxlinux-oldlocalization"><span class="">Localization</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsxlinux-oldusers-groups-li">
+  <a href="/docs/xlinux-old/users-groups/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsxlinux-oldusers-groups"><span class="">Users and groups</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsxlinux-oldstorage-li">
+  <a href="/docs/xlinux-old/storage/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsxlinux-oldstorage"><span class="">Storage</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsxlinux-oldprotecting-files-li">
+  <a href="/docs/xlinux-old/protecting-files/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsxlinux-oldprotecting-files"><span class="">Protecting files</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsxlinux-oldgoverning-software-li">
+  <a href="/docs/xlinux-old/governing-software/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsxlinux-oldgoverning-software"><span class="">Governing software</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsxlinux-oldkernel-modules-li">
+  <a href="/docs/xlinux-old/kernel-modules/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsxlinux-oldkernel-modules"><span class="">Kernel modules</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child active-path" id="m-docsxlinux-oldownership-permissions-li">
+  <a href="/docs/xlinux-old/ownership-permissions/" class="align-left ps-0 active td-sidebar-link td-sidebar-link__page" id="m-docsxlinux-oldownership-permissions"><span class="td-sidebar-nav-active-item">Ownership and permissions</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsxlinux-oldaccess-auth-li">
+  <a href="/docs/xlinux-old/access-auth/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsxlinux-oldaccess-auth"><span class="">Access and authorization</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsxlinux-oldlogging-li">
+  <a href="/docs/xlinux-old/logging/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsxlinux-oldlogging"><span class="">Logging services</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsxlinux-oldfirewalls-li">
+  <a href="/docs/xlinux-old/firewalls/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsxlinux-oldfirewalls"><span class="">Firewalls</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsxlinux-oldsecurity-best-practices-li">
+  <a href="/docs/xlinux-old/security-best-practices/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsxlinux-oldsecurity-best-practices"><span class="">Security best practices</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsxlinux-oldcpu-memory-li">
+  <a href="/docs/xlinux-old/cpu-memory/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsxlinux-oldcpu-memory"><span class="">CPU and memory</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsxlinux-oldperformance-li">
+  <a href="/docs/xlinux-old/performance/" title="Optimizing performance" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsxlinux-oldperformance"><span class="">Performance</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsxlinux-olddevices-li">
+  <a href="/docs/xlinux-old/devices/" title="Linux devices" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsxlinux-olddevices"><span class="">Devices</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsxlinux-oldautomating-jobs-li">
+  <a href="/docs/xlinux-old/automating-jobs/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsxlinux-oldautomating-jobs"><span class="">Automating jobs</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsxlinux-oldcloud-virtualization-li">
+  <a href="/docs/xlinux-old/cloud-virtualization/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsxlinux-oldcloud-virtualization"><span class="">Cloud and virtualization</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsxlinux-oldorchestration-li">
+  <a href="/docs/xlinux-old/orchestration/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsxlinux-oldorchestration"><span class="">Orchestration</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docsxlinux-oldtmux-li">
+  <a href="/docs/xlinux-old/tmux/" class="align-left ps-0 td-sidebar-link td-sidebar-link__page" id="m-docsxlinux-oldtmux"><span class="">tmux</span></a>
+</li>
+  </ul>
+</li>
+  </ul>
+</li>
+    </ul>
+  </nav>
+</div>
+
+          </aside>
+          <aside class="d-none d-xl-block col-xl-2 td-sidebar-toc d-print-none">
+            <div class="td-page-meta ms-2 pb-1 pt-2 mb-0">
+
+</div>
+
+            <div class="td-toc">
+        <nav id="TableOfContents">
+  <ul>
+    <li><a href="#file-and-directory-permissions">File and directory permissions</a>
+      <ul>
+        <li><a href="#ownership">Ownership</a></li>
+        <li><a href="#chown">chown</a></li>
+        <li><a href="#chgrp">chgrp</a></li>
+      </ul>
+    </li>
+    <li><a href="#access-permissions">Access permissions</a>
+      <ul>
+        <li><a href="#chmod">chmod</a></li>
+        <li><a href="#symbolic-mode">Symbolic mode</a></li>
+        <li><a href="#octal-mode">octal mode</a></li>
+      </ul>
+    </li>
+    <li><a href="#special-permissions">Special permissions</a>
+      <ul>
+        <li><a href="#suid">SUID</a></li>
+        <li><a href="#sgidguid">SGID/GUID</a></li>
+        <li><a href="#sticky-bit">Sticky bit</a></li>
+      </ul>
+    </li>
+    <li><a href="#default-permissions">Default permissions</a>
+      <ul>
+        <li><a href="#umask">umask</a></li>
+      </ul>
+    </li>
+    <li><a href="#access-control-lists">Access Control Lists</a>
+      <ul>
+        <li><a href="#getfacl">getfacl</a></li>
+        <li><a href="#setfacl">setfacl</a></li>
+      </ul>
+    </li>
+    <li><a href="#context-based-permissions">Context-based permissions</a>
+      <ul>
+        <li><a href="#selinux-for-rhel">SELinux for RHEL</a></li>
+        <li><a href="#apparmor-for-ubuntu">AppArmor for Ubuntu</a></li>
+      </ul>
+    </li>
+    <li><a href="#linux-user-types">Linux user types</a>
+      <ul>
+        <li><a href="#escalating-privileges">Escalating privileges</a></li>
+      </ul>
+    </li>
+    <li><a href="#restrict-users-and-files">Restrict users and files</a>
+      <ul>
+        <li><a href="#ulimit">ulimit</a></li>
+        <li><a href="#lsattr">lsattr</a></li>
+        <li><a href="#chattr">chattr</a></li>
+      </ul>
+    </li>
+    <li><a href="#create-shared-directory">Create shared directory</a></li>
+  </ul>
+</nav>
+      </div>
+    
+            
+	
+          </aside>
+          <main class="col-12 col-md-9 col-xl-8 ps-md-5" role="main">
+            
+  
+
+            <nav aria-label="breadcrumb" class="td-breadcrumbs">
+  <ol class="breadcrumb">
+  <li class="breadcrumb-item">
+    <a href="/docs/">Documentation</a></li>
+  <li class="breadcrumb-item">
+    <a href="/docs/xlinux-old/">xLinux (old)</a></li>
+  <li class="breadcrumb-item active" aria-current="page">
+    Ownership and permissions</li>
+  </ol>
+</nav>
+<div class="td-content">
+	<h1>Ownership and permissions</h1>
+	
+	<header class="article-meta">
+		
+  </header>
+	<h2 id="file-and-directory-permissions">File and directory permissions</h2>
+<p>Linux assigns each file and directory an owner and allows the owner to set basic security settings on the file or directory.</p>
+<h3 id="ownership">Ownership</h3>
+<p>Linux has a three-tiered approach to protecting files and directories:</p>
+<dl>
+<dt>Owner</dt>
+<dd>Linux assigns each file and directory is assigned to an owner. The admin can assign the owner privileges to the file or directory.</dd>
+<dt>Group</dt>
+<dd>Linux can assign each file and directory a single group of users. The admin can assign the group privileges that are different than the owner</dd>
+<dt>Others</dt>
+<dd>Assigned to any user account that is not the owner or in the assigned group.</dd>
+</dl>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#8f5902;font-style:italic"># ubuntu and rocky assign each user account to a separate group with the same name as the user acct</span>
+</span></span><span style="display:flex;"><span>ll
+</span></span><span style="display:flex;"><span>-rw-rw-r--  <span style="color:#0000cf;font-weight:bold">1</span> &lt;ownername&gt; &lt;groupname&gt; <span style="color:#0000cf;font-weight:bold">31</span> Mar <span style="color:#0000cf;font-weight:bold">18</span> 19:19 alphabet.txt
+</span></span></code></pre></div><h3 id="chown">chown</h3>
+<p>Change the owner assigned to a file or directory.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>chown <span style="color:#ce5c00;font-weight:bold">[</span>options<span style="color:#ce5c00;font-weight:bold">]</span> newowner <span style="color:#ce5c00;font-weight:bold">[</span> filenames <span style="color:#000;font-weight:bold">|</span> directorynames <span style="color:#ce5c00;font-weight:bold">]</span>
+</span></span><span style="display:flex;"><span>-R <span style="color:#8f5902;font-style:italic"># recursively changes the owner for all files in a directory</span>
+</span></span><span style="display:flex;"><span><span style="color:#8f5902;font-style:italic"># change owner</span>
+</span></span><span style="display:flex;"><span>sudo chown linuxuser alphabet.txt 
+</span></span><span style="display:flex;"><span>ll
+</span></span><span style="display:flex;"><span>total <span style="color:#0000cf;font-weight:bold">72</span>
+</span></span><span style="display:flex;"><span>-rw-rw-r--  <span style="color:#0000cf;font-weight:bold">1</span> linuxuser   groupname   <span style="color:#0000cf;font-weight:bold">31</span> Mar <span style="color:#0000cf;font-weight:bold">18</span> 19:19 alphabet.txt
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8f5902;font-style:italic"># change owner and group at once</span>
+</span></span><span style="display:flex;"><span>chown newowner:newgroup filenames
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8f5902;font-style:italic"># example</span>
+</span></span><span style="display:flex;"><span>sudo chown linuxuser:testgroup cat.txt counts.txt tar_tests/
+</span></span><span style="display:flex;"><span>ll
+</span></span><span style="display:flex;"><span>total <span style="color:#0000cf;font-weight:bold">72</span>
+</span></span><span style="display:flex;"><span>...
+</span></span><span style="display:flex;"><span>-rw-rw-r--  <span style="color:#0000cf;font-weight:bold">1</span> linuxuser   testgroup     <span style="color:#0000cf;font-weight:bold">31</span> Mar <span style="color:#0000cf;font-weight:bold">18</span> 19:19 alphabet.txt
+</span></span><span style="display:flex;"><span>-rw-rw-r--  <span style="color:#0000cf;font-weight:bold">1</span> linuxuser   testgroup     <span style="color:#0000cf;font-weight:bold">25</span> Mar <span style="color:#0000cf;font-weight:bold">19</span> 23:49 cat.txt
+</span></span><span style="display:flex;"><span>...
+</span></span><span style="display:flex;"><span>-rw-rw-r--  <span style="color:#0000cf;font-weight:bold">1</span> linuxuser   testgroup     <span style="color:#0000cf;font-weight:bold">15</span> Mar <span style="color:#0000cf;font-weight:bold">18</span> 19:19 counts.txt
+</span></span><span style="display:flex;"><span>...
+</span></span><span style="display:flex;"><span>drwxrwxr-x  <span style="color:#0000cf;font-weight:bold">2</span> linuxuser   testgroup   <span style="color:#0000cf;font-weight:bold">4096</span> Apr  <span style="color:#0000cf;font-weight:bold">7</span> 09:10 tar_tests/
+</span></span></code></pre></div><h3 id="chgrp">chgrp</h3>
+<p>The file or directory owner, or the root user can change the group assigned to the file using <code>chgrp</code>:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>chgrp <span style="color:#ce5c00;font-weight:bold">[</span>options<span style="color:#ce5c00;font-weight:bold">]</span> newgroup filenames
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8f5902;font-style:italic"># change group on file</span>
+</span></span><span style="display:flex;"><span>sudo chgrp testgroup alphabet.txt 
+</span></span><span style="display:flex;"><span>ll
+</span></span><span style="display:flex;"><span>total <span style="color:#0000cf;font-weight:bold">72</span>
+</span></span><span style="display:flex;"><span>...
+</span></span><span style="display:flex;"><span>-rw-rw-r--  <span style="color:#0000cf;font-weight:bold">1</span> linuxuser   testgroup     <span style="color:#0000cf;font-weight:bold">31</span> Mar <span style="color:#0000cf;font-weight:bold">18</span> 19:19 alphabet.txt
+</span></span></code></pre></div><h2 id="access-permissions">Access permissions</h2>
+<p>Root user and file or directory owner can change access permissions.</p>
+<p>After you assign the owner and group, you can assign specific permissions. You can assign each tier of protection (owner, group, others) different permissions:</p>
+<dl>
+<dt>Read</dt>
+<dd>Access data in file or directory</dd>
+<dt>Write</dt>
+<dd>Modify data stored in the file or directory</dd>
+<dt>Execute</dt>
+<dd>Run the file on the system, or to <code>cd</code> into the directory. If a subdirectory does grant execute permission but one of its parent dirs does not, the user cannot <code>cd</code> into that directory. All dirs in the path must have <code>x</code> set on them.</dd>
+</dl>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ll
+</span></span><span style="display:flex;"><span>total <span style="color:#0000cf;font-weight:bold">72</span>
+</span></span><span style="display:flex;"><span>...
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8f5902;font-style:italic"># file</span>
+</span></span><span style="display:flex;"><span>-&lt;owner&gt;&lt;group&gt;&lt;others&gt;
+</span></span><span style="display:flex;"><span>-rw-rw-r--  <span style="color:#0000cf;font-weight:bold">1</span> linuxuser   testgroup     <span style="color:#0000cf;font-weight:bold">31</span> Mar <span style="color:#0000cf;font-weight:bold">18</span> 19:19 alphabet.txt
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8f5902;font-style:italic"># directory</span>
+</span></span><span style="display:flex;"><span>d&lt;owner&gt;&lt;group&gt;&lt;others&gt;
+</span></span><span style="display:flex;"><span>drwxrwxr-x  <span style="color:#0000cf;font-weight:bold">2</span> linuxuser   testgroup   <span style="color:#0000cf;font-weight:bold">4096</span> Apr  <span style="color:#0000cf;font-weight:bold">7</span> 09:10 tar_tests/
+</span></span></code></pre></div><h3 id="chmod">chmod</h3>
+<p>Changes the file or directory permissions based on the provided mode:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>chmod &lt;mode&gt;&lt;action&gt;&lt;permission&gt;
+</span></span></code></pre></div><h3 id="symbolic-mode">Symbolic mode</h3>
+<p>Denote permissions with a letter code:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>u <span style="color:#8f5902;font-style:italic"># owner</span>
+</span></span><span style="display:flex;"><span>g <span style="color:#8f5902;font-style:italic"># group</span>
+</span></span><span style="display:flex;"><span>o <span style="color:#8f5902;font-style:italic"># other</span>
+</span></span><span style="display:flex;"><span>a <span style="color:#8f5902;font-style:italic"># all</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>r <span style="color:#8f5902;font-style:italic"># read</span>
+</span></span><span style="display:flex;"><span>w <span style="color:#8f5902;font-style:italic"># write</span>
+</span></span><span style="display:flex;"><span>x <span style="color:#8f5902;font-style:italic"># execute</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8f5902;font-style:italic"># separate codes with:</span>
+</span></span><span style="display:flex;"><span><span style="color:#8f5902;font-style:italic"># + if you want to add permission</span>
+</span></span><span style="display:flex;"><span><span style="color:#8f5902;font-style:italic"># - if you want to remove permission</span>
+</span></span><span style="display:flex;"><span><span style="color:#8f5902;font-style:italic"># = to set as only permission</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8f5902;font-style:italic"># before</span>
+</span></span><span style="display:flex;"><span>ll
+</span></span><span style="display:flex;"><span>-rw-rw-r--  <span style="color:#0000cf;font-weight:bold">1</span> linuxuser   testgroup     <span style="color:#0000cf;font-weight:bold">31</span> Mar <span style="color:#0000cf;font-weight:bold">18</span> 19:19 alphabet.txt
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8f5902;font-style:italic"># remove write permission for group</span>
+</span></span><span style="display:flex;"><span>sudo chmod g-w alphabet.txt 
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8f5902;font-style:italic"># after</span>
+</span></span><span style="display:flex;"><span>ll
+</span></span><span style="display:flex;"><span>-rw-r--r--  <span style="color:#0000cf;font-weight:bold">1</span> linuxuser   testgroup     <span style="color:#0000cf;font-weight:bold">31</span> Mar <span style="color:#0000cf;font-weight:bold">18</span> 19:19 alphabet.txt
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8f5902;font-style:italic"># read, write, execute to owner and group</span>
+</span></span><span style="display:flex;"><span>ll alphabet.txt 
+</span></span><span style="display:flex;"><span>---------- <span style="color:#0000cf;font-weight:bold">1</span> linuxuser testgroup <span style="color:#0000cf;font-weight:bold">31</span> Mar <span style="color:#0000cf;font-weight:bold">18</span> 19:19 alphabet.txt
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8f5902;font-style:italic"># command</span>
+</span></span><span style="display:flex;"><span>sudo chmod <span style="color:#000">ug</span><span style="color:#ce5c00;font-weight:bold">=</span>rwx alphabet.txt 
+</span></span><span style="display:flex;"><span>ll alphabet.txt 
+</span></span><span style="display:flex;"><span>-rwxrwx--- <span style="color:#0000cf;font-weight:bold">1</span> linuxuser testgroup <span style="color:#0000cf;font-weight:bold">31</span> Mar <span style="color:#0000cf;font-weight:bold">18</span> 19:19 alphabet.txt*
+</span></span></code></pre></div><h3 id="octal-mode">octal mode</h3>
+<p>The nine possible permission bits are represented as three octal numbers, one for owner, group, and others:</p>
+<table>
+  <thead>
+      <tr>
+          <th>Octal value</th>
+          <th>Permission</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>0</td>
+          <td><code>---</code></td>
+      </tr>
+      <tr>
+          <td>1</td>
+          <td><code>--x</code></td>
+      </tr>
+      <tr>
+          <td>2</td>
+          <td><code>-w-</code></td>
+      </tr>
+      <tr>
+          <td>3</td>
+          <td><code>-wx</code></td>
+      </tr>
+      <tr>
+          <td>4</td>
+          <td><code>r--</code></td>
+      </tr>
+      <tr>
+          <td>5</td>
+          <td><code>r-x</code></td>
+      </tr>
+      <tr>
+          <td>6</td>
+          <td><code>rw-</code></td>
+      </tr>
+      <tr>
+          <td>7</td>
+          <td><code>rwx</code></td>
+      </tr>
+  </tbody>
+</table>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#8f5902;font-style:italic"># octal for ugo</span>
+</span></span><span style="display:flex;"><span>sudo chmod <span style="color:#0000cf;font-weight:bold">664</span> alphabet.txt 
+</span></span><span style="display:flex;"><span>ll alphabet.txt 
+</span></span><span style="display:flex;"><span>-rw-rw-r-- <span style="color:#0000cf;font-weight:bold">1</span> linuxuser testgroup <span style="color:#0000cf;font-weight:bold">31</span> Mar <span style="color:#0000cf;font-weight:bold">18</span> 19:19 alphabet.txt
+</span></span></code></pre></div><h2 id="special-permissions">Special permissions</h2>
+<h3 id="suid">SUID</h3>
+<p>You can set the <em>Set User ID</em> (SUID) on executable files.</p>
+<ul>
+<li>Linux runs these files as the file owner, not the account actually running the executable.</li>
+<li>Commonly used in server apps that must run as root, but usually launched by a standard user.</li>
+</ul>
+<p>Indicated by an <code>s</code> in place of an <code>x</code> for the owner permission:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#8f5902;font-style:italic"># SUID set</span>
+</span></span><span style="display:flex;"><span>rwsr-x-r-x
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8f5902;font-style:italic"># SUID not set</span>
+</span></span><span style="display:flex;"><span>rwSr-x-r-x
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8f5902;font-style:italic"># set the SUID</span>
+</span></span><span style="display:flex;"><span>chmod u+s &lt;executable&gt;
+</span></span><span style="display:flex;"><span><span style="color:#8f5902;font-style:italic"># 4 at beginning</span>
+</span></span><span style="display:flex;"><span>chmod <span style="color:#0000cf;font-weight:bold">4750</span> &lt;executable&gt;
+</span></span></code></pre></div><h3 id="sgidguid">SGID/GUID</h3>
+<p><em>Set Group ID</em> works differently for files and dirs:</p>
+<ul>
+<li>Files: tells linux to run the program with the file&rsquo;s group permissions.</li>
+<li>Directories: any files users create i the directory are assigned the group of the directory and not that of the user. This helps create an environment where multiple users can share files. All users in the group have the same perms as all files in the shared dir.</li>
+</ul>
+<p>Indicated by an <code>s</code> in place of an <code>x</code> for the group permission:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#8f5902;font-style:italic"># SGID set</span>
+</span></span><span style="display:flex;"><span>rwxrwsr--
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8f5902;font-style:italic"># set the SGID</span>
+</span></span><span style="display:flex;"><span>chmod g+s /dir
+</span></span><span style="display:flex;"><span><span style="color:#8f5902;font-style:italic"># 2 at beginning</span>
+</span></span><span style="display:flex;"><span>chmod <span style="color:#0000cf;font-weight:bold">2660</span> /dir
+</span></span></code></pre></div><h3 id="sticky-bit">Sticky bit</h3>
+<p>Prevents file from being deleted by someone that doesn&rsquo;t own it, even if they belong to a group with write perms on the file. Often used on dirs that are shared by groups, where the group members has read and write access, but only the owner can remove it.</p>
+<p>Indicated by a <code>t</code> in the execute bit position for others:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#8f5902;font-style:italic"># sticky bit set</span>
+</span></span><span style="display:flex;"><span>rwxrw-r-t
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8f5902;font-style:italic"># set sticky bit</span>
+</span></span><span style="display:flex;"><span>chmod o+t /dir
+</span></span><span style="display:flex;"><span><span style="color:#8f5902;font-style:italic"># 1 at the start</span>
+</span></span><span style="display:flex;"><span>chmod <span style="color:#0000cf;font-weight:bold">1777</span> /dir
+</span></span></code></pre></div><h2 id="default-permissions">Default permissions</h2>
+<h3 id="umask">umask</h3>
+<p>The <em>user mask</em> is a mask that is applied to the permission bits on a file or directory to define the default permissions.</p>
+<ul>
+<li>octal value that represents the bits to be removed from the octal mode:
+<ul>
+<li>octal mode <code>666</code> permissions for files</li>
+<li>octal mode <code>777</code> perms for directories</li>
+</ul>
+</li>
+<li>Consists of four values: <code>&lt;special-perm&gt;&lt;owner&gt;&lt;group&gt;&lt;other&gt;</code>. Special permissions:
+<ul>
+<li>4: SUID</li>
+<li>2: GUID</li>
+<li>1: stick bit</li>
+</ul>
+</li>
+</ul>
+<table>
+  <thead>
+      <tr>
+          <th><code>umask</code></th>
+          <th>Created files</th>
+          <th>Created directories</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><code>000</code></td>
+          <td><code>666</code> (<code>rw-rw-rw-</code>)</td>
+          <td><code>777</code> (<code>rwxrwxrwx</code>)</td>
+      </tr>
+      <tr>
+          <td><code>002</code></td>
+          <td><code>664</code> (<code>rw-rw-r--</code>)</td>
+          <td><code>775</code> (<code>rwxrwxr-x</code>)</td>
+      </tr>
+      <tr>
+          <td><code>022</code></td>
+          <td><code>644</code> (<code>rw-r--r--</code>)</td>
+          <td><code>755</code> (<code>rwxr-xr-x</code>)</td>
+      </tr>
+      <tr>
+          <td><code>277</code></td>
+          <td><code>400</code> (<code>r--------</code>)</td>
+          <td><code>500</code> (<code>r-x------</code>)</td>
+      </tr>
+  </tbody>
+</table>
+<p><a href="https://www.linuxtrainingacademy.com/all-umasks/">Every possible combo</a></p>
+<p>When you change umask on the command line, its only for the session.</p>
+<ul>
+<li>set in script in <code>/etc/profile</code></li>
+<li>To persist changes, change it in <code>$HOME/.bashrc</code></li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#8f5902;font-style:italic"># view umask values</span>
+</span></span><span style="display:flex;"><span><span style="color:#204a87">umask</span>
+</span></span><span style="display:flex;"><span><span style="color:#0000cf;font-weight:bold">0002</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8f5902;font-style:italic"># view permissions</span>
+</span></span><span style="display:flex;"><span>ls -l
+</span></span><span style="display:flex;"><span>drwxrwxr-x <span style="color:#0000cf;font-weight:bold">2</span> linuxuser linuxuser <span style="color:#0000cf;font-weight:bold">4096</span> Apr <span style="color:#0000cf;font-weight:bold">10</span> 23:50 test1
+</span></span><span style="display:flex;"><span>-rw-rw-r-- <span style="color:#0000cf;font-weight:bold">1</span> linuxuser linuxuser    <span style="color:#0000cf;font-weight:bold">0</span> Apr <span style="color:#0000cf;font-weight:bold">10</span> 23:50 test2
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8f5902;font-style:italic"># change umask</span>
+</span></span><span style="display:flex;"><span><span style="color:#204a87">umask</span> <span style="color:#0000cf;font-weight:bold">027</span>
+</span></span><span style="display:flex;"><span>touch test3
+</span></span><span style="display:flex;"><span>ls -l
+</span></span><span style="display:flex;"><span>drwxrwxr-x <span style="color:#0000cf;font-weight:bold">2</span> linuxuser linuxuser <span style="color:#0000cf;font-weight:bold">4096</span> Apr <span style="color:#0000cf;font-weight:bold">10</span> 23:50 test1
+</span></span><span style="display:flex;"><span>-rw-rw-r-- <span style="color:#0000cf;font-weight:bold">1</span> linuxuser linuxuser    <span style="color:#0000cf;font-weight:bold">0</span> Apr <span style="color:#0000cf;font-weight:bold">10</span> 23:50 test2
+</span></span><span style="display:flex;"><span>-rw-r----- <span style="color:#0000cf;font-weight:bold">1</span> linuxuser linuxuser    <span style="color:#0000cf;font-weight:bold">0</span> Apr <span style="color:#0000cf;font-weight:bold">10</span> 23:51 test3
+</span></span></code></pre></div><h2 id="access-control-lists">Access Control Lists</h2>
+<p>You can only assign file or directory permissions to a single user or group.</p>
+<ul>
+<li>ACL lets you specifiy a list of multiple users or groups and the permissions that are assigned to them.</li>
+<li>ACL permissionns use the same r,w, and x permission bits but you can assign to multiple users.</li>
+</ul>
+<h3 id="getfacl">getfacl</h3>
+<p>View ACLs assigned to a file or directory:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>getfacl <span style="color:#204a87">test</span> 
+</span></span><span style="display:flex;"><span><span style="color:#8f5902;font-style:italic"># file: test</span>
+</span></span><span style="display:flex;"><span><span style="color:#8f5902;font-style:italic"># owner: linuxuser</span>
+</span></span><span style="display:flex;"><span><span style="color:#8f5902;font-style:italic"># group: linuxuser</span>
+</span></span><span style="display:flex;"><span>user::rw-
+</span></span><span style="display:flex;"><span>group::rw-
+</span></span><span style="display:flex;"><span>other::r--
+</span></span></code></pre></div><h3 id="setfacl">setfacl</h3>
+<p>Modify permissions assigned to a file or directory:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#8f5902;font-style:italic"># Define rule:</span>
+</span></span><span style="display:flex;"><span><span style="color:#8f5902;font-style:italic"># u[ser]:uid:perms</span>
+</span></span><span style="display:flex;"><span><span style="color:#8f5902;font-style:italic"># g[roup]:gid:perms</span>
+</span></span><span style="display:flex;"><span><span style="color:#8f5902;font-style:italic"># o[ther]::perms</span>
+</span></span><span style="display:flex;"><span>setfacl <span style="color:#ce5c00;font-weight:bold">[</span>options<span style="color:#ce5c00;font-weight:bold">]</span> rule filenames
+</span></span><span style="display:flex;"><span>-m <span style="color:#8f5902;font-style:italic"># modify permissions to file or dir</span>
+</span></span><span style="display:flex;"><span>-x <span style="color:#8f5902;font-style:italic"># rm permissions</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8f5902;font-style:italic"># add rw perms for sales group to test file</span>
+</span></span><span style="display:flex;"><span>setfacl -m g:sales:rw <span style="color:#204a87">test</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8f5902;font-style:italic"># (+) sign next to perms indicates ACL </span>
+</span></span><span style="display:flex;"><span>-rw-rw-r--+ <span style="color:#0000cf;font-weight:bold">1</span> linuxuser linuxuser <span style="color:#0000cf;font-weight:bold">0</span> Apr <span style="color:#0000cf;font-weight:bold">11</span> 21:54 <span style="color:#204a87">test</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8f5902;font-style:italic"># check ACL perms</span>
+</span></span><span style="display:flex;"><span>getfacl <span style="color:#204a87">test</span> 
+</span></span><span style="display:flex;"><span><span style="color:#8f5902;font-style:italic"># file: test</span>
+</span></span><span style="display:flex;"><span><span style="color:#8f5902;font-style:italic"># owner: linuxuser</span>
+</span></span><span style="display:flex;"><span><span style="color:#8f5902;font-style:italic"># group: linuxuser</span>
+</span></span><span style="display:flex;"><span>user::rw-
+</span></span><span style="display:flex;"><span>group::rw-
+</span></span><span style="display:flex;"><span>group:sales:rw-
+</span></span><span style="display:flex;"><span>mask::rw-
+</span></span><span style="display:flex;"><span>other::r--
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8f5902;font-style:italic"># remove sales group perms</span>
+</span></span><span style="display:flex;"><span>setfacl -x g:sales <span style="color:#204a87">test</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8f5902;font-style:italic"># verify</span>
+</span></span><span style="display:flex;"><span>getfacl <span style="color:#204a87">test</span>
+</span></span><span style="display:flex;"><span><span style="color:#8f5902;font-style:italic"># file: test</span>
+</span></span><span style="display:flex;"><span><span style="color:#8f5902;font-style:italic"># owner: linuxuser</span>
+</span></span><span style="display:flex;"><span><span style="color:#8f5902;font-style:italic"># group: linuxuser</span>
+</span></span><span style="display:flex;"><span>user::rw-
+</span></span><span style="display:flex;"><span>group::rw-
+</span></span><span style="display:flex;"><span>mask::rw-
+</span></span><span style="display:flex;"><span>other::r--
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8f5902;font-style:italic"># use d: option to set default ACL on dir that is inherited</span>
+</span></span><span style="display:flex;"><span><span style="color:#8f5902;font-style:italic"># by any file in the directory.</span>
+</span></span><span style="display:flex;"><span>sudo setfacl -m d:g:sales:rw <span style="color:#204a87;font-weight:bold">$(</span><span style="color:#204a87">pwd</span><span style="color:#204a87;font-weight:bold">)</span>
+</span></span><span style="display:flex;"><span>touch sales-test
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8f5902;font-style:italic"># verify</span>
+</span></span><span style="display:flex;"><span>getfacl sales-test 
+</span></span><span style="display:flex;"><span><span style="color:#8f5902;font-style:italic"># file: sales-test</span>
+</span></span><span style="display:flex;"><span><span style="color:#8f5902;font-style:italic"># owner: linuxuser</span>
+</span></span><span style="display:flex;"><span><span style="color:#8f5902;font-style:italic"># group: linuxuser</span>
+</span></span><span style="display:flex;"><span>user::rw-
+</span></span><span style="display:flex;"><span>group::rwx			<span style="color:#8f5902;font-style:italic">#effective:rw-</span>
+</span></span><span style="display:flex;"><span>group:sales:rw-
+</span></span><span style="display:flex;"><span>mask::rw-
+</span></span><span style="display:flex;"><span>other::r--
+</span></span></code></pre></div><h2 id="context-based-permissions">Context-based permissions</h2>
+<p>Linux permissions and ACLs are <em>discretionary access control</em> (DAC). They are set by file or directory owner.</p>
+<p><em>Mandatory access control</em> (MAC) lets the system administrator define securty based on the context of an object in the system, which overrides the DAC permissions.</p>
+<ul>
+<li><em>Role-based access control</em> (RBAC) is a subcategory of MAC, which bases perms on the roles users and processes play in the Linux system.</li>
+</ul>
+<h3 id="selinux-for-rhel">SELinux for RHEL</h3>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#8f5902;font-style:italic"># check if SELinux is active:</span>
+</span></span><span style="display:flex;"><span>sudo sestatus
+</span></span><span style="display:flex;"><span>SELinux status:                 enabled
+</span></span><span style="display:flex;"><span>SELinuxfs mount:                /sys/fs/selinux
+</span></span><span style="display:flex;"><span>SELinux root directory:         /etc/selinux
+</span></span><span style="display:flex;"><span>Loaded policy name:             targeted
+</span></span><span style="display:flex;"><span>Current mode:                   enforcing
+</span></span><span style="display:flex;"><span>Mode from config file:          enforcing
+</span></span><span style="display:flex;"><span>Policy MLS status:              enabled
+</span></span><span style="display:flex;"><span>Policy deny_unknown status:     allowed
+</span></span><span style="display:flex;"><span>Memory protection checking:     actual <span style="color:#ce5c00;font-weight:bold">(</span>secure<span style="color:#ce5c00;font-weight:bold">)</span>
+</span></span><span style="display:flex;"><span>Max kernel policy version:      <span style="color:#0000cf;font-weight:bold">33</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8f5902;font-style:italic"># view additional context perms for files and dirs</span>
+</span></span><span style="display:flex;"><span>ls -Z test1.txt 
+</span></span><span style="display:flex;"><span>unconfined_u:object_r:user_home_t:s0 test1.txt
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8f5902;font-style:italic"># change file security context</span>
+</span></span><span style="display:flex;"><span>chcon -u &lt;new-user&gt; -r &lt;new-role&gt; -t &lt;new-type&gt; &lt;filename&gt;
+</span></span></code></pre></div><h3 id="apparmor-for-ubuntu">AppArmor for Ubuntu</h3>
+<p>Controls files and network ports that applications can access. Installed by default, but you need to install a few packages:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#8f5902;font-style:italic"># install pacakges</span>
+</span></span><span style="display:flex;"><span>sudo apt install apparmor-utils
+</span></span><span style="display:flex;"><span>sudo apt install apparmor-profiles
+</span></span></code></pre></div><p>Calls policies <em>profiles</em>, defined in <code>/etc/apparmor.d</code>:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#8f5902;font-style:italic"># file names are path.to.app (replace &#39;/&#39; with &#39;.&#39;)</span>
+</span></span><span style="display:flex;"><span>ls -l /etc/apparmor.d/
+</span></span><span style="display:flex;"><span>total <span style="color:#0000cf;font-weight:bold">188</span>
+</span></span><span style="display:flex;"><span>-rw-r--r-- <span style="color:#0000cf;font-weight:bold">1</span> root root   <span style="color:#0000cf;font-weight:bold">879</span> Jun  <span style="color:#0000cf;font-weight:bold">5</span>  <span style="color:#0000cf;font-weight:bold">2023</span> bin.ping
+</span></span><span style="display:flex;"><span>drwxr-xr-x <span style="color:#0000cf;font-weight:bold">5</span> root root  <span style="color:#0000cf;font-weight:bold">4096</span> Feb <span style="color:#0000cf;font-weight:bold">20</span> 14:23 tunables
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8f5902;font-style:italic"># variables are defined in tunables</span>
+</span></span><span style="display:flex;"><span>cat /etc/apparmor.d/tunables/apparmorfs 
+</span></span><span style="display:flex;"><span><span style="color:#8f5902;font-style:italic">#    Copyright (C) 2012 Canonical Ltd.</span>
+</span></span><span style="display:flex;"><span><span style="color:#8f5902;font-style:italic">#</span>
+</span></span><span style="display:flex;"><span><span style="color:#8f5902;font-style:italic">#    This program is free software; you can redistribute it and/or</span>
+</span></span><span style="display:flex;"><span><span style="color:#8f5902;font-style:italic">#    modify it under the terms of version 2 of the GNU General Public</span>
+</span></span><span style="display:flex;"><span><span style="color:#8f5902;font-style:italic">#    License published by the Free Software Foundation.</span>
+</span></span><span style="display:flex;"><span><span style="color:#8f5902;font-style:italic">#</span>
+</span></span><span style="display:flex;"><span><span style="color:#8f5902;font-style:italic"># ------------------------------------------------------------------</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>include &lt;tunables/securityfs&gt;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>@<span style="color:#ce5c00;font-weight:bold">{</span>apparmorfs<span style="color:#ce5c00;font-weight:bold">}=</span>@<span style="color:#ce5c00;font-weight:bold">{</span>securityfs<span style="color:#ce5c00;font-weight:bold">}</span>/apparmor/
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8f5902;font-style:italic"># get AppArmor status</span>
+</span></span><span style="display:flex;"><span>sudo aa-status
+</span></span><span style="display:flex;"><span>apparmor module is loaded.
+</span></span><span style="display:flex;"><span><span style="color:#0000cf;font-weight:bold">65</span> profiles are loaded.
+</span></span><span style="display:flex;"><span><span style="color:#0000cf;font-weight:bold">46</span> profiles are in enforce mode.
+</span></span><span style="display:flex;"><span>   /snap/snapd/20671/usr/lib/snapd/snap-confine
+</span></span><span style="display:flex;"><span>   /snap/snapd/20671/usr/lib/snapd/snap-confine//mount-namespace-capture-helper
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8f5902;font-style:italic"># list active ports without AppArmor profile</span>
+</span></span><span style="display:flex;"><span>sudo aa-unconfined
+</span></span><span style="display:flex;"><span><span style="color:#0000cf;font-weight:bold">500</span> /usr/lib/systemd/systemd-resolved <span style="color:#ce5c00;font-weight:bold">(</span>/lib/systemd/systemd-resolved<span style="color:#ce5c00;font-weight:bold">)</span> not confined
+</span></span><span style="display:flex;"><span><span style="color:#0000cf;font-weight:bold">668</span> /usr/sbin/avahi-daemon not confined
+</span></span><span style="display:flex;"><span><span style="color:#0000cf;font-weight:bold">673</span> /usr/sbin/NetworkManager not confined
+</span></span><span style="display:flex;"><span><span style="color:#0000cf;font-weight:bold">22828</span> /usr/sbin/cupsd confined by <span style="color:#4e9a06">&#39;/usr/sbin/cupsd (enforce)&#39;</span>
+</span></span><span style="display:flex;"><span><span style="color:#0000cf;font-weight:bold">22830</span> /usr/sbin/cups-browsed confined by <span style="color:#4e9a06">&#39;/usr/sbin/cups-browsed (enforce)&#39;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8f5902;font-style:italic"># turn off a profile with complain mode</span>
+</span></span><span style="display:flex;"><span>sudo aa-complain /usr/sbin/tcpdump
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8f5902;font-style:italic"># disable a profile</span>
+</span></span><span style="display:flex;"><span>sudo aa-disable /usr/sbin/tcpdump
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8f5902;font-style:italic"># turn profile back on</span>
+</span></span><span style="display:flex;"><span>sudo aa-enforce /usr/bin/tcpdump
+</span></span></code></pre></div><h2 id="linux-user-types">Linux user types</h2>
+<dl>
+<dt><strong>Root</strong></dt>
+<dd>Main admin on the system. Special user value <code>0</code>. Can access all files and dirs.</dd>
+<dt><strong>Standard</strong></dt>
+<dd>Perform standard tasks, like run desktop applications or shell commands. Assigned <code>$HOME</code> dir, and can store files and create subdirectories. Usually cannot access files or dirs outside of <code>$HOME</code> dir unless given permission.</dd>
+</dl>
+<p>User account IDs are over 1000.</p>
+<dl>
+<dt><strong>Service</strong></dt>
+<dd>Used for applications that start in the background, like Apache web server or MySQL. Password in shadow file is usually set to <code>*</code>, so these accts cannot log into the system. Also, <code>etc/passwd</code> login shell is set to <code>nologin</code> value.
+<p>Service account IDs are less than 1000.</p>
+</dd>
+</dl>
+<h3 id="escalating-privileges">Escalating privileges</h3>
+<p>Users and groups with supperuser privileges are stored in <code>/etc/sudoers</code>. Common groups with these privilegs:</p>
+<ul>
+<li>Debian: <code>sudo</code> group</li>
+<li>RHEL: <code>wheel</code> group (short for big wheel)</li>
+</ul>
+<dl>
+<dt><strong>su</strong> (<em>substitute user</em>)</dt>
+<dd>Lets standard user account run commands as another user account, including root. Requires passwd for other account.</dd>
+<dt><strong>sudo</strong> (<em>substitute user do</em>)</dt>
+<dd>Lets standard user account run commands as another user account, including root. Requires passwd for own user account.</dd>
+<dt><strong>sudoedit</strong></dt>
+<dd>Lets standard user account open a file in a text editor with privileges of another user, including root. Requires passwd for own user account.</dd>
+</dl>
+<h2 id="restrict-users-and-files">Restrict users and files</h2>
+<h3 id="ulimit">ulimit</h3>
+<p>Restricts access to CPU and memory system resources for each user account:</p>
+<p><a href="https://phoenixnap.com/kb/ulimit-linux-command#flags">List of common flags</a></p>
+<h3 id="lsattr">lsattr</h3>
+<p>Display current attributes applied to a file or directory:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>lsattr test1.txt 
+</span></span><span style="display:flex;"><span>--------------e------- test1.txt
+</span></span><span style="display:flex;"><span>linuxuser@ubuntu22:~/linux-playg
+</span></span></code></pre></div><h3 id="chattr">chattr</h3>
+<p>Modifies attributes assigned to a file or directory, which define actions that the filestysm can allow or block on the file directory:</p>
+<p>To assign an attribute:</p>
+<ul>
+<li>To add, precede with <code>+</code></li>
+<li>To remove, precede with <code>-</code></li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#8f5902;font-style:italic"># mode is the attribute you modify</span>
+</span></span><span style="display:flex;"><span>chattr <span style="color:#ce5c00;font-weight:bold">[</span> mode <span style="color:#ce5c00;font-weight:bold">]</span> files...
+</span></span><span style="display:flex;"><span>a <span style="color:#8f5902;font-style:italic"># only open in append mode when writing</span>
+</span></span><span style="display:flex;"><span>A <span style="color:#8f5902;font-style:italic"># access time for file is not modified when file is opened</span>
+</span></span><span style="display:flex;"><span>c <span style="color:#8f5902;font-style:italic"># automatically compress file on disk</span>
+</span></span><span style="display:flex;"><span>C <span style="color:#8f5902;font-style:italic"># not automatically copied on write for journaling filesystems</span>
+</span></span><span style="display:flex;"><span>d <span style="color:#8f5902;font-style:italic"># do not backup with dump program</span>
+</span></span><span style="display:flex;"><span>D <span style="color:#8f5902;font-style:italic"># write synchronously to disk without caching</span>
+</span></span><span style="display:flex;"><span>e <span style="color:#8f5902;font-style:italic"># system uses extents for mapping blocks on disk</span>
+</span></span><span style="display:flex;"><span>E <span style="color:#8f5902;font-style:italic"># file is encrypted</span>
+</span></span><span style="display:flex;"><span>F <span style="color:#8f5902;font-style:italic"># all path lookups in the directory are case-sensitive</span>
+</span></span><span style="display:flex;"><span>i <span style="color:#8f5902;font-style:italic"># file cannot be modified or deleted</span>
+</span></span><span style="display:flex;"><span>I <span style="color:#8f5902;font-style:italic"># index dir using hash tree</span>
+</span></span><span style="display:flex;"><span>j <span style="color:#8f5902;font-style:italic"># if fs uses journaling, data written to file is written to journal before file</span>
+</span></span><span style="display:flex;"><span>N <span style="color:#8f5902;font-style:italic"># file contains data stored in inode table</span>
+</span></span><span style="display:flex;"><span>P <span style="color:#8f5902;font-style:italic"># for dirs, files in dir inherit project ID of the dir</span>
+</span></span><span style="display:flex;"><span>s <span style="color:#8f5902;font-style:italic"># if file is deleted, blocks are zeroed and written back to disk</span>
+</span></span><span style="display:flex;"><span>S <span style="color:#8f5902;font-style:italic"># file changes are written synchronously to disk and not stored in a buffer</span>
+</span></span><span style="display:flex;"><span>t <span style="color:#8f5902;font-style:italic"># if file contains partial block fragment at the end, it is not merged w other files</span>
+</span></span><span style="display:flex;"><span>T <span style="color:#8f5902;font-style:italic"># dir is deemed (?) topo of a dir hierarchy for storage purposes</span>
+</span></span><span style="display:flex;"><span>U <span style="color:#8f5902;font-style:italic"># save file contents when deleted so you can use undelete feature</span>
+</span></span><span style="display:flex;"><span>V <span style="color:#8f5902;font-style:italic"># apply file auth to file</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8f5902;font-style:italic"># view attributes</span>
+</span></span><span style="display:flex;"><span>lsattr test1.txt 
+</span></span><span style="display:flex;"><span>--------------e------- test1.txt
+</span></span><span style="display:flex;"><span>linuxuser@ubuntu22:~/linux-playg
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8f5902;font-style:italic"># assign attribute</span>
+</span></span><span style="display:flex;"><span>sudo chattr +i test1.txt 
+</span></span><span style="display:flex;"><span>lsattr test1.txt 
+</span></span><span style="display:flex;"><span>----i---------e------- test1.txt
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8f5902;font-style:italic"># remove attribute</span>
+</span></span><span style="display:flex;"><span>sudo chattr -i test1.txt 
+</span></span><span style="display:flex;"><span>lsattr test1.txt 
+</span></span><span style="display:flex;"><span>--------------e------- test1.txt
+</span></span></code></pre></div><h2 id="create-shared-directory">Create shared directory</h2>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#8f5902;font-style:italic"># 1. add user</span>
+</span></span><span style="display:flex;"><span>sudo useradd -m test1
+</span></span><span style="display:flex;"><span><span style="color:#8f5902;font-style:italic"># set user passwd</span>
+</span></span><span style="display:flex;"><span>sudo passwd test1
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8f5902;font-style:italic"># 2. add user</span>
+</span></span><span style="display:flex;"><span>sudo useradd -m test2
+</span></span><span style="display:flex;"><span><span style="color:#8f5902;font-style:italic"># set user passwd</span>
+</span></span><span style="display:flex;"><span>sudo passwd test2 
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8f5902;font-style:italic"># 3. create group </span>
+</span></span><span style="display:flex;"><span>sudo groupadd sales
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8f5902;font-style:italic"># 4. add user to group</span>
+</span></span><span style="display:flex;"><span>sudo usermod -G sales test1
+</span></span><span style="display:flex;"><span><span style="color:#8f5902;font-style:italic"># add user to group</span>
+</span></span><span style="display:flex;"><span>sudo usermod -G sales test2
+</span></span><span style="display:flex;"><span><span style="color:#8f5902;font-style:italic"># verify group assignments</span>
+</span></span><span style="display:flex;"><span>cat /etc/group <span style="color:#000;font-weight:bold">|</span> grep sales
+</span></span><span style="display:flex;"><span>sales:x:1005:test1,test2
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8f5902;font-style:italic"># 5. create shared dir</span>
+</span></span><span style="display:flex;"><span>sudo mkdir sales
+</span></span><span style="display:flex;"><span><span style="color:#8f5902;font-style:italic"># change default group for shared dir</span>
+</span></span><span style="display:flex;"><span>sudo chgrp sales sales/
+</span></span><span style="display:flex;"><span><span style="color:#8f5902;font-style:italic"># grant write privs to sales group</span>
+</span></span><span style="display:flex;"><span>sudo chmod g+w sales/
+</span></span><span style="display:flex;"><span><span style="color:#8f5902;font-style:italic"># set GUID bit for shared dir (all files created in dir are assigned to sales group)</span>
+</span></span><span style="display:flex;"><span>sudo chmod g+s sales/
+</span></span></code></pre></div>
+	
+</div>
+
+
+          </main>
+        </div>
+      </div>
+      <footer class="td-footer row d-print-none">
+  <div class="container-fluid">
+    <div class="row mx-md-2">
+      <div class="td-footer__left col-6 col-sm-4 order-sm-1">
+        
+      </div><div class="td-footer__right col-6 col-sm-4 order-sm-3">
+        
+      </div><div class="td-footer__center col-12 col-sm-4 py-2 order-sm-2">
+        <span class="td-footer__copyright">&copy;
+    2025
+    <span class="td-footer__authors">The Docsy Authors</span></span><span class="td-footer__all_rights_reserved">All Rights Reserved</span><span class="ms-2"><a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Privacy Policy</a></span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <script src="/js/main.js"></script>
+<script defer src="/js/click-to-copy.js" crossorigin="anonymous"></script>
+<script src='/js/tabpane-persist.js'></script>
+
+  </body>
+</html>

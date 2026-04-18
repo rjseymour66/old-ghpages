@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>git on Goldydocs</title>
+    <link>//localhost:1313/docs/git/</link>
+    <description>Recent content in git on Goldydocs</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <atom:link href="//localhost:1313/docs/git/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Branching</title>
+      <link>//localhost:1313/docs/git/branching/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/docs/git/branching/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Linux&#43; git</title>
+      <link>//localhost:1313/docs/git/linux-plus/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/docs/git/linux-plus/</guid>
+      <description>&lt;dl&gt;&#xA;&lt;dt&gt;Working directory&lt;/dt&gt;&#xA;&lt;dd&gt;Where all program files are created, modified, and reviewed.&lt;/dd&gt;&#xA;&lt;dt&gt;Staging area&lt;/dt&gt;&#xA;&lt;dd&gt;Also called the &lt;em&gt;index&lt;/em&gt;, its located on the same system and the working directory. Register files to the staging area with &lt;code&gt;git add&lt;/code&gt;.&#xA;&lt;p&gt;There is a hidden subdirectory, &lt;code&gt;.git&lt;/code&gt; that is created with &lt;code&gt;git init&lt;/code&gt;. When you add a file to the staging area, git creates or updates the file information in &lt;code&gt;.git/index&lt;/code&gt;. This includes checksums, timestamps, and filenames.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

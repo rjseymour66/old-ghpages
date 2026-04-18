@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Networking on Goldydocs</title>
+    <link>//localhost:1313/docs/networking/</link>
+    <description>Recent content in Networking on Goldydocs</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <atom:link href="//localhost:1313/docs/networking/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Intro to networks</title>
+      <link>//localhost:1313/docs/networking/intro-networks/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/docs/networking/intro-networks/</guid>
+      <description>&lt;p&gt;A network is two or more connected computers that can share resources such as data and applications, office machines, an internet connection, or any combination of the previous things.&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Hosts on a network communicate through binary code&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;local-area-network&#34;&gt;Local area network&lt;/h2&gt;&#xA;&lt;p&gt;A LAN is usually restricted to a location that is the size of an office building, single office, or home office.&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Best to split a big LAN into smaller logical zones called &lt;em&gt;workgroups&lt;/em&gt; to make admin easier.&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Workgroups are physically in the same network segment&lt;/li&gt;&#xA;&lt;li&gt;Create workgroups according to function. For example, an accounting workgroup and a sales workgroup&lt;/li&gt;&#xA;&lt;li&gt;You can connect workgroups with a router. This allows you to keep the workgroups separate so they aren&amp;rsquo;t on one large network, competing for access to resources.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h3 id=&#34;common-components&#34;&gt;Common components&lt;/h3&gt;&#xA;&lt;dl&gt;&#xA;&lt;dt&gt;Workstations&lt;/dt&gt;&#xA;&lt;dd&gt;Computers that run more than one CPU and whose resources are avialable to other users on the network.&lt;/dd&gt;&#xA;&lt;dt&gt;Servers&lt;/dt&gt;&#xA;&lt;dd&gt;Computers that are &amp;ldquo;at the service&amp;rdquo; of the network and run specialized software known as the network operating system to maintain and control the network.&#xA;&lt;p&gt;Servers are highly specialized and run one labor-intensive task:&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>OSI model</title>
+      <link>//localhost:1313/docs/networking/osi-model/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/docs/networking/osi-model/</guid>
+      <description>&lt;h2 id=&#34;overview&#34;&gt;Overview&lt;/h2&gt;&#xA;&lt;p&gt;The &lt;em&gt;Open Systems Interconnection&lt;/em&gt; reference model&amp;ndash;a hierarchical conceptual model of hos communications should happen&amp;ndash;describes how data and network information are communicated from an application on one computer through the network media to an application on another computer.&lt;/p&gt;&#xA;&lt;p&gt;When networking began, computers could only communicate with other computers from the same manufacturer. OSI model helped vendors create interaoperable network devices and software in the form of protocols so that different vendors&amp;rsquo; networks could work together.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Ethernet</title>
+      <link>//localhost:1313/docs/networking/connectors-wiring/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/docs/networking/connectors-wiring/</guid>
+      <description>&lt;p&gt;If you are on the same LAN, you find other workstations with their MAC address.&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Can use the broadcast address to find hosts on same LAN, no DNS required&lt;/li&gt;&#xA;&lt;li&gt;&lt;code&gt;192.168.0.255&lt;/code&gt; is a broadcast address&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Send message to broadcast address looking for workstation by name. Message includes sender MAC addr&lt;/li&gt;&#xA;&lt;li&gt;After name is resolved to an IP addr, broadcast on LAN to get MAC address&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;ethernet-basics&#34;&gt;Ethernet basics&lt;/h2&gt;&#xA;&lt;p&gt;Ethernet is a contention media-access method that lets all hosts on a network share the same bandwidth of a link.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Networking devices</title>
+      <link>//localhost:1313/docs/networking/network-devices/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/docs/networking/network-devices/</guid>
+      <description>&lt;h2 id=&#34;connectivity-devices&#34;&gt;Connectivity devices&lt;/h2&gt;&#xA;&lt;p&gt;Devices in this section connect network devices.&lt;/p&gt;&#xA;&lt;h3 id=&#34;network-interface-card-nic&#34;&gt;Network Interface Card (NIC)&lt;/h3&gt;&#xA;&lt;p&gt;Installed on the computer to connect (interface) the computer to the network.&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Provides physical, electrical, and electronic connections to network media&lt;/li&gt;&#xA;&lt;li&gt;Layer 2 bc it uses the MAC address, which is layer 2 in OSI model&lt;/li&gt;&#xA;&lt;li&gt;Almost all are built into the motherboard, but you can still buy them as an expansion card that you plug into the machine&lt;/li&gt;&#xA;&lt;li&gt;Usually has lights to indicate ethernet connection and connection speed&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Activity LED flickers to indicate intermittent transmission and reception of frames&lt;/li&gt;&#xA;&lt;li&gt;There is no universal standard for NIC LEDs&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h3 id=&#34;hub&#34;&gt;Hub&lt;/h3&gt;&#xA;&lt;p&gt;In a star topology, the device that connects all the segments of the network together without segmenting the network&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Internet Protocol</title>
+      <link>//localhost:1313/docs/networking/internet-protocol/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/docs/networking/internet-protocol/</guid>
+      <description>&lt;h2 id=&#34;tcpip&#34;&gt;TCP/IP&lt;/h2&gt;&#xA;&lt;p&gt;Created by the DoD to ensure data integrity and maintain communications in the event of catastropic war.&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;First request for comments (RFC) to the Internet Engineering Task Force (IETF) was in 1974&lt;/li&gt;&#xA;&lt;li&gt;1983, TCP/IP replaced Network Control Protocol (NCP) as the official data transport for ARPAnet (Advanced research Projects Agency), which was the DoD&amp;rsquo;s precursor to the internet&lt;/li&gt;&#xA;&lt;li&gt;Most development work on TCP/IP happened at UC Berkeley&lt;/li&gt;&#xA;&lt;li&gt;BSD distro packaged TCP/IP and it took off&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h3 id=&#34;dod-model&#34;&gt;DoD model&lt;/h3&gt;&#xA;&lt;p&gt;Condensed version of OSI model:&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>IP addressing</title>
+      <link>//localhost:1313/docs/networking/ip-addressing/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/docs/networking/ip-addressing/</guid>
+      <description>&lt;p&gt;An IP address is a numeric identifier assigned to each machine on an IP network&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;logical address, not hardware.&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Hardware is hard-coded on the NIC and used to find machines on a network&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;IP addr designed to allow a host on one network to communication with a host on another network, regardless of LAN design&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;terminology&#34;&gt;Terminology&lt;/h2&gt;&#xA;&lt;dl&gt;&#xA;&lt;dt&gt;Bit&lt;/dt&gt;&#xA;&lt;dd&gt;One binary digit, either 0 or 1&lt;/dd&gt;&#xA;&lt;dt&gt;Byte&lt;/dt&gt;&#xA;&lt;dd&gt;7 or 8 bits, depending on whether parity is used.&lt;/dd&gt;&#xA;&lt;dt&gt;Octet&lt;/dt&gt;&#xA;&lt;dd&gt;Ordinary 8-bit binary number, typically displayed in decimal up to 255. Same as &lt;em&gt;octet&lt;/em&gt;.&lt;/dd&gt;&#xA;&lt;dt&gt;Network address&lt;/dt&gt;&#xA;&lt;dd&gt;Designation used in routing to send packets to a remote network. For example, 10.0.0.0 or 172.16.0.0.&lt;/dd&gt;&#xA;&lt;dt&gt;IP address&lt;/dt&gt;&#xA;&lt;dd&gt;Logical address that defines a single host, but can also reference many or all hosts.&lt;/dd&gt;&#xA;&lt;dt&gt;Broadcast address&lt;/dt&gt;&#xA;&lt;dd&gt;Used by applications and hosts to send information to all hosts on a network. For example:&#xA;&lt;ul&gt;&#xA;&lt;li&gt;255.255.255.255: all netowrks and all hosts&lt;/li&gt;&#xA;&lt;li&gt;172.16.255.255: all subnets and hosts on 172.16.0.0&lt;/li&gt;&#xA;&lt;li&gt;10.255.255.255: all subnets and hosts on network 10.0.0.0&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/dd&gt;&#xA;&lt;/dl&gt;&#xA;&lt;h2 id=&#34;ip-addressing-scheme&#34;&gt;IP addressing scheme&lt;/h2&gt;&#xA;&lt;p&gt;IP address is 32 bits long, divided into 4 sections of 1 octet each in one of the following formats:&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Subnets and NAT</title>
+      <link>//localhost:1313/docs/networking/subnet-nat/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/docs/networking/subnet-nat/</guid>
+      <description>&lt;h2 id=&#34;basics&#34;&gt;Basics&lt;/h2&gt;&#xA;&lt;p&gt;Subnetting is when you take one network address range and create multiple subnetworks within that range. Benefits include:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;strong&gt;Reduced network traffic&lt;/strong&gt;: routers keep most traffic on the local network, only packets destined for that network travel through its router. Each router creates a broadcast domain, so the more broadcast domains you create, the smaller the less network traffic on each segment.&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Optimized network performance&lt;/strong&gt;: Reward for reducing network traffic&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Simplified management&lt;/strong&gt;: Easier to ID and isolate network problems in a group of smaller connected networks than within one giant network&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Facilitated spanning of large geographical distances&lt;/strong&gt;: Connecting multiple smaller networks is more efficient bc data doesn&amp;rsquo;t have to travel as far&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;create-a-subnet&#34;&gt;Create a subnet&lt;/h2&gt;&#xA;&lt;p&gt;To create a subnet, you take bits from the host portion of the IP address and resever them to define the subnet address. Use the following process to determine your needs:&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

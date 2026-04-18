@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Large Language Models on Goldydocs</title>
+    <link>//localhost:1313/docs/llm/</link>
+    <description>Recent content in Large Language Models on Goldydocs</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <atom:link href="//localhost:1313/docs/llm/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>RHEL</title>
+      <link>//localhost:1313/docs/llm/rhel/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/docs/llm/rhel/</guid>
+      <description>&lt;p&gt;&lt;a href=&#34;https://docs.redhat.com/en/documentation/red_hat_enterprise_linux_ai/1.4&#34;&gt;https://docs.redhat.com/en/documentation/red_hat_enterprise_linux_ai/1.4&lt;/a&gt;&lt;/p&gt;&#xA;&lt;h2 id=&#34;timeline&#34;&gt;Timeline&lt;/h2&gt;&#xA;&lt;h4 id=&#34;1950-alan-turing-proposes-the-turing-test&#34;&gt;1950 Alan Turing proposes the Turing test.&lt;/h4&gt;&#xA;&lt;p&gt;English mathematician Alan Turing publishes “Computing Machinery and Intelligence,” in which he asks: “Can machines think?”. In the paper, Turing proposes an experiment that is now known as the “Turing test” to assess the ability of a machine to exhibit intelligent behavior that is indistinguishable from that of a human.&lt;/p&gt;&#xA;&lt;p&gt;In the Turing test, a human evaluator reviews text from a conversation between two participants: a human and a machine. A machine would pass the test if the human evaluator could not reliably tell the human participant from the machine.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>
